@@ -1,101 +1,46 @@
-.login-screen-aAN {
-    align-items: center;
-    background-color: #ffffff;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    padding: 5.2rem 4.5rem 4.1rem 4.5rem;
-    width: 100%;
-  
-    .account-login-7Zc {
-      color: #000000;
-      flex-shrink: 0;
-      font-family: Inter, 'Source Sans Pro';
-      font-size: 2.2rem;
-      font-weight: 400;
-      line-height: 0.2125;
-      margin: 0rem 0.2rem 2.3rem 0rem;
-      text-align: center;
-      white-space: nowrap;
-    }
-    .line-39-Yev {
-      background-color: #000000;
-      flex-shrink: 0;
-      height: 0.1rem;
-      margin-bottom: 1.6rem;
-      width: 50%;
-    }
-    .email-address-fUe {
-      color: #000000;
-      flex-shrink: 0;
-      font-family: Inter, 'Source Sans Pro';
-      font-size: 1.5rem;
-      font-weight: 400;
-      line-height: 1.2125;
-      margin-bottom: 1.1rem;
-      text-align: center;
-      white-space: nowrap;
-    }
-    .rectangle-81-XWr {
-      border: solid 0.1rem #000000;
-      border-radius: 3rem;
-      box-sizing: border-box;
-      flex-shrink: 0;
-      font-family: Inter, 'Source Sans Pro';
-      font-weight: 400;
-      font-size: 1.5rem;
-      height: 2.8rem;
-      margin: 0rem 22.9rem 2.3rem 22.9rem;
-      width: calc(100% - 55.8rem);
-    }
-    .password-ozA {
-      color: #000000;
-      flex-shrink: 0;
-      font-family: Inter, 'Source Sans Pro';
-      font-size: 1.5rem;
-      font-weight: 400;
-      line-height: 1.2125;
-      margin: 0rem 0rem 1.1rem 0.1rem;
-      text-align: center;
-      white-space: nowrap;
-    }
-    .dont-have-an-account-i7U {
-        color: #000000;
-        flex-shrink: 0;
-        font-family: Inter, 'Source Sans Pro';
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.2125;
-        margin: 0rem 0.1rem 1.2rem 0rem;
-        text-align: center;
-        white-space: nowrap;
-      }
-      .group-39-zan {
-        align-items: center;
-        border: solid 0.1rem #000000;
-        border-radius: 3rem;
-        box-sizing: border-box;
-        color: #000000;
-        display: flex;
-        flex-shrink: 0;
-        font-family: Inter, 'Source Sans Pro';
-        font-size: 1rem;
-        font-weight: 400;
-        height: 2.7rem;
-        justify-content: center;
-        line-height: 1.2125;
-        margin: 0rem 31.3rem 0rem 31.2rem;
-        text-align: center;
-        white-space: nowrap;
-        width: calc(100% - 72.5rem);
-        margin-bottom: 1.1rem;
-      }
-      .create-account{
-        font-family: Inter, 'Source Sans Pro';
-        font-size: 1rem;
-        font-weight: 400;
-        color:black;
-        text-decoration:none;
-        text-align:center;
-      }
-    }
+.login-page-FTx {
+  background-color
+  : 
+  #ffffff;
+  height
+  : 
+  128.2rem;
+  overflow
+  : 
+  hidden;
+  position
+  : 
+  relative;
+  width
+  : 
+  100%;
+  .unsplash-rfabslv3bd8-iZQ {
+    background-image: url("../Images/LoginBackground.png");
+    height: 100%;
+    width:100%;
+    margin:0;
+    padding:0;
+
+    background-position:center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+  }
+.login-J3k {
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 2.5rem;
+  box-shadow: 0 0.1237rem 0.9858rem rgba(0, 0, 0, 0.0756838098), 0 0.3127rem 2.4932rem rgba(0, 0, 0, 0.0931405798), 0 0.638rem 5.0859rem rgba(0, 0, 0, 0.1194749326), 0 1.3141rem 10.476rem rgba(0, 0, 0, 0.178156957), 0 3.6rem 28.7rem rgba(0, 0, 0, 0.3100000024);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 37.7rem;
+  left: 57.1rem;
+  overflow: hidden;
+  padding: 0.7rem 3.6rem 0.5rem 3.7rem;
+  position: absolute;
+  top: 1.8rem;
+  width: 30.1rem;
+
+}
+}

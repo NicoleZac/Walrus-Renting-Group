@@ -7,6 +7,9 @@ import ProfileIcon from '@mui/icons-material/Person';
 import MailIcon from '@mui/icons-material/Mail';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import AddIcon from '@mui/icons-material/Add';
+import BedIcon from '@mui/icons-material/Bed';
+import BathroomIcon from '@mui/icons-material/Bathroom';
+import SearchIcon from '@mui/icons-material/Search';
 
 function Nav(){
     const {user,setUser} = useContext(UserContext);
@@ -15,64 +18,89 @@ function Nav(){
     function handleLogout(){
         setUser(null);
     }
-    console.log(userEmail);
 return(
     <nav>
-    <div class="header-logged-out-vqY" id="59:679">
-<div class="header-wke" id="59:662">
-<div class="banner-EDx" id="I59:662;119:2579">
+        <div class="header-P5L" id="141:2721">
+<div class="auto-group-ephx-9Tp" id="N4FjgWHfmcRyaX4FNqepHx">
+<div class="group-1-6vn" id="I141:2830;1:33"></div>
+<div class="frame-16-p66" id="141:3733">
+<div class="banner-jTx" id="141:2772">
 <Link to="/">
-<img class="group-6-wPG" src={logo} alt ={logo}id="I59:662;119:2579;1:110"/>
+<img class="group-6-T94" src={logo} alt ={logo} id="I141:2772;1:110"/>
 </Link>
-
 </div>
-<div class="group-1-h9U" id="I59:662;24:109;1:33">
-
-<div class="frame-8-ZxN" id="I59:662;24:109;24:97">
-<p class="location-Jux" id="I59:662;24:109;24:87">Location</p>
-<div class="line-5-2qx" id="I59:662;24:109;24:88"></div>
-<p class="location-Jux" id="I59:662;24:109;24:89">Beds</p>
-<div class="line-5-2qx" id="I59:662;24:109;24:91"></div>
-<p class="location-Jux" id="I59:662;24:109;24:90">Baths</p>
-<div class="line-5-2qx" id="I59:662;24:109;24:92"></div>
-<p class="location-Jux" id="I59:662;24:109;24:93">Price Range</p>
+<div class="search-bar-qhL" id="141:3078">
+<div class="frame-15-Y5x" id="I141:3078;141:2933">
+<div class="frame-15-Sx2" id="I141:3078;141:2930">
+<p class="where-yh4" id="I141:3078;141:2924">Where</p>
+<p class="find-your-new-home-hNA" id="I141:3078;141:2927">Find your new home</p>
 </div>
-
+<div class="line-36-E7C" id="I141:3078;141:2931"></div>
+<div class="frame-15-ZQN" id="I141:3078;141:2953">
+<BedIcon class="bath-3aS" id="I141:3078;141:2949"/>
+<p class="beds-mmL" id="I141:3078;141:2944">Beds</p>
+</div>
+<div class="line-38-K2A" id="I141:3078;141:2960"></div>
+<div class="frame-16-T8N" id="I141:3078;141:2954">
+<BathroomIcon class="bath-MzS" id="I141:3078;141:2957"/>
+<p class="bath-h2i" id="I141:3078;141:2956">Baths</p>
+</div>
+<div class="line-39-36a" id="I141:3078;141:2964"></div>
+<div class="frame-17-m2a" id="I141:3078;141:2961">
+<p class="price-range-HWi" id="I141:3078;141:2962">Price Range</p>
+<p class="min-max-Rcv" id="I141:3078;141:2963">Min - Max</p>
+</div>
+</div>
+<div class="group-15-wLN" id="I141:3078;141:2968">
+<SearchIcon class="vector-GtS"  id="I141:3078;141:2967"/>
+</div>
 </div>
 {userType === "Renter" && (<>
-<div class="frame-68-xFk" id="I59:662;102:4943">
+<div class="frame-69-9hL" id="141:3230">
 <Link to={`/UserProfile/${userEmail}`}>
-<ProfileIcon class= "icon-person-TyC"/>
+<ProfileIcon class="icon-person-R94"  id="141:3164"/>
 </Link>
-<MailIcon class="vector-AMp"/>
-<FavoriteIcon class="vector-7H4"/>
+<MailIcon class="vector-LWv" id="141:3163"/>
+<FavoriteIcon class="vector-sWr"  id="141:3162"/>
 </div>
 </>)}
 {userType === "Landlord" && (<>
-<div class="frame-68-xFk" id="I59:662;102:4943">
+<div class="frame-69-9hL" id="141:3230">
 <Link to={`/ListProperty`}>
 <AddIcon class="icon-add"/>
 </Link>
 <Link to={`/UserProfile/${userEmail}`}>
-<ProfileIcon class= "icon-person-TyC"/>
+<ProfileIcon class="icon-person-R94"  id="141:3164"/>
 </Link>
-<MailIcon class="vector-AMp"/>
-<FavoriteIcon class="vector-7H4"/>
+<MailIcon class="vector-LWv" id="141:3163"/>
+<FavoriteIcon class="vector-sWr"  id="141:3162"/>
 </div>
 </>)}
+
 {}
 {userEmail &&(<>
 <Link to="/">
-<div class="frame-8-rVY" id="I59:662;1:129" onClick={handleLogout}>Logout</div>
+<div class="frame-8-Dqc" id="141:3160" onClick={handleLogout}>Logout</div>
 </Link>
 </>)}
 {!userEmail &&(<>
 <Link to="/Login">
-<div class="frame-8-rVY" id="I59:662;1:129">Login</div>
+<div class="frame-8-Dqc" id="141:3160">Login
+</div>
 </Link>
 </>)}
 </div>
 </div>
+<p class="additional-filters-twk" id="141:5089">Additional Filters</p>
+</div>
+
+
+
+
+
+
+
+
 </nav>
 );
 }
