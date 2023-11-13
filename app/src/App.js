@@ -1,19 +1,26 @@
-import React, {useContext,useEffect} from "react";
+import React, {useState, useContext,useEffect} from "react";
 import './App.css';
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
 import {UserProvider} from "./Context/usercontext";
 import {PageProvider,PageContext} from "./Context/pagecontext";
 import Nav from "./Components/navbar";
 import LoginRegisterNav from "./Components/LoginRegisterNavbar";
-import ListProperty from "./Pages/ListProperty"
 import HomePage from "./Pages/HomePage";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import ListProperty from "./Components/ListProperty";
 import UserProfile from "./Pages/UserProfile"
 import {useLocation} from 'react-router-dom';
 
 function App() {
-  
+  const[isPopOpen,setPopOpen] = useState(false);
+
+  const openPop = () =>{
+    setPopOpen(true);
+  };
+  const closePop = () =>{
+    setPopOpen(false);
+  }
   return (
     <PageProvider>
     <UserProvider>
@@ -21,20 +28,19 @@ function App() {
  
 
    <Routes>
-    <Route path="/"element={<Content/> }/>
-    <Route path="/ListProperty" element={<Content/>}/>
-    <Route path="/Login" element={<Content/> }/>
-    <Route path="/Register" element={<Content/>}/>
-    <Route path={"/UserProfile/:email"} element={<Content />}/>
+    <Route path="/"element={<Content openPopup={openPop}/> }/>
+    <Route path="/Login" element={<Content openPopup={openPop}/> }/>
+    <Route path="/Register" element={<Content openPopup={openPop}/>}/>
+    <Route path={"/UserProfile/:email"} element={<Content openPopup={openPop} />}/>
    </Routes>
-
+    <ListProperty isOpen={isPopOpen} requestClose={closePop}/>
   </Router>
   </UserProvider>
    </PageProvider>
   
   );
 }
-function Content(){
+function Content({openPopup}){
   const{LoginRegisterPage,setLoginRegister} = useContext(PageContext);
   const location = useLocation();
   useEffect(()=>{
@@ -52,11 +58,8 @@ else{
 };
   return (
     <>
-    {LoginRegisterPage ? <LoginRegisterNav/>: <Nav/>}
-    <Routes>
-    <Route index element={<HomePage/>}/>
-    </Routes>
-    {location.pathname === '/ListProperty' && <ListProperty/>}
+    {LoginRegisterPage ? <LoginRegisterNav/>: <Nav openPopup={openPopup}/>}
+    {location.pathname === '/' && <HomePage/>}
     {location.pathname === '/Login' && <Login/>}
     {location.pathname === '/Register' && <Register/>}
     {location.pathname === "/UserProfile/:email" && <UserProfile/>}

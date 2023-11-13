@@ -1,0 +1,104 @@
+.property-card-P14 {
+    align-items: flex-start;
+    background-color: #ffffff;
+    border: solid 0.0483rem #bdbdbd;
+    border-radius: 0.9665rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-shrink: 0;
+    height: 100%;
+    overflow: hidden;
+    padding-right: 1.495rem;
+    position: relative;
+
+
+    .frame-70-6gA {
+        align-items: flex-end;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border-right: solid 0.0483rem #bdbdbd;
+        box-sizing: border-box;
+        display: flex;
+        flex-shrink: 0;
+        height: 100%;
+        margin-right: 1.9813rem;
+        overflow: hidden;
+        padding: 17.3rem 1.256rem 1.287rem 2.03rem;
+        position: relative;
+
+      .auto-group-z5tw-2Zp {
+        align-items: flex-end;
+        box-sizing: border-box;
+        display: flex;
+        height: 100%;
+        padding: 0.359rem 2.05rem 0.255rem 0.444rem;
+        width: 14.6074rem;
+
+        .item-89900-Z3x {
+            color: #ffffff;
+            flex-shrink: 0;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 2.8564rem;
+            font-weight: 700;
+            line-height: 0.1725;
+            margin-right: 0.8456rem;
+            white-space: nowrap;
+        }
+        .vector-Ugi {
+            flex-shrink: 0;
+            height: 2.2367rem;
+            margin: 0rem 1.208rem 1.783rem 0rem;
+            object-fit: contain;
+            vertical-align: top;
+            width: 2.6095rem;
+        }
+      }
+    }
+    .frame-19-sir {
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      margin-top: 1.4284rem;
+
+      .downtown-E3c {
+        color: #828282;
+        flex-shrink: 0;
+        font-family: Roboto, 'Source Sans Pro';
+        font-size: 1.388rem;
+        font-weight: 700;
+        line-height: 1.1725;
+        margin-bottom: 3.3794rem;
+        white-space: nowrap;
+      }
+      .bedrooms {
+        color: #828282;
+        flex-shrink: 0;
+        font-size:1.388rem;
+        font-family: Roboto, 'Source Sans Pro';
+        font-weight: 700;
+        line-height: 0.1725;
+        margin-bottom: 0.9046rem;
+
+      }
+      .bathrooms {
+        color: #828282;
+        flex-shrink: 0;
+        font-family: Roboto, 'Source Sans Pro';
+        font-size: 1.388rem;
+        font-weight: 700;
+        line-height: 0.1725;
+        margin-bottom: 0.9046rem;
+        white-space: nowrap;
+      }
+      .sq-ft-Mtv {
+        color: #828282;
+        flex-shrink: 0;
+        font-family: Roboto, 'Source Sans Pro';
+        font-size:1.388rem;
+        font-weight: 400;
+        line-height: 1.1725;
+        white-space: nowrap;
+      }
+    }
+}
