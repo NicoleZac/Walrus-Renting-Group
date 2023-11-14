@@ -58,8 +58,8 @@ else{
 };
   return (
     <>
-    {LoginRegisterPage ? <LoginRegisterNav/>: <Nav openPopup={openPopup}/>}
-    {location.pathname === '/' && <HomePage/>}
+    {LoginRegisterPage ? <LoginRegisterNav/>: <Nav/>}
+    {location.pathname === '/' && <HomePage openPopup={openPopup}/>}
     {location.pathname === '/Login' && <Login/>}
     {location.pathname === '/Register' && <Register/>}
     {location.pathname === "/UserProfile/:email" && <UserProfile/>}

@@ -12,11 +12,10 @@ import BathroomIcon from '@mui/icons-material/Bathroom';
 import SearchIcon from '@mui/icons-material/Search';
 import ListProperty from './ListProperty';
 
-function Nav({openPopup}){
+function Nav(){
     const [listProperty,setListProperty] = useState(false);
     const {user,setUser} = useContext(UserContext);
     const userEmail = user?.email;
-    const userType = user?.userType;
     function handleLogout(){
         setUser(null);
     }
@@ -57,19 +56,8 @@ return(
                             <SearchIcon class="vector-GtS" id="I141:3078;141:2967" />
                         </div>
                     </div>
-                    {userType === "Renter" && (<>
+                    {userEmail && (<>
                         <div class="frame-69-9hL" id="141:3230">
-                            <Link to={`/UserProfile/${userEmail}`}>
-                                <ProfileIcon class="icon-person-R94" id="141:3164" />
-                            </Link>
-                            <MailIcon class="vector-LWv" id="141:3163" />
-                            <FavoriteIcon class="vector-sWr" id="141:3162" />
-                        </div>
-                    </>)}
-                    {userType === "Landlord" && (<>
-                        <div class="frame-69-9hL" id="141:3230">
-                            <AddIcon onClick={openPopup}  class="icon-add" />
-
                             <Link to={`/UserProfile/${userEmail}`}>
                                 <ProfileIcon class="icon-person-R94" id="141:3164" />
                             </Link>
