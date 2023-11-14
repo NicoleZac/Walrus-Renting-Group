@@ -6,7 +6,6 @@ import logo from "../Images/logo.png"
 import ProfileIcon from '@mui/icons-material/Person';
 import MailIcon from '@mui/icons-material/Mail';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import AddIcon from '@mui/icons-material/Add';
 import BedIcon from '@mui/icons-material/Bed';
 import BathroomIcon from '@mui/icons-material/Bathroom';
 import SearchIcon from '@mui/icons-material/Search';

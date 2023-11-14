@@ -34,7 +34,7 @@ const ListProperty =({isOpen,requestClose})=>{
             case 'p2':
                 return <Page2 onNext={handleNext} onPrevious={handlePrevious}/>;    
             case 'p3':
-                return <Page3 onNext={handleNext} onPrevious={handlePrevious}/>;
+                return <Page3 onNext={handleNext} onPrevious={handlePrevious} onSubmit={handleSubmit}/>;
             case 'p4':
                 return <Page4 onPrevious={handlePrevious} onSubmit={handleSubmit}/>;
             default:
@@ -45,11 +45,50 @@ const ListProperty =({isOpen,requestClose})=>{
 <Modal
         isOpen = {isOpen}
         onRequestClose ={requestClose}
+        style={{
+           overlay: {
+            backgroundColor: 'rgba(0,0,0,0.5)',
+            display:'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right:0,
+            bottom: 0,
+           },
+           content:{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%,-50%)',
+            height: '100%',
+            backgroundColor: 'white',
+
+           }
+        }}
 >
+<div style={{width: '100%'}}>
 {getPageContent()}
-    
+</div>
 </Modal>
 
     );
+};
+
+export const useSharedForm = () =>{
+    const[formData,setFormData] = useState({
+        propertyType: '',
+        description: '',
+        images: [],
+        numBeds: '',
+        numBaths: '',
+        additionalFilters: [],
+        propertySize: '',
+    });
+    const updateSharedForm = (value) =>{
+        setFormData(value);
+    };
+    return [formData,updateSharedForm];
 };
 export default ListProperty;

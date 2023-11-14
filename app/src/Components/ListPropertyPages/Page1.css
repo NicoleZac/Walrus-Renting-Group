@@ -1,257 +1,193 @@
-.create-a-property-zPc {
-    border-radius: 10rem;
-    box-shadow: 0 0.0498rem 0.2214rem rgba(0, 0, 0, 0.0421718433), 0 0.1197rem 0.532rem rgba(0, 0, 0, 0.0605839156), 0 0.2254rem 1.0017rem rgba(0, 0, 0, 0.075000003), 0 0.4021rem 1.7869rem rgba(0, 0, 0, 0.0894160867), 0 0.752rem 3.3422rem rgba(0, 0, 0, 0.1078281552), 0 1.8rem 8rem rgba(0, 0, 0, 0.150000006);
-    height: 159.7rem;
-    left: 20.2rem;
-    position: absolute;
-    top: 10.2rem;
-    width: 61.3rem;
 
-    .rectangle-13-gGS {
-      background-color: #ffffff;
-      border-radius: 3.05rem;
-      height: 153.7rem;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 61.1rem;
-    }
-    .line-8-buC {
-      background-color: #bdbdbd;
-      height: 0.1rem;
-      left: 0.2rem;
-      position: absolute;
-      top: 7.1rem;
-      width: 61.1rem;
-    }
-    .frame-17-WmG {
-      height: 1.5rem;
-      left: 3.6rem;
-      object-fit: contain;
-      position: absolute;
-      top: 3rem;
-      vertical-align: top;
-      width: 1.5rem;
-    }
-    .create-a-property-qYe {
-      color: #828282;
+.create-a-property-2ne {
+  border-radius: 6.4478rem;
+  box-shadow: 0 0.0321rem 0.1427rem rgba(0, 0, 0, 0.0421718433), 0 0.0772rem 0.343rem rgba(0, 0, 0, 0.0605839156), 0 0.1453rem 0.6459rem rgba(0, 0, 0, 0.075000003), 0 0.2592rem 1.1522rem rgba(0, 0, 0, 0.0894160867), 0 0.4849rem 2.155rem rgba(0, 0, 0, 0.1078281552), 0 1.1606rem 5.1582rem rgba(0, 0, 0, 0.150000006);
+  flex-shrink: 0;
+  height: 102.9709rem;
+  margin-right: 5.0292rem;
+  position: relative;
+  width: 39.5249rem;
+
+  .rectangle-13-cXt {
+    background-color: #ffffff;
+    border-radius: 1.9666rem;
+    height: 99.1023rem;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 39.3959rem;
+  }
+  .line-8-fFG {
+    background-color: #bdbdbd;
+    height: 0.0645rem;
+    left: 0.129rem;
+    position: absolute;
+    top: 4.5779rem;
+    width: 39.3959rem;
+  }
+  .frame-17-m3Q {
+    height: 0.9672rem;
+    left: 2.3212rem;
+    object-fit: contain;
+    position: absolute;
+    top: 1.9343rem;
+    vertical-align: top;
+    width: 0.9672rem;
+  }
+  .create-a-property-Ehg {
+    color: #828282;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 1.2896rem;
+    font-weight: 700;
+    height: 1.6rem;
+    left: 14.6364rem;
+    line-height: 1.1725;
+    position: absolute;
+    top: 1.6764rem;
+    white-space: nowrap;
+    width: 10.2rem;
+  }
+  .frame-15-dzi {
+    height: 2.3rem;
+    left: 3.2239rem;
+    position: absolute;
+    top: 7.9308rem;
+    width: 5.7rem;
+
+    .progress-bar-JLA {
+      color: #4f4f4f;
       font-family: Roboto, 'Source Sans Pro';
-      font-size: 2rem;
-      font-weight: 700;
-      height: 2.4rem;
-      left: 22.7rem;
+      font-size: 0.9721rem;
+      font-weight: 400;
+      height: 1.2rem;
+      left: 0;
       line-height: 1.1725;
       position: absolute;
-      top: 2.6rem;
+      top: 0;
       white-space: nowrap;
-      width: 15.8rem;
+      width: 5.6rem;
     }
-    .frame-15-8Gr {
-      height: 3.6rem;
-      left: 5rem;
+    .complete-ZWz {
+      color: #828282;
+      font-family: Roboto, 'Source Sans Pro';
+      font-size: 0.9721rem;
+      font-weight: 400;
+      height: 1.2rem;
+      left: 0;
+      line-height: 1.1725;
       position: absolute;
-      top: 12.3rem;
-      width: 8.8rem;
+      top: 1.1rem;
+      white-space: nowrap;
+      width: 5.7rem;
+    }
+  }
+  .group-17-qzJ {
+    height: 0.234rem;
+    left: 3.2238rem;
+    object-fit: contain;
+    position: absolute;
+    top: 11.606rem;
+    vertical-align: top;
+    width: 32.7547rem;
+  }
+  .group-51-kbU {
+    height: 9.9432rem;
+    left: 3.2238rem;
+    position: absolute;
+    top: 14.2496rem;
+    width: 31.981rem;
 
-      .progress-bar-SoL {
+    .frame-19-GZp {
+      height: 2.3635rem;
+      margin-bottom: 1.5697rem;
+      position: relative;
+      width: 11rem;
+
+      .type-of-home-CTU {
         color: #4f4f4f;
         font-family: Roboto, 'Source Sans Pro';
-        font-size: 1.5076rem;
+        font-size: 0.9721rem;
         font-weight: 400;
+        height: 1.2rem;
+        left: 0;
         line-height: 1.1725;
+        position: absolute;
+        top: 0;
         white-space: nowrap;
+        width: 6.1rem;
       }
-      .complete-NS6 {
+      .select-as-many-you-want-gtS {
         color: #828282;
         font-family: Roboto, 'Source Sans Pro';
-        font-size: 1.5076rem;
+        font-size: 0.9721rem;
         font-weight: 400;
+        height: 1.2rem;
+        left: 0;
         line-height: 1.1725;
+        position: absolute;
+        top: 1.1635rem;
         white-space: nowrap;
+        width: 11rem;
       }
     }
-    .group-17-WHQ {
-      height: 0.363rem;
-      left: 5rem;
-      object-fit: contain;
-      position: absolute;
-      top: 18rem;
-      vertical-align: top;
-      width: 50.8rem;
-    }
-    .group-51-RvA {
-      height: 15.4091rem;
-      left: 5rem;
-      position: absolute;
-      top: 22.1rem;
-      width: 49.6rem;
+    .frame-20-aiv {
+      align-items: flex-start;
+      column-gap: 1.0961rem;
+      display: flex;
+      height: 6.0101rem;
+      width: 100%;
 
-      .frame-19-M38 {
+      .auto-group-xevv-umC {
+        align-items: center;
         display: flex;
         flex-direction: column;
-        margin-bottom: 2.4016rem;
+        flex-shrink: 0;
+        height: 100%;
+        width: 9.9296rem;
 
-        .type-of-home-V9L {
-          color: #4f4f4f;
-          flex-shrink: 0;
-          font-family: Roboto, 'Source Sans Pro';
-          font-size: 1.5076rem;
-          font-weight: 400;
-          line-height: 1.1725;
-          margin-bottom: 0.0984rem;
-          white-space: nowrap;
-        }
-        .select-as-many-you-want-1dU {
-          color: #828282;
-          flex-shrink: 0;
-          font-family: Roboto, 'Source Sans Pro';
-          font-size: 1.5076rem;
-          font-weight: 400;
-          line-height: 1.1725;
-          white-space: nowrap;
-        }
-      }
-      .frame-20-Xri {
-        align-items: flex-start;
-        column-gap: 1.7rem;
-        display: flex;
-        height: 9.3091rem;
-        width: 100%;
-
-        .auto-group-gbfg-rtz {
-          align-items: center;
-          display: flex;
-          flex-direction: column;
-          flex-shrink: 0;
-          height: 100%;
-          width: 15.4rem;
-
-          .price-11C {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            margin-bottom: 1.7rem;
-            overflow: hidden;
-            padding: 1.052rem 5.75rem 0rem 5.75rem;
-            position: relative;
-            width: 100%;
-
-            .frame-15-Wie {
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-          .price-C5g {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            overflow: hidden;
-            padding: 1.052rem 5.55rem 0rem 5.55rem;
-            position: relative;
-            width: 100%;
-
-            .frame-15-Ws4 {
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-        }
-        .auto-group-x5ge-z1Y {
-          align-items: center;
-          display: flex;
-          flex-direction: column;
-          flex-shrink: 0;
-          height: 100%;
-          width: 15.4rem;
-
-          .price-XGN {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            margin-bottom: 1.7rem;
-            overflow: hidden;
-            padding: 1.052rem 4.05rem 0rem 4.05rem;
-            position: relative;
-            width: 100%;
-
-            .frame-15-qnr {
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-          .price-VMc {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            overflow: hidden;
-            padding: 1.052rem 4.35rem 0rem 4.35rem;
-            position: relative;
-            width: 100%;
-
-            .frame-15-QUa {
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-        }
-        .price-UzE {
+        .price-EoU {
           background-color: #ffffff;
-          border: solid 0.0702rem #c2c2c2;
-          border-radius: 28.0608rem;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
           box-sizing: border-box;
           flex-shrink: 0;
-          height: 3.8046rem;
+          height: 2.457rem;
+          margin-bottom: 1.0961rem;
           overflow: hidden;
-          padding: 1.052rem 5.45rem 0rem 5.45rem;
+          padding: 0.678rem 3.665rem 0rem 3.665rem;
           position: relative;
-          width: 15.4rem;
+          width: 100%;
 
-          .frame-15-bZ4 {
+          .frame-15-gSW {
             color: #4f4f4f;
             font-family: Roboto, 'Source Sans Pro';
-            font-size: 1.4794rem;
+            font-size: 0.9539rem;
             font-weight: 400;
-            height: 3.5538rem;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+        .price-WAe {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          overflow: hidden;
+          padding: 0.678rem 3.565rem 0rem 3.565rem;
+          position: relative;
+          width: 100%;
+
+          .frame-15-dWA {
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
             line-height: 1.1725;
             text-align: center;
             white-space: nowrap;
@@ -259,806 +195,931 @@
           }
         }
       }
-    }
-    .frame-19-F7p {
-      height: 3.6984rem;
-      left: 5rem;
-      position: absolute;
-      top: 41.6rem;
-      width: 23.5rem;
-
-      .key-features-ZuC {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 1.5076rem;
-        font-weight: 400;
-        line-height: 1.1725;
-        margin-bottom: 0.0984rem;
-        white-space: nowrap;
-      }
-      .what-makes-your-property-special-tRg {
-        color: #828282;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 1.5076rem;
-        font-weight: 400;
-        line-height: 1.1725;
-        white-space: nowrap;
-      }
-    }
-    .search-bar-CSN {
-      background-color: #ffffff;
-      border: solid 0.1rem #c2c2c2;
-      border-radius: 2rem;
-      box-sizing: border-box;
-      height: 21.3rem;
-      left: 5.1rem;
-      padding: 2rem 3.1rem;
-      position: absolute;
-      top: 47.4rem;
-      width: 49.5rem;
-
-      .frame-17-uLn {
-        height: 3.6rem;
-        width: 22.4rem;
-
-        .description-max-600-characters-T7Q {
-          color: #4f4f4f;
-          font-family: Roboto, 'Source Sans Pro';
-          font-size: 1.5076rem;
-          font-weight: 400;
-          line-height: 1.1725;
-          white-space: nowrap;
-        }
-        .enter-here-AnW {
-          color: #828282;
-          font-family: Roboto, 'Source Sans Pro';
-          font-size: 1.5076rem;
-          font-weight: 400;
-          line-height: 1.1725;
-          white-space: nowrap;
-        }
-      }
-    }
-    .search-bar-sB8 {
-      align-items: center;
-      background-color: #ffffff;
-      border: solid 0.1rem #c2c2c2;
-      border-radius: 2rem;
-      box-sizing: border-box;
-      display: flex;
-      height: 9.3rem;
-      left: 5.1rem;
-      padding: 2.5rem 14.209rem 2.45rem 15.8rem;
-      position: absolute;
-      top: 70.8rem;
-      width: 49.5rem;
-
-      .upload-photos-wRt {
-        color: #4f4f4f;
-        flex-shrink: 0;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 1.5076rem;
-        font-weight: 400;
-        line-height: 1.1725;
-        margin: 0.05rem 1.4rem 0rem 0rem;
-        white-space: nowrap;
-      }
-      .group-52-pVg {
-        border-radius: 0.5rem;
-        flex-shrink: 0;
-        height: 4.35rem;
-        object-fit: contain;
-        vertical-align: top;
-        width: 8.1906rem;
-      }
-    }
-    .group-53-sir {
-      height: 12.4091rem;
-      left: 4.9rem;
-      position: absolute;
-      top: 83.1rem;
-      width: 45.2rem;
-
-      .of-beds-xVQ {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 1.5076rem;
-        font-weight: 400;
-        line-height: 1.1725;
-        margin: 0rem 0rem 2.2rem 0.2rem;
-        white-space: nowrap;
-      }
-      .frame-53-Ehp {
+      .auto-group-m8ww-hF8 {
         align-items: center;
         display: flex;
-        height: 8.4091rem;
-        width: 100%;
+        flex-direction: column;
+        flex-shrink: 0;
+        height: 100%;
+        width: 9.9296rem;
 
-        .auto-group-bazw-MGe {
-          align-items: center;
-          display: flex;
-          flex-direction: column;
-          flex-shrink: 0;
-          height: 100%;
-          margin-right: 0.8rem;
-          width: 8.4rem;
-
-          .price-HAJ {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            margin-bottom: 0.8rem;
-            overflow: hidden;
-            padding: 1.052rem 2.294rem 0rem 2.306rem;
-            position: relative;
-            width: 100%;
-
-            .frame-15-CHG {
-              box-sizing: border-box;
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              padding: 0rem 1.456rem 0rem 1.444rem;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-          .price-3Yn {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            overflow: hidden;
-            padding: 1.052rem 2.294rem 0rem 2.306rem;
-            position: relative;
-            width: 100%;
-
-            .frame-15-yBY {
-              box-sizing: border-box;
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              padding: 0rem 1.456rem 0rem 1.444rem;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-        }
-        .auto-group-r4a6-ckJ {
-          align-items: center;
-          display: flex;
-          flex-direction: column;
-          flex-shrink: 0;
-          height: 100%;
-          margin-right: 0.8rem;
-          width: 8.4rem;
-
-          .price-Z9k {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            margin-bottom: 0.8rem;
-            overflow: hidden;
-            padding: 1.052rem 2.294rem 0rem 2.306rem;
-            position: relative;
-            width: 100%;
-
-            .frame-15-fyU {
-              box-sizing: border-box;
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              padding: 0rem 1.456rem 0rem 1.444rem;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-          .price-uN2 {
-            background-color: #c9cba3;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            overflow: hidden;
-            padding: 1.052rem 2.294rem 0rem 2.306rem;
-            position: relative;
-            width: 100%;
-
-            .frame-15-EQJ {
-              box-sizing: border-box;
-              color: #ffffff;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              padding: 0rem 1.456rem 0rem 1.444rem;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-        }
-        .auto-group-v9by-gXC {
-          align-items: center;
-          display: flex;
-          flex-direction: column;
-          flex-shrink: 0;
-          height: 100%;
-          width: 8.4rem;
-
-          .price-ptJ {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            margin-bottom: 0.8rem;
-            overflow: hidden;
-            padding: 1.052rem 2.294rem 0rem 2.306rem;
-            position: relative;
-            width: 100%;
-
-            .frame-15-8tz {
-              box-sizing: border-box;
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              padding: 0rem 1.456rem 0rem 1.444rem;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-          .price-CP4 {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            overflow: hidden;
-            padding: 1.052rem 2.294rem 0rem 2.306rem;
-            position: relative;
-            width: 100%;
-
-            .frame-15-8Xc {
-              box-sizing: border-box;
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              padding: 0rem 1.056rem 0rem 1.044rem;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-        }
-        .auto-group-2psn-MvA {
-          align-items: flex-start;
+        .price-EVx {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
           box-sizing: border-box;
-          display: flex;
           flex-shrink: 0;
-          height: 100%;
-          padding-left: 0.8rem;
+          height: 2.457rem;
+          margin-bottom: 1.0961rem;
+          overflow: hidden;
+          padding: 0.678rem 2.615rem 0rem 2.615rem;
+          position: relative;
+          width: 100%;
 
-          .price-W2N {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            margin-right: 0.8rem;
-            overflow: hidden;
-            padding: 1.052rem 2.294rem 0rem 2.306rem;
-            position: relative;
-            width: 8.4rem;
-
-            .frame-15-1zi {
-              box-sizing: border-box;
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              padding: 0rem 1.456rem 0rem 1.444rem;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-          .price-g5G {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            overflow: hidden;
-            padding: 1.052rem 2.294rem 0rem 2.306rem;
-            position: relative;
-            width: 8.4rem;
-
-            .frame-15-CJW {
-              box-sizing: border-box;
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              padding: 0rem 1.456rem 0rem 1.444rem;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
+          .frame-15-wQN {
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
           }
         }
-      }
-    }
-    .group-54-duc {
-      height: 12.4091rem;
-      left: 4.9rem;
-      position: absolute;
-      top: 98.5rem;
-      width: 45.2rem;
-
-      .of-baths-APk {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 1.5076rem;
-        font-weight: 400;
-        line-height: 1.1725;
-        margin: 0rem 0rem 2.2rem 0.2rem;
-        white-space: nowrap;
-      }
-      .frame-53-g7C {
-        align-items: center;
-        display: flex;
-        height: 8.4091rem;
-        width: 100%;
-
-        .auto-group-kwpe-pDQ {
-          align-items: center;
-          display: flex;
-          flex-direction: column;
-          flex-shrink: 0;
-          height: 100%;
-          margin-right: 0.8rem;
-          width: 8.4rem;
-
-          .price-LSe {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            margin-bottom: 0.8rem;
-            overflow: hidden;
-            padding: 1.052rem 2.294rem 0rem 2.306rem;
-            position: relative;
-            width: 100%;
-
-            .frame-15-TGN {
-              box-sizing: border-box;
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              padding: 0rem 1.456rem 0rem 1.444rem;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-          .price-vQr {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            overflow: hidden;
-            padding: 1.052rem 2.294rem 0rem 2.306rem;
-            position: relative;
-            width: 100%;
-
-            .frame-15-3VU {
-              box-sizing: border-box;
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              padding: 0rem 1.456rem 0rem 1.444rem;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-        }
-        .auto-group-4dsa-VMU {
-          align-items: center;
-          display: flex;
-          flex-direction: column;
-          flex-shrink: 0;
-          height: 100%;
-          margin-right: 0.8rem;
-          width: 8.4rem;
-
-          .price-dCn {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            margin-bottom: 0.8rem;
-            overflow: hidden;
-            padding: 1.052rem 2.294rem 0rem 2.306rem;
-            position: relative;
-            width: 100%;
-
-            .frame-15-wUN {
-              box-sizing: border-box;
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              padding: 0rem 1.456rem 0rem 1.444rem;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-          .price-PbG {
-            background-color: #c9cba3;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            overflow: hidden;
-            padding: 1.052rem 2.294rem 0rem 2.306rem;
-            position: relative;
-            width: 100%;
-
-            .frame-15-Kjp {
-              box-sizing: border-box;
-              color: #ffffff;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              padding: 0rem 1.456rem 0rem 1.444rem;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-        }
-        .auto-group-87ce-a9x {
-          align-items: center;
-          display: flex;
-          flex-direction: column;
-          flex-shrink: 0;
-          height: 100%;
-          width: 8.4rem;
-
-          .price-7Qn {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            margin-bottom: 0.8rem;
-            overflow: hidden;
-            padding: 1.052rem 2.294rem 0rem 2.306rem;
-            position: relative;
-            width: 100%;
-
-            .frame-15-2ne {
-              box-sizing: border-box;
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              padding: 0rem 1.456rem 0rem 1.444rem;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-          .price-6Gi {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            overflow: hidden;
-            padding: 1.052rem 2.294rem 0rem 2.306rem;
-            position: relative;
-            width: 100%;
-
-            .frame-15-2AN {
-              box-sizing: border-box;
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              padding: 0rem 1.056rem 0rem 1.044rem;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-        }
-        .auto-group-waev-UHG {
-          align-items: flex-start;
+        .price-ZAr {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
           box-sizing: border-box;
-          display: flex;
           flex-shrink: 0;
-          height: 100%;
-          padding-left: 0.8rem;
+          height: 2.457rem;
+          overflow: hidden;
+          padding: 0.678rem 2.815rem 0rem 2.815rem;
+          position: relative;
+          width: 100%;
 
-          .price-DEr {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            margin-right: 0.8rem;
-            overflow: hidden;
-            padding: 1.052rem 2.294rem 0rem 2.306rem;
-            position: relative;
-            width: 8.4rem;
-
-            .frame-15-wAr {
-              box-sizing: border-box;
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              padding: 0rem 1.456rem 0rem 1.444rem;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
-          }
-          .price-oD4 {
-            background-color: #ffffff;
-            border: solid 0.0702rem #c2c2c2;
-            border-radius: 28.0608rem;
-            box-sizing: border-box;
-            flex-shrink: 0;
-            height: 3.8046rem;
-            overflow: hidden;
-            padding: 1.052rem 2.294rem 0rem 2.306rem;
-            position: relative;
-            width: 8.4rem;
-
-            .frame-15-WtA {
-              box-sizing: border-box;
-              color: #4f4f4f;
-              font-family: Roboto, 'Source Sans Pro';
-              font-size: 1.4794rem;
-              font-weight: 400;
-              height: 3.5538rem;
-              line-height: 1.1725;
-              padding: 0rem 1.456rem 0rem 1.444rem;
-              text-align: center;
-              white-space: nowrap;
-              width: 100%;
-            }
+          .frame-15-3ri {
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
           }
         }
       }
-    }
-    .frame-19-a7L {
-      height: 3.6984rem;
-      left: 5.2rem;
-      position: absolute;
-      top: 115.3rem;
-      width: 11.4rem;
-
-      .additional-filters-hSr {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 1.5076rem;
-        font-weight: 400;
-        line-height: 1.1725;
-        margin-bottom: 0.0984rem;
-        white-space: nowrap;
-      }
-      .utilities-more-1yL {
-        color: #828282;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 1.5076rem;
-        font-weight: 400;
-        line-height: 1.1725;
-        white-space: nowrap;
-      }
-    }
-    .frame-21-wc6 {
-      align-items: center;
-      column-gap: 1.7rem;
-      display: flex;
-      height: 3.8046rem;
-      left: 5.1rem;
-      position: absolute;
-      top: 121.7rem;
-      width: 49.6rem;
-
-      .price-T4e {
+      .price-K3Y {
         background-color: #ffffff;
-        border: solid 0.0702rem #c2c2c2;
-        border-radius: 28.0608rem;
+        border: solid 0.0452rem #c2c2c2;
+        border-radius: 18.093rem;
         box-sizing: border-box;
         flex-shrink: 0;
-        height: 100%;
+        height: 2.457rem;
         overflow: hidden;
-        padding: 1.052rem 5.2rem 0rem 5.2rem;
+        padding: 0.678rem 3.515rem 0rem 3.515rem;
         position: relative;
-        width: 15.4rem;
+        width: 9.9296rem;
 
-        .frame-15-yog {
+        .frame-15-Pp6 {
           color: #4f4f4f;
           font-family: Roboto, 'Source Sans Pro';
-          font-size: 1.4794rem;
+          font-size: 0.9539rem;
           font-weight: 400;
-          height: 3.5538rem;
+          height: 2.3308rem;
           line-height: 1.1725;
           text-align: center;
           white-space: nowrap;
           width: 100%;
         }
       }
-      .price-rMg {
-        background-color: #ffffff;
-        border: solid 0.0702rem #c2c2c2;
-        border-radius: 28.0608rem;
-        box-sizing: border-box;
-        flex-shrink: 0;
-        height: 100%;
-        overflow: hidden;
-        padding: 1.052rem 3.4rem 0rem 3.4rem;
-        position: relative;
-        width: 15.4rem;
-
-        .frame-15-Ber {
-          color: #4f4f4f;
-          font-family: Roboto, 'Source Sans Pro';
-          font-size: 1.4794rem;
-          font-weight: 400;
-          height: 3.5538rem;
-          line-height: 1.1725;
-          text-align: center;
-          white-space: nowrap;
-          width: 100%;
-        }
-      }
-      .price-eoL {
-        background-color: #ffffff;
-        border: solid 0.0702rem #c2c2c2;
-        border-radius: 28.0608rem;
-        box-sizing: border-box;
-        flex-shrink: 0;
-        height: 100%;
-        overflow: hidden;
-        padding: 1.052rem 2rem 0rem 2rem;
-        position: relative;
-        width: 15.4rem;
-
-        .frame-15-yqc {
-          color: #4f4f4f;
-          font-family: Roboto, 'Source Sans Pro';
-          font-size: 1.4794rem;
-          font-weight: 400;
-          height: 3.5538rem;
-          line-height: 1.1725;
-          text-align: center;
-          white-space: nowrap;
-          width: 100%;
-        }
-      }
-    }
-    .search-bar-fCe {
-      background-color: #ffffff;
-      border: solid 0.1rem #c2c2c2;
-      border-radius: 40rem;
-      box-sizing: border-box;
-      height: 8.1rem;
-      left: 5.1rem;
-      padding: 2rem 5.1rem 2.5rem 5.1rem;
-      position: absolute;
-      top: 129.4rem;
-      width: 49.6rem;
-
-      .frame-17-M5U {
-        cursor: pointer;
-        height: 100%;
-        width: 13.9rem;
-
-        .square-footage-h9L {
-          color: #4f4f4f;
-          font-family: Roboto, 'Source Sans Pro';
-          font-size: 1.5076rem;
-          font-weight: 400;
-          line-height: 1.1725;
-          white-space: nowrap;
-        }
-        .sqft-DNa {
-          color: #828282;
-          font-family: Roboto, 'Source Sans Pro';
-          font-size: 1.5076rem;
-          font-weight: 400;
-          line-height: 1.1725;
-          white-space: nowrap;
-        }
-      }
-    }
-    .submit-iKL {
-      align-items: center;
-      background-color: #4f4f4f;
-      border-radius: 40rem;
-      color: #ffffff;
-      display: flex;
-      font-family: Roboto, 'Source Sans Pro';
-      font-size: 2.12rem;
-      font-weight: 400;
-      height: 6.8rem;
-      justify-content: center;
-      left: 6.4rem;
-      line-height: 1.1725;
-      position: absolute;
-      top: 141.4rem;
-      white-space: nowrap;
-      width: 48.2rem;
     }
   }
+  .frame-19-DYE {
+    height: 2.3635rem;
+    left: 3.2239rem;
+    position: absolute;
+    top: 26.8227rem;
+    width: 15.1rem;
+
+    .key-features-5KY {
+      color: #4f4f4f;
+      font-family: Roboto, 'Source Sans Pro';
+      font-size: 0.9721rem;
+      font-weight: 400;
+      height: 1.2rem;
+      left: 0;
+      line-height: 1.1725;
+      position: absolute;
+      top: 0;
+      white-space: nowrap;
+      width: 5.6rem;
+    }
+    .what-makes-your-property-special-ZEi {
+      color: #828282;
+      font-family: Roboto, 'Source Sans Pro';
+      font-size: 0.9721rem;
+      font-weight: 400;
+      height: 1.2rem;
+      left: 0;
+      line-height: 1.1725;
+      position: absolute;
+      top: 1.1635rem;
+      white-space: nowrap;
+      width: 15.1rem;
+    }
+  }
+  .search-bar-eGA {
+    background-color: #ffffff;
+    font-family: Roboto, 'Source Sans Pro';
+    border: solid 0.0645rem #c2c2c2;
+    border-radius: 1.2896rem;
+    box-sizing: border-box;
+    height: 13.7338rem;
+    left: 3.2884rem;
+    padding: 1.2896rem 1.9988rem;
+    position: absolute;
+    top: 30.5625rem;
+    width: 31.9165rem;
+
+    .frame-17-hES {
+      height: 2.3rem;
+      position: relative;
+      width: 14.4rem;
+
+      .description-max-600-characters-21p {
+        color: #4f4f4f;
+        font-family: Roboto, 'Source Sans Pro';
+        font-size: 0.9721rem;
+        font-weight: 400;
+        height: 1.2rem;
+        left: 0;
+        line-height: 1.1725;
+        position: absolute;
+        top: 0;
+        white-space: nowrap;
+        width: 14.4rem;
+      }
+      .enter-here-Eta {
+        color: #828282;
+        font-family: Roboto, 'Source Sans Pro';
+        font-size: 0.9721rem;
+        font-weight: 400;
+        height: 1.2rem;
+        left: 0;
+        line-height: 1.1725;
+        position: absolute;
+        top: 1.1rem;
+        white-space: nowrap;
+        width: 4.6rem;
+      }
+    }
+  }
+  .search-bar-3LE {
+    align-items: center;
+    background-color: #ffffff;
+    border: solid 0.0645rem #c2c2c2;
+    border-radius: 1.2896rem;
+    box-sizing: border-box;
+    display: flex;
+    height: 5.9964rem;
+    left: 3.2884rem;
+    padding: 1.612rem 9.162rem 1.58rem 10.188rem;
+    position: absolute;
+    top: 45.6502rem;
+    width: 31.9165rem;
+
+    .upload-photos-t5x {
+      color: #4f4f4f;
+      flex-shrink: 0;
+      font-family: Roboto, 'Source Sans Pro';
+      font-size: 0.9721rem;
+      font-weight: 400;
+      line-height: 1.1725;
+      margin: 0.072rem 0.886rem 0rem 0rem;
+      white-space: nowrap;
+    }
+    .group-52-MVL {
+      border-radius: 0.3224rem;
+      flex-shrink: 0;
+      height: 2.8048rem;
+      object-fit: contain;
+      vertical-align: top;
+      width: 5.2812rem;
+    }
+  }
+  .group-53-1Zt {
+    height: 8.0089rem;
+    left: 3.1595rem;
+    position: absolute;
+    top: 53.581rem;
+    width: 29.1439rem;
+
+    .of-beds-hxW {
+      color: #4f4f4f;
+      font-family: Roboto, 'Source Sans Pro';
+      font-size: 0.9721rem;
+      font-weight: 400;
+      line-height: 1.1725;
+      margin: 0rem 0rem 1.379rem 0.129rem;
+      white-space: nowrap;
+    }
+    .frame-53-CeN {
+      align-items: center;
+      display: flex;
+      height: 5.4298rem;
+      width: 100%;
+
+      .auto-group-2g4a-8Y2 {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        height: 100%;
+        margin-right: 0.5158rem;
+        width: 5.4161rem;
+
+        .price-TaJ {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          margin-bottom: 0.5158rem;
+          overflow: hidden;
+          padding: 0.678rem 1.529rem 0rem 1.487rem;
+          position: relative;
+          width: 100%;
+
+          .frame-15-NSN {
+            box-sizing: border-box;
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            padding: 0rem 0.879rem 0rem 0.921rem;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+        .price-DSz {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          overflow: hidden;
+          padding: 0.678rem 1.529rem 0rem 1.487rem;
+          position: relative;
+          width: 100%;
+
+          .frame-15-JUS {
+            box-sizing: border-box;
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            padding: 0rem 0.879rem 0rem 0.921rem;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+      }
+      .auto-group-kkpi-8iN {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        height: 100%;
+        margin-right: 0.5158rem;
+        width: 5.4161rem;
+
+        .price-ewc {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          margin-bottom: 0.5158rem;
+          overflow: hidden;
+          padding: 0.678rem 1.529rem 0rem 1.487rem;
+          position: relative;
+          width: 100%;
+
+          .frame-15-n2E {
+            box-sizing: border-box;
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            padding: 0rem 0.879rem 0rem 0.921rem;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+        .price-d2r {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          overflow: hidden;
+          padding: 0.678rem 1.529rem 0rem 1.487rem;
+          position: relative;
+          width: 100%;
+
+          .frame-15-ktA {
+            box-sizing: border-box;
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            padding: 0rem 0.879rem 0rem 0.921rem;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+      }
+      .auto-group-ofwa-Zqc {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        height: 100%;
+        width: 5.4161rem;
+
+        .price-6qY {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          margin-bottom: 0.5158rem;
+          overflow: hidden;
+          padding: 0.678rem 1.529rem 0rem 1.487rem;
+          position: relative;
+          width: 100%;
+
+          .frame-15-1Si {
+            box-sizing: border-box;
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            padding: 0rem 0.879rem 0rem 0.921rem;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+        .price-ry8 {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          overflow: hidden;
+          padding: 0.678rem 1.529rem 0rem 1.487rem;
+          position: relative;
+          width: 100%;
+
+          .frame-15-C1Q {
+            box-sizing: border-box;
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            padding: 0rem 0.629rem 0rem 0.671rem;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+      }
+      .auto-group-yxyt-FkN {
+        align-items: flex-start;
+        box-sizing: border-box;
+        display: flex;
+        flex-shrink: 0;
+        height: 100%;
+        padding-left: 0.5159rem;
+
+        .price-AcS {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          margin-right: 0.5158rem;
+          overflow: hidden;
+          padding: 0.678rem 1.529rem 0rem 1.487rem;
+          position: relative;
+          width: 5.4161rem;
+
+          .frame-15-qCn {
+            box-sizing: border-box;
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            padding: 0rem 0.879rem 0rem 0.921rem;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+        .price-s9U {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          overflow: hidden;
+          padding: 0.678rem 1.529rem 0rem 1.487rem;
+          position: relative;
+          width: 5.4161rem;
+
+          .frame-15-yCW {
+            box-sizing: border-box;
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            padding: 0rem 0.879rem 0rem 0.921rem;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .group-54-19C {
+    height: 8.0089rem;
+    left: 3.1595rem;
+    position: absolute;
+    top: 63.5106rem;
+    width: 29.1439rem;
+
+    .of-baths-Je6 {
+      color: #4f4f4f;
+      font-family: Roboto, 'Source Sans Pro';
+      font-size: 0.9721rem;
+      font-weight: 400;
+      line-height: 1.1725;
+      margin: 0rem 0rem 1.379rem 0.129rem;
+      white-space: nowrap;
+    }
+    .frame-53-xCr {
+      align-items: center;
+      display: flex;
+      height: 5.4298rem;
+      width: 100%;
+
+      .auto-group-kr2w-5HU {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        height: 100%;
+        margin-right: 0.5158rem;
+        width: 5.4161rem;
+
+        .price-oUN {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          margin-bottom: 0.5158rem;
+          overflow: hidden;
+          padding: 0.678rem 1.529rem 0rem 1.487rem;
+          position: relative;
+          width: 100%;
+
+          .frame-15-5wg {
+            box-sizing: border-box;
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            padding: 0rem 0.879rem 0rem 0.921rem;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+        .price-vBc {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          overflow: hidden;
+          padding: 0.678rem 1.529rem 0rem 1.487rem;
+          position: relative;
+          width: 100%;
+
+          .frame-15-Sfk {
+            box-sizing: border-box;
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            padding: 0rem 0.879rem 0rem 0.921rem;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+      }
+      .auto-group-bltu-mjx {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        height: 100%;
+        margin-right: 0.5158rem;
+        width: 5.4161rem;
+
+        .price-Tsg {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          margin-bottom: 0.5158rem;
+          overflow: hidden;
+          padding: 0.678rem 1.529rem 0rem 1.487rem;
+          position: relative;
+          width: 100%;
+
+          .frame-15-XsY {
+            box-sizing: border-box;
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            padding: 0rem 0.879rem 0rem 0.921rem;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+        .price-dJJ {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          overflow: hidden;
+          padding: 0.678rem 1.529rem 0rem 1.487rem;
+          position: relative;
+          width: 100%;
+
+          .frame-15-JfL {
+            box-sizing: border-box;
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            padding: 0rem 0.879rem 0rem 0.921rem;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+      }
+      .auto-group-oedg-HGN {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        height: 100%;
+        width: 5.4161rem;
+
+        .price-ZUn {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          margin-bottom: 0.5158rem;
+          overflow: hidden;
+          padding: 0.678rem 1.529rem 0rem 1.487rem;
+          position: relative;
+          width: 100%;
+
+          .frame-15-QVQ {
+            box-sizing: border-box;
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            padding: 0rem 0.879rem 0rem 0.921rem;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+        .price-bZt {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          overflow: hidden;
+          padding: 0.678rem 1.529rem 0rem 1.487rem;
+          position: relative;
+          width: 100%;
+
+          .frame-15-L1g {
+            box-sizing: border-box;
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            padding: 0rem 0.629rem 0rem 0.671rem;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+      }
+      .auto-group-f88s-n8a {
+        align-items: flex-start;
+        box-sizing: border-box;
+        display: flex;
+        flex-shrink: 0;
+        height: 100%;
+        padding-left: 0.5159rem;
+
+        .price-iY2 {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          margin-right: 0.5158rem;
+          overflow: hidden;
+          padding: 0.678rem 1.529rem 0rem 1.487rem;
+          position: relative;
+          width: 5.4161rem;
+
+          .frame-15-qMk {
+            box-sizing: border-box;
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            padding: 0rem 0.879rem 0rem 0.921rem;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+        .price-5Wz {
+          background-color: #ffffff;
+          border: solid 0.0452rem #c2c2c2;
+          border-radius: 18.093rem;
+          box-sizing: border-box;
+          flex-shrink: 0;
+          height: 2.457rem;
+          overflow: hidden;
+          padding: 0.678rem 1.529rem 0rem 1.487rem;
+          position: relative;
+          width: 5.4161rem;
+
+          .frame-15-QJN {
+            box-sizing: border-box;
+            color: #4f4f4f;
+            font-family: Roboto, 'Source Sans Pro';
+            font-size: 0.9539rem;
+            font-weight: 400;
+            height: 2.3308rem;
+            line-height: 1.1725;
+            padding: 0rem 0.879rem 0rem 0.921rem;
+            text-align: center;
+            white-space: nowrap;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .frame-19-rRG {
+    height: 2.3635rem;
+    left: 3.3528rem;
+    position: absolute;
+    top: 74.3428rem;
+    width: 7.3rem;
+
+    .additional-filters-n42 {
+      color: #4f4f4f;
+      font-family: Roboto, 'Source Sans Pro';
+      font-size: 0.9721rem;
+      font-weight: 400;
+      height: 1.2rem;
+      left: 0;
+      line-height: 1.1725;
+      position: absolute;
+      top: 0;
+      white-space: nowrap;
+      width: 7.3rem;
+    }
+    .utilities-more-HmU {
+      color: #828282;
+      font-family: Roboto, 'Source Sans Pro';
+      font-size: 0.9721rem;
+      font-weight: 400;
+      height: 1.2rem;
+      left: 0;
+      line-height: 1.1725;
+      position: absolute;
+      top: 1.1635rem;
+      white-space: nowrap;
+      width: 6.8rem;
+    }
+  }
+  .frame-21-b1U {
+    align-items: center;
+    column-gap: 1.0961rem;
+    display: flex;
+    height: 2.457rem;
+    left: 3.2884rem;
+    position: absolute;
+    top: 78.4694rem;
+    width: 31.981rem;
+
+    .price-6iv {
+      background-color: #ffffff;
+      border: solid 0.0452rem #c2c2c2;
+      border-radius: 18.093rem;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      height: 100%;
+      overflow: hidden;
+      padding: 0.678rem 3.365rem 0rem 3.365rem;
+      position: relative;
+      width: 9.9296rem;
+
+      .frame-15-DoY {
+        color: #4f4f4f;
+        font-family: Roboto, 'Source Sans Pro';
+        font-size: 0.9539rem;
+        font-weight: 400;
+        height: 2.3308rem;
+        line-height: 1.1725;
+        text-align: center;
+        white-space: nowrap;
+        width: 100%;
+      }
+    }
+    .price-VWA {
+      background-color: #ffffff;
+      border: solid 0.0452rem #c2c2c2;
+      border-radius: 18.093rem;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      height: 100%;
+      overflow: hidden;
+      padding: 0.678rem 2.165rem 0rem 2.165rem;
+      position: relative;
+      width: 9.9296rem;
+
+      .frame-15-Qt2 {
+        color: #4f4f4f;
+        font-family: Roboto, 'Source Sans Pro';
+        font-size: 0.9539rem;
+        font-weight: 400;
+        height: 2.3308rem;
+        line-height: 1.1725;
+        text-align: center;
+        white-space: nowrap;
+        width: 100%;
+      }
+    }
+    .price-Ust {
+      background-color: #ffffff;
+      border: solid 0.0452rem #c2c2c2;
+      border-radius: 18.093rem;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      height: 100%;
+      overflow: hidden;
+      padding: 0.678rem 1.265rem 0rem 1.265rem;
+      position: relative;
+      width: 9.9296rem;
+
+      .frame-15-1cv {
+        color: #4f4f4f;
+        font-family: Roboto, 'Source Sans Pro';
+        font-size: 0.9539rem;
+        font-weight: 400;
+        height: 2.3308rem;
+        line-height: 1.1725;
+        text-align: center;
+        white-space: nowrap;
+        width: 100%;
+      }
+    }
+  }
+  .search-bar-HqL {
+    background-color: #ffffff;
+    font-size: 0.9721rem;
+    font-family: Roboto, 'Source Sans Pro';
+    border: solid 0.0645rem #c2c2c2;
+    border-radius: 25.7911rem;
+    box-sizing: border-box;
+    height: 5.2227rem;
+    left: 3.2884rem;
+    padding: 1.29rem 3.288rem 1.633rem 3.288rem;
+    position: absolute;
+    top: 83.4342rem;
+    width: 31.981rem;
+
+    .frame-17-zUr {
+      height: 100%;
+      position: relative;
+      width: 6.9rem;
+
+      .square-footage-LYi {
+        color: #4f4f4f;
+        font-family: Roboto, 'Source Sans Pro';
+        font-size: 0.9721rem;
+        font-weight: 400;
+        height: 1.2rem;
+        left: 0;
+        line-height: 1.1725;
+        position: absolute;
+        top: 0;
+        white-space: nowrap;
+        width: 6.9rem;
+      }
+      .sqft-Etz {
+        color: #828282;
+        font-family: Roboto, 'Source Sans Pro';
+        font-size: 0.9721rem;
+        font-weight: 400;
+        height: 1.2rem;
+        left: 0;
+        line-height: 1.1725;
+        position: absolute;
+        top: 1.1rem;
+        white-space: nowrap;
+        width: 3.4rem;
+      }
+    }
+  }
+  .submit-hXg {
+    align-items: center;
+    background-color: #4f4f4f;
+    border-radius: 25.7911rem;
+    color: #ffffff;
+    display: flex;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 1.3669rem;
+    font-weight: 400;
+    height: 4.3845rem;
+    justify-content: center;
+    left: 4.1266rem;
+    line-height: 1.1725;
+    position: absolute;
+    top: 91.1715rem;
+    white-space: nowrap;
+    width: 31.0782rem;
+  }
+}
