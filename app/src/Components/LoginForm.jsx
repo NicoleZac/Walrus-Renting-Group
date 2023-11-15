@@ -59,7 +59,7 @@ function LoginForm(){
 </div>
 <button type="submit" class="submit-huc" id="30:2335" onClick={handleSubmit}>Login</button>
 
-<span class="error">{error}</span>
+<span class="error-login">{error}</span>
 </div>
 
     );

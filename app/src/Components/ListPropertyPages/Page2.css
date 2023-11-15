@@ -156,6 +156,9 @@
   }
   .search-bar-SN6 {
     background-color: #ffffff;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 0.9721rem;
+    font-weight: 400;
     border: solid 0.0645rem #c2c2c2;
     border-radius: 25.7911rem;
     box-sizing: border-box;
@@ -165,45 +168,15 @@
     position: absolute;
     top: 18.1182rem;
     width: 31.981rem;
-
-    .frame-17-YAE {
-      height: 100%;
-      position: relative;
-      width: 4.6rem;
-
-      .address-GM8 {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 1.1725;
-        position: absolute;
-        top: 0;
-        white-space: nowrap;
-        width: 3.6rem;
-      }
-      .enter-here-N9G {
-        color: #828282;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 1.1725;
-        position: absolute;
-        top: 1.1rem;
-        white-space: nowrap;
-        width: 4.6rem;
-      }
-    }
   }
   .search-bar-RtE {
     background-color: #ffffff;
     border: solid 0.0645rem #c2c2c2;
     border-radius: 25.7911rem;
     box-sizing: border-box;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 0.9721rem;
+    font-weight: 400;
     height: 5.2227rem;
     left: 2.7726rem;
     padding: 1.29rem 3.288rem 1.633rem 3.288rem;
@@ -211,87 +184,28 @@
     top: 38.2353rem;
     width: 15.4102rem;
 
-    .frame-17-Wen {
-      height: 100%;
-      position: relative;
-      width: 4.6rem;
-
-      .city-rCr {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 1.1725;
-        position: absolute;
-        top: 0;
-        white-space: nowrap;
-        width: 1.7rem;
-      }
-      .enter-here-7uU {
-        color: #828282;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 1.1725;
-        position: absolute;
-        top: 1.1rem;
-        white-space: nowrap;
-        width: 4.6rem;
-      }
-    }
   }
   .search-bar-wNi {
     background-color: #ffffff;
     border: solid 0.0645rem #c2c2c2;
     border-radius: 25.7911rem;
     box-sizing: border-box;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 0.9721rem;
+    font-weight: 400;
     height: 5.2227rem;
     left: 19.8592rem;
     padding: 1.29rem 3.288rem 1.633rem 3.288rem;
     position: absolute;
     top: 38.2353rem;
     width: 14.8943rem;
-
-    .frame-17-yqC {
-      height: 100%;
-      position: relative;
-      width: 4.6rem;
-
-      .zip-code-iGz {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 1.1725;
-        position: absolute;
-        top: 0;
-        white-space: nowrap;
-        width: 3.9rem;
-      }
-      .enter-here-Chx {
-        color: #828282;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 1.1725;
-        position: absolute;
-        top: 1.1rem;
-        white-space: nowrap;
-        width: 4.6rem;
-      }
-    }
   }
   .search-bar-UQa {
     background-color: #ffffff;
     border: solid 0.0645rem #c2c2c2;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 0.9721rem;
+    font-weight: 400;
     border-radius: 25.7911rem;
     box-sizing: border-box;
     height: 5.2227rem;
@@ -301,44 +215,15 @@
     top: 31.5296rem;
     width: 31.981rem;
 
-    .frame-17-nAN {
-      height: 100%;
-      position: relative;
-      width: 6.9rem;
-
-      .province-state-vXU {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 1.1725;
-        position: absolute;
-        top: 0;
-        white-space: nowrap;
-        width: 6.9rem;
-      }
-      .enter-here-qeS {
-        color: #828282;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 1.1725;
-        position: absolute;
-        top: 1.1rem;
-        white-space: nowrap;
-        width: 4.6rem;
-      }
-    }
   }
   .search-bar-Wka {
     background-color: #ffffff;
     border: solid 0.0645rem #c2c2c2;
     border-radius: 25.7911rem;
     box-sizing: border-box;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 0.9721rem;
+    font-weight: 400;
     height: 5.2227rem;
     left: 2.7726rem;
     padding: 1.29rem 3.288rem 1.633rem 3.288rem;
@@ -346,38 +231,6 @@
     top: 24.8239rem;
     width: 31.981rem;
 
-    .frame-17-D9C {
-      height: 100%;
-      position: relative;
-      width: 4.6rem;
-
-      .country-xMg {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 1.1725;
-        position: absolute;
-        top: 0;
-        white-space: nowrap;
-        width: 3.4rem;
-      }
-      .enter-here-sjY {
-        color: #828282;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 1.1725;
-        position: absolute;
-        top: 1.1rem;
-        white-space: nowrap;
-        width: 4.6rem;
-      }
-    }
   }
   .frame-22-M8v {
     align-items: center;
@@ -388,31 +241,6 @@
     top: 48.3583rem;
     width: 16.2483rem;
 
-    .price-UjL {
-      background-color: #ffffff;
-      border: solid 0.0452rem #c2c2c2;
-      border-radius: 18.093rem;
-      box-sizing: border-box;
-      flex-shrink: 0;
-      height: 100%;
-      margin-right: 1.0961rem;
-      overflow: hidden;
-      padding: 0.678rem 2.115rem 0rem 2.115rem;
-      position: relative;
-      width: 9.9296rem;
-
-      .frame-15-zhg {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9539rem;
-        font-weight: 400;
-        height: 2.3308rem;
-        line-height: 1.1725;
-        text-align: center;
-        white-space: nowrap;
-        width: 100%;
-      }
-    }
     .price-U74 {
       background-color: #c9cba3;
       border: solid 0.0452rem #c2c2c2;
@@ -440,4 +268,91 @@
       }
     }
   }
+}
+.adding-tag{
+  background-color: #4f4f4f;
+  border: solid 0.0452rem #c2c2c2;
+  border-radius: 18.093rem;
+  box-sizing: border-box;
+  color: #ffffff;
+  flex-shrink: 0;
+  height: 10%;
+  overflow: hidden;
+  padding: 0.678rem 1.433rem 0rem 1.39rem;
+  position: relative;
+  width: 5.2227rem;
+}
+.adding-input{
+  background-color: #ffffff;
+  border: solid 0.0452rem #c2c2c2;
+  border-radius: 18.093rem;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  height: 10%;
+  margin-right: 1.0961rem;
+  overflow: hidden;
+  padding: 0.678rem 2.115rem 0rem 2.115rem;
+  position: relative;
+  width: 9.9296rem;
+}
+.tag-container{
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 8px;
+.remove-tag{
+  background-color: #4f4f4f;
+  justify-content:space-between;
+  align-items:center;
+  display:flex;
+  border: solid 0.0452rem #c2c2c2;
+  border-radius: 18.093rem;
+  box-sizing: border-box;
+  color: #ffffff;
+  flex-shrink: 0;
+  top: 1.2rem;
+  height: 100%;
+  overflow: hidden;
+  width: 5.2227rem;
+  padding: 0.678rem 1.433rem 0rem 1.39rem;
+  position: relative;
+}
+.price-UjL {
+  background-color: #ffffff;
+  justify-content:space-between;
+  display:flex;
+  top: 5rem;
+  width: 9.9296rem;
+  border: solid 0.0452rem #c2c2c2;
+  border-radius: 18.093rem;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  height: 100%;
+  margin-right: 0.0961rem;
+  overflow: hidden;
+  top: 1.3rem;
+  padding: 0.678rem 2.115rem 0rem 2.115rem;
+  position: relative;
+
+  .frame-15-zhg {
+    color: #4f4f4f;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 0.9539rem;
+    font-weight: 400;
+    height: 2.3308rem;
+    line-height: 1.1725;
+    text-align: center;
+    white-space: nowrap;
+    width: 100%;
+  }
+}
+}
+.modal-icon{
+  background-color: #ffffff;
+  flex-shrink: 0;
+  height: 1.857rem;
+  margin-bottom: 0.5158rem;
+  overflow: hidden;
+  padding: 0rem 0rem 0rem 0rem;
+  position: relative;
+  width: 5%;
 }

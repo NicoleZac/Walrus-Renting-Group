@@ -3,65 +3,109 @@ import "./Page1.css";
 import ClearIcon from '@mui/icons-material/Clear';
 import ImageIcon from '@mui/icons-material/Image';
 import Progress0 from '../../Images/ProgressBars/Progress0.png';
-import {useSharedForm} from '../ListProperty';
+import { useFormData } from '../../Context/formdatacontext';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
+
 const Page1 = ({onNext,requestClose}) =>{
-    const [formData,setFormData] = useSharedForm();
+    const {formData,dispatch} = useFormData();
     const [selectedType,setSelectedType] = useState(formData?.propertyType);
     const [selectedBeds,setSelectedBeds] = useState(formData?.numBeds);
     const [selectedBaths,setSelectedBaths] = useState(formData?.numBaths);
-    const [selectedFilters,setSelectedFilters] = useState(formData.additionalFilters);
-    const [images,setImages] = useState(formData.images);
-
-
-    const handleTextInput = (e)=>{
-        const {name,value} =e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
+    const [selectedFilters,setSelectedFilters] = useState(formData.additionalFilters || []);
+    const [images,setImages] = useState(formData.images || []);
+    const [viewImages,setViewImages] = useState(images.length !== 0);
+    const [previewImages,setPreviewImages] =useState([]);
+    const handleTextInput = (inputName,value)=>{
+        dispatch({type:'UPDATE_DATA',payload:{[inputName]:value}});
     }
     const handleSelectType = (type) =>{
         if(selectedType === type){
             setSelectedType(null);
+            dispatch({type:'UPDATE_DATA',payload:{propertyType:null}});
         }
         else{
             setSelectedType(type);
+            dispatch({type:'UPDATE_DATA',payload:{propertyType:type}});
         }
     };
     const handleSelectBeds = (num) =>{
         if(selectedBeds === num){
             setSelectedBeds(null);
+            dispatch({type:'UPDATE_DATA',payload:{numBed:''}});
         }
         else{
             setSelectedBeds(num);
+            dispatch({type:'UPDATE_DATA',payload:{numBeds:num}});
         }
     };
     const handleSelectBaths = (num) =>{
         if(selectedBaths === num){
             setSelectedBaths(null);
+            dispatch({type:'UPDATE_DATA',payload:{numBaths:num}});
         }
         else{
             setSelectedBaths(num);
+            dispatch({type:'UPDATE_DATA',payload:{numBaths:num}});
         }
     };
-    const handleFilters =(filter) =>{
-        const isFilter = selectedFilters.includes(filter);
-        if(isFilter){
-            setSelectedFilters((prevFilter)=>prevFilter.filter((selected)=> selected !== filter));
-        }
-        else{
-            setSelectedFilters((prevFilter)=>[...prevFilter,filter]);
-        }
-    };
+    const handleFilters = (filter) => {
+        setSelectedFilters((prevFilter) => {
+          const isFilter = prevFilter.includes(filter);
+      
+          if (isFilter) {
+            return prevFilter.filter((selected) => selected !== filter);
+          } else {
+            return [...prevFilter, filter];
+          }
+        });
+        dispatch({ type: 'UPDATE_DATA', payload: { additionalFilters: [...selectedFilters, filter] } });
+      };
     const handleImages = (e) =>{
         const files = e.target.files;
         const fileNames = Array.from(files).map((file)=>file.name);
-
         setImages((prevImage)=>[...prevImage,...fileNames]);
+
+        const newPreviewImages =[...previewImages];
+        Array.from(files).forEach((file)=>{
+            const fileReader = new FileReader();
+            fileReader.onload=()=>{
+                newPreviewImages.push({name:file.name,preview:fileReader.result})
+                setPreviewImages(newPreviewImages);
+            };
+            fileReader.readAsDataURL(file);
+        });
+        dispatch({ type: 'UPDATE_DATA', payload: { images: [...images, ...fileNames] } });
     }
     const handleUpload = () =>{
-       document.getElementById('imageFile').click();
-    }
+       const fileInput = document.getElementById('imageFile');
+       fileInput.value=null;
+       fileInput.click();
+    };
+    const handleImageDelete = (imageFile) => {
+        setImages((prevImages) => {
+          const updatedImages = prevImages.filter((image) => image !== imageFile);
+      
+          const newPreviewImages = previewImages.filter((image) => image.name !== imageFile);
+          setPreviewImages(newPreviewImages);
+  
+          if (updatedImages.length === 0) {
+            setViewImages(false);
+          }
+
+          dispatch({ type: 'UPDATE_DATA', payload: { images: updatedImages } });
+      
+          return updatedImages;
+        });
+      };
+    const handleViewImages = ()=>{
+        setViewImages(true);
+    };
+    const handleImageClose = ()=>{
+        setViewImages(false);
+    };
+
     return(
 
         <div class="create-a-property-2ne" id="165:13949">
@@ -105,14 +149,39 @@ const Page1 = ({onNext,requestClose}) =>{
         <p class="key-features-5KY" id="I165:13949;165:8221">Key Features</p>
         <p class="what-makes-your-property-special-ZEi" id="I165:13949;165:8222">What makes your property special?</p>
         </div>
-        <textarea type="text" placeholder="Description (Max 600 characters)&#10;Enter Here" name="description" value={formData.description} onChange={handleTextInput}class="search-bar-eGA" id="I165:13949;165:8335">
+        <textarea type="text" placeholder="Description (Max 600 characters)&#10;Enter Here" name="description" value={formData.description} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-eGA" id="I165:13949;165:8335">
 
         </textarea>
         <div onClick={handleUpload} class="search-bar-3LE" id="I165:13949;165:8340">
         <input id="imageFile" type="file" onChange={handleImages} style={{display:'none'}} multiple/>
         <p class="upload-photos-t5x" id="I165:13949;165:8343">Upload Photos</p>
         <ImageIcon class="group-52-MVL" src="/api/prod-us-east-2-first-cluster/projects/LZTNXrW..." id="I165:13949;165:8347"/>
+        
         </div>
+        {images.length > 0 && (
+            <div>
+               <div onClick={handleViewImages} class="uploads">
+                <p class="view-photos">View Photos</p>
+               </div>
+                </div>
+        )}
+        <Modal
+        isOpen={viewImages}
+        onRequestClose={handleImageClose}
+        >
+        <ClearIcon onClick={handleImageClose} class="modal-icon"></ClearIcon>
+        <ul class="modal-list">
+        {previewImages.map((imageFile)=>(
+            <li class="modal-image"key={imageFile.name}>
+            <p>{imageFile.name} </p>
+            <img src={imageFile.preview} alt={imageFile.name} style={{maxWidth:'100%',maxHeight:'150px',height:'auto'}}/>
+            <button onClick={()=>handleImageDelete(imageFile.name)}class="modal-button">
+                Delete
+            </button>
+            </li>
+        ))}
+        </ul>
+        </Modal>
         <div class="group-53-1Zt" id="I165:13949;165:8400">
         <p class="of-beds-hxW" id="I165:13949;165:8357"># of Beds</p>
         <div class="frame-53-CeN" id="I165:13949;165:8369">
@@ -202,7 +271,7 @@ const Page1 = ({onNext,requestClose}) =>{
         <div class="frame-15-1cv" id="I165:13949;165:8451;141:4592">Smoking Allowed</div>
         </div>
         </div>
-        <textarea placeholder="Square Footage&#10;500sqft"  name="propertySize" value={formData.propertySize} onChange={handleTextInput}class="search-bar-HqL" id="I165:13949;165:8464">
+        <textarea placeholder="Square Footage&#10;500sqft"  name="propertySize" value={formData.propertySize} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-HqL" id="I165:13949;165:8464">
  
         </textarea>
         <div onClick={onNext} class="submit-hXg" id="I165:13949;165:8469">Next Page</div>

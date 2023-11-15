@@ -236,6 +236,9 @@
     background-color: #ffffff;
     border: solid 0.0645rem #c2c2c2;
     border-radius: 25.7911rem;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 0.9721rem;
+    font-weight: 400;
     box-sizing: border-box;
     height: 5.2227rem;
     left: 2.7726rem;
@@ -243,39 +246,6 @@
     position: absolute;
     top: 24.5015rem;
     width: 31.981rem;
-
-    .frame-17-xiN {
-      height: 100%;
-      position: relative;
-      width: 5.8rem;
-
-      .lease-length-WE6 {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 1.1725;
-        position: absolute;
-        top: 0;
-        white-space: nowrap;
-        width: 5.8rem;
-      }
-      .ie-1-year-d3p {
-        color: #828282;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 1.1725;
-        position: absolute;
-        top: 1.1rem;
-        white-space: nowrap;
-        width: 3.9rem;
-      }
-    }
   }
   .price-J9x {
     background-color: #ffffff;
@@ -283,6 +253,9 @@
     border-radius: 18.093rem;
     box-sizing: border-box;
     height: 3.557rem;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 0.9539rem;
+    font-weight: 400;
     left: 2.7726rem;
     overflow: hidden;
     padding: 0.678rem 3.306rem 0.578rem 3.306rem;
@@ -290,39 +263,7 @@
     top: 35.9786rem;
     width: 12.2128rem;
 
-    .frame-15-ber {
-      height: 100%;
-      position: relative;
-      width: 100%;
-
-      .min-price-wii {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9539rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 0.1725;
-        position: absolute;
-        text-align: center;
-        top: 0;
-        white-space: nowrap;
-        width: 5.6rem;
-      }
-      .item-000-f8v {
-        color: #828282;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9539rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 1.6rem;
-        line-height: 0.1725;
-        position: absolute;
-        top: 1.1rem;
-        white-space: nowrap;
-        width: 2.4rem;
-      }
-    }
+   
   }
   .price-uJA {
     background-color: #ffffff;
@@ -331,44 +272,14 @@
     box-sizing: border-box;
     height: 3.557rem;
     left: 18.1827rem;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 0.9539rem;
+    font-weight: 400;
     overflow: hidden;
     padding: 0.678rem 2.656rem 0.578rem 2.656rem;
     position: absolute;
     top: 35.9786rem;
     width: 12.2128rem;
 
-    .frame-15-Qki {
-      height: 100%;
-      position: relative;
-      width: 100%;
-
-      .min-price-AE6 {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9539rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 0.1725;
-        position: absolute;
-        text-align: center;
-        top: 0;
-        white-space: nowrap;
-        width: 6.9rem;
-      }
-      .item-000-gCS {
-        color: #828282;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9539rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 2.25rem;
-        line-height: 0.1725;
-        position: absolute;
-        top: 1.1rem;
-        white-space: nowrap;
-        width: 2.4rem;
-      }
-    }
   }
 }

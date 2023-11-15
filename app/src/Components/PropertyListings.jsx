@@ -15,7 +15,7 @@ const PropertyListings = ({properties,other}) =>{
             const ownedProperties =properties.filter(property => property.landlord ===userEmail);
             if(other){
                 const neighbourhoods = new Set(ownedProperties.map(property=>property.neighbourhood));
-                const filteredOther = properties.filter(property=> neighbourhoods.has(property.neighbourhood));
+                const filteredOther = properties.filter(property=> neighbourhoods.has(property.neighbourhood)&& property.landlord !== userEmail);
                 for(let i=0;i<filteredOther.length;i+=3){
                     rows.push(filteredOther.slice(i,i+3));
                 }

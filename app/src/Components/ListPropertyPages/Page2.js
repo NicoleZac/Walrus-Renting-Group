@@ -1,9 +1,53 @@
-import React from 'react';
+import React,{useState} from 'react';
 import "./Page2.css";
 import Progress1 from '../../Images/ProgressBars/Progress1.png'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import Modal  from 'react-modal';
+import ClearIcon from '@mui/icons-material/Clear';
+import { useFormData } from '../../Context/formdatacontext';
+
+
+Modal.setAppElement('#root');
 
 const Page2 = ({onNext,onPrevious}) =>{
+    const {formData,dispatch} = useFormData();
+    const [tags,setTags] = useState(formData.tags || []);
+    const [newTag,setNewTag] = useState('');
+    const[isModalOpen,setIsModalOpen] = useState(false);
+    const[error,setError] = useState('');
+    const handleTextInput = (inputName,value)=>{
+        dispatch({type:'UPDATE_DATA',payload:{[inputName]:value}});
+    }
+    const handleTagChange = (e)=>{
+        setNewTag(e.target.value);
+    };
+    const handleAddTag=()=>{
+        if(newTag.trim()!=='' && !tags.includes(newTag.trim())){
+            setTags([...tags,newTag.trim()]);
+            dispatch({ type: 'UPDATE_DATA', payload: { tags: [...tags, newTag.trim()] } });
+            setNewTag('');
+            setError('');
+        }
+        else{
+            setError('Tag must not be empty and not a duplicate');
+        }
+    };
+    const handleRemoveTag = (index) => {
+        setTags((prevTags) => {
+          const updatedTags = [...prevTags];
+          updatedTags.splice(index, 1);
+
+          dispatch({ type: 'UPDATE_DATA', payload: { tags: updatedTags } });
+      
+          return updatedTags;
+        });
+      };
+    const openModal=()=>{
+        setIsModalOpen(true);
+    };
+    const closeModal=()=>{
+        setIsModalOpen(false);
+    };
     return(
 <div class="create-a-property-CMx" id="165:13950">
 <div class="rectangle-13-tka" id="I165:13950;165:8472"></div>
@@ -21,43 +65,50 @@ const Page2 = ({onNext,onPrevious}) =>{
 <p class="neighborhood-description-xZQ" id="I165:13950;165:8668">Neighborhood Description</p>
 <div onClick={onNext} class="submit-SzN" id="I165:13950;165:8544">Next Page</div>
 <ArrowBackIosIcon onClick={onPrevious} class="group-49-v8r" id="I165:13950;165:8642"/>
-<div class="search-bar-SN6" id="I165:13950;165:8539">
-<div class="frame-17-YAE" id="I165:13950;165:8541">
-<p class="address-GM8" id="I165:13950;165:8542">Address</p>
-<p class="enter-here-N9G" id="I165:13950;165:8543">Enter Here</p>
-</div>
-</div>
-<div class="search-bar-RtE" id="I165:13950;165:8646">
-<div class="frame-17-Wen" id="I165:13950;165:8648">
-<p class="city-rCr" id="I165:13950;165:8649">City</p>
-<p class="enter-here-7uU" id="I165:13950;165:8650">Enter Here</p>
-</div>
-</div>
-<div class="search-bar-wNi" id="I165:13950;165:8661">
-<div class="frame-17-yqC" id="I165:13950;165:8663">
-<p class="zip-code-iGz" id="I165:13950;165:8664">Zip Code</p>
-<p class="enter-here-Chx" id="I165:13950;165:8665">Enter Here</p>
-</div>
-</div>
-<div class="search-bar-UQa" id="I165:13950;165:8651">
-<div class="frame-17-nAN" id="I165:13950;165:8653">
-<p class="province-state-vXU" id="I165:13950;165:8654">Province / State</p>
-<p class="enter-here-qeS" id="I165:13950;165:8655">Enter Here</p>
-</div>
-</div>
-<div class="search-bar-Wka" id="I165:13950;165:8656">
-<div class="frame-17-D9C" id="I165:13950;165:8658">
-<p class="country-xMg" id="I165:13950;165:8659">Country</p>
-<p class="enter-here-sjY" id="I165:13950;165:8660">Enter Here</p>
-</div>
-</div>
+<textarea placeholder="Address&#10;Enter Here" name="address" value={formData.address} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-SN6" id="I165:13950;165:8539">
+</textarea>
+<textarea placeholder="City&#10;Enter Here" name="city" value={formData.city} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-RtE" id="I165:13950;165:8646">
+</textarea>
+<textarea placeholder="Zip Code&#10;Enter Here" name="zip" value={formData.zip} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-wNi" id="I165:13950;165:8661">
+</textarea>
+<textarea placeholder="Province / State&#10;Enter Here" name="province" value={formData.province}onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-UQa" id="I165:13950;165:8651">
+</textarea>
+<textarea placeholder="Country&#10;Enter Here"name="country" value={formData.country} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-Wka" id="I165:13950;165:8656">
+</textarea>
 <div class="frame-22-M8v" id="I165:13950;165:8670">
-<div class="price-UjL" id="I165:13950;165:8671">
-<div class="frame-15-zhg" id="I165:13950;165:8671;141:4592">Close to Gym</div>
-</div>
-<div class="price-U74" id="I165:13950;165:8672">
+
+    <div onClick ={openModal} class="price-U74" id="I165:13950;165:8672">
 <div class="frame-15-zr6" id="I165:13950;165:8672;141:4592">+</div>
 </div>
+
+    <Modal
+    isOpen = {isModalOpen}
+    onRequestClose={closeModal}
+    >
+         <ClearIcon onClick={closeModal} class="modal-icon"></ClearIcon>
+
+            <input type="text" value={newTag} onChange={handleTagChange} placeholder="Enter Tag" class="adding-input">
+            </input>
+            <button class= "adding-tag"onClick={handleAddTag} >
+             Add
+            </button>
+            {error && <p style={{color:'red'}}>{error}</p>}
+
+       
+        <ul class="tag-container">
+            {tags.map((tag,index)=>(
+                <>
+                <div class="price-UjL" id="I165:13950;165:8671" key={index}>
+                <div class="frame-15-zhg" id="I165:13950;165:8671;141:4592">{tag}</div>
+                </div>
+                    <button class="remove-tag" onClick={()=>handleRemoveTag(index)}>
+                        Remove
+                    </button>
+                    </>
+            ))}
+        </ul>
+    </Modal>
+
 </div>
 </div>
 );

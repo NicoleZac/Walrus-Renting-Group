@@ -1,18 +1,36 @@
 
-import React, {useContext} from 'react';
+import React, {useState,useContext} from 'react';
 import {UserContext} from "../../Context/usercontext";
 import {Link} from "react-router-dom";
+import {useSharedForm} from '../ListProperty';
 import "./Page4.css";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import EventIcon from '@mui/icons-material/Event';
 import Progress3 from '../../Images/ProgressBars/Progress3.png';
-const Page4 = ({onPrevious,onSubmit}) =>{
+import { useFormData } from '../../Context/formdatacontext';
+const Page4 = ({onPrevious,onSubmit,error}) =>{
+    const {formData,dispatch} = useFormData();
+    const [selectedMethod,setSelectedMethod] = useState(formData?.contactMethod);
     const {user} = useContext(UserContext);
     const userEmail = user?.email;
+    const handleSelectMethod= (method) =>{
+        if(selectedMethod === method){
+            setSelectedMethod(null);
+            dispatch({type:'UPDATE_DATA',payload:{contactMethod:null}});
+        }
+        else{
+            setSelectedMethod(method);
+            dispatch({type:'UPDATE_DATA',payload:{contactMethod:method}});
+            dispatch({type:'UPDATE_DATA',payload:{landlord:userEmail}});
+        }
+    };
     return(
 <div class="create-a-property-9ES" id="165:13952">
+    
 <div class="rectangle-13-EFt" id="I165:13952;165:8767"></div>
-<div class="line-8-MrJ" id="I165:13952;165:8768"></div>
+<div class="line-8-MrJ" id="I165:13952;165:8768">
+    
+</div>
 <p class="create-a-property-tbL" id="I165:13952;165:8769">Create a Property</p>
 <div class="frame-15-aj4" id="I165:13952;165:8770">
 <p class="progress-bar-v2E" id="I165:13952;165:8771">Progress Bar</p>
@@ -27,16 +45,20 @@ const Page4 = ({onPrevious,onSubmit}) =>{
 <p class="availability-calendar-optional-pSN" id="I165:13952;165:8783">Availability Calendar (Optional)</p>
 <p class="choose-when-you-give-a-tour-Lfc" id="I165:13952;165:8784">Choose when you give a tour.</p>
 </div>
-<div onClick={onSubmit} class="submit-UWv" id="I165:13952;165:8785">Complete</div>
+<div onClick={onSubmit} class="submit-UWv" id="I165:13952;165:8785">Complete
+</div>
+<div class="error">
+{error && <p style={{color:'red'}}>{error}</p>}
+</div>
 <ArrowBackIosIcon onClick={onPrevious} class="group-49-kUS" src="/api/prod-us-east-2-first-cluster/projects/LZTNXrW..." id="I165:13952;165:8787"/>
 <div class="frame-20-HUN" id="I165:13952;165:8253">
-<div class="price-CbL" id="I165:13952;165:8254">
+<div onClick={()=>handleSelectMethod('email')} style={{backgroundColor: selectedMethod ==='email' ? '#c9cba3':'#ffffff'}}class="price-CbL" id="I165:13952;165:8254">
 <div class="frame-15-vXL" id="I165:13952;165:8254;141:4592">Email</div>
 </div>
-<div class="price-xiv" id="I165:13952;165:8255">
+<div onClick={()=>handleSelectMethod('in-app')} style={{backgroundColor: selectedMethod ==='in-app' ? '#c9cba3':'#ffffff'}}class="price-xiv" id="I165:13952;165:8255">
 <div class="frame-15-HWJ" id="I165:13952;165:8255;141:4592">In-App</div>
 </div>
-<div class="price-Zyc" id="I165:13952;165:8256">
+<div onClick={()=>handleSelectMethod('phone')} style={{backgroundColor: selectedMethod ==='phone' ? '#c9cba3':'#ffffff'}}class="price-Zyc" id="I165:13952;165:8256">
 <div class="frame-15-u1t" id="I165:13952;165:8256;141:4592">Phone</div>
 </div>
 </div>
@@ -45,7 +67,9 @@ const Page4 = ({onPrevious,onSubmit}) =>{
 <Link to={`/Calendar/${userEmail}`}>
 <EventIcon class="vector-Zke" src="/api/prod-us-east-2-first-cluster/projects/LZTNXrW..." id="I165:13952;165:8817"/>
 </Link>
+
 </div>
+
 </div>
     );
 };

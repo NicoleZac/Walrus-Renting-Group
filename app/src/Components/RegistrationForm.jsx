@@ -105,7 +105,7 @@ function RegistrationForm(){
 <button type ="submit"class="price-SYi" id="30:2369"  style={{backgroundColor:landlordColor}} checked={!isRenter} onClick={handleLandlord}>Landlord</button>
 </div>
 <button type="submit" class="submit-cLi" id="30:2352" onClick={handleSubmit}>Create Account</button>
-<span class="error">{error}</span>
+<span class="error-register">{error}</span>
 </div>
     );
 }

@@ -326,38 +326,7 @@
     top: 30.5625rem;
     width: 31.9165rem;
 
-    .frame-17-hES {
-      height: 2.3rem;
-      position: relative;
-      width: 14.4rem;
 
-      .description-max-600-characters-21p {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 1.1725;
-        position: absolute;
-        top: 0;
-        white-space: nowrap;
-        width: 14.4rem;
-      }
-      .enter-here-Eta {
-        color: #828282;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 1.1725;
-        position: absolute;
-        top: 1.1rem;
-        white-space: nowrap;
-        width: 4.6rem;
-      }
-    }
   }
   .search-bar-3LE {
     align-items: center;
@@ -392,11 +361,57 @@
       width: 5.2812rem;
     }
   }
+  .uploads{
+    align-items: center;
+    background-color: #ffffff;
+    border: solid 0.0645rem #c2c2c2;
+    border-radius: 1.2896rem;
+    box-sizing: border-box;
+    display: flex;
+    height: 2.9964rem;
+    left: 3.2884rem;
+    position: absolute;
+    top: 53.6502rem;
+    width: 11.9165rem;
+    .view-photos {
+      color: #4f4f4f;
+      flex-shrink: 0;
+      font-family: Roboto, 'Source Sans Pro';
+      font-size: 0.9721rem;
+      font-weight: 400;
+      line-height: 1.1725;
+      margin: 0.072rem 2.886rem 0rem 3.3rem;
+      white-space: nowrap;
+    }
+  }
+  .downloads{
+    align-items: center;
+    background-color: #ffffff;
+    border: solid 0.0645rem #c2c2c2;
+    border-radius: 1.2896rem;
+    box-sizing: border-box;
+    display: flex;
+    height: 2.9964rem;
+    left: 23.2884rem;
+    position: absolute;
+    top: 53.6502rem;
+    width: 11.9165rem;
+    .download-photos {
+      color: #4f4f4f;
+      flex-shrink: 0;
+      font-family: Roboto, 'Source Sans Pro';
+      font-size: 0.9721rem;
+      font-weight: 400;
+      line-height: 1.1725;
+      margin: 0.072rem 2.886rem 0rem 3.3rem;
+      white-space: nowrap;
+    }
+  }
   .group-53-1Zt {
     height: 8.0089rem;
     left: 3.1595rem;
     position: absolute;
-    top: 53.581rem;
+    top: 57.581rem;
     width: 29.1439rem;
 
     .of-beds-hxW {
@@ -670,7 +685,7 @@
     height: 8.0089rem;
     left: 3.1595rem;
     position: absolute;
-    top: 63.5106rem;
+    top: 67.5106rem;
     width: 29.1439rem;
 
     .of-baths-Je6 {
@@ -944,7 +959,7 @@
     height: 2.3635rem;
     left: 3.3528rem;
     position: absolute;
-    top: 74.3428rem;
+    top: 77.3428rem;
     width: 7.3rem;
 
     .additional-filters-n42 {
@@ -981,7 +996,7 @@
     height: 2.457rem;
     left: 3.2884rem;
     position: absolute;
-    top: 78.4694rem;
+    top: 82.4694rem;
     width: 31.981rem;
 
     .price-6iv {
@@ -1068,41 +1083,10 @@
     left: 3.2884rem;
     padding: 1.29rem 3.288rem 1.633rem 3.288rem;
     position: absolute;
-    top: 83.4342rem;
+    top: 87.4342rem;
     width: 31.981rem;
 
-    .frame-17-zUr {
-      height: 100%;
-      position: relative;
-      width: 6.9rem;
 
-      .square-footage-LYi {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 1.1725;
-        position: absolute;
-        top: 0;
-        white-space: nowrap;
-        width: 6.9rem;
-      }
-      .sqft-Etz {
-        color: #828282;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
-        font-weight: 400;
-        height: 1.2rem;
-        left: 0;
-        line-height: 1.1725;
-        position: absolute;
-        top: 1.1rem;
-        white-space: nowrap;
-        width: 3.4rem;
-      }
-    }
   }
   .submit-hXg {
     align-items: center;
@@ -1118,8 +1102,43 @@
     left: 4.1266rem;
     line-height: 1.1725;
     position: absolute;
-    top: 91.1715rem;
+    top: 95.1715rem;
     white-space: nowrap;
     width: 31.0782rem;
   }
 }
+.modal-button{
+  background-color: #ffffff;
+  border: solid 0.0452rem #c2c2c2;
+  border-radius: 18.093rem;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  height: 2.457rem;
+  margin-bottom: 0.5158rem;
+  overflow: hidden;
+  padding: 0.678rem 1.529rem 0rem 1.487rem;
+  position: relative;
+  width: 50%;
+}
+.modal-icon{
+  background-color: #ffffff;
+  flex-shrink: 0;
+  height: 1.857rem;
+  margin-bottom: 0.5158rem;
+  overflow: hidden;
+  padding: 0rem 0rem 0rem 0rem;
+  position: relative;
+  width: 5%;
+}
+.modal-list{
+  list-style-type:none;
+  padding: 0;
+  display:flex;
+  flex-wrap:wrap;
+}
+.modal-image{
+  font-family: Roboto, 'Source Sans Pro';
+  margin-Right: 10px;
+  margin-bottom:10px;
+}
+

@@ -1,9 +1,34 @@
-import React from 'react';
+import React,{useState} from 'react';
 import "./Page3.css";
+import {useSharedForm} from '../ListProperty';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import EventIcon from '@mui/icons-material/Event';
 import Progress2 from '../../Images/ProgressBars/Progress2.png';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { useFormData } from '../../Context/formdatacontext';
 const Page3 = ({onNext,onPrevious}) =>{
+    const {formData,dispatch} = useFormData();
+    const [startDate,setStartDate] = useState(formData?.startDate);
+    const [isDatePickerOpen,setIsDatePickerOpen] = useState(false);
+    const [error,setError] = useState('');
+    const handleTextInput = (inputName,value)=>{
+        dispatch({type:'UPDATE_DATA',payload:{[inputName]:value}});
+    }
+    const handleDateChange=(date)=>{
+        if(date && date <new Date()){
+            setError('Select a Date after the current date')
+        }
+        else{
+            setStartDate(date);
+            dispatch({type:'UPDATE_DATA',payload:{startDate:date}});
+            setIsDatePickerOpen(false);
+            setError('');
+        }
+    };
+    const openDatePicker=()=>{
+        setIsDatePickerOpen(true);
+    };
     return(
         <div class="create-a-property-vkS" id="165:13951">
         <div class="rectangle-13-2Hg" id="I165:13951;165:8687"></div>
@@ -27,29 +52,23 @@ const Page3 = ({onNext,onPrevious}) =>{
         <div class="search-bar-uiA" id="I165:13951;165:8729">
         <div class="frame-17-bqt" id="I165:13951;165:8731">
         <p class="earlest-start-darte-Ym8" id="I165:13951;165:8732">Earlest Start Date</p>
-        <p class="dd-mm-yyyy-FfY" id="I165:13951;165:8733">dd-mm-yyyy</p>
+        {startDate &&(
+        <p class="dd-mm-yyyy-FfY" id="I165:13951;165:8733">{startDate.toLocaleDateString()}</p>
+        )}
         </div>
 
-        <EventIcon class="vector-k6W" src="/api/prod-us-east-2-first-cluster/projects/LZTNXrW..." id="I165:13951;165:8745"/>
+        <EventIcon onClick={openDatePicker} class="vector-k6W" src="/api/prod-us-east-2-first-cluster/projects/LZTNXrW..." id="I165:13951;165:8745"/>
+        {error && <p style={{color:'red'}}>{error}</p>}
+        {isDatePickerOpen &&(
+            <DatePicker selected={startDate} onChange={handleDateChange} dateFormat="MMMM d,yyyy" isClearable placeholderText="Select a date"/>
+        )}
         </div>
-        <div class="search-bar-ehg" id="I165:13951;165:8746">
-        <div class="frame-17-xiN" id="I165:13951;165:8748">
-        <p class="lease-length-WE6" id="I165:13951;165:8749">Lease Length</p>
-        <p class="ie-1-year-d3p" id="I165:13951;165:8750">ie: 1 year</p>
-        </div>
-        </div>
-        <div class="price-J9x" id="I165:13951;165:8756">
-        <div class="frame-15-ber" id="I165:13951;165:8756;141:4592">
-        <p class="min-price-wii" id="I165:13951;165:8756;141:4593">Monthly Rent</p>
-        <p class="item-000-f8v" id="I165:13951;165:8756;141:4594">$0.00</p>
-        </div>
-        </div>
-        <div class="price-uJA" id="I165:13951;165:8761">
-        <div class="frame-15-Qki" id="I165:13951;165:8761;141:4592">
-        <p class="min-price-AE6" id="I165:13951;165:8761;141:4593">Security Deposit</p>
-        <p class="item-000-gCS" id="I165:13951;165:8761;141:4594">$0.00</p>
-        </div>
-        </div>
+        <textarea placeholder="Lease Length&#10;ie: 1 year"  name="leaseLength" value={formData.leaseLength} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-ehg" id="I165:13951;165:8746">
+        </textarea>
+        <textarea placeholder="Monthly Rent&#10;$0.00" name="monthlyRent" value={formData.monthlyRent} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="price-J9x" id="I165:13951;165:8756">
+        </textarea>
+        <textarea placeholder="Security Deposit&#10;$0.00" name="securityDep" value={formData.securityDep} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="price-uJA" id="I165:13951;165:8761">
+        </textarea>
         </div>
     );
 };

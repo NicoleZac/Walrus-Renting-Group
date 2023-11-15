@@ -10,12 +10,15 @@ import BedIcon from '@mui/icons-material/Bed';
 import BathroomIcon from '@mui/icons-material/Bathroom';
 import SearchIcon from '@mui/icons-material/Search';
 import ListProperty from './ListProperty';
+import {useFormData} from "../Context/formdatacontext";
 
 function Nav(){
     const [listProperty,setListProperty] = useState(false);
     const {user,setUser} = useContext(UserContext);
+    const{dispatch} = useFormData();
     const userEmail = user?.email;
     function handleLogout(){
+        dispatch({type: 'LOGOUT'});
         setUser(null);
     }
 return(
