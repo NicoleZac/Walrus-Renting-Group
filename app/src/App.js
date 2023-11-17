@@ -1,8 +1,8 @@
-import React, {useState, useContext,useEffect} from "react";
-import './App.css';
-import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
-import {UserProvider} from "./Context/usercontext";
-import {PageProvider,PageContext} from "./Context/pagecontext";
+import React, { useState, useContext, useEffect } from "react";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { UserProvider } from "./Context/usercontext";
+import { PageProvider, PageContext } from "./Context/pagecontext";
 import Nav from "./Components/navbar";
 import LoginRegisterNav from "./Components/LoginRegisterNavbar";
 import HomePage from "./Pages/HomePage";
@@ -13,70 +13,75 @@ import Page1 from "./Components/ListPropertyPages/Page1";
 import Page2 from "./Components/ListPropertyPages/Page2";
 import Page3 from "./Components/ListPropertyPages/Page3";
 import Page4 from "./Components/ListPropertyPages/Page4";
-import UserProfile from "./Pages/UserProfile"
-import Calendar from "./Pages/UserProfile"
-import {useLocation} from 'react-router-dom';
-import {FormDataProvider} from './Context/formdatacontext';
+import UserProfile from "./Pages/UserProfile";
+import Calendar from "./Pages/UserProfile";
+import { useLocation } from "react-router-dom";
+import { FormDataProvider } from "./Context/formdatacontext";
 
 function App() {
-  const[isPopOpen,setPopOpen] = useState(false);
+  const [isPopOpen, setPopOpen] = useState(false);
 
-  const openPop = () =>{
+  const openPop = () => {
     setPopOpen(true);
   };
-  const closePop = () =>{
+  const closePop = () => {
     setPopOpen(false);
-  }
+  };
   return (
     <FormDataProvider>
-    <PageProvider>
-    <UserProvider>
-      <Router>
- 
-
-   <Routes>
-    <Route path="/"element={<Content openPopup={openPop}/> }/>
-    <Route path="/Login" element={<Content openPopup={openPop}/> }/>
-    <Route path="/Register" element={<Content openPopup={openPop}/>}/>
-    <Route path={"/UserProfile/:email"} element={<Content openPopup={openPop} />}/>
-    <Route path={"/Calendar/:email"} element={<Content openPopup={openPop} />}/>
-    <Route path={"/ListProperty"} element={<Content openPopup={openPop} />}/>
-   </Routes>
-    <ListProperty isOpen={isPopOpen} requestClose={closePop}/>
-  </Router>
-  </UserProvider>
-   </PageProvider>
-   </FormDataProvider>
-  
+      <PageProvider>
+        <UserProvider>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Content openPopup={openPop} />} />
+              <Route path="/Login" element={<Content openPopup={openPop} />} />
+              <Route
+                path="/Register"
+                element={<Content openPopup={openPop} />}
+              />
+              <Route
+                path={"/UserProfile/:email"}
+                element={<Content openPopup={openPop} />}
+              />
+              <Route
+                path={"/Calendar/:email"}
+                element={<Content openPopup={openPop} />}
+              />
+              <Route
+                path={"/ListProperty"}
+                element={<Content openPopup={openPop} />}
+              />
+            </Routes>
+            <ListProperty isOpen={isPopOpen} requestClose={closePop} />
+          </Router>
+        </UserProvider>
+      </PageProvider>
+    </FormDataProvider>
   );
 }
-function Content({openPopup}){
-  const{LoginRegisterPage,setLoginRegister} = useContext(PageContext);
+function Content({ openPopup }) {
+  const { LoginRegisterPage, setLoginRegister } = useContext(PageContext);
   const location = useLocation();
-  useEffect(()=>{
+  useEffect(() => {
     handleSwitch();
-},[location.pathname,setLoginRegister]);
-const handleSwitch=()=>{
-
-  if (location.pathname === '/Login' || location.pathname=== '/Register'){
-    setLoginRegister(true);
-
-}
-else{
-  setLoginRegister(false);
-}
-};
+  }, [location.pathname, setLoginRegister]);
+  const handleSwitch = () => {
+    if (location.pathname === "/Login" || location.pathname === "/Register") {
+      setLoginRegister(true);
+    } else {
+      setLoginRegister(false);
+    }
+  };
   return (
     <>
-    {LoginRegisterPage ? <LoginRegisterNav/>: <Nav/>}
-    {location.pathname === '/' && <HomePage openPopup={openPopup}/>}
-    {location.pathname === '/Login' && <Login/>}
-    {location.pathname === '/Register' && <Register/>}
-    {location.pathname === "/UserProfile/:email" && <UserProfile/>}
-    {location.pathname === "/Calendar/:email" && <Calendar/>}
-    {location.pathname === "/ListProperty" && <ListProperty/>}
+      {LoginRegisterPage ? <LoginRegisterNav /> : <Nav />}
+      {location.pathname === "/" && <HomePage openPopup={openPopup} />}
+      {location.pathname === "/Login" && <Login />}
+      {location.pathname === "/Register" && <Register />}
+      {location.pathname === "/UserProfile/:email" && <UserProfile />}
+      {location.pathname === "/Calendar/:email" && <Calendar />}
+      {location.pathname === "/ListProperty" && <ListProperty />}
     </>
-
   );
 }
 
