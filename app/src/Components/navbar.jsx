@@ -71,24 +71,30 @@ function Nav() {
           </div>
           <div className="div-24">
             {userEmail && (
-              <Link to={`/UserProfile/${userEmail}`}>
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/ef4d5567-e4d6-40e8-9039-f16f190f3684?"
-                  className="img-5"
-                />
-              </Link>
+              <>
+                <Link to={`/UserProfile/${userEmail}`}>
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/ef4d5567-e4d6-40e8-9039-f16f190f3684?"
+                    className="img-5"
+                  />
+                </Link>
+                <Link to={`/UserProfile/${userEmail}`}>
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
+                    className="img-6"
+                  />
+                </Link>
+                <Link to={`/UserProfile/${userEmail}`}>
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/97d36e33-6f9a-4165-916f-a11683446465?"
+                    className="img-7"
+                  />
+                </Link>
+              </>
             )}
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
-              className="img-6"
-            />
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/97d36e33-6f9a-4165-916f-a11683446465?"
-              className="img-7"
-            />
             <div className="div-25">
               {userEmail && (
                 <Link to="/">
