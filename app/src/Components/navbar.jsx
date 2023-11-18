@@ -5,16 +5,38 @@ import { Link } from "react-router-dom";
 import logo from "../Images/logo.png";
 import ListProperty from "./ListProperty";
 import { useFormData } from "../Context/formdatacontext";
+import { state, useFilter } from "../Context/filtercontext";
 
 function Nav() {
-  const [listProperty, setListProperty] = useState(false);
+  const [locationFilter, setLocationFilter] = useState("");
+  const [bathFilter, setBathFilter] = useState();
+  const [bedFilter, setBedFilter] = useState();
+
   const { user, setUser } = useContext(UserContext);
   const { dispatch } = useFormData();
+  const { dispatchFilter } = useFilter();
   const userEmail = user?.email;
+
   function handleLogout() {
     dispatch({ type: "LOGOUT" });
     setUser(null);
   }
+
+  const handleFilterChange = (filterName, value) => {
+    dispatchFilter({ type: "SET_FILTER", payload: { filterName, value } });
+  };
+
+  const handleButtonClick = () => {
+    handleFilterChange("location", locationFilter);
+    handleFilterChange("bath", bathFilter);
+    handleFilterChange("bed", bedFilter);
+  };
+
+  const handleEnterPress = (event) => {
+    if (event.key === "Enter") {
+      handleButtonClick();
+    }
+  };
 
   return (
     <div className="div">
@@ -34,7 +56,14 @@ function Nav() {
             <div className="div-9">
               <div className="div-10">
                 <div className="div-11">Where</div>
-                <div className="div-12">Find your new home</div>
+                <input
+                  className="div-12"
+                  type="text"
+                  placeholder="Find your new home..."
+                  value={locationFilter}
+                  onChange={(e) => setLocationFilter(e.target.value)}
+                  onKeyDown={handleEnterPress}
+                />
               </div>
               <div className="div-13">
                 <div className="div-14" />
@@ -44,7 +73,14 @@ function Nav() {
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/af350dc6-a591-468c-baa3-e3642d76bc54?"
                     className="img-2"
                   />
-                  <div className="div-16">Beds</div>
+                  <input
+                    type="number"
+                    placeholder="Baths"
+                    value={bathFilter}
+                    onChange={(e) => setBathFilter(e.target.value)}
+                    onKeyDown={handleEnterPress}
+                    className="number-input"
+                  />
                 </div>
               </div>
               <div className="div-17">
@@ -54,7 +90,14 @@ function Nav() {
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/7c2377dc-9136-4549-84c6-158a8f299819?"
                     className="img-3"
                   />
-                  <div className="div-19">Bath</div>
+                  <input
+                    type="number"
+                    placeholder="Bed"
+                    value={bedFilter}
+                    onChange={(e) => setBedFilter(e.target.value)}
+                    onKeyDown={handleEnterPress}
+                    className="number-input" // Apply a CSS class for styling
+                  />{" "}
                 </div>
                 <div className="div-20" />
                 <div className="div-21">
@@ -63,11 +106,13 @@ function Nav() {
                 </div>
               </div>
             </div>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c1d4bb4-e80e-4e78-8391-79dc5e262a64?"
-              className="img-4"
-            />
+            <button onClick={handleButtonClick}>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c1d4bb4-e80e-4e78-8391-79dc5e262a64?"
+                className="img-4"
+              />
+            </button>
           </div>
           <div className="div-24">
             {userEmail && (
