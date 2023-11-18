@@ -124,7 +124,7 @@ button {
   align-self: center;
   display: flex;
   gap: 80px;
-  padding: 12px 12px 12px 80px;
+  padding: 12px 12px 12px 28px;
   height: 42px;
 }
 @media (max-width: 991px) {
