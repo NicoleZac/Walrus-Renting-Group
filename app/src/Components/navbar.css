@@ -6,6 +6,44 @@
   flex-direction: column;
   padding: 0 20px;
 }
+
+input {
+  border: none;
+  outline: none;
+}
+
+.number-input {
+  width: 40px;
+  /* Add more styles as needed */
+}
+
+/* Remove arrows in number input */
+.number-input::-webkit-inner-spin-button,
+.number-input::-webkit-outer-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+}
+
+/* Firefox */
+.number-input[type="number"] {
+  -moz-appearance: textfield !important;
+}
+
+input:focus {
+  box-shadow: none;
+}
+
+button {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+  transition: background-color 0.3s; /* Add a transition for a smoother effect */
+}
+
+.button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a box shadow on hover */
+}
+
 .div-2 {
   display: flex;
   width: 100%;
@@ -254,7 +292,14 @@
   overflow: hidden;
   align-self: stretch;
   max-width: 100%;
+  filter: brightness(1);
+  transition: filter 0.3s;
 }
+
+.img-4:hover {
+  filter: brightness(0.9);
+}
+
 .div-24 {
   align-items: flex-start;
   align-self: center;
