@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { UserProvider } from "./Context/usercontext";
 import { PageProvider, PageContext } from "./Context/pagecontext";
+import { FilterProvider } from "./Context/filtercontext";
 import Nav from "./Components/navbar";
 import LoginRegisterNav from "./Components/LoginRegisterNavbar";
 import HomePage from "./Pages/HomePage";
@@ -31,29 +32,34 @@ function App() {
     <FormDataProvider>
       <PageProvider>
         <UserProvider>
-          <Router>
-            <Routes>
-              <Route path="/" element={<Content openPopup={openPop} />} />
-              <Route path="/Login" element={<Content openPopup={openPop} />} />
-              <Route
-                path="/Register"
-                element={<Content openPopup={openPop} />}
-              />
-              <Route
-                path={"/UserProfile/:email"}
-                element={<Content openPopup={openPop} />}
-              />
-              <Route
-                path={"/Calendar/:email"}
-                element={<Content openPopup={openPop} />}
-              />
-              <Route
-                path={"/ListProperty"}
-                element={<Content openPopup={openPop} />}
-              />
-            </Routes>
-            <ListProperty isOpen={isPopOpen} requestClose={closePop} />
-          </Router>
+          <FilterProvider>
+            <Router>
+              <Routes>
+                <Route path="/" element={<Content openPopup={openPop} />} />
+                <Route
+                  path="/Login"
+                  element={<Content openPopup={openPop} />}
+                />
+                <Route
+                  path="/Register"
+                  element={<Content openPopup={openPop} />}
+                />
+                <Route
+                  path={"/UserProfile/:email"}
+                  element={<Content openPopup={openPop} />}
+                />
+                <Route
+                  path={"/Calendar/:email"}
+                  element={<Content openPopup={openPop} />}
+                />
+                <Route
+                  path={"/ListProperty"}
+                  element={<Content openPopup={openPop} />}
+                />
+              </Routes>
+              <ListProperty isOpen={isPopOpen} requestClose={closePop} />
+            </Router>
+          </FilterProvider>
         </UserProvider>
       </PageProvider>
     </FormDataProvider>
