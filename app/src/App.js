@@ -17,6 +17,7 @@ import Page4 from "./Components/ListPropertyPages/Page4";
 import UserProfile from "./Pages/UserProfile";
 import Calendar from "./Pages/UserProfile";
 import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { FormDataProvider } from "./Context/formdatacontext";
 
 function App() {
@@ -78,6 +79,7 @@ function Content({ openPopup }) {
       setLoginRegister(false);
     }
   };
+
   return (
     <>
       {LoginRegisterPage ? <LoginRegisterNav /> : <Nav />}
