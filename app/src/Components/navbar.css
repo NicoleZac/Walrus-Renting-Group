@@ -5,6 +5,9 @@
   display: flex;
   flex-direction: column;
   padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
 input {
@@ -288,7 +291,7 @@ button {
   aspect-ratio: 1;
   object-fit: contain;
   object-position: center;
-  width: 58px;
+  width: 44px;
   overflow: hidden;
   align-self: stretch;
   max-width: 100%;
@@ -369,4 +372,70 @@ button {
   .div-26 {
     white-space: initial;
   }
+}
+
+/* filter for min/max */
+
+.div-100 {
+  padding-top: 50px;
+}
+.div-101 {
+  border-radius: 0px 0px 30px 30px;
+  border: 1px solid var(--Gray-4, #bdbdbd);
+  background-color: #fff;
+  display: flex;
+  width: 10%;
+  flex-direction: column;
+  padding: 31px 38px 45px 39px;
+  position: absolute;
+  z-index: 2;
+}
+@media (max-width: 991px) {
+  .div-101 {
+    padding: 0 20px;
+  }
+}
+.div-102 {
+  display: flex;
+  justify-content: space-between;
+}
+.div-103 {
+  color: var(--Gray-2, #4f4f4f);
+  font: 400 15px/18px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+}
+.div-104 {
+  color: var(--Gray-3, #828282);
+  white-space: nowrap;
+  font: 400 15px/18px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+}
+@media (max-width: 991px) {
+  .div-104 {
+    white-space: initial;
+  }
+}
+.div-105 {
+  display: flex;
+  margin-top: 15px;
+  justify-content: space-between;
+}
+.div-106 {
+  color: var(--Gray-2, #4f4f4f);
+  font: 400 15px/18px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+}
+.div-107 {
+  color: var(--Gray-3, #828282);
+  white-space: nowrap;
+  font: 400 15px/18px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+}
+@media (max-width: 991px) {
+  .div-107 {
+    white-space: initial;
+  }
+}
+
+.div-108 {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-top: 7px;
+  padding-right: 20px;
 }
