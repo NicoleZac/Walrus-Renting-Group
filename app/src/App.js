@@ -16,6 +16,7 @@ import Page3 from "./Components/ListPropertyPages/Page3";
 import Page4 from "./Components/ListPropertyPages/Page4";
 import UserProfile from "./Pages/UserProfile";
 import Calendar from "./Pages/UserProfile";
+import PropertyPage from "./Pages/PropertyPage";
 import { useLocation } from "react-router-dom";
 import { FormDataProvider } from "./Context/formdatacontext";
 
@@ -56,6 +57,10 @@ function App() {
                   path={"/ListProperty"}
                   element={<Content openPopup={openPop} />}
                 />
+                <Route
+                  path={"/PropertyPage"}
+                  element={<Content openPopup={openPop} />}
+                />
               </Routes>
               <ListProperty isOpen={isPopOpen} requestClose={closePop} />
             </Router>
@@ -87,6 +92,7 @@ function Content({ openPopup }) {
       {location.pathname === "/UserProfile/:email" && <UserProfile />}
       {location.pathname === "/Calendar/:email" && <Calendar />}
       {location.pathname === "/ListProperty" && <ListProperty />}
+      {location.pathname === "/PropertyPage" && <PropertyPage />}
     </>
   );
 }
