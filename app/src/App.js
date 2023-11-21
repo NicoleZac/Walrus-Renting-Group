@@ -69,6 +69,7 @@ function App() {
 function Content({ openPopup }) {
   const { LoginRegisterPage, setLoginRegister } = useContext(PageContext);
   const location = useLocation();
+  const { email } = useParams();
   useEffect(() => {
     handleSwitch();
   }, [location.pathname, setLoginRegister]);
@@ -86,8 +87,8 @@ function Content({ openPopup }) {
       {location.pathname === "/" && <HomePage openPopup={openPopup} />}
       {location.pathname === "/Login" && <Login />}
       {location.pathname === "/Register" && <Register />}
-      {location.pathname === "/UserProfile/:email" && <UserProfile />}
-      {location.pathname === "/Calendar/:email" && <Calendar />}
+      {location.pathname === `/UserProfile/${email}` && <UserProfile />}
+      {location.pathname === `/Calendar/${email}` && <Calendar />}
       {location.pathname === "/ListProperty" && <ListProperty />}
     </>
   );

@@ -4,7 +4,7 @@ import RenterProfile from "../Components/RenterProfile";
 import { UserContext } from "../Context/usercontext";
 import "./UserProfile.css"
 
-function UserProfile () {
+function UserProfile (useParams) {
   const { user } = useContext(UserContext);
   const userType = user?.userType;
 
