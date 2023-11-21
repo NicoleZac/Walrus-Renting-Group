@@ -1,5 +1,5 @@
 import "./navbar.css";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import { UserContext } from "../Context/usercontext";
 import { Link } from "react-router-dom";
 import logo from "../Images/logo.png";
@@ -11,11 +11,14 @@ function Nav() {
   const [locationFilter, setLocationFilter] = useState("");
   const [bathFilter, setBathFilter] = useState();
   const [bedFilter, setBedFilter] = useState();
-
   const { user, setUser } = useContext(UserContext);
   const { dispatch } = useFormData();
   const { dispatchFilter } = useFilter();
   const userEmail = user?.email;
+
+  //MinMax Popup
+  const [isMinMaxPopupOpen, setMinMaxPopupOpen] = useState(true);
+  const popupRef = useRef();
 
   function handleLogout() {
     dispatch({ type: "LOGOUT" });
@@ -24,6 +27,7 @@ function Nav() {
 
   const handleFilterChange = (filterName, value) => {
     dispatchFilter({ type: "SET_FILTER", payload: { filterName, value } });
+    closeMinMaxPopup();
   };
 
   const handleButtonClick = () => {
@@ -36,6 +40,16 @@ function Nav() {
     if (event.key === "Enter") {
       handleButtonClick();
     }
+  };
+
+  const openMinMaxPopup = () => {
+    console.log("Opening");
+    setMinMaxPopupOpen(true);
+  };
+
+  const closeMinMaxPopup = () => {
+    console.log("Leaving");
+    setMinMaxPopupOpen(false);
   };
 
   return (
@@ -52,68 +66,85 @@ function Nav() {
               />
             </Link>
           </div>
-          <div className="div-8">
-            <div className="div-9">
-              <div className="div-10">
-                <div className="div-11">Where</div>
-                <input
-                  className="div-12"
-                  type="text"
-                  placeholder="Find your new home..."
-                  value={locationFilter}
-                  onChange={(e) => setLocationFilter(e.target.value)}
-                  onKeyDown={handleEnterPress}
+          <div className="div-100">
+            <div className="div-8">
+              <div className="div-9">
+                <div className="div-10">
+                  <div className="div-11">Where</div>
+                  <input
+                    className="div-12"
+                    type="text"
+                    placeholder="Find your new home..."
+                    value={locationFilter}
+                    onChange={(e) => setLocationFilter(e.target.value)}
+                    onKeyDown={handleEnterPress}
+                  />
+                </div>
+                <div className="div-13">
+                  <div className="div-14" />
+                  <div className="div-15">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/af350dc6-a591-468c-baa3-e3642d76bc54?"
+                      className="img-2"
+                    />
+                    <input
+                      type="number"
+                      placeholder="Baths..."
+                      value={bathFilter}
+                      onChange={(e) => setBathFilter(e.target.value)}
+                      onKeyDown={handleEnterPress}
+                      className="number-input"
+                    />
+                  </div>
+                </div>
+                <div className="div-17">
+                  <div className="div-18">
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/7c2377dc-9136-4549-84c6-158a8f299819?"
+                      className="img-3"
+                    />
+                    <input
+                      type="number"
+                      placeholder="Beds..."
+                      value={bedFilter}
+                      onChange={(e) => setBedFilter(e.target.value)}
+                      onKeyDown={handleEnterPress}
+                      className="number-input" // Apply a CSS class for styling
+                    />{" "}
+                  </div>
+                  <div className="div-20" />
+                  <button className="div-21" onMouseEnter={openMinMaxPopup}>
+                    <div className="div-22">Price Range</div>
+                    <div className="div-23">Min - Max</div>
+                  </button>
+                </div>
+              </div>
+              <button onClick={handleButtonClick}>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c1d4bb4-e80e-4e78-8391-79dc5e262a64?"
+                  className="img-4"
                 />
-              </div>
-              <div className="div-13">
-                <div className="div-14" />
-                <div className="div-15">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/af350dc6-a591-468c-baa3-e3642d76bc54?"
-                    className="img-2"
-                  />
-                  <input
-                    type="number"
-                    placeholder="Baths"
-                    value={bathFilter}
-                    onChange={(e) => setBathFilter(e.target.value)}
-                    onKeyDown={handleEnterPress}
-                    className="number-input"
-                  />
-                </div>
-              </div>
-              <div className="div-17">
-                <div className="div-18">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/7c2377dc-9136-4549-84c6-158a8f299819?"
-                    className="img-3"
-                  />
-                  <input
-                    type="number"
-                    placeholder="Bed"
-                    value={bedFilter}
-                    onChange={(e) => setBedFilter(e.target.value)}
-                    onKeyDown={handleEnterPress}
-                    className="number-input" // Apply a CSS class for styling
-                  />{" "}
-                </div>
-                <div className="div-20" />
-                <div className="div-21">
-                  <div className="div-22">Price Range</div>
-                  <div className="div-23">Min - Max</div>
-                </div>
-              </div>
+              </button>
             </div>
-            <button onClick={handleButtonClick}>
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c1d4bb4-e80e-4e78-8391-79dc5e262a64?"
-                className="img-4"
-              />
-            </button>
+            <div className="div-108">
+              {isMinMaxPopupOpen && (
+                <div className="div-101" onMouseLeave={closeMinMaxPopup}>
+                  <div className="div-102">
+                    <div className="div-103">Min Price</div>
+                    <div className="div-104">$0.00</div>
+                  </div>
+                  <div className="div-105">
+                    <div className="div-106">Max Price</div>
+                    <div className="div-107">$10,000.00</div>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
+
           <div className="div-24">
             {userEmail && (
               <>
