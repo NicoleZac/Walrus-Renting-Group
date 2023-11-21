@@ -25,13 +25,16 @@ function HomePage({ openPopup }) {
             <div class="employment-Ega" id="I195:7530;195:7168;161:3104">
               My properties
             </div>
-            <PropertyListings properties={propertyList} />
+            <PropertyListings properties={propertyList} type="Landlord" />
           </div>
           <div class="landlords-own-properties-LbC" id="I195:7530;195:7298">
             <div class="employment-Ega" id="I195:7530;195:7298;161:3104">
               Other Properties in my Neighborhood
             </div>
-            <PropertyListings properties={propertyList} other={other} />
+            <PropertyListings
+              properties={propertyList}
+              type="OtherInNeighbourhood"
+            />
           </div>
         </div>
       ) : (
