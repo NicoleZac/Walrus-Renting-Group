@@ -16,10 +16,14 @@ input {
 }
 
 .number-input {
+  color: var(--Gray-3, #828282);
   width: 40px;
   /* Add more styles as needed */
 }
 
+.label-style {
+  color: var(--Gray-3, #828282);
+}
 /* Remove arrows in number input */
 .number-input::-webkit-inner-spin-button,
 .number-input::-webkit-outer-spin-button {
@@ -406,6 +410,7 @@ button {
 .div-104 {
   color: var(--Gray-3, #828282);
   white-space: nowrap;
+  width: 40px;
   font: 400 15px/18px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
 }
 @media (max-width: 991px) {

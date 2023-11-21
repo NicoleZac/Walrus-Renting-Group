@@ -1,5 +1,5 @@
 import "./navbar.css";
-import React, { useContext, useState, useEffect, useRef } from "react";
+import React, { useContext, useState } from "react";
 import { UserContext } from "../Context/usercontext";
 import { Link } from "react-router-dom";
 import logo from "../Images/logo.png";
@@ -17,8 +17,10 @@ function Nav() {
   const userEmail = user?.email;
 
   //MinMax Popup
-  const [isMinMaxPopupOpen, setMinMaxPopupOpen] = useState(true);
-  const popupRef = useRef();
+  const [isMinMaxPopupOpen, setMinMaxPopupOpen] = useState(false);
+  const [minPriceFilter, setMinPriceFilter] = useState();
+  const [maxPriceFilter, setMaxPriceFilter] = useState();
+  const maxDigits = 5;
 
   function handleLogout() {
     dispatch({ type: "LOGOUT" });
@@ -34,6 +36,8 @@ function Nav() {
     handleFilterChange("location", locationFilter);
     handleFilterChange("bath", bathFilter);
     handleFilterChange("bed", bedFilter);
+    handleFilterChange("minPrice", minPriceFilter);
+    handleFilterChange("maxPrice", maxPriceFilter);
   };
 
   const handleEnterPress = (event) => {
@@ -43,12 +47,10 @@ function Nav() {
   };
 
   const openMinMaxPopup = () => {
-    console.log("Opening");
     setMinMaxPopupOpen(true);
   };
 
   const closeMinMaxPopup = () => {
-    console.log("Leaving");
     setMinMaxPopupOpen(false);
   };
 
@@ -111,13 +113,16 @@ function Nav() {
                       value={bedFilter}
                       onChange={(e) => setBedFilter(e.target.value)}
                       onKeyDown={handleEnterPress}
-                      className="number-input" // Apply a CSS class for styling
-                    />{" "}
+                      className="number-input"
+                    />
                   </div>
                   <div className="div-20" />
                   <button className="div-21" onMouseEnter={openMinMaxPopup}>
                     <div className="div-22">Price Range</div>
-                    <div className="div-23">Min - Max</div>
+                    <div className="div-23">
+                      {minPriceFilter ? "$" + minPriceFilter : "Min"} -{" "}
+                      {maxPriceFilter ? "$" + maxPriceFilter : "Max"}
+                    </div>
                   </button>
                 </div>
               </div>
@@ -134,11 +139,35 @@ function Nav() {
                 <div className="div-101" onMouseLeave={closeMinMaxPopup}>
                   <div className="div-102">
                     <div className="div-103">Min Price</div>
-                    <div className="div-104">$0.00</div>
+                    <label className="label-style">
+                      $
+                      <input
+                        className="number-input"
+                        placeholder="10"
+                        type="number"
+                        value={minPriceFilter}
+                        onChange={(e) =>
+                          setMinPriceFilter(e.target.value.slice(0, maxDigits))
+                        }
+                        onKeyDown={handleEnterPress}
+                      />
+                    </label>
                   </div>
                   <div className="div-105">
                     <div className="div-106">Max Price</div>
-                    <div className="div-107">$10,000.00</div>
+                    <label className="label-style">
+                      $
+                      <input
+                        className="number-input"
+                        placeholder="4000"
+                        type="number"
+                        value={maxPriceFilter}
+                        onChange={(e) =>
+                          setMaxPriceFilter(e.target.value.slice(0, maxDigits))
+                        }
+                        onKeyDown={handleEnterPress}
+                      />
+                    </label>
                   </div>
                 </div>
               )}
