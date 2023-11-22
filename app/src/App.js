@@ -12,8 +12,6 @@ import Register from "./Pages/Register";
 import ListProperty from "./Components/ListProperty";
 import UserProfile from "./Pages/UserProfile";
 import Calendar from "./Pages/Calendar";
-import PropertyPage from "./Pages/PropertyPage";
-
 import { useLocation } from "react-router-dom";
 import { useParams} from "react-router-dom";
 import { FormDataProvider } from "./Context/formdatacontext";

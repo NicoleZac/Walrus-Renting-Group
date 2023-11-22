@@ -1,12 +1,264 @@
-#calendar {
-	top: 2042px;
-	left: 3014px;
-	width: 1179px;
-	height: 1208px;
-	-ms-border-radius: 40px;
-	-o-border-radius: 40px;
-	-moz-border-radius: 40px;
-	-webkit-border-radius: 40px;
+
+
+.calendar {
+	background-color: #ffffff;
 	border-radius: 40px;
-	background:rgba(255,255,255,1);
-}
+	height: 1208px;
+	overflow: hidden;
+	position: relative;
+	width: 1800px;
+	margin-left: 20%;
+  }
+  
+  .calendar .overlap {
+	height: 151px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 1179px;
+  }
+  
+  .calendar .frame {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-color: var(--gray-4);
+	height: 151px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 1270px;
+  }
+  
+  .calendar .text-wrapper {
+	color: #545454;
+	font-family: "Roboto-Bold", Helvetica;
+	font-size: 35px;
+	font-weight: 700;
+	left: 509px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	top: 54px;
+	white-space: nowrap;
+  }
+  
+  .calendar .group {
+	height: 23px;
+	left: 1116px;
+	position: absolute;
+	top: 64px;
+	width: 13px;
+  }
+  
+  .calendar .img {
+	height: 23px;
+	left: 57px;
+	position: absolute;
+	top: 64px;
+	width: 13px;
+  }
+  
+  .calendar .div-time {
+	align-items: flex-start;
+	display: inline-flex;
+	flex-direction: column;
+	gap: 50px;
+	left: 58px;
+	position: absolute;
+	top: 318px;
+	white-space: nowrap;
+  }
+  
+  .calendar .text-wrapper-2 {
+	color: var(--gray-3);
+	font-family: "Roboto-Regular", Helvetica;
+	font-size: 22.4px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: normal;
+	margin-top: -1.12px;
+	position: relative;
+	white-space: nowrap;
+	width: fit-content;
+  }
+  
+  .calendar .text-wrapper-3 {
+	color: var(--gray-3);
+	font-family: "Roboto-Regular", Helvetica;
+	font-size: 22.4px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: normal;
+	position: relative;
+	white-space: nowrap;
+	width: fit-content;
+  }
+  
+  .calendar .frame-2 {
+	align-items: flex-start;
+	display: inline-flex;
+	gap: 94px;
+	left: 87px;
+	position: absolute;
+	top: 186px;
+  }
+  
+  .calendar .text-wrapper-4 {
+	color: #545454;
+	font-family: "Roboto-Regular", Helvetica;
+	font-size: 22.4px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: normal;
+	margin-top: -1px;
+	position: relative;
+	white-space: nowrap;
+	width: fit-content;
+  }
+  
+  .calendar .frame-3 {
+	align-items: flex-start;
+	display: inline-flex;
+	gap: 120px;
+	left: 237px;
+	position: absolute;
+	top: 245px;
+  }
+  
+  .calendar .text-wrapper-5 {
+	color: var(--gray-3);
+	font-family: "Roboto-Bold", Helvetica;
+	font-size: 22.4px;
+	font-weight: 700;
+	margin-top: -1px;
+	width: fit-content;
+	flex: '1';
+	text-align: 'center'; 
+	width: 20px;
+  }
+  
+  .calendar .overlap-group {
+	height: 800px;
+	left: 170px;
+	position: absolute;
+	top: 317px;
+	width: 840px;
+  }
+  
+  .calendar .frame-4 {
+	align-items: flex-start;
+	display: inline-flex;
+	gap: 140px;
+	height: 797px;
+	left: 0;
+	position: absolute;
+	top: 3px;
+  }
+  
+  .calendar .vl {
+	border-left: 0.05px solid gray;
+	height: 800px;
+	position: relative;
+  }
+ 
+  
+  .calendar .overlap-group-wrapper {
+	height: 223px;
+	left: 565px;
+	position: absolute;
+	top: 0;
+	width: 142px;
+  }
+  
+  .calendar .overlap-group-2 {
+	background-color: #c9cba3;
+	border-radius: 16px;
+	height: 223px;
+	position: relative;
+	width: 138px;
+	margin-left: 2px;
+  }
+  
+  .calendar .text-wrapper-6 {
+	color: var(--gray-2);
+	font-family: "Roboto-Bold", Helvetica;
+	font-size: 30px;
+	font-weight: 700;
+	left: 17px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	top: 29px;
+	white-space: nowrap;
+  }
+  
+  .calendar .text-wrapper-7 {
+	color: #545454;
+	font-family: "Roboto-Regular", Helvetica;
+	font-size: 17.7px;
+	font-weight: 400;
+	left: 15px;
+	letter-spacing: 0;
+	line-height: normal;
+	position: absolute;
+	top: 65px;
+	width: 108px;
+  }
+  
+  .calendar .overlap-wrapper {
+	height: 223px;
+	left: 142px;
+	position: absolute;
+	top: 282px;
+	width: 142px;
+  }
+  
+  .calendar .rectangle {
+	background-color: #c9cba3;
+	border-radius: 16px;
+	height: 223px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 138px;
+  }
+  
+  .calendar .div-wrapper {
+	height: 313px;
+	left: 425px;
+	position: absolute;
+	top: 386px;
+	width: 142px;
+  }
+  
+  .calendar .overlap-2 {
+	background-color: #c9cba3;
+	border-radius: 16px;
+	height: 313px;
+	position: relative;
+	width: 138px;
+  }
+  .group-49-NEn {
+	flex-shrink: 0;
+	height: 40px;
+	object-fit: scale-down;
+	vertical-align: top;
+	width: 40px;
+	cursor: pointer;
+  	color: black;
+  }
+  .group-49-NEn:hover  {
+  	color: pink;
+  }
+  .group-48-NEn {
+	flex-shrink: 0;
+	height: 40px;
+	object-fit: scale-down;
+	vertical-align: top;
+	width: 40px;
+	cursor: pointer;
+  	color: black;
+  }
+  .group-48-NEn:hover {
+  	color: pink;
+  }
