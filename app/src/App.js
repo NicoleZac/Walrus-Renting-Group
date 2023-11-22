@@ -3,19 +3,19 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { UserProvider } from "./Context/usercontext";
 import { PageProvider, PageContext } from "./Context/pagecontext";
+import { FilterProvider } from "./Context/filtercontext";
 import Nav from "./Components/navbar";
 import LoginRegisterNav from "./Components/LoginRegisterNavbar";
 import HomePage from "./Pages/HomePage";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import ListProperty from "./Components/ListProperty";
-import Page1 from "./Components/ListPropertyPages/Page1";
-import Page2 from "./Components/ListPropertyPages/Page2";
-import Page3 from "./Components/ListPropertyPages/Page3";
-import Page4 from "./Components/ListPropertyPages/Page4";
 import UserProfile from "./Pages/UserProfile";
 import Calendar from "./Pages/Calendar";
+import PropertyPage from "./Pages/PropertyPage";
+
 import { useLocation } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import { FormDataProvider } from "./Context/formdatacontext";
 
 function App() {
@@ -31,29 +31,38 @@ function App() {
     <FormDataProvider>
       <PageProvider>
         <UserProvider>
-          <Router>
-            <Routes>
-              <Route path="/" element={<Content openPopup={openPop} />} />
-              <Route path="/Login" element={<Content openPopup={openPop} />} />
-              <Route
-                path="/Register"
-                element={<Content openPopup={openPop} />}
-              />
-              <Route
-                path={"/UserProfile/:email"}
-                element={<Content openPopup={openPop} />}
-              />
-              <Route
-                path={"/Calendar/:email"}
-                element={<Content openPopup={openPop} />}
-              />
-              <Route
-                path={"/ListProperty"}
-                element={<Content openPopup={openPop} />}
-              />
-            </Routes>
-            <ListProperty isOpen={isPopOpen} requestClose={closePop} />
-          </Router>
+          <FilterProvider>
+            <Router>
+              <Routes>
+                <Route path="/" element={<Content openPopup={openPop} />} />
+                <Route
+                  path="/Login"
+                  element={<Content openPopup={openPop} />}
+                />
+                <Route
+                  path="/Register"
+                  element={<Content openPopup={openPop} />}
+                />
+                <Route
+                  path={"/UserProfile/:email"}
+                  element={<Content openPopup={openPop} />}
+                />
+                <Route
+                  path={"/Calendar/:email"}
+                  element={<Content openPopup={openPop} />}
+                />
+                <Route
+                  path={"/ListProperty"}
+                  element={<Content openPopup={openPop} />}
+                />
+                  <Route
+                  path={"/PropertyPage/:id/:property"}
+                  element={<Content openPopup={openPop} />}
+                />
+              </Routes>
+              <ListProperty isOpen={isPopOpen} requestClose={closePop} />
+            </Router>
+          </FilterProvider>
         </UserProvider>
       </PageProvider>
     </FormDataProvider>
@@ -62,6 +71,8 @@ function App() {
 function Content({ openPopup }) {
   const { LoginRegisterPage, setLoginRegister } = useContext(PageContext);
   const location = useLocation();
+  const {email} = useParams(); 
+  const {id,property} = useParams();
   useEffect(() => {
     handleSwitch();
   }, [location.pathname, setLoginRegister]);
@@ -78,9 +89,10 @@ function Content({ openPopup }) {
       {location.pathname === "/" && <HomePage openPopup={openPopup} />}
       {location.pathname === "/Login" && <Login />}
       {location.pathname === "/Register" && <Register />}
-      {location.pathname === "/UserProfile/:email" && <UserProfile />}
-      {location.pathname === "/Calendar/" && <Calendar />}
+      {location.pathname === `/UserProfile/${email}` && <UserProfile />}
+      {location.pathname === `/Calendar/${email}` && <Calendar />}
       {location.pathname === "/ListProperty" && <ListProperty />}
+      {location.pathname === `/PropertyPage/${encodeURIComponent(id)}/${encodeURIComponent(property)}` && <PropertyPage />}
     </>
   );
 }

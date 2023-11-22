@@ -2,18 +2,22 @@
 import React, {useState,useContext} from 'react';
 import {UserContext} from "../../Context/usercontext";
 import {Link} from "react-router-dom";
-import {useSharedForm} from '../ListProperty';
 import "./Page4.css";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import EventIcon from '@mui/icons-material/Event';
 import Progress3 from '../../Images/ProgressBars/Progress3.png';
 import { useFormData } from '../../Context/formdatacontext';
+import propertyList from '../propertyList.js';
 const Page4 = ({onPrevious,onSubmit,error}) =>{
     const {formData,dispatch} = useFormData();
     const [selectedMethod,setSelectedMethod] = useState(formData?.contactMethod);
     const {user} = useContext(UserContext);
     const userEmail = user?.email;
     const handleSelectMethod= (method) =>{
+        const propertyIds = propertyList.map(property=>property.id);
+        const maxPId = Math.max(...propertyIds);
+ 
+         dispatch({type:'UPDATE_DATA',payload:{id:maxPId+1}});
         if(selectedMethod === method){
             setSelectedMethod(null);
             dispatch({type:'UPDATE_DATA',payload:{contactMethod:null}});

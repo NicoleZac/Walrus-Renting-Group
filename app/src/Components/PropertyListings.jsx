@@ -1,58 +1,94 @@
-import React,{useContext} from 'react';
-import PropertyCard from './PropertyCard';
-import './PropertyListings.css';
-import {UserContext} from "../Context/usercontext";
+import React, { useContext, useEffect, useState } from "react";
+import PropertyCard from "./PropertyCard";
+import "./PropertyListings.css";
+import { UserContext } from "../Context/usercontext";
+import { useFilter } from "../Context/filtercontext";
+import { Link } from "react-router-dom";
 
-const PropertyListings = ({properties,other}) =>{
-        const {user} = useContext(UserContext);
-        const userEmail = user?.email;
-    const userType = user?.userType;
-    const renderCards =(userType)=>{
-       
-        const rows = [];
-        if(userType === "Landlord"){
+const PropertyListings = ({ properties, type }) => {
+  const { user } = useContext(UserContext);
+  const { state } = useFilter();
+  const [filteredProperties, setFilteredProperties] = useState(properties);
 
-            const ownedProperties =properties.filter(property => property.landlord ===userEmail);
-            if(other){
-                const neighbourhoods = new Set(ownedProperties.map(property=>property.neighbourhood));
-                const filteredOther = properties.filter(property=> neighbourhoods.has(property.neighbourhood)&& property.landlord !== userEmail);
-                for(let i=0;i<filteredOther.length;i+=3){
-                    rows.push(filteredOther.slice(i,i+3));
-                }
-            }
-            else{
-                for(let i=0;i<ownedProperties.length;i+=3){
-                    rows.push(ownedProperties.slice(i,i+3));
-                }
-            }   
-        }
-        else{
-            for(let i=0;i<properties.length;i+=3){
-                rows.push(properties.slice(i,i+3));
-            }
-        }
-       
-    return rows.map((row,index) =>(
-       
-        <div key={index} class="auto-group-8ukp-FQe" id="N4EkTu8JNLJQjMFWLi8uKp">
- 
-            {row.map((property,propertyIndex)=>(
-                 <PropertyCard key={propertyIndex} property={property} />
+  useEffect(() => {
+    runFilter();
+  }, [state]);
+
+  const runFilter = () => {
+    let tempProperties = properties;
+
+    if (type === "Landlord" && user?.email !== "") {
+      tempProperties = tempProperties.filter(
+        (prop) => prop.landlord === user?.email
+      );
+    }
+
+    if (type === "OtherInNeighbourhood" && user?.email !== "") {
+      tempProperties = tempProperties.filter(
+        (prop) =>
+          prop.landlord !== user?.email &&
+          tempProperties
+            .filter((prop) => prop.landlord === user?.email)
+            .map((prop) => prop.neighbourhood)
+            .includes(prop.neighbourhood)
+      );
+    }
+
+    if (state.filters.location !== "") {
+      tempProperties = tempProperties.filter((prop) =>
+        prop.neighbourhood
+          .toLowerCase()
+          .includes(state.filters.location.toLowerCase())
+      );
+    }
+
+    if (state.filters.bath !== undefined && state.filters.bath !== 0) {
+      tempProperties = tempProperties.filter(
+        (prop) => prop.bathrooms >= state.filters.bath
+      );
+    }
+
+    if (state.filters.bed !== undefined && state.filters.bed !== 0) {
+      tempProperties = tempProperties.filter(
+        (prop) => prop.bedrooms >= state.filters.bed
+      );
+    }
+
+    if (state.filters.minPrice !== undefined && state.filters.minPrice !== 0) {
+      tempProperties = tempProperties.filter(
+        (prop) => prop.rent >= state.filters.minPrice
+      );
+    }
+
+    if (state.filters.maxPrice !== undefined && state.filters.maxPrice !== 0) {
+      tempProperties = tempProperties.filter(
+        (prop) => prop.rent <= state.filters.maxPrice
+      );
+    }
+
+    setFilteredProperties(tempProperties);
+  };
+
+  return (
+    <div className="table">
+      {filteredProperties
+        .reduce(
+          (rows, cell, index) =>
+            (index % 3 === 0
+              ? rows.push([cell])
+              : rows[rows.length - 1].push(cell)) && rows,
+          []
+        )
+        .map((row, rowIndex) => (
+          <div className="tableRow" key={rowIndex}>
+            {row.map((cell, cellIndex) => (
+              <Link to={ `/PropertyPage/${encodeURIComponent(cell.id)}/${encodeURIComponent(JSON.stringify(cell))}`} style={{textDecoration: 'none',color:'inherit'}}>
+              <PropertyCard key={cellIndex} property={cell} />
+              </Link>
             ))}
-    
-        </div>
-
-     ));
-    };
-    return(
-    <div class="frame-19-ubg">
-        {userType === "Landlord" ? (
-       renderCards(userType)
-        ):(
-        renderCards(userType)
-        )}
-        </div>
-   
-    );
+          </div>
+        ))}
+    </div>
+  );
 };
 export default PropertyListings;

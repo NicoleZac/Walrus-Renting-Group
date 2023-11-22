@@ -168,6 +168,11 @@ const Page1 = ({onNext,requestClose}) =>{
         <Modal
         isOpen={viewImages}
         onRequestClose={handleImageClose}
+        style={{
+            overlay: {
+             zIndex: 999,
+            },
+        }}
         >
         <ClearIcon onClick={handleImageClose} class="modal-icon"></ClearIcon>
         <ul class="modal-list">

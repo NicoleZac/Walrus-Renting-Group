@@ -4,7 +4,6 @@ import Page1 from './ListPropertyPages/Page1';
 import Page2 from './ListPropertyPages/Page2';
 import Page3 from './ListPropertyPages/Page3';
 import Page4 from './ListPropertyPages/Page4';
-import propertyList from './propertyList.js';
 import {useFormData} from '../Context/formdatacontext.js';
 
 
@@ -13,9 +12,10 @@ const ListProperty =({isOpen,requestClose})=>{
     const [currentPage,setPage] = useState('p1');
     const[error,setError] =useState('');
     const pages=['p1','p2','p3','p4'];
+
     const currentIndex = pages.indexOf(currentPage);
     const handleSubmit = ()=>{
-        console.log(formData);
+
         const isValueEmpty = (value) => {
             if (Array.isArray(value)) {
               return value.length === 0;
@@ -82,7 +82,7 @@ const ListProperty =({isOpen,requestClose})=>{
         style={{
            overlay: {
             backgroundColor: 'rgba(0,0,0,0.5)',
-            display:'flex',
+            display:isOpen ? 'block' : 'none',
             alignItems: 'center',
             justifyContent: 'center',
             position: 'fixed',
@@ -90,8 +90,10 @@ const ListProperty =({isOpen,requestClose})=>{
             left: 0,
             right:0,
             bottom: 0,
+            zIndex: 998,
            },
            content:{
+            display:isOpen ? 'block' : 'none',
             position: 'absolute',
             top: '50%',
             left: '50%',
@@ -110,30 +112,4 @@ const ListProperty =({isOpen,requestClose})=>{
     );
 };
 
-export const useSharedForm = () =>{
-    const[formData,setFormData] = useState({
-        propertyType: '',
-        description: '',
-        images: [],
-        numBeds: '',
-        numBaths: '',
-        additionalFilters: [],
-        propertySize: '',
-        address: '',
-        country: '',
-        province: '',
-        city:'',
-        zip: '',
-        tags: [],
-        startDate: '',
-        leaseLength: '',
-        monthlyRent:'',
-        securityDep:'',
-        contactMethod:'',
-    });
-    const updateSharedForm = (value) =>{
-        setFormData(value);
-    };
-    return [formData,updateSharedForm];
-};
 export default ListProperty;
