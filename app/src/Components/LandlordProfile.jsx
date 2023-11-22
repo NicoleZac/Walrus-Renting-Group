@@ -20,7 +20,7 @@ const LandlordProfile = ({ user, openPopup }) => {
         <div className="column">
           <div className="profile-information">
             <h2 className="profile-name">{`${firstName} ${lastName}`}</h2>
-            <p className="profile-email">{`Email: ${email}`}</p>
+            <p className="profile-email">{`${email}`}</p>
             <p className="profile-age">65 years old</p>
             <p className="profile-description">
               I’ve got a nice property for you to stay at. Looking for renters.

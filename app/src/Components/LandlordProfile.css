@@ -1,74 +1,133 @@
-.frame-55-XVL {
-  align-items: center;
+.profile-card {
   display: flex;
-  flex-shrink: 0;
-  height: 4.0056rem;
-  margin: 2rem 30.572rem 2rem 14.328rem;
-  width: calc(100% - 54.9006rem);
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  align-self: center;
+  margin: 20px;
+  margin-top: 122px;
+  max-width: 100%;
+  padding: 50px 20px;
+  border-bottom: 2px solid var(--Gray-4, #bdbdbd);
+}
 
-  .submit-qW2 {
+@media (max-width: 991px) {
+  .profile-card {
+    margin-top: 40px;
+    flex-direction: column;
     align-items: center;
-    border: solid 0.0589rem #4f4f4f;
-    border-radius: 23.5625rem;
-    box-sizing: border-box;
-    color: #4f4f4f;
-    display: flex;
-    flex-shrink: 0;
-    font-family: Roboto, 'Source Sans Pro';
-    font-size: 1.2488rem;
-    font-weight: 400;
-    height: 100%;
-    justify-content: center;
-    line-height: 1.1725;
-    margin-right: 16.0225rem;
-    white-space: nowrap;
-    width: 21.0884rem;
-  }
-  .submit-UJ6 {
-    align-items: center;
-    border: solid 0.0589rem #4f4f4f;
-    border-radius: 23.5625rem;
-    box-sizing: border-box;
-    color: #4f4f4f;
-    display: flex;
-    flex-shrink: 0;
-    font-family: Roboto, 'Source Sans Pro';
-    font-size: 1.2488rem;
-    font-weight: 400;
-    height: 100%;
-    justify-content: center;
-    line-height: 1.1725;
-    white-space: nowrap;
-    width: 21.0884rem;
   }
 }
-.landlords-own-properties-LbC {
-  align-items: center;
-  background-color: #ffffff;
-  border: solid 0.0589rem #828282;
-  box-sizing: border-box;
+
+.image-wrapper {
+  width: 300px;
+  max-width: 100%;
+  margin: 20px;
+}
+
+.column {
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
+  line-height: normal;
+  width: 65%;
+}
 
-  padding: 2.003rem 0rem 3.703rem 0rem;
-  width: 112.7466rem;
+@media (max-width: 991px) {
+  .column {
+    width: 100%;
+  }
+}
 
-  .employment-Ega {
-      align-items: center;
-      color: #828282;
-      display: flex;
-      flex-shrink: 0;
-      font-family: Roboto, 'Source Sans Pro';
-      font-size: 2.0617rem;
-      font-weight: 700;
-      height: 2.5rem;
-      justify-content: center;
-      line-height: 1.1725;
-      margin: 0rem 77.033rem 2.978rem 16.111rem;
-      overflow: hidden;
-      position: relative;
-      white-space: nowrap;
-      width: calc(100% - 63.144rem);
+.profile-image {
+  margin-bottom: 20px;
+  margin-left: 1000px;
+}
+
+.profile-img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+
+@media (max-width: 991px) {
+  .profile-img {
+    margin-top: 20px;
+  }
+}
+
+.profile-details {
+  display: flex;
+  margin-top: 41px;
+  width: 100%;
+  flex-direction: column;
+  margin-left: 100px;
+}
+
+@media (max-width: 991px) {
+  .profile-details {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.profile-name {
+  margin-bottom: 10px;
+  margin-left: -3px;
+  color: var(--Gray-3, #828282);
+  white-space: nowrap;
+  font: 700 53px/62px Roboto, -apple-system, Roboto, Helvetica,
+    sans-serif;
+}
+
+@media (max-width: 991px) {
+  .profile-name {
+    max-width: 100%;
+    font-size: 40px;
+    line-height: 52px;
+    white-space: initial;
+  }
+}
+
+.profile-email {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 3px;
+  color: var(--Gray-3, #828282);
+  white-space: nowrap;
+  font: 700 53px/62px Roboto, -apple-system, Roboto, Helvetica,
+    sans-serif;
+  font-size: 1.5em;
+}
+
+.profile-age {
+  margin-bottom: 10px;
+  margin-left: 2px;
+  color: var(--Gray-3, #828282);
+  margin-top: 18px;
+  white-space: nowrap;
+  font: italic 400 30px/35px Roboto, -apple-system, Roboto, Helvetica,
+    sans-serif;
+}
+
+@media (max-width: 991px) {
+  .profile-age {
+    max-width: 100%;
+    white-space: initial;
+  }
+}
+
+.profile-description {
+  margin-bottom: 20px;
+  margin-left: -5px;
+  color: var(--Gray-3, #828282);
+  margin-top: 17px;
+  font: 400 20px/23px Roboto, -apple-system, Roboto, Helvetica,
+    sans-serif;
+  padding: 10px;
+}
+
+@media (max-width: 991px) {
+  .profile-description {
+    max-width: 100%;
   }
 }

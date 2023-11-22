@@ -1,4 +1,5 @@
 import React, { useContext} from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import "./RenterProfile.css"
 
 const RenterProfile = ({ user }) => {
@@ -14,38 +15,36 @@ const RenterProfile = ({ user }) => {
         </div>
         <div className="profile-details">
           <h2 className="profile-name">{`${firstName} ${lastName}`}</h2>
-          <p className="profile-email">{`Email: ${email}`}</p>
           <div className="profile-age">22 years old</div>
-          <div className="profile-description">
-            I am a short term renter looking for a home with a nearby Pilates
-            studio.
-          </div>
-      </div>
-      <div className="Employment">
+          <p className="profile-email">{`${email}`}</p>
+          <div className="profile-description">I am a short term renter looking for a home with a nearby Pilates studio.</div>
+          <div className="send-message">Send Message</div>
+      <div className="additional-information">
         <div className="column-3">
           <div className="div-37">
-            <div className="div-38">Employment</div>
+            <div className="employment">Employment</div>
             <div className="div-39">
-              <div className="div-40">Full Time Student</div>
-              <div className="div-41">University of Calgary</div>
+              <div className="student">Full Time Student</div>
+              <div className="university">University of Calgary</div>
+              <div className="faculty">Engineering</div>
             </div>
-            <div className="div-42">Engineering</div>
           </div>
         </div>
-        <div className="column-4">
+        <div className="filters">
           <div className="div-43">
-            <div className="div-44">Looking for</div>
+            <div className="requirements">Looking for</div>
             <div className="div-45">
-              <div className="div-46">Room to Rent</div>
-              <div className="div-47">Short Term</div>
-              <div className="div-48">Near University</div>
+              <div className="room">Room to Rent</div>
+              <div className="length">Short Term</div>
+              <div className="location">Near University</div>
             </div>
             <div className="div-49">
-              <div className="div-50">Access to Transit</div>
-              <div className="div-51">Ensuite Laundry</div>
+              <div className="transit">Access to Transit</div>
+              <div className="laundry">Ensuite Laundry</div>
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
     );
