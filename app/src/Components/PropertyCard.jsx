@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./PropertyCard.css";
-import BedIcon from "@mui/icons-material/Bed";
-import BathroomIcon from "@mui/icons-material/Bathroom";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 function PropertyCard({ property }) {
   const [image, setImage] = useState(null);
@@ -30,12 +28,18 @@ function PropertyCard({ property }) {
           {property.neighbourhood}
         </p>
         <div class="bedrooms">
-          <BedIcon />
-          <p>{property.bedrooms}</p>
+        <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/7c2377dc-9136-4549-84c6-158a8f299819?"
+                      />
+          <p>{property.bedrooms} Bedrooms</p>
         </div>
         <div class="bathrooms">
-          <BathroomIcon />
-          <p>{property.bathrooms}</p>
+        <img
+              loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/af350dc6-a591-468c-baa3-e3642d76bc54?"
+            />
+          <p>{property.bathrooms} Bathrooms</p>
         </div>
         <p class="sq-ft-Mtv" id="I141:5987;141:5983">
           {property.size} sqft
