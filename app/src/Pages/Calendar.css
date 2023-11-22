@@ -1,0 +1,12 @@
+#calendar {
+	top: 2042px;
+	left: 3014px;
+	width: 1179px;
+	height: 1208px;
+	-ms-border-radius: 40px;
+	-o-border-radius: 40px;
+	-moz-border-radius: 40px;
+	-webkit-border-radius: 40px;
+	border-radius: 40px;
+	background:rgba(255,255,255,1);
+}

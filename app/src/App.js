@@ -79,7 +79,7 @@ function Content({ openPopup }) {
       {location.pathname === "/Login" && <Login />}
       {location.pathname === "/Register" && <Register />}
       {location.pathname === "/UserProfile/:email" && <UserProfile />}
-      {location.pathname === "/Calendar/:email" && <Calendar />}
+      {location.pathname === "/Calendar/" && <Calendar />}
       {location.pathname === "/ListProperty" && <ListProperty />}
     </>
   );
