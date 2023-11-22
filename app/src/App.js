@@ -14,7 +14,7 @@ import Page2 from "./Components/ListPropertyPages/Page2";
 import Page3 from "./Components/ListPropertyPages/Page3";
 import Page4 from "./Components/ListPropertyPages/Page4";
 import UserProfile from "./Pages/UserProfile";
-import Calendar from "./Pages/UserProfile";
+import Calendar from "./Pages/Calendar";
 import { useLocation } from "react-router-dom";
 import { FormDataProvider } from "./Context/formdatacontext";
 
