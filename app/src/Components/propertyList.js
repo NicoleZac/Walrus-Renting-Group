@@ -1,5 +1,6 @@
 const propertyList = [
   {
+    id: 91,
     title: "House on a Hill",
     image: "Property1.png",
     size: 1200,
@@ -9,6 +10,7 @@ const propertyList = [
     neighbourhood: "Evanston",
   },
   {
+    id: 92,
     title: "Modern Downtown Loft",
     image: "Property2.png",
     size: 1800,
@@ -19,6 +21,7 @@ const propertyList = [
     landlord: "landtest",
   },
   {
+    id: 93,
     title: "Spacious Family Home",
     image: "Property3.png",
     size: 2500,
@@ -29,6 +32,7 @@ const propertyList = [
     landlord: "landtest",
   },
   {
+    id: 94,
     title: "Unique Hidden Home",
     image: "Property4.png",
     size: 2000,
@@ -39,6 +43,7 @@ const propertyList = [
     landlord: "landtest",
   },
   {
+    id: 95,
     title: "Cozy Apartment",
     image: "Property5.png",
     size: 1200,
@@ -48,6 +53,7 @@ const propertyList = [
     neighbourhood: "Downtown",
   },
   {
+    id: 96,
     title: "Suburban Home",
     image: "Property6.png",
     size: 1800,
@@ -57,6 +63,7 @@ const propertyList = [
     neighbourhood: "Downtown",
   },
   {
+    id: 97,
     title: "Modern Urban Oasis",
     image: "Property7.png",
     size: 1600,
