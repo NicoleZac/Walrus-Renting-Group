@@ -3,6 +3,7 @@ import PropertyCard from "./PropertyCard";
 import "./PropertyListings.css";
 import { UserContext } from "../Context/usercontext";
 import { useFilter } from "../Context/filtercontext";
+import { Link } from "react-router-dom";
 
 const PropertyListings = ({ properties, type }) => {
   const { user } = useContext(UserContext);
@@ -81,7 +82,9 @@ const PropertyListings = ({ properties, type }) => {
         .map((row, rowIndex) => (
           <div className="tableRow" key={rowIndex}>
             {row.map((cell, cellIndex) => (
+              <Link to={ `/PropertyPage/${encodeURIComponent(cell.id)}/${encodeURIComponent(JSON.stringify(cell))}`} style={{textDecoration: 'none',color:'inherit'}}>
               <PropertyCard key={cellIndex} property={cell} />
+              </Link>
             ))}
           </div>
         ))}
