@@ -59,8 +59,6 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
     if (range.current) {
       range.current.style.left = `${minPercent}%`;
       range.current.style.width = `${maxPercent - minPercent}%`;
-      // barGraphRange.current.style.left = `${minPercent}%`;
-      // barGraphRange.current.style.width = `${maxPercent - minPercent}%`;
     }
   }, [minVal, getPercent]);
 
@@ -71,14 +69,12 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
 
     if (range.current) {
       range.current.style.width = `${maxPercent - minPercent}%`;
-      // barGraphRange.current.style.width = `${maxPercent - minPercent}%`;
     }
   }, [maxVal, getPercent]);
 
   return (
     <div>
-      <div>
-        <div></div>
+      <div className="bar-parent">
         <div className="bar-container">
           {values.map((value, index) => (
             <div
