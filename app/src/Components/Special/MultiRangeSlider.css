@@ -1,3 +1,32 @@
+.bar-div {
+  width: 50px;
+  margin: 0 5px;
+  background-color: #bdbdbd;
+  flex: 1; /* Allow the items to grow and take available space */
+}
+
+.bar-container {
+  padding-right: 150px;
+  padding-left: 150px;
+  height: 100px;
+  display: flex;
+  flex-direction: row; /* Set the direction to row for a horizontal layout */
+  justify-content: space-between; /* Stretch the items to fill the container horizontally */
+  align-items: flex-end; /* Center the items vertically if needed */
+}
+
+.top-layer::before {
+  content: "";
+  height: 100px;
+  margin-left: -262px;
+  width: 523px;
+  position: absolute;
+  z-index: 2; /* Higher z-index to appear on top */
+  transition: background-color 0.2s ease; /* Transition the background color over 0.5 seconds */
+  background: #000000;
+  mix-blend-mode: soft-light;
+}
+
 .container {
   height: 30%;
   display: flex;

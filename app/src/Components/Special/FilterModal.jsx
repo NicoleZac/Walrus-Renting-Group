@@ -4,7 +4,6 @@ import "./FilterModal.css";
 import { state, useFilter } from "../../Context/filtercontext";
 import Slider from "react-slider";
 import MultiRangeSlider from "./MultiRangeSlider";
-
 const FilterModal = ({ isOpen, closeModal }) => {
   const homeTypeOptions = ["Room", "Apartment", "Duplex", "House", "Basement"];
   const additionalFilterOptions = [
@@ -21,8 +20,6 @@ const FilterModal = ({ isOpen, closeModal }) => {
   const [minPriceFilter, setMinPriceFilter] = useState();
   const [maxPriceFilter, setMaxPriceFilter] = useState();
   const maxDigits = 5;
-
-  //Slider
 
   useEffect(() => {
     if (state.filters.maxPrice !== undefined && state.filters.maxPrice !== 0) {

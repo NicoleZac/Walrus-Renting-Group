@@ -28,12 +28,6 @@
   margin-right: 2px; /* Adjust the margin between bars */
 }
 
-
-
-
-
-
-
 /* styles.css */
 .modal-overlay {
   position: fixed;
@@ -349,6 +343,7 @@
   align-self: stretch;
   display: flex;
   margin-top: 58px;
+  cursor: pointer;
   justify-content: space-between;
   gap: 300px;
 }
