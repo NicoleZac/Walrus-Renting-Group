@@ -14,7 +14,7 @@ function Nav() {
   const [bedFilter, setBedFilter] = useState();
   const { user, setUser } = useContext(UserContext);
   const { dispatch } = useFormData();
-  const { dispatchFilter } = useFilter();
+  const { state, dispatchFilter } = useFilter();
   const userEmail = user?.email;
   const [isModalOpen, setModalOpen] = useState(false);
 
@@ -27,6 +27,11 @@ function Nav() {
   //Filter Modal
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
+
+  useEffect(() => {
+    setMinPriceFilter(state.filters.minPrice);
+    setMaxPriceFilter(state.filters.maxPrice);
+  }, [state]);
 
   function handleLogout() {
     dispatch({ type: "LOGOUT" });
@@ -159,7 +164,7 @@ function Nav() {
                   </div>
                   <div className="div-105">
                     <div className="div-106">Max Price</div>
-                     <label className="label-style">
+                    <label className="label-style">
                       $
                       <input
                         className="number-input"

@@ -1,3 +1,39 @@
+/* App.css */
+.slider-container {
+  width: 80%;
+  margin: 20px auto;
+}
+
+/* Styles for the slider */
+.ReactSlider {
+  width: 100%;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.ReactSlider-thumb {
+  height: 20px;
+  width: 20px;
+}
+
+/* Styles for the bar container */
+.bar-container {
+  display: flex;
+  height: 100px; /* Adjust the height of the bar container */
+}
+
+/* Styles for individual bars */
+.bar {
+  background-color: #3498db; /* Change this to your preferred color */
+  margin-right: 2px; /* Adjust the margin between bars */
+}
+
+
+
+
+
+
+
 /* styles.css */
 .modal-overlay {
   position: fixed;
@@ -9,6 +45,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: default;
 }
 
 .modal-content {
