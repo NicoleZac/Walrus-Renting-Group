@@ -159,7 +159,7 @@ function Nav() {
                   </div>
                   <div className="div-105">
                     <div className="div-106">Max Price</div>
-                    <label className="label-style">
+                     <label className="label-style">
                       $
                       <input
                         className="number-input"

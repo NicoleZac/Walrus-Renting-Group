@@ -17,6 +17,9 @@
   padding: 60px;
   text-align: center;
   width: 800px;
+  top: 15%;
+  position: absolute;
+  transform: scale(0.75);
 }
 
 .close-button {
@@ -367,6 +370,11 @@
   flex-direction: column;
   padding: 11px 61px 11px 62px;
 }
+
+.fdiv-28:hover {
+  background-color: #f5f5f5; /* New background color on hover */
+}
+
 @media (max-width: 991px) {
   .fdiv-28 {
     padding: 0 20px;
