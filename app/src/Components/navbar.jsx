@@ -1,12 +1,12 @@
 import "./navbar.css";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import { UserContext } from "../Context/usercontext";
 import { Link } from "react-router-dom";
 import logo from "../Images/logo.png";
 import ListProperty from "./ListProperty";
 import { useFormData } from "../Context/formdatacontext";
 import { state, useFilter } from "../Context/filtercontext";
-
+import ClickableComponent from "./Special/Clicked";
 function Nav() {
   const [locationFilter, setLocationFilter] = useState("");
   const [bathFilter, setBathFilter] = useState();
@@ -71,7 +71,7 @@ function Nav() {
           <div className="div-100">
             <div className="div-8">
               <div className="div-9">
-                <div className="div-10">
+                <ClickableComponent className="div-10">
                   <div className="div-11">Where</div>
                   <input
                     className="div-12"
@@ -81,9 +81,8 @@ function Nav() {
                     onChange={(e) => setLocationFilter(e.target.value)}
                     onKeyDown={handleEnterPress}
                   />
-                </div>
-                <div className="div-13">
-                  <div className="div-14" />
+                </ClickableComponent>
+                <ClickableComponent className="div-13">
                   <div className="div-15">
                     <img
                       loading="lazy"
@@ -99,8 +98,6 @@ function Nav() {
                       className="number-input"
                     />
                   </div>
-                </div>
-                <div className="div-17">
                   <div className="div-18">
                     <img
                       loading="lazy"
@@ -116,7 +113,8 @@ function Nav() {
                       className="number-input"
                     />
                   </div>
-                  <div className="div-20" />
+                </ClickableComponent>
+                <ClickableComponent className="div-17">
                   <button className="div-21" onMouseEnter={openMinMaxPopup}>
                     <div className="div-22">Price Range</div>
                     <div className="div-23">
@@ -124,15 +122,15 @@ function Nav() {
                       {maxPriceFilter ? "$" + maxPriceFilter : "Max"}
                     </div>
                   </button>
-                </div>
+                  <button onClick={handleButtonClick}>
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c1d4bb4-e80e-4e78-8391-79dc5e262a64?"
+                      className="img-4"
+                    />
+                  </button>
+                </ClickableComponent>
               </div>
-              <button onClick={handleButtonClick}>
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c1d4bb4-e80e-4e78-8391-79dc5e262a64?"
-                  className="img-4"
-                />
-              </button>
             </div>
             <div className="div-108">
               {isMinMaxPopupOpen && (
