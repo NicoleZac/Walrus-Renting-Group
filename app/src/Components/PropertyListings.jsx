@@ -41,6 +41,25 @@ const PropertyListings = ({ properties, type }) => {
       );
     }
 
+    const homeType = state.filters.homeType;
+    if (homeType.length !== 0) {
+      tempProperties = tempProperties.filter((prop) =>
+        homeType.includes(prop.type)
+      );
+    }
+
+    const acceptedAdditionalFilters = state.filters.additionalFilters;
+    console.log(acceptedAdditionalFilters);
+    if (acceptedAdditionalFilters.length !== 0) {
+      tempProperties = tempProperties.filter(
+        (prop) =>
+          Array.isArray(prop.additionalFilters) &&
+          acceptedAdditionalFilters.every((type) =>
+            prop.additionalFilters.includes(type)
+          )
+      );
+    }
+
     if (state.filters.bath !== undefined && state.filters.bath !== 0) {
       tempProperties = tempProperties.filter(
         (prop) => prop.bathrooms >= state.filters.bath

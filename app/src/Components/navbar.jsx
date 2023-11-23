@@ -7,6 +7,7 @@ import ListProperty from "./ListProperty";
 import { useFormData } from "../Context/formdatacontext";
 import { state, useFilter } from "../Context/filtercontext";
 import ClickableComponent from "./Special/Clicked";
+import FilterModal from "./Special/FilterModal";
 function Nav() {
   const [locationFilter, setLocationFilter] = useState("");
   const [bathFilter, setBathFilter] = useState();
@@ -15,12 +16,17 @@ function Nav() {
   const { dispatch } = useFormData();
   const { dispatchFilter } = useFilter();
   const userEmail = user?.email;
+  const [isModalOpen, setModalOpen] = useState(false);
 
   //MinMax Popup
   const [isMinMaxPopupOpen, setMinMaxPopupOpen] = useState(false);
   const [minPriceFilter, setMinPriceFilter] = useState();
   const [maxPriceFilter, setMaxPriceFilter] = useState();
   const maxDigits = 5;
+
+  //Filter Modal
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
 
   function handleLogout() {
     dispatch({ type: "LOGOUT" });
@@ -212,7 +218,10 @@ function Nav() {
             </div>
           </div>
         </div>
-        <div className="div-26">Additional Filters</div>
+        <button className="div-26" onClick={openModal}>
+          Additional Filters
+        </button>
+        <FilterModal isOpen={isModalOpen} closeModal={closeModal} />
       </div>
     </div>
   );
