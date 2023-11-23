@@ -24,9 +24,15 @@ const FilterModal = ({ isOpen, closeModal }) => {
 
   //Slider
 
-  // useEffect(() => {
-  //   console.log(minPriceFilter, maxPriceFilter);
-  // }, [minPriceFilter, maxPriceFilter]);
+  useEffect(() => {
+    if (state.filters.maxPrice !== undefined && state.filters.maxPrice !== 0) {
+      setMaxPriceFilter(state.filters.maxPrice);
+    }
+
+    if (state.filters.minPrice !== undefined && state.filters.minPrice !== 0) {
+      setMinPriceFilter(state.filters.minPrice);
+    }
+  }, [state]);
 
   const handleHomeClick = (option) => {
     const isSelected = homeType.includes(option);

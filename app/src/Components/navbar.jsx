@@ -156,7 +156,9 @@ function Nav() {
                         type="number"
                         value={minPriceFilter}
                         onChange={(e) =>
-                          setMinPriceFilter(e.target.value.slice(0, maxDigits))
+                          setMinPriceFilter(
+                            parseInt(e.target.value.slice(0, maxDigits))
+                          )
                         }
                         onKeyDown={handleEnterPress}
                       />
@@ -172,7 +174,9 @@ function Nav() {
                         type="number"
                         value={maxPriceFilter}
                         onChange={(e) =>
-                          setMaxPriceFilter(e.target.value.slice(0, maxDigits))
+                          setMaxPriceFilter(
+                            parseInt(e.target.value.slice(0, maxDigits))
+                          )
                         }
                         onKeyDown={handleEnterPress}
                       />
