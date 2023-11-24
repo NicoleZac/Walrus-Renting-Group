@@ -84,6 +84,28 @@
   white-space: nowrap;
 }
 
+.individual-property .buttons{
+  align-items: center;
+  display: inline-flex;
+  gap: 24.15px;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 82px;
+}
+
+.individual-property .heart{
+  height: 32.94px;
+  position: relative;
+  width: 38.42px;
+}
+
+.individual-property .calendar{
+  height: 39.04px;
+  position: relative;
+  width: 35.13px;
+}
+
 .individual-property .text-wrapper-6 {
   color: rgba(130,130,130,1);
   font-family: "Roboto-Regular", Helvetica;
@@ -171,8 +193,63 @@
 
 }
 
+.individual-property .text-wrapper-25{
+  color: rgba(130, 130, 130, 1);
+  font-family: "Roboto-Bold", Helvetica;
+  font-size: 25px;
+  font-weight: 700;
+  left: 28px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 33px;
+  white-space: nowrap;
+}
+
+.individual-property .stuff{
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 63px;
+  left: 29px;
+  position: absolute;
+  top: 90px
+
+}
+
+.individual-property .item1{
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+}
+
 .individual-property .beds {
-  color: rgba(79,79,79,1);
+  height: 25px;
+  position: relative;
+  width: 25px;
+}
+
+.individual-property .bed-text{
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+}
+
+.individual-property .bed-text-wrapper{
+  color: rgba(79,79, 79, 1);
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 15.1px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -0.69px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
 }
 
 .individual-property .baths {

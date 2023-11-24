@@ -6,6 +6,8 @@ import HousePic3 from '../Images/PropertyPics/HousePic3.png'
 import Bed from '../Images/PropertyPics/Bed.png'
 import Bath from '../Images/PropertyPics/Bath.png'
 import House from '../Images/PropertyPics/House.png'
+import Heart from '../Images/PropertyPics/heart.png'
+import Calendar from '../Images/PropertyPics/calendar.png'
 
 export const PropertyPage = () => {
   return (
@@ -26,7 +28,10 @@ export const PropertyPage = () => {
         <div className="group">
           <div className="text-wrapper-5">Outdoor Retreat</div>
           <div className="text-wrapper-6">$1541.00 / month</div>
-          <img className="frame-6" alt="Frame" src="frame-50.svg" />
+          <div className="buttons">
+            <img className="heart" alt="Heart" src={Heart} />
+            <img className="calendar" alt="Calendar" src={Calendar}/>
+          </div>
         </div>
         <div className="frame-7">
           <div className="property-features">
@@ -38,6 +43,29 @@ export const PropertyPage = () => {
             </div>
             <div className = "frame-26">
               Ensuite Laundry
+            </div>
+          </div>
+          <div className="text-wrapper-25">
+            Features
+          </div>
+          <div className="stuff">
+            <div className="item1">
+              <img className="beds" alt="Bath" src={Bed} />
+              <div className="bed-text">
+                <div className="bed-text-wrapper">5 Beds</div>
+              </div>
+            </div>
+            <div className="item1">
+              <img className="beds" alt="Bath" src={Bath} />
+              <div className="bed-text">
+                <div className="bed-text-wrapper">2 Baths</div>
+              </div>
+            </div>
+            <div className="item1">
+              <img className="beds" alt="Bath" src={House} />
+              <div className="bed-text">
+                <div className="bed-text-wrapper">House</div>
+              </div>
             </div>
           </div>
           <div className="description">
