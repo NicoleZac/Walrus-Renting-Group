@@ -13,12 +13,13 @@
 input {
   border: none;
   outline: none;
+  background-color: rgba(255, 255, 255, 0); /* Transparent white background */
 }
 
 .number-input {
   color: var(--Gray-3, #828282);
   width: 40px;
-  /* Add more styles as needed */
+  background-color: rgba(255, 255, 255, 0); /* Transparent white background */
 }
 
 .label-style {
@@ -130,9 +131,7 @@ button {
   background-color: #fff;
   align-self: center;
   display: flex;
-  gap: 80px;
-  padding: 12px 12px 12px 28px;
-  height: 42px;
+  padding: 5px;
 }
 @media (max-width: 991px) {
   .div-8 {
@@ -145,7 +144,6 @@ button {
   justify-content: space-between;
   align-items: center;
   display: flex;
-  gap: 50px;
   margin: auto 0;
 }
 @media (max-width: 991px) {
@@ -159,12 +157,24 @@ button {
   display: flex;
   flex-grow: 1;
   flex-basis: 0%;
+  border-radius: 200px;
   flex-direction: column;
   margin: auto 0;
+  padding: 15px;
+  background-color: rgba(43, 175, 74, 0); /* Initial background color */
+  transition: background-color 0.3s; /* Smooth transition for the color change */
+  width: 200px;
 }
+
+.div-10:hover {
+  background-color: #f5f5f5; /* New background color on hover */
+}
+
 .div-11 {
   color: var(--Gray-2, #4f4f4f);
   white-space: nowrap;
+  padding-left: 8px;
+  font-weight: 700px;
   font: 400 15px/18px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
 }
 @media (max-width: 991px) {
@@ -175,6 +185,7 @@ button {
 .div-12 {
   color: var(--Gray-3, #828282);
   white-space: nowrap;
+  padding-left: 8px;
   font: 400 15px/18px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
 }
 @media (max-width: 991px) {
@@ -183,10 +194,18 @@ button {
   }
 }
 .div-13 {
-  align-self: stretch;
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  padding: 21.5px;
+  background-color: rgba(43, 175, 74, 0); /* Initial background color */
+  transition: background-color 0.3s; /* Smooth transition for the color change */
+  width: 200px;
+  border-radius: 200px;
+}
+
+.div-13:hover {
+  background-color: #f5f5f5; /* New background color on hover */
 }
 .div-14 {
   background-color: #bdbdbd;
@@ -221,10 +240,17 @@ button {
   }
 }
 .div-17 {
-  align-self: stretch;
+  align-items: center;
   display: flex;
   justify-content: space-between;
   gap: 20px;
+  padding: 10px;
+  border-radius: 200px;
+  background-color: rgba(43, 175, 74, 0); /* Initial background color */
+  transition: background-color 0.3s; /* Smooth transition for the color change */
+}
+.div-17:hover {
+  background-color: #f5f5f5; /* New background color on hover */
 }
 @media (max-width: 991px) {
   .div-17 {
@@ -273,6 +299,7 @@ button {
 }
 .div-22 {
   color: var(--Gray-2, #4f4f4f);
+  padding-left: 5px;
   white-space: nowrap;
   font: 400 15px/18px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
 }
@@ -283,6 +310,7 @@ button {
 }
 .div-23 {
   color: var(--Gray-3, #828282);
+  padding-left: 5px;
   white-space: nowrap;
   font: 400 15px/18px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
 }
@@ -301,6 +329,7 @@ button {
   max-width: 100%;
   filter: brightness(1);
   transition: filter 0.3s;
+  padding-left: 70px;
 }
 
 .img-4:hover {
@@ -388,7 +417,7 @@ button {
   border: 1px solid var(--Gray-4, #bdbdbd);
   background-color: #fff;
   display: flex;
-  width: 10%;
+  width: 160px;
   flex-direction: column;
   padding: 31px 38px 45px 39px;
   position: absolute;
