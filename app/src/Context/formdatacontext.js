@@ -21,6 +21,7 @@ const initialState={
         securityDep:'',
         contactMethod:'',
         landlord: '',
+        id:'',
     },
 };
 const formReducer = (state,action)=>{
@@ -37,6 +38,7 @@ const formReducer = (state,action)=>{
 };
 const  FormDataProvider =({children}) =>{
     const[formData,dispatch]= useReducer(formReducer,initialState);
+
     return(
         <FormDataContext.Provider value={{formData,dispatch}}>
         {children}

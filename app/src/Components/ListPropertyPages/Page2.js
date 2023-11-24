@@ -84,6 +84,11 @@ const Page2 = ({onNext,onPrevious}) =>{
     <Modal
     isOpen = {isModalOpen}
     onRequestClose={closeModal}
+    style={{
+        overlay: {
+         zIndex: 999,
+        },
+    }}
     >
          <ClearIcon onClick={closeModal} class="modal-icon"></ClearIcon>
 
