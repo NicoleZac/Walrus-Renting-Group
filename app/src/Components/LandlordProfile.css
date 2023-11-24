@@ -25,19 +25,6 @@
   margin: 20px;
 }
 
-.column {
-  display: flex;
-  flex-direction: column;
-  line-height: normal;
-  width: 65%;
-}
-
-@media (max-width: 991px) {
-  .column {
-    width: 100%;
-  }
-}
-
 .profile-image {
   margin-bottom: 20px;
   margin-left: 1000px;
@@ -90,7 +77,7 @@
 
 .profile-email {
   margin-bottom: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
   margin-left: 3px;
   color: var(--Gray-3, #828282);
   white-space: nowrap;
@@ -100,7 +87,6 @@
 }
 
 .profile-age {
-  margin-bottom: 10px;
   margin-left: 2px;
   color: var(--Gray-3, #828282);
   margin-top: 18px;
@@ -117,17 +103,40 @@
 }
 
 .profile-description {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Adjust this value as needed */
   margin-left: -5px;
+  margin-top: -10px;
   color: var(--Gray-3, #828282);
-  margin-top: 17px;
-  font: 400 20px/23px Roboto, -apple-system, Roboto, Helvetica,
-    sans-serif;
+  font: 400 20px/23px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
   padding: 10px;
 }
 
 @media (max-width: 991px) {
   .profile-description {
     max-width: 100%;
+    margin-top: 30px; /* Adjust this value as needed */
   }
+}
+
+.create-property {
+  background-color: var(--gray-2);
+  border-radius: 400px;
+  height: 68px;
+  position: relative;
+  width: 358px;
+}
+
+.button {
+  color: #ffffff;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 21.2px;
+  font-weight: 400;
+  height: 25px;
+  left: 104px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 20px;
+  white-space: nowrap;
 }
