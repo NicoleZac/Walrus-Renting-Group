@@ -13,6 +13,7 @@ import ListProperty from "./Components/ListProperty";
 import UserProfile from "./Pages/UserProfile";
 import Calendar from "./Pages/Calendar";
 import PropertyPage from "./Pages/PropertyPage";
+import Messaging from "./Pages/Messaging";
 
 import { useLocation } from "react-router-dom";
 import { useParams} from "react-router-dom";
@@ -59,6 +60,10 @@ function App() {
                   path={"/PropertyPage/:email"}
                   element={<Content openPopup={openPop} />}
                 />
+                <Route
+                  path={"/Messaging/:email"}
+                  element={<Content openPopup={openPop} />}
+                />
               </Routes>
               <ListProperty isOpen={isPopOpen} requestClose={closePop} />
             </Router>
@@ -93,6 +98,7 @@ function Content({ openPopup }) {
       {location.pathname === `/Calendar/${email}` && <Calendar />}
       {location.pathname === "/ListProperty" && <ListProperty />}
       {location.pathname === "/PropertyPage/:email" && <PropertyPage />}
+      {location.pathname === "/Messaging/:email" && <Messaging />}
     </>
   );
 }
