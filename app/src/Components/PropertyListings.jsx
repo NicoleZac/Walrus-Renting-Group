@@ -1,91 +1,112 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import PropertyCard from "./PropertyCard";
 import "./PropertyListings.css";
 import { UserContext } from "../Context/usercontext";
 import { useFilter } from "../Context/filtercontext";
+import { Link } from "react-router-dom";
 
-const PropertyListings = ({ properties, other }) => {
+const PropertyListings = ({ properties, type }) => {
   const { user } = useContext(UserContext);
   const { state } = useFilter();
-
-  const userEmail = user?.email;
-  const userType = user?.userType;
+  const [filteredProperties, setFilteredProperties] = useState(properties);
 
   useEffect(() => {
-    console.log("Filter state changed:", state);
+    runFilter();
   }, [state]);
 
-  const renderCards = (userType) => {
-    const rows = [];
-    if (userType === "Landlord") {
-      const ownedProperties = properties.filter(
-        (property) => property.landlord === userEmail
+  const runFilter = () => {
+    let tempProperties = properties;
+
+    if (type === "Landlord" && user?.email !== "") {
+      tempProperties = tempProperties.filter(
+        (prop) => prop.landlord === user?.email
       );
-      if (other) {
-        const neighbourhoods = new Set(
-          ownedProperties.map((property) => property.neighbourhood)
-        );
-        const filteredOther = properties.filter(
-          (property) =>
-            neighbourhoods.has(property.neighbourhood) &&
-            property.landlord !== userEmail
-        );
-        for (let i = 0; i < filteredOther.length; i += 3) {
-          rows.push(filteredOther.slice(i, i + 3));
-        }
-      } else {
-        for (let i = 0; i < ownedProperties.length; i += 3) {
-          rows.push(ownedProperties.slice(i, i + 3));
-        }
-      }
-    } else {
-      for (let i = 0; i < properties.length; i += 3) {
-        rows.push(properties.slice(i, i + 3));
-      }
     }
 
-    // Filtering based on search
-    return rows.map((row, index) => {
-      let filteredProperties = row;
-      const desiredCategories = {
-        neighbourhood: state.filters.location,
-        bedrooms: state.filters.bed,
-        bathrooms: state.filters.bath,
-      };
-      Object.keys(desiredCategories).forEach((categoryKey) => {
-        const desiredCategory = desiredCategories[categoryKey];
-        if (desiredCategory != "" && typeof desiredCategory === "string") {
-          filteredProperties = filteredProperties.filter((property) =>
-            String(property[categoryKey])
-              .toLowerCase()
-              .includes(String(desiredCategory).toLowerCase())
-          );
-        } else if (
-          desiredCategory != 0 &&
-          typeof desiredCategory === "number"
-        ) {
-          filteredProperties = filteredProperties.filter(
-            (property) => String(property[categoryKey]) == desiredCategory
-          );
-        }
-      });
-
-      return (
-        <div
-          key={index}
-          class="auto-group-8ukp-FQe"
-          id="N4EkTu8JNLJQjMFWLi8uKp"
-        >
-          {filteredProperties.map((filteredProperty, propertyIndex) => (
-            <PropertyCard key={propertyIndex} property={filteredProperty} />
-          ))}
-        </div>
+    if (type === "OtherInNeighbourhood" && user?.email !== "") {
+      tempProperties = tempProperties.filter(
+        (prop) =>
+          prop.landlord !== user?.email &&
+          tempProperties
+            .filter((prop) => prop.landlord === user?.email)
+            .map((prop) => prop.neighbourhood)
+            .includes(prop.neighbourhood)
       );
-    });
+    }
+
+    if (state.filters.location !== "") {
+      tempProperties = tempProperties.filter((prop) =>
+        prop.neighbourhood
+          .toLowerCase()
+          .includes(state.filters.location.toLowerCase())
+      );
+    }
+
+    const homeType = state.filters.homeType;
+    if (homeType.length !== 0) {
+      tempProperties = tempProperties.filter((prop) =>
+        homeType.includes(prop.type)
+      );
+    }
+
+    const acceptedAdditionalFilters = state.filters.additionalFilters;
+    console.log(acceptedAdditionalFilters);
+    if (acceptedAdditionalFilters.length !== 0) {
+      tempProperties = tempProperties.filter(
+        (prop) =>
+          Array.isArray(prop.additionalFilters) &&
+          acceptedAdditionalFilters.every((type) =>
+            prop.additionalFilters.includes(type)
+          )
+      );
+    }
+
+    if (state.filters.bath !== undefined && state.filters.bath !== 0) {
+      tempProperties = tempProperties.filter(
+        (prop) => prop.bathrooms >= state.filters.bath
+      );
+    }
+
+    if (state.filters.bed !== undefined && state.filters.bed !== 0) {
+      tempProperties = tempProperties.filter(
+        (prop) => prop.bedrooms >= state.filters.bed
+      );
+    }
+
+    if (state.filters.minPrice !== undefined && state.filters.minPrice !== 0) {
+      tempProperties = tempProperties.filter(
+        (prop) => prop.rent >= state.filters.minPrice
+      );
+    }
+
+    if (state.filters.maxPrice !== undefined && state.filters.maxPrice !== 0) {
+      tempProperties = tempProperties.filter(
+        (prop) => prop.rent <= state.filters.maxPrice
+      );
+    }
+
+    setFilteredProperties(tempProperties);
   };
+
   return (
-    <div class="frame-19-ubg">
-      {userType === "Landlord" ? renderCards(userType) : renderCards(userType)}
+    <div className="table">
+      {filteredProperties
+        .reduce(
+          (rows, cell, index) =>
+            (index % 3 === 0
+              ? rows.push([cell])
+              : rows[rows.length - 1].push(cell)) && rows,
+          []
+        )
+        .map((row, rowIndex) => (
+          <div className="tableRow" key={rowIndex}>
+            {row.map((cell, cellIndex) => (
+              <Link to={ `/PropertyPage/${encodeURIComponent(cell.id)}/${encodeURIComponent(JSON.stringify(cell))}`} style={{textDecoration: 'none',color:'inherit'}}>
+              <PropertyCard key={cellIndex} property={cell} />
+              </Link>
+            ))}
+          </div>
+        ))}
     </div>
   );
 };
