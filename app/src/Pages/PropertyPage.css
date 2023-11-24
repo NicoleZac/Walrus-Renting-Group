@@ -1,0 +1,298 @@
+.individual-property {
+  background-color: #ffffff;
+  height: 1908px;
+  width: 1920px;
+  position: relative;
+  left: 115px;
+  
+}
+
+.individual-property .frame-5 {
+  align-items: flex-end;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 46px;
+  left: 388px;
+  position: relative;
+  top: 143px;
+}
+
+.individual-property .submit {
+  background-color: rgba(79,79,79,1);
+  border-radius: 400px;
+  height: 68px;
+  position: relative;
+  width: 358px;
+}
+
+.individual-property .text-wrapper-4 {
+  color: #ffffff;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 21.2px;
+  font-weight: 400;
+  height: 25px;
+  left: 97px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 20px;
+  white-space: nowrap;
+}
+
+.individual-property .photos{
+  display: flex;
+  flex-direction: row;
+}
+
+.individual-property .big-image{
+  margin: 10px auto;
+  margin-right: 10px auto;
+  display: block;
+}
+
+.big-image img {
+  margin-right: 10px auto;
+  display: block;
+}
+
+.individual-property .small-image{
+  display: flex;
+  flex-direction: column;
+}
+
+.small-image img {
+  margin: 10px auto; /* "auto" will center block elements */
+  display: block; /* Set images to be "block" so they obey our auto margin */
+  margin-left: 15px;
+}
+
+.individual-property .group {
+  height: 121.04px;
+  margin-right: -4px;
+  position: relative;
+  width: 1148px;
+}
+
+.individual-property .text-wrapper-5 {
+  color: rgba(130,130,130,1);
+  font-family: "Roboto-Bold", Helvetica;
+  font-size: 53.2px;
+  font-weight: 700;
+  left: 0;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.individual-property .buttons{
+  align-items: center;
+  display: inline-flex;
+  gap: 24.15px;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 82px;
+}
+
+.individual-property .heart{
+  height: 32.94px;
+  position: relative;
+  width: 38.42px;
+}
+
+.individual-property .calendar{
+  height: 39.04px;
+  position: relative;
+  width: 35.13px;
+}
+
+.individual-property .text-wrapper-6 {
+  color: rgba(130,130,130,1);
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 53.2px;
+  font-weight: 400;
+  left: 719px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.individual-property .frame-6 {
+  height: 39px;
+  left: 0;
+  position: absolute;
+  top: 82px;
+  width: 98px;
+}
+
+.individual-property .frame-7 {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  position: relative;
+  width: 1144px;
+}
+
+.individual-property .property-features {
+  background-color: #ffffff;
+  border-color: rgba(189, 189, 189, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  height: 536px;
+  position: relative;
+  width: 572px;
+}
+
+.individual-property .frame-2{
+  align-items: flex-start;
+  color: rgba(79,79, 79, 1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px 18px;
+  left: 32px;
+  position: absolute;
+  top: 150px;
+  width: 113px;
+  border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
+  border-radius: 20px; /* Adjust border-radius to make the corners rounder */
+  padding: 5px 10px;
+
+}
+
+.individual-property .frame-25{
+  align-items: flex-start;
+  color: rgba(79,79, 79, 1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px 18px;
+  left: 207px;
+  position: absolute;
+  top: 150px;
+  width: 128px;
+  border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
+  border-radius: 20px; /* Adjust border-radius to make the corners rounder */
+  padding: 5px 10px;
+
+}
+
+.individual-property .frame-26{
+  align-items: flex-start;
+  color: rgba(79,79, 79, 1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px 18px;
+  left: 32px;
+  position: absolute;
+  top: 205px;
+  width: 125px;
+  border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
+  border-radius: 20px; /* Adjust border-radius to make the corners rounder */
+  padding: 5px 10px;
+
+}
+
+.individual-property .text-wrapper-25{
+  color: rgba(130, 130, 130, 1);
+  font-family: "Roboto-Bold", Helvetica;
+  font-size: 25px;
+  font-weight: 700;
+  left: 28px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 33px;
+  white-space: nowrap;
+}
+
+.individual-property .stuff{
+  align-items: flex-start;
+  display: inline-flex;
+  gap: 63px;
+  left: 29px;
+  position: absolute;
+  top: 90px
+
+}
+
+.individual-property .item1{
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+}
+
+.individual-property .beds {
+  height: 25px;
+  position: relative;
+  width: 25px;
+}
+
+.individual-property .bed-text{
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+}
+
+.individual-property .bed-text-wrapper{
+  color: rgba(79,79, 79, 1);
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 15.1px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -0.69px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.individual-property .baths {
+  color: rgba(79,79,79,1);
+}
+
+.individual-property .type {
+  color: rgba(79,79,79,1);
+}
+
+.individual-property .description {
+  background-color: #ffffff;
+  height: 536px;
+  position: relative;
+  width: 572px;
+}
+
+.individual-property .text-wrapper-7 {
+  color: rgba(130,130,130,1);
+  font-family: "Roboto-Bold", Helvetica;
+  font-size: 25px;
+  font-weight: 700;
+  left: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 33px;
+  white-space: nowrap;
+}
+
+.individual-property .our-mountain-home {
+  color: rgba(79,79,79,1);
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 22px;
+  font-weight: 400;
+  left: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 78px;
+  width: 476px;
+}
+
