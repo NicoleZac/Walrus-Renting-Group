@@ -15,7 +15,8 @@ import Calendar from "./Pages/Calendar";
 import PropertyPage from "./Pages/PropertyPage";
 
 import { useLocation } from "react-router-dom";
-import { useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
+
 import { FormDataProvider } from "./Context/formdatacontext";
 
 function App() {
@@ -71,6 +72,7 @@ function App() {
 function Content({ openPopup }) {
   const { LoginRegisterPage, setLoginRegister } = useContext(PageContext);
   const location = useLocation();
+
   const {email} = useParams(); 
   const {id,property} = useParams();
   useEffect(() => {
@@ -83,6 +85,7 @@ function Content({ openPopup }) {
       setLoginRegister(false);
     }
   };
+
   return (
     <>
       {LoginRegisterPage ? <LoginRegisterNav /> : <Nav />}
@@ -92,7 +95,7 @@ function Content({ openPopup }) {
       {location.pathname === `/UserProfile/${email}` && <UserProfile />}
       {location.pathname === `/Calendar/${email}` && <Calendar />}
       {location.pathname === "/ListProperty" && <ListProperty />}
-      {location.pathname === "/PropertyPage/:email" && <PropertyPage />}
+       {location.pathname === `/PropertyPage/${encodeURIComponent(id)}/${encodeURIComponent(property)}` && <PropertyPage />}
     </>
   );
 }
