@@ -2,6 +2,9 @@
   background-color: #ffffff;
   height: 1908px;
   width: 1920px;
+  position: relative;
+  left: 100px;
+  
 }
 
 .individual-property .frame-5 {
