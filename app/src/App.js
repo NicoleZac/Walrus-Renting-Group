@@ -55,8 +55,8 @@ function App() {
                   path={"/ListProperty"}
                   element={<Content openPopup={openPop} />}
                 />
-                  <Route
-                  path={"/PropertyPage/:id/:property"}
+                <Route
+                  path={"/PropertyPage/:email"}
                   element={<Content openPopup={openPop} />}
                 />
               </Routes>
@@ -92,7 +92,7 @@ function Content({ openPopup }) {
       {location.pathname === `/UserProfile/${email}` && <UserProfile />}
       {location.pathname === `/Calendar/${email}` && <Calendar />}
       {location.pathname === "/ListProperty" && <ListProperty />}
-      {location.pathname === `/PropertyPage/${encodeURIComponent(id)}/${encodeURIComponent(property)}` && <PropertyPage />}
+      {location.pathname === "/PropertyPage/:email" && <PropertyPage />}
     </>
   );
 }
