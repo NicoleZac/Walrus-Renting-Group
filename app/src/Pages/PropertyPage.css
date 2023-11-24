@@ -37,8 +37,20 @@
   white-space: nowrap;
 }
 
-.individual-property .big-image{
+.individual-property .photos{
+  display: flex;
+  flex-direction: row;
+}
 
+.individual-property .big-image{
+  margin: 10px auto;
+  margin-right: 10px auto;
+  display: block;
+}
+
+.big-image img {
+  margin-right: 10px auto;
+  display: block;
 }
 
 .individual-property .small-image{
@@ -49,6 +61,7 @@
 .small-image img {
   margin: 10px auto; /* "auto" will center block elements */
   display: block; /* Set images to be "block" so they obey our auto margin */
+  margin-left: 15px;
 }
 
 .individual-property .group {
@@ -98,6 +111,64 @@
   flex: 0 0 auto;
   position: relative;
   width: 1144px;
+}
+
+.individual-property .property-features {
+  background-color: #ffffff;
+  border-color: rgba(189, 189, 189, 1);
+  border-right-style: solid;
+  border-right-width: 1px;
+  height: 536px;
+  position: relative;
+  width: 572px;
+}
+
+.individual-property .frame-2{
+  align-items: flex-start;
+  color: rgba(79,79, 79, 1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px 18px;
+  left: 32px;
+  position: absolute;
+  top: 150px;
+  width: 113px;
+  border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
+  border-radius: 20px; /* Adjust border-radius to make the corners rounder */
+  padding: 5px 10px;
+
+}
+
+.individual-property .frame-25{
+  align-items: flex-start;
+  color: rgba(79,79, 79, 1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px 18px;
+  left: 207px;
+  position: absolute;
+  top: 150px;
+  width: 128px;
+  border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
+  border-radius: 20px; /* Adjust border-radius to make the corners rounder */
+  padding: 5px 10px;
+
+}
+
+.individual-property .frame-26{
+  align-items: flex-start;
+  color: rgba(79,79, 79, 1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px 18px;
+  left: 32px;
+  position: absolute;
+  top: 205px;
+  width: 125px;
+  border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
+  border-radius: 20px; /* Adjust border-radius to make the corners rounder */
+  padding: 5px 10px;
+
 }
 
 .individual-property .beds {

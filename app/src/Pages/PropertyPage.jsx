@@ -14,12 +14,14 @@ export const PropertyPage = () => {
         <div className="submit">
           <div className="text-wrapper-4">Contact Landlord</div>
         </div>
-        <div className = "big-image">
-          <img src={HousePic1} alt="Property" />
-        </div>
-        <div className = "small-image">
-          <img src={HousePic2} alt="Property" />
-          <img src={HousePic3} alt="Property" />
+        <div className = "photos">
+          <div className = "big-image">
+            <img src={HousePic1} alt="Property" />
+          </div>
+          <div className = "small-image">
+            <img src={HousePic2} alt="Property" />
+            <img src={HousePic3} alt="Property" />
+          </div>
         </div>
         <div className="group">
           <div className="text-wrapper-5">Outdoor Retreat</div>
@@ -27,12 +29,17 @@ export const PropertyPage = () => {
           <img className="frame-6" alt="Frame" src="frame-50.svg" />
         </div>
         <div className="frame-7">
-          <img src={Bed} alt="Property" />
-          <div className="beds">5 beds</div>
-          <img src={Bath} alt="Property" />
-          <div className="baths">3 baths</div>
-          <img src={House} alt="Property" />
-          <div className="type">House</div>
+          <div className="property-features">
+            <div className = "frame-2">
+              Available Now!
+            </div>
+            <div className = "frame-25">
+              Utilities Included
+            </div>
+            <div className = "frame-26">
+              Ensuite Laundry
+            </div>
+          </div>
           <div className="description">
             <div className="text-wrapper-7">Description</div>
             <p className="our-mountain-home">
