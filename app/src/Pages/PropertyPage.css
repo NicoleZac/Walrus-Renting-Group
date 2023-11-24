@@ -1,0 +1,87 @@
+.property-profile {
+    /* Styles for the entire property profile page */
+  }
+  
+  .photos {
+    /* Styles for the photo section */
+  }
+  
+  .property-details {
+    /* Styles for the property details section */
+  }
+  
+  .title-price {
+    height: 62px;
+    width: 383px;
+    color: #828282;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 22px;
+    font-weight: 400;
+    left: 48px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    top: 0px;
+    width: 476px;
+    
+  }
+  
+  .price {
+    height: 62px;
+    width: 383px;
+    color: #828282;
+    font-family: "Roboto", Helvetica;
+    font-size: 40px;
+    font-weight: 400;
+    left: 48px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    top: 0px;
+    width: 476px;
+    
+  }
+  .heart-btn,
+  .calendar-btn {
+    /* Styles for the heart and calendar buttons */
+  }
+  
+  .property-info {
+    /* Styles for the property information section */
+  }
+  
+  .features {
+    /* Styles for the property features */
+  }
+  
+  .icon-container {
+    /* Styles for the container holding icons */
+  }
+  
+  .bed-icon,
+  .toilet-icon,
+  .house-icon {
+    /* Styles for individual icons (bed, toilet, house) */
+  }
+  
+  .tags {
+    /* Styles for property tags */
+  }
+  
+  .description {
+    height: 398px;
+    width: 476px;
+    color: var(--gray-2);
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 22px;
+    font-weight: 400;
+    left: 48px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    top: 0px;
+    width: 476px;
+    --gray-2: rgba(79, 79, 79, 1);
+    --gray-3: rgba(130, 130, 130, 1);
+  }
+  
