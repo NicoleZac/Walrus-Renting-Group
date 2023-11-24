@@ -16,7 +16,6 @@ import PropertyPage from "./Pages/PropertyPage";
 
 import { useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
-
 import { FormDataProvider } from "./Context/formdatacontext";
 
 function App() {
@@ -56,8 +55,8 @@ function App() {
                   path={"/ListProperty"}
                   element={<Content openPopup={openPop} />}
                 />
-                <Route
-                  path={"/PropertyPage/:email"}
+                  <Route
+                  path={"/PropertyPage/:id/:property"}
                   element={<Content openPopup={openPop} />}
                 />
               </Routes>
@@ -72,7 +71,6 @@ function App() {
 function Content({ openPopup }) {
   const { LoginRegisterPage, setLoginRegister } = useContext(PageContext);
   const location = useLocation();
-
   const {email} = useParams(); 
   const {id,property} = useParams();
   useEffect(() => {
@@ -94,8 +92,10 @@ function Content({ openPopup }) {
       {location.pathname === "/Register" && <Register />}
       {location.pathname === `/UserProfile/${email}` && <UserProfile />}
       {location.pathname === `/Calendar/${email}` && <Calendar />}
+      {location.pathname === `/UserProfile/${email}` && <UserProfile />}
+      {location.pathname === `/Calendar/${email}` && <Calendar />}
       {location.pathname === "/ListProperty" && <ListProperty />}
-       {location.pathname === `/PropertyPage/${encodeURIComponent(id)}/${encodeURIComponent(property)}` && <PropertyPage />}
+      {location.pathname === `/PropertyPage/${encodeURIComponent(id)}/${encodeURIComponent(property)}` && <PropertyPage />}
     </>
   );
 }
