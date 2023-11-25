@@ -10,11 +10,27 @@ import Heart from '../Images/PropertyPics/heart.png'
 import Calendar from '../Images/PropertyPics/calendar.png'
 
 export const PropertyPage = () => {
+
+    /* For sending favourites button */
+    const handleFavourite = () => {
+    
+    };
+
+    /* For view availability button */
+    const handleCalendar = () => {
+    
+    };
+
+    /* For contact landlord button */
+    const contactLandlord = () => {
+    
+    };
+
   return (
     <div className="individual-property">
       <div className="frame-5">
         <div className="submit">
-          <div className="text-wrapper-4">Contact Landlord</div>
+          <button type="submit" class="text-wrapper-4" onClick={contactLandlord}>Contact Landlord</button>
         </div>
         <div className = "photos">
           <div className = "big-image">
@@ -29,8 +45,22 @@ export const PropertyPage = () => {
           <div className="text-wrapper-5">Outdoor Retreat</div>
           <div className="text-wrapper-6">$1541.00 / month</div>
           <div className="buttons">
-            <img className="heart" alt="Heart" src={Heart} />
-            <img className="calendar" alt="Calendar" src={Calendar}/>
+            <button onClick={handleFavourite}>
+              <img
+                className="heart"
+                alt="Heart"
+                loading="lazy"
+                src={Heart}
+              />
+            </button>
+            <button onClick={handleCalendar}>
+              <img
+                className="calendar"
+                alt="Calendar"
+                loading="lazy"
+                src={Calendar}
+              />
+            </button>
           </div>
         </div>
         <div className="frame-7">
