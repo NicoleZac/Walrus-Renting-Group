@@ -10,6 +10,8 @@ export const FilterProvider = ({ children }) => {
       bed: 0,
       minPrice: 0,
       maxPrice: 0,
+      homeType: [],
+      additionalFilters: [],
     },
   };
 
