@@ -8,18 +8,29 @@ import Bath from '../Images/PropertyPics/Bath.png'
 import House from '../Images/PropertyPics/House.png'
 import Heart from '../Images/PropertyPics/heart.png'
 import Calendar from '../Images/PropertyPics/calendar.png'
-import {useParams} from 'react-router-dom';
-import { Link } from "react-router-dom";
 
 export const PropertyPage = () => {
-  const {id,property} = useParams();
-  const propertyInfo = JSON.parse(decodeURIComponent(property));
-  
+
+    /* For sending favourites button */
+    const handleFavourite = () => {
+    
+    };
+
+    /* For view availability button */
+    const handleCalendar = () => {
+    
+    };
+
+    /* For contact landlord button */
+    const contactLandlord = () => {
+    
+    };
+
   return (
     <div className="individual-property">
       <div className="frame-5">
         <div className="submit">
-          <div className="text-wrapper-4">Contact Landlord</div>
+          <button type="submit" class="text-wrapper-4" onClick={contactLandlord}>Contact Landlord</button>
         </div>
         <div className = "photos">
           <div className = "big-image">
@@ -31,13 +42,25 @@ export const PropertyPage = () => {
           </div>
         </div>
         <div className="group">
-          <div className="text-wrapper-5">{propertyInfo.title}</div>
-          <div className="text-wrapper-6">${propertyInfo.rent} / month</div>
+          <div className="text-wrapper-5">Outdoor Retreat</div>
+          <div className="text-wrapper-6">$1541.00 / month</div>
           <div className="buttons">
-            <img className="heart" alt="Heart" src={Heart} />
-            <Link to={`/Calendar/${propertyInfo?.landlord}`}>
-            <img className="calendar" alt="Calendar" src={Calendar}/>
-            </Link>
+            <button onClick={handleFavourite}>
+              <img
+                className="heart"
+                alt="Heart"
+                loading="lazy"
+                src={Heart}
+              />
+            </button>
+            <button onClick={handleCalendar}>
+              <img
+                className="calendar"
+                alt="Calendar"
+                loading="lazy"
+                src={Calendar}
+              />
+            </button>
           </div>
         </div>
         <div className="frame-7">
@@ -59,13 +82,13 @@ export const PropertyPage = () => {
             <div className="item1">
               <img className="beds" alt="Bath" src={Bed} />
               <div className="bed-text">
-                <div className="bed-text-wrapper">{propertyInfo.bedrooms} Beds</div>
+                <div className="bed-text-wrapper">5 Beds</div>
               </div>
             </div>
             <div className="item1">
               <img className="beds" alt="Bath" src={Bath} />
               <div className="bed-text">
-                <div className="bed-text-wrapper">{propertyInfo.bathrooms} Baths</div>
+                <div className="bed-text-wrapper">2 Baths</div>
               </div>
             </div>
             <div className="item1">
