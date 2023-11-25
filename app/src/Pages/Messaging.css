@@ -1,0 +1,305 @@
+.messaging {
+  background-color: #ffffff;
+  height: 1282px;
+  width: 1920px;
+}
+
+.messaging .overlap-wrapper1 {
+  background-color: #ffffff;
+  height: 1024px;
+  left: 370px;
+  position: relative;
+  top: 225px;
+  width: 1179px;
+}
+
+.messaging .overlap1 {
+  height: 1025px;
+  position: relative;
+  top: -1px;
+}
+
+.messaging .overlap2 {
+  height: 1025px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1179px;
+}
+
+.messaging .search-bar-wrapper {
+  align-items: center;
+  border-color: var(--gray-4);
+  border-top-style: solid;
+  border-top-width: 1px;
+  display: flex;
+  gap: 10px;
+  height: 151px;
+  left: 382px;
+  padding: 43px 88px;
+  position: absolute;
+  top: 874px;
+  width: 797px;
+}
+
+.messaging .search-bar {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #c2c2c2;
+  border-radius: 400px;
+  height: 81px;
+  margin-bottom: -8px;
+  margin-right: -30px;
+  margin-top: -8px;
+  position: relative;
+  width: 651px;
+}
+
+.messaging .frame-wrapper1 {
+  align-items: center;
+  display: inline-flex;
+  gap: 42px;
+  justify-content: center;
+  left: 51px;
+  position: absolute;
+  top: 32px;
+}
+
+.messaging .frame-3 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 139px;
+}
+
+.messaging .text-wrapper {
+  color: rgba(130, 130, 130, 1);
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 15.1px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -0.69px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.messaging .send {
+  height: 58px;
+  left: 573px;
+  position: absolute;
+  top: 12px;
+  width: 58px;
+}
+
+.messaging .div-wrapper {
+  align-items: center;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: rgba(189, 189, 189, 1);
+  display: flex;
+  gap: 10px;
+  height: 151px;
+  left: 382px;
+  padding: 43px 88px;
+  position: absolute;
+  top: 0;
+  width: 797px;
+}
+
+.messaging .frame-4 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 212px;
+  margin-right: -35px;
+  position: relative;
+}
+
+.messaging .text-wrapper-2 {
+  color: rgba(130, 130, 130, 1);
+  font-family: "Roboto-Bold", Helvetica;
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.messaging .frame-5 {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 32px;
+  justify-content: flex-end;
+  position: relative;
+}
+
+
+.messaging .text-wrapper-3 {
+  color: rgba(79, 79, 79, 1);
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 15.1px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.messaging .calendar {
+  height: 35.56px;
+  position: relative;
+  width: 32px;
+}
+
+.messaging .user-card {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: #ffffff;
+  height: 106px;
+  width: 329px;
+}
+
+.messaging .frame25 {
+  align-items: center;
+  display: inline-flex;
+  gap: 16px;
+  justify-content: center;
+  left: 14px;
+  position: relative;
+  top: 15px;
+}
+
+.messaging .ellipse {
+  height: 75px;
+  position: relative;
+  width: 75px;
+}
+
+.messaging .div25 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 163px;
+}
+
+.messaging .text-wrapper25 {
+  color: #ffffff;
+  font-family: "Roboto-Bold", Helvetica;
+  font-size: 15.1px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -0.69px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+
+}
+
+.messaging .text-wrapper25-2 {
+  color: #ffffff;
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 15.1px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.messaging .group25 {
+  height: 23px;
+  margin-right: -2px;
+  position: relative;
+  width: 25px;
+}
+
+.messaging .overlap-group25 {
+  background-color: #ffffff;
+  border-radius: 11.5px;
+  height: 23px;
+  position: relative;
+  width: 23px;
+}
+
+.messaging .text-wrapper25-3 {
+  color: rgba(79, 79, 79, 1);
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 12.5px;
+  font-weight: 400;
+  height: 15px;
+  left: 8px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-align: center;
+  top: 4px;
+  white-space: nowrap;
+  width: 7px;
+}
+
+.messaging .search-bar-2 {
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #c2c2c2;
+  border-radius: 400px;
+  height: 81px;
+  left: 24px;
+  position: absolute;
+  top: 44px;
+  width: 358px;
+}
+
+.messaging .frame-9 {
+  align-items: center;
+  display: inline-flex;
+  gap: 42px;
+  justify-content: center;
+  left: 51px;
+  position: absolute;
+  top: 20px;
+}
+
+.messaging .text-wrapper-4 {
+  color: rgba(79, 79, 79, 1);
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 15.1px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-right: -14px;
+  margin-top: -0.69px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.messaging .text-wrapper-5 {
+  color: rgba(130, 130, 130, 1);
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 15.1px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.messaging .search {
+  height: 58px;
+  left: 282px;
+  position: absolute;
+  top: 12px;
+  width: 58px;
+}
