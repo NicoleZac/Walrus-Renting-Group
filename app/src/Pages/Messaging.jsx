@@ -9,6 +9,17 @@ import Anger from '../Images/PropertyPics/Anger.png'
 import Search from '../Images/PropertyPics/search.png'
 
 export const Messaging = () => {
+
+  /* For sending messages button */
+  const handleSend = () => {
+    
+  };
+
+  /* For view availability button */
+    const handleCalendar = () => {
+    
+  };
+
   return (
     <div className = "messaging">
       <div className = "overlap-wrapper1">
@@ -18,10 +29,21 @@ export const Messaging = () => {
               <div className = "search-bar">
                 <div className = "frame-wrapper1">
                   <div className = "frame-3">
-                    <div className = "text-wrapper">Write a message...</div>
+                    <input
+                      type="text"
+                      className="text-input"
+                      placeholder="Write a message..."
+                    />
                   </div>
                 </div>
-                <img className="send" alt="Send" src={Send}/>
+                <button onClick={handleSend}>
+                <img
+                  className="send"
+                  alt="Send"
+                  loading="lazy"
+                  src={Send}
+                />
+                </button>
               </div>
             </div>
             <div className = "div-wrapper">
@@ -29,7 +51,14 @@ export const Messaging = () => {
                 <div className = "text-wrapper-2">Drake The Demon</div>
                 <div className = "frame-5s">
                   <div className="text-wrapper-3">View Availability</div>
-                  <img className="calendar" alt="Calendar" src={Calendar}/>
+                    <button onClick={handleCalendar}>
+                      <img
+                        className="calendar"
+                        alt="Calendar"
+                        loading="lazy"
+                        src={Calendar}
+                      />
+                  </button>
                 </div>
               </div>
             </div>
@@ -88,8 +117,11 @@ export const Messaging = () => {
             <div className="search-bar-2">
               <div className="frame-9">
                 <div className="frame-3">
-                  <div className="text-wrapper-4">Search your messages</div>
-                  <div className="text-wrapper-5">John Smith</div>
+                  <input
+                      type="text"
+                      className="text-wrapper-5"
+                      placeholder="Search your messages"
+                    />
                 </div>
               </div>
               <img className="search" alt="Search" src={Search} />
