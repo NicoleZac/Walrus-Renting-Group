@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import React from "react";
 import "./Messaging.css";
 import Send from '../Images/PropertyPics/send.png'
@@ -19,6 +18,10 @@ export const Messaging = () => {
     const handleCalendar = () => {
     
   };
+
+    const handleSearch = () => {
+      
+    };
 
   return (
     <div className = "messaging">
@@ -124,7 +127,14 @@ export const Messaging = () => {
                     />
                 </div>
               </div>
-              <img className="search" alt="Search" src={Search} />
+              <button onClick={handleSearch}>
+                <img
+                  className="search"
+                  alt="Searcn"
+                  loading="lazy"
+                  src={Search}
+                />
+              </button>
             </div>
           </div>
           <div className="frame-11">

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PropertyPage.css';
 import HousePic1 from '../Images/PropertyPics/HousePic1.png'
 import HousePic2 from '../Images/PropertyPics/HousePic2.png'
@@ -7,24 +7,26 @@ import Bed from '../Images/PropertyPics/Bed.png'
 import Bath from '../Images/PropertyPics/Bath.png'
 import House from '../Images/PropertyPics/House.png'
 import Heart from '../Images/PropertyPics/heart.png'
+import HeartFilled from '../Images/PropertyPics/filledheart.png'
 import Calendar from '../Images/PropertyPics/calendar.png'
 
 export const PropertyPage = () => {
+  const [isFavorited, setIsFavorited] = useState(false);
 
-    /* For sending favourites button */
-    const handleFavourite = () => {
-    
-    };
+  /* For sending favourites button */
+  const handleFavourite = () => {
+    setIsFavorited(!isFavorited);
+  };
 
-    /* For view availability button */
-    const handleCalendar = () => {
-    
-    };
+  /* For view availability button */
+  const handleCalendar = () => {
+    // Your implementation
+  };
 
-    /* For contact landlord button */
-    const contactLandlord = () => {
-    
-    };
+  /* For contact landlord button */
+  const contactLandlord = () => {
+    // Your implementation
+  };
 
   return (
     <div className="individual-property">
@@ -50,7 +52,7 @@ export const PropertyPage = () => {
                 className="heart"
                 alt="Heart"
                 loading="lazy"
-                src={Heart}
+                src={isFavorited ? HeartFilled : Heart}
               />
             </button>
             <button onClick={handleCalendar}>
