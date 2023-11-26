@@ -1,159 +1,121 @@
-import React from 'react';
+import React, { useState } from "react";
 import "./Calendar.css";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
+export const Calendar = () => {
 
-function Calendar(){
+    
+    const [day1, setDay1Value] = useState('28');
+    const [day2, setDay2Value] = useState('29');
+    const [day3, setDay3Value] = useState('30');
+    const [day4, setDay4Value] = useState('1');
+    const [day5, setDay5Value] = useState('2');
+    const [day6, setDay6Value] = useState('3');
+    const [day7, setDay7Value] = useState('4');
+    const [isVisible, setIsVisible] = useState(true);
 
-    return(
-        <div
-        id="CalendarRoot"
-        className="bg-white flex flex-col pb-24 gap-12 w-full items-start rounded-[40px]"
-        >
-        <div className="flex flex-col gap-8 w-full items-start">
-            <div className="border-solid border-[#bdbdbd] flex flex-row mb-px gap-[440px] w-full h-40 items-start pt-12 pl-16 pr-12 border-t-0 border-b border-x-0">
-            <img
-                src="https://file.rendit.io/n/SA8SAb2MAPIBaTZM7LAL.svg"
-                alt="Group1"
-                className="mt-3 w-3"
-            />
-            <div className="text-4xl font-sans font-bold text-[#828282] mt-px mr-2">
-                December
-            </div>
-            <img
-                src="https://file.rendit.io/n/hrbPdrJ51LRCySK0qD5G.svg"
-                alt="Group"
-                className="mt-3 w-3"
-            />
-            </div>
-            <div className="flex flex-row justify-between ml-[237px] w-3/4 items-start">
-            <div className="text-2xl font-sans text-[#bdbdbd]">SUN</div>
-            <div className="text-2xl font-sans text-[#bdbdbd]">MON</div>
-            <div className="text-2xl font-sans text-[#bdbdbd]">TUE</div>
-            <div className="text-2xl font-sans text-[#bdbdbd]">WED</div>
-            <div className="text-2xl font-sans text-[#bdbdbd]">THU</div>
-            <div className="text-2xl font-sans text-[#bdbdbd]">FRI</div>
-            <div className="text-2xl font-sans text-[#bdbdbd]">SAT</div>
-            </div>
-            <div className="flex flex-row justify-between ml-[237px] w-3/4 items-start">
-            <div className="text-center text-2xl font-sans font-bold text-[#828282]">
-                29
-            </div>
-            <div className="text-center text-2xl font-sans font-bold text-[#828282]">
-                28
-            </div>
-            <div className="text-center text-2xl font-sans font-bold text-[#828282]">
-                30
-            </div>
-            <div className="text-center text-2xl font-sans font-bold text-[#828282]">
-                1
-            </div>
-            <div className="text-center text-2xl font-sans font-bold text-[#828282]">
-                2
-            </div>
-            <div className="text-center text-2xl font-sans font-bold text-[#828282]">
-                3
-            </div>
-            <div className="text-center text-2xl font-sans font-bold text-[#828282]">
-                4
-            </div>
-            </div>
+    const handleForwardClick = () => {
+        // Change the value when the icon is clicked
+        setDay1Value('5');
+        setDay2Value('6');
+        setDay3Value('7');
+        setDay4Value('8');
+        setDay5Value('9');
+        setDay6Value('10');
+        setDay7Value('11');
+        setIsVisible(false);
+      };
+      const handleBackClick = () => {
+        // Change the value when the icon is clicked
+        setDay1Value('28');
+        setDay2Value('29');
+        setDay3Value('30');
+        setDay4Value('1');
+        setDay5Value('2');
+        setDay6Value('3');
+        setDay7Value('4');
+        setIsVisible(true);
+      };
+    
+    //  const [isHoveredF, setIsHoveredF] = useState(false);
+    //  const [isHoveredB, setIsHoveredB] = useState(false);
+
+  return (
+    <div className="calendar" >
+      <div className="overlap">
+        <div className="frame">
+          <div className="text-wrapper">December</div>
         </div>
-        <div className="flex flex-row justify-between ml-16 w-4/5 items-start">
-            <div className="flex flex-row mt-px gap-12 w-1/6 items-start">
-            <div className="flex flex-col justify-between w-12 h-[786px] items-start">
-                <div id="Element1" className="text-2xl font-sans text-[#828282]">
-                08:00{" "}
-                </div>
-                <div id="Element2" className="text-2xl font-sans text-[#828282]">
-                09:00{" "}
-                </div>
-                <div id="Element3" className="text-2xl font-sans text-[#828282]">
-                10:00{" "}
-                </div>
-                <div id="Element4" className="text-2xl font-sans text-[#828282]">
-                11:00{" "}
-                </div>
-                <div id="Element5" className="text-2xl font-sans text-[#828282]">
-                12:00{" "}
-                </div>
-                <div id="Element6" className="text-2xl font-sans text-[#828282]">
-                13:00{" "}
-                </div>
-                <div id="Element7" className="text-2xl font-sans text-[#828282]">
-                14:00{" "}
-                </div>
-                <div id="Element8" className="text-2xl font-sans text-[#828282]">
-                15:00{" "}
-                </div>
-                <div id="Element9" className="text-2xl font-sans text-[#828282]">
-                16:00{" "}
-                </div>
-                <div id="Element10" className="text-2xl font-sans text-[#828282]">
-                17:00{" "}
-                </div>
-                <div id="Element11" className="text-2xl font-sans text-[#828282]">
-                18:00{" "}
-                </div>
-            </div>
-            <div
-                id="Line"
-                className="border-solid border-[#e0e0e0] mt-px w-px h-[797px] border-r-2 border-l-0 border-y-0"
-            />
-            </div>
-            <div className="flex flex-row mt-1 w-1/6 items-start">
-            <div
-                id="Line1"
-                className="border-solid border-[#e0e0e0] mr-32 w-px h-[797px] border-r-2 border-l-0 border-y-0"
-            />
-            <div
-                id="Line2"
-                className="border-solid border-[#e0e0e0] mr-[-140px] w-px h-[797px] border-r-2 border-l-0 border-y-0"
-            />
-            <div className="bg-[#c9cba3] flex flex-row mt-[279px] w-full items-start rounded-lg">
-                <div className="bg-[#c9cba3] flex flex-col gap-px w-full h-56 items-start pl-4 py-8 rounded-lg">
-                <div className="text-3xl font-sans font-bold text-[#4f4f4f]">
-                    Free
-                </div>
-                <div className="text-lg font-sans text-[#828282]">11:30 - 14:30</div>
-                </div>
-            </div>
-            </div>
-            <div className="flex flex-row justify-between w-1/3 items-start">
-            <div className="flex flex-row mt-1 w-1/2 items-start">
-                <div
-                id="Line3"
-                className="border-solid border-[#e0e0e0] w-px h-[797px] border-r-2 border-l-0 border-y-0"
-                />
-                <div className="bg-[#c9cba3] flex flex-col mt-[383px] gap-px w-full h-[313px] items-start pl-4 py-8 rounded-lg">
-                <div className="text-3xl font-sans font-bold text-[#4f4f4f]">
-                    Free
-                </div>
-                <div className="text-lg font-sans text-[#828282]">13:00 - 17:00</div>
-                </div>
-            </div>
-            <div className="relative flex flex-row pl-px w-1/2 items-start">
-                <div
-                id="Line4"
-                className="border-solid border-[#e0e0e0] w-px h-[797px] absolute top-1 left-0 border-r-2 border-l-0 border-y-0"
-                />
-                <div className="bg-[#c9cba3] relative flex flex-col mb-[577px] gap-px w-full h-56 items-start pl-4 py-8 rounded-lg">
-                <div className="text-3xl font-sans font-bold text-[#4f4f4f]">
-                    Free
-                </div>
-                <div className="text-lg font-sans text-[#828282]">08:00 - 11:00</div>
-                </div>
-            </div>
-            <div
-                id="Line5"
-                className="border-solid border-[#e0e0e0] mt-1 w-px h-[797px] border-r-2 border-l-0 border-y-0"
-            />
-            </div>
-            <div
-            id="Line6"
-            className="border-solid border-[#e0e0e0] mt-1 w-px h-[797px] border-r-2 border-l-0 border-y-0"
-            />
+      </div>
+      <div className="div-time">
+        <div className="text-wrapper-2">08:00</div>
+        <div className="text-wrapper-3">09:00</div>
+        <div className="text-wrapper-3">10:00</div>
+        <div className="text-wrapper-3">11:00</div>
+        <div className="text-wrapper-3">12:00</div>
+        <div className="text-wrapper-3">13:00</div>
+        <div className="text-wrapper-3">14:00</div>
+        <div className="text-wrapper-3">15:00</div>
+        <div className="text-wrapper-3">16:00</div>
+        <div className="text-wrapper-3">17:00</div>
+        <div className="text-wrapper-3">18:00</div>
+      </div>
+      <div className="frame-2">
+        <ArrowBackIosIcon class="group-49-NEn"  id="165:6276" onClick={handleBackClick} />
+        <div className="text-wrapper-4">SUN</div>
+        <div className="text-wrapper-4">MON</div>
+        <div className="text-wrapper-4">TUE</div>
+        <div className="text-wrapper-4">WED</div>
+        <div className="text-wrapper-4">THU</div>
+        <div className="text-wrapper-4">FRI</div>
+        <div className="text-wrapper-4">SAT</div>
+        <ArrowForwardIosIcon class="group-48-NEn"  id="164:6276" onClick={handleForwardClick}  /> 
+      </div>
+      <div className="frame-3" style={{ display: 'flex' }}>
+        <div className="text-wrapper-5">{day1}</div>
+        <div className="text-wrapper-5">{day2}</div>
+        <div className="text-wrapper-5">{day3}</div>
+        <div className="text-wrapper-5">{day4}</div>
+        <div className="text-wrapper-5">{day5}</div>
+        <div className="text-wrapper-5">{day6}</div>
+        <div className="text-wrapper-5">{day7}</div>
+      </div>
+      <div className="overlap-group">
+        <div className="frame-4">
+            <div class="vl"></div>
+            <div class="vl"></div>
+            <div class="vl"></div>
+            <div class="vl"></div>
+            <div class="vl"></div>
+            <div class="vl"></div>
+            <div class="vl"></div>
+            <div class="vl"></div>
         </div>
+        {isVisible && <div>
+        <div className="overlap-group-wrapper">
+          <div className="overlap-group-2">
+          <div className="rectangle" />
+            <div className="text-wrapper-6">Free</div>
+            <div className="text-wrapper-7">08:00 - 11:00</div>
+          </div>
         </div>
-    );
+        <div className="overlap-wrapper">
+          <div className="overlap-group-2">
+            <div className="rectangle" />
+            <div className="text-wrapper-6">Free</div>
+            <div className="text-wrapper-7">11:30 - 14:30</div>
+          </div>
+        </div>
+        <div className="div-wrapper">
+          <div className="overlap-2">
+            <div className="text-wrapper-6">Free</div>
+            <div className="text-wrapper-7">13:00 - 17:00</div>
+          </div>
+        </div>
+        </div>}
+      </div>
+    </div>
+  );
 }
 export default Calendar;

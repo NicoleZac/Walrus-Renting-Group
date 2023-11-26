@@ -222,6 +222,21 @@
 	top: 0;
 	width: 138px;
   }
+  .calendar .rectanglet1 {
+	border-radius: 16px;
+	height: 223px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 138px;
+  }
+  .calendar .background-white {
+	background-color: white;
+  }
+  
+  .calendar .background-green {
+	background-color: #c9cba3;
+  }
   
   .calendar .div-wrapper {
 	height: 313px;
