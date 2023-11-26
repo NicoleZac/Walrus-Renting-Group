@@ -92,8 +92,6 @@ function Content({ openPopup }) {
       {location.pathname === "/Register" && <Register />}
       {location.pathname === `/UserProfile/${email}` && <UserProfile />}
       {location.pathname === `/Calendar/${email}` && <Calendar />}
-      {location.pathname === `/UserProfile/${email}` && <UserProfile />}
-      {location.pathname === `/Calendar/${email}` && <Calendar />}
       {location.pathname === "/ListProperty" && <ListProperty />}
       {location.pathname === `/PropertyPage/${encodeURIComponent(id)}/${encodeURIComponent(property)}` && <PropertyPage />}
     </>
