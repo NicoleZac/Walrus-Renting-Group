@@ -271,6 +271,7 @@ const propertyList = [
     bathrooms: 2,
     neighbourhood: "Crescent Heights",
     landlord: "testLandlord@email.com",
+    type: "Room",
   },
   {
     id: 116,
@@ -279,6 +280,7 @@ const propertyList = [
     size: 2509,
     rent: 1498.3,
     bedrooms: 13,
+    type: "Room",
     bathrooms: 9,
     neighbourhood: "Christie Park",
     landlord: "testLandlord4@email.com",
@@ -293,6 +295,7 @@ const propertyList = [
     bathrooms: 12,
     neighbourhood: "Erlton",
     landlord: "testLandlord@email.com",
+    type: "Room",
   },
   {
     id: 118,
@@ -304,6 +307,7 @@ const propertyList = [
     bathrooms: 18,
     neighbourhood: "Beltline",
     landlord: "testLandlord4@email.com",
+    type: "Room",
   },
   {
     id: 119,
@@ -315,6 +319,7 @@ const propertyList = [
     bathrooms: 19,
     neighbourhood: "Mission",
     landlord: "testLandlord@email.com",
+    type: "Basement",
   },
   {
     id: 120,
@@ -326,6 +331,7 @@ const propertyList = [
     bathrooms: 8,
     neighbourhood: "Discovery Ridge",
     landlord: "testLandlord3@email.com",
+    type: "Basement",
   },
   {
     id: 121,
@@ -348,6 +354,7 @@ const propertyList = [
     bathrooms: 8,
     neighbourhood: "Mission",
     landlord: "testLandlord2@email.com",
+    type: "Basement",
   },
   {
     id: 123,
@@ -364,6 +371,8 @@ const propertyList = [
     id: 124,
     title: "Sunrise Spectacle Retreat",
     image: "Property8.png",
+    type: "Basement",
+
     size: 904,
     rent: 2066.6,
     bedrooms: 10,
@@ -392,6 +401,7 @@ const propertyList = [
     bathrooms: 13,
     neighbourhood: "Chinatown",
     landlord: "testLandlord@email.com",
+    type: "Basement",
   },
   {
     id: 127,
@@ -403,6 +413,7 @@ const propertyList = [
     bathrooms: 3,
     neighbourhood: "Erlton",
     landlord: "testLandlord3@email.com",
+    type: "Duplex",
   },
   {
     id: 128,
@@ -413,6 +424,7 @@ const propertyList = [
     bedrooms: 7,
     bathrooms: 9,
     neighbourhood: "Mission",
+    type: "Duplex",
     landlord: "testLandlord2@email.com",
   },
   {
@@ -425,6 +437,7 @@ const propertyList = [
     bathrooms: 14,
     neighbourhood: "Downtown",
     landlord: "testLandlord2@email.com",
+    type: "House",
   },
   {
     id: 130,
@@ -436,6 +449,8 @@ const propertyList = [
     bathrooms: 12,
     neighbourhood: "Copperfield",
     landlord: "testLandlord@email.com",
+    type: "House",
+    additionalFilters: ["Utilities"],
   },
   {
     id: 131,
@@ -447,6 +462,7 @@ const propertyList = [
     bathrooms: 20,
     neighbourhood: "Glenbrook",
     landlord: "testLandlord@email.com",
+    type: "Basement",
   },
   {
     id: 132,
@@ -458,6 +474,7 @@ const propertyList = [
     bathrooms: 13,
     neighbourhood: "Edgemont",
     landlord: "testLandlord@email.com",
+    type: "Basement",
   },
   {
     id: 133,
@@ -469,6 +486,7 @@ const propertyList = [
     bathrooms: 20,
     neighbourhood: "Copperfield",
     landlord: "testLandlord4@email.com",
+    type: "Basement",
   },
   {
     id: 134,
@@ -480,6 +498,7 @@ const propertyList = [
     bathrooms: 14,
     neighbourhood: "Greenview",
     landlord: "testLandlord@email.com",
+    additionalFilters: ["Utilities", "Smoking"],
   },
   {
     id: 135,
@@ -524,6 +543,7 @@ const propertyList = [
     bathrooms: 14,
     neighbourhood: "Rosedale",
     landlord: "testLandlord4@email.com",
+    additionalFilters: ["Utilities", "Pets"],
   },
   {
     id: 139,
@@ -535,6 +555,8 @@ const propertyList = [
     bathrooms: 5,
     neighbourhood: "Elbow Park",
     landlord: "testLandlord3@email.com",
+    type: "Apartment",
+    additionalFilters: ["Utilities", "Pets", "Smoking"],
   },
   {
     id: 140,
