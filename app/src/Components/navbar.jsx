@@ -1,37 +1,26 @@
 import "./navbar.css";
-import React, { useContext, useEffect, useState, useRef } from "react";
+import React, { useContext, useState } from "react";
 import { UserContext } from "../Context/usercontext";
 import { Link } from "react-router-dom";
 import logo from "../Images/logo.png";
 import ListProperty from "./ListProperty";
 import { useFormData } from "../Context/formdatacontext";
 import { state, useFilter } from "../Context/filtercontext";
-import ClickableComponent from "./Special/Clicked";
-import FilterModal from "./Special/FilterModal";
+
 function Nav() {
   const [locationFilter, setLocationFilter] = useState("");
   const [bathFilter, setBathFilter] = useState();
   const [bedFilter, setBedFilter] = useState();
   const { user, setUser } = useContext(UserContext);
   const { dispatch } = useFormData();
-  const { state, dispatchFilter } = useFilter();
+  const { dispatchFilter } = useFilter();
   const userEmail = user?.email;
-  const [isModalOpen, setModalOpen] = useState(false);
 
   //MinMax Popup
   const [isMinMaxPopupOpen, setMinMaxPopupOpen] = useState(false);
   const [minPriceFilter, setMinPriceFilter] = useState();
   const [maxPriceFilter, setMaxPriceFilter] = useState();
   const maxDigits = 5;
-
-  //Filter Modal
-  const openModal = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
-
-  useEffect(() => {
-    setMinPriceFilter(state.filters.minPrice);
-    setMaxPriceFilter(state.filters.maxPrice);
-  }, [state]);
 
   function handleLogout() {
     dispatch({ type: "LOGOUT" });
@@ -82,7 +71,7 @@ function Nav() {
           <div className="div-100">
             <div className="div-8">
               <div className="div-9">
-                <ClickableComponent className="div-10">
+                <div className="div-10">
                   <div className="div-11">Where</div>
                   <input
                     className="div-12"
@@ -92,8 +81,9 @@ function Nav() {
                     onChange={(e) => setLocationFilter(e.target.value)}
                     onKeyDown={handleEnterPress}
                   />
-                </ClickableComponent>
-                <ClickableComponent className="div-13">
+                </div>
+                <div className="div-13">
+                  <div className="div-14" />
                   <div className="div-15">
                     <img
                       loading="lazy"
@@ -109,6 +99,8 @@ function Nav() {
                       className="number-input"
                     />
                   </div>
+                </div>
+                <div className="div-17">
                   <div className="div-18">
                     <img
                       loading="lazy"
@@ -124,8 +116,7 @@ function Nav() {
                       className="number-input"
                     />
                   </div>
-                </ClickableComponent>
-                <ClickableComponent className="div-17">
+                  <div className="div-20" />
                   <button className="div-21" onMouseEnter={openMinMaxPopup}>
                     <div className="div-22">Price Range</div>
                     <div className="div-23">
@@ -133,15 +124,15 @@ function Nav() {
                       {maxPriceFilter ? "$" + maxPriceFilter : "Max"}
                     </div>
                   </button>
-                  <button onClick={handleButtonClick}>
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c1d4bb4-e80e-4e78-8391-79dc5e262a64?"
-                      className="img-4"
-                    />
-                  </button>
-                </ClickableComponent>
+                </div>
               </div>
+              <button onClick={handleButtonClick}>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/0c1d4bb4-e80e-4e78-8391-79dc5e262a64?"
+                  className="img-4"
+                />
+              </button>
             </div>
             <div className="div-108">
               {isMinMaxPopupOpen && (
@@ -156,9 +147,7 @@ function Nav() {
                         type="number"
                         value={minPriceFilter}
                         onChange={(e) =>
-                          setMinPriceFilter(
-                            parseInt(e.target.value.slice(0, maxDigits))
-                          )
+                          setMinPriceFilter(e.target.value.slice(0, maxDigits))
                         }
                         onKeyDown={handleEnterPress}
                       />
@@ -174,9 +163,7 @@ function Nav() {
                         type="number"
                         value={maxPriceFilter}
                         onChange={(e) =>
-                          setMaxPriceFilter(
-                            parseInt(e.target.value.slice(0, maxDigits))
-                          )
+                          setMaxPriceFilter(e.target.value.slice(0, maxDigits))
                         }
                         onKeyDown={handleEnterPress}
                       />
@@ -227,10 +214,7 @@ function Nav() {
             </div>
           </div>
         </div>
-        <button className="div-26" onClick={openModal}>
-          Additional Filters
-        </button>
-        <FilterModal isOpen={isModalOpen} closeModal={closeModal} />
+        <div className="div-26">Additional Filters</div>
       </div>
     </div>
   );
