@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import './PropertyPage.css';
 import HousePic1 from '../Images/PropertyPics/HousePic1.png'
@@ -15,7 +16,22 @@ import { Link } from "react-router-dom";
 export const PropertyPage = () => {
   const {id,property} = useParams();
   const propertyInfo = JSON.parse(decodeURIComponent(property));
-  
+  const [isFavorited, setIsFavorited] = useState(false);
+
+  /* For sending favourites button */
+  const handleFavourite = () => {
+    setIsFavorited(!isFavorited);
+  };
+
+  /* For view availability button */
+  const handleCalendar = () => {
+    // Your implementation
+  };
+
+  /* For contact landlord button */
+  const contactLandlord = () => {
+    // Your implementation
+  };
   return (
     <div className="individual-property">
       <div className="frame-5">

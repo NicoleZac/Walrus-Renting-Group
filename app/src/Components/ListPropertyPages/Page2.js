@@ -1,17 +1,18 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import "./Page2.css";
 import Progress1 from '../../Images/ProgressBars/Progress1.png'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import Modal  from 'react-modal';
 import ClearIcon from '@mui/icons-material/Clear';
 import { useFormData } from '../../Context/formdatacontext';
-
+import {useLocation} from 'react-router-dom';
 
 Modal.setAppElement('#root');
 
 const Page2 = ({onNext,onPrevious}) =>{
+    const location = useLocation();
     const {formData,dispatch} = useFormData();
-    const [tags,setTags] = useState(formData.tags || []);
+    const [tags,setTags] = useState(formData.formData.tags || []);
     const [newTag,setNewTag] = useState('');
     const[isModalOpen,setIsModalOpen] = useState(false);
     const[error,setError] = useState('');
@@ -42,6 +43,10 @@ const Page2 = ({onNext,onPrevious}) =>{
           return updatedTags;
         });
       };
+      useEffect(()=>{
+        setIsModalOpen(false);
+
+    },[location.pathname]);
     const openModal=()=>{
         setIsModalOpen(true);
     };
@@ -65,15 +70,15 @@ const Page2 = ({onNext,onPrevious}) =>{
 <p class="neighborhood-description-xZQ" id="I165:13950;165:8668">Neighborhood Description</p>
 <div onClick={onNext} class="submit-SzN" id="I165:13950;165:8544">Next Page</div>
 <ArrowBackIosIcon onClick={onPrevious} class="group-49-v8r" id="I165:13950;165:8642"/>
-<textarea placeholder="Address&#10;Enter Here" name="address" value={formData.address} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-SN6" id="I165:13950;165:8539">
+<textarea placeholder="Address&#10;Enter Here" name="address" value={formData.formData.address} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-SN6" id="I165:13950;165:8539">
 </textarea>
-<textarea placeholder="City&#10;Enter Here" name="city" value={formData.city} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-RtE" id="I165:13950;165:8646">
+<textarea placeholder="City&#10;Enter Here" name="city" value={formData.formData.city} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-RtE" id="I165:13950;165:8646">
 </textarea>
-<textarea placeholder="Zip Code&#10;Enter Here" name="zip" value={formData.zip} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-wNi" id="I165:13950;165:8661">
+<textarea placeholder="Zip Code&#10;Enter Here" name="zip" value={formData.formData.zip} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-wNi" id="I165:13950;165:8661">
 </textarea>
-<textarea placeholder="Province / State&#10;Enter Here" name="province" value={formData.province}onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-UQa" id="I165:13950;165:8651">
+<textarea placeholder="Province / State&#10;Enter Here" name="province" value={formData.formData.province}onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-UQa" id="I165:13950;165:8651">
 </textarea>
-<textarea placeholder="Country&#10;Enter Here"name="country" value={formData.country} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-Wka" id="I165:13950;165:8656">
+<textarea placeholder="Country&#10;Enter Here"name="country" value={formData.formData.country} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-Wka" id="I165:13950;165:8656">
 </textarea>
 <div class="frame-22-M8v" id="I165:13950;165:8670">
 
@@ -86,7 +91,7 @@ const Page2 = ({onNext,onPrevious}) =>{
     onRequestClose={closeModal}
     style={{
         overlay: {
-         zIndex: 999,
+         zIndex: 998,
         },
     }}
     >

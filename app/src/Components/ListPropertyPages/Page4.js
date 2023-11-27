@@ -10,7 +10,7 @@ import { useFormData } from '../../Context/formdatacontext';
 import propertyList from '../propertyList.js';
 const Page4 = ({onPrevious,onSubmit,error}) =>{
     const {formData,dispatch} = useFormData();
-    const [selectedMethod,setSelectedMethod] = useState(formData?.contactMethod);
+    const [selectedMethod,setSelectedMethod] = useState(formData.formData.contactMethod);
     const {user} = useContext(UserContext);
     const userEmail = user?.email;
     const handleSelectMethod= (method) =>{
