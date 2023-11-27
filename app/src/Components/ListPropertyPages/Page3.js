@@ -8,7 +8,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { useFormData } from '../../Context/formdatacontext';
 const Page3 = ({onNext,onPrevious}) =>{
     const {formData,dispatch} = useFormData();
-    const [startDate,setStartDate] = useState(formData?.startDate);
+    const [startDate,setStartDate] = useState(formData.formData.startDate);
     const [isDatePickerOpen,setIsDatePickerOpen] = useState(false);
     const [error,setError] = useState('');
     const handleTextInput = (inputName,value)=>{
@@ -62,11 +62,11 @@ const Page3 = ({onNext,onPrevious}) =>{
             <DatePicker selected={startDate} onChange={handleDateChange} dateFormat="MMMM d,yyyy" isClearable placeholderText="Select a date"/>
         )}
         </div>
-        <textarea placeholder="Lease Length&#10;ie: 1 year"  name="leaseLength" value={formData.leaseLength} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-ehg" id="I165:13951;165:8746">
+        <textarea placeholder="Lease Length&#10;ie: 1 year"  name="leaseLength" value={formData.formData.leaseLength} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-ehg" id="I165:13951;165:8746">
         </textarea>
-        <textarea placeholder="Monthly Rent&#10;$0.00" name="monthlyRent" value={formData.monthlyRent} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="price-J9x" id="I165:13951;165:8756">
+        <textarea placeholder="Monthly Rent&#10;$0.00" name="monthlyRent" value={formData.formData.monthlyRent} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="price-J9x" id="I165:13951;165:8756">
         </textarea>
-        <textarea placeholder="Security Deposit&#10;$0.00" name="securityDep" value={formData.securityDep} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="price-uJA" id="I165:13951;165:8761">
+        <textarea placeholder="Security Deposit&#10;$0.00" name="securityDep" value={formData.formData.securityDep} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="price-uJA" id="I165:13951;165:8761">
         </textarea>
         </div>
     );

@@ -2,7 +2,6 @@ import React, { useContext} from "react";
 import LandlordProfile from "../Components/LandlordProfile";
 import RenterProfile from "../Components/RenterProfile";
 import { UserContext } from "../Context/usercontext";
-import "./UserProfile.css"
 
 function UserProfile (useParams) {
   const { user } = useContext(UserContext);

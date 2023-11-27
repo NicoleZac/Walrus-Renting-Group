@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import './PropertyPage.css';
 import HousePic1 from '../Images/PropertyPics/HousePic1.png'
 import HousePic2 from '../Images/PropertyPics/HousePic2.png'
@@ -7,6 +8,7 @@ import Bed from '../Images/PropertyPics/Bed.png'
 import Bath from '../Images/PropertyPics/Bath.png'
 import House from '../Images/PropertyPics/House.png'
 import Heart from '../Images/PropertyPics/heart.png'
+import HeartFilled from '../Images/PropertyPics/filledheart.png'
 import Calendar from '../Images/PropertyPics/calendar.png'
 import {useParams} from 'react-router-dom';
 import { Link } from "react-router-dom";
@@ -14,7 +16,22 @@ import { Link } from "react-router-dom";
 export const PropertyPage = () => {
   const {id,property} = useParams();
   const propertyInfo = JSON.parse(decodeURIComponent(property));
-  
+  const [isFavorited, setIsFavorited] = useState(false);
+
+  /* For sending favourites button */
+  const handleFavourite = () => {
+    setIsFavorited(!isFavorited);
+  };
+
+  /* For view availability button */
+  const handleCalendar = () => {
+    // Your implementation
+  };
+
+  /* For contact landlord button */
+  const contactLandlord = () => {
+    // Your implementation
+  };
   return (
     <div className="individual-property">
       <div className="frame-5">
@@ -34,10 +51,22 @@ export const PropertyPage = () => {
           <div className="text-wrapper-5">{propertyInfo.title}</div>
           <div className="text-wrapper-6">${propertyInfo.rent} / month</div>
           <div className="buttons">
-            <img className="heart" alt="Heart" src={Heart} />
-            <Link to={`/Calendar/${propertyInfo?.landlord}`}>
-            <img className="calendar" alt="Calendar" src={Calendar}/>
-            </Link>
+            <button onClick={handleFavourite}>
+              <img
+                className="heart"
+                alt="Heart"
+                loading="lazy"
+                src={Heart}
+              />
+            </button>
+            <button onClick={handleCalendar}>
+              <img
+                className="calendar"
+                alt="Calendar"
+                loading="lazy"
+                src={Calendar}
+              />
+            </button>
           </div>
         </div>
         <div className="frame-7">
