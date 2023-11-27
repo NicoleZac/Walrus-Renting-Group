@@ -7,8 +7,9 @@
     display: flex;
     flex-shrink: 0;
     height: 100%;
+    width: 600px;
     overflow: hidden;
-    padding-right: 1.495rem;
+    padding-right: 3.495rem;
     position: relative;
 
 

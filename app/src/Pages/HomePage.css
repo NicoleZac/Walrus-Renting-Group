@@ -1,9 +1,18 @@
+.auto-group-n9aa-rLh {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  padding: 2.2rem 0rem 15.5rem 0rem;
+  row-gap: 0rem;
+  width: 100%;
 .frame-55-XVL {
     align-items: center;
     display: flex;
     flex-shrink: 0;
     height: 4.0056rem;
-    margin: 2rem 30.572rem 2rem 14.328rem;
+    margin: 0rem 30.572rem 2.5rem 14.328rem;
     width: calc(100% - 54.9006rem);
 
     .submit-qW2 {
@@ -51,8 +60,8 @@
     flex-direction: column;
     flex-shrink: 0;
 
-    padding: 2.003rem 0rem 3.703rem 0rem;
-    width: 112.7466rem;
+    padding: 2.003rem 0rem 0.703rem 0rem;
+    width: 107%;
 
     .employment-Ega {
         align-items: center;
@@ -65,10 +74,11 @@
         height: 2.5rem;
         justify-content: center;
         line-height: 1.1725;
-        margin: 0rem 77.033rem 2.978rem 16.111rem;
+        margin: 0rem 77.033rem 2.978rem 0.111rem;
         overflow: hidden;
         position: relative;
         white-space: nowrap;
-        width: calc(100% - 63.144rem);
+        width: 100%;
     }
+}
 }
