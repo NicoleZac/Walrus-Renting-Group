@@ -1,22 +1,40 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import "./Page1.css";
 import ClearIcon from '@mui/icons-material/Clear';
 import ImageIcon from '@mui/icons-material/Image';
 import Progress0 from '../../Images/ProgressBars/Progress0.png';
 import { useFormData } from '../../Context/formdatacontext';
+import {useLocation} from 'react-router-dom';
 import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
 
 const Page1 = ({onNext,requestClose}) =>{
+    const location = useLocation();
     const {formData,dispatch} = useFormData();
-    const [selectedType,setSelectedType] = useState(formData?.propertyType);
-    const [selectedBeds,setSelectedBeds] = useState(formData?.numBeds);
-    const [selectedBaths,setSelectedBaths] = useState(formData?.numBaths);
-    const [selectedFilters,setSelectedFilters] = useState(formData.additionalFilters || []);
-    const [images,setImages] = useState(formData.images || []);
+    const [selectedType,setSelectedType] = useState(formData.formData.propertyType);
+    const [selectedBeds,setSelectedBeds] = useState(formData.formData.numBeds);
+    const [selectedBaths,setSelectedBaths] = useState(formData.formData.numBaths);
+    const [selectedFilters,setSelectedFilters] = useState(formData.formData.additionalFilters || []);
+    const [images,setImages] = useState(formData.formData.images || []);
     const [viewImages,setViewImages] = useState(images.length !== 0);
-    const [previewImages,setPreviewImages] =useState([]);
+    const [previewImages,setPreviewImages]=useState([]);
+    useEffect(()=>{
+        const loadImage = async(imagePath)=>{
+            const imageModule = await import(`../../Images/Properties/${imagePath}`);
+            setPreviewImages((prevImages)=>{
+                const isAdded = prevImages.some((img)=>img.name ===imagePath);
+                if(!isAdded){
+                    return [...prevImages,{name:imagePath,src:imageModule.default}];
+                }
+                return prevImages;
+            });
+        };
+        images.forEach((image)=>{
+            loadImage(image);
+        })
+    },[images,setPreviewImages]);
+    
     const handleTextInput = (inputName,value)=>{
         dispatch({type:'UPDATE_DATA',payload:{[inputName]:value}});
     }
@@ -64,17 +82,12 @@ const Page1 = ({onNext,requestClose}) =>{
       };
     const handleImages = (e) =>{
         const files = e.target.files;
+        
         const fileNames = Array.from(files).map((file)=>file.name);
         setImages((prevImage)=>[...prevImage,...fileNames]);
 
-        const newPreviewImages =[...previewImages];
         Array.from(files).forEach((file)=>{
-            const fileReader = new FileReader();
-            fileReader.onload=()=>{
-                newPreviewImages.push({name:file.name,preview:fileReader.result})
-                setPreviewImages(newPreviewImages);
-            };
-            fileReader.readAsDataURL(file);
+                setImages([...images,...fileNames]);
         });
         dispatch({ type: 'UPDATE_DATA', payload: { images: [...images, ...fileNames] } });
     }
@@ -86,19 +99,21 @@ const Page1 = ({onNext,requestClose}) =>{
     const handleImageDelete = (imageFile) => {
         setImages((prevImages) => {
           const updatedImages = prevImages.filter((image) => image !== imageFile);
-      
-          const newPreviewImages = previewImages.filter((image) => image.name !== imageFile);
-          setPreviewImages(newPreviewImages);
-  
+          setPreviewImages((prevImages)=>prevImages.filter((image)=>image.name !== imageFile));
           if (updatedImages.length === 0) {
             setViewImages(false);
           }
 
+         setImages(images.filter((image)=>image !== imageFile));
+
           dispatch({ type: 'UPDATE_DATA', payload: { images: updatedImages } });
-      
           return updatedImages;
         });
       };
+    useEffect(()=>{
+        setViewImages(false);
+
+    },[location.pathname]);
     const handleViewImages = ()=>{
         setViewImages(true);
     };
@@ -149,7 +164,7 @@ const Page1 = ({onNext,requestClose}) =>{
         <p class="key-features-5KY" id="I165:13949;165:8221">Key Features</p>
         <p class="what-makes-your-property-special-ZEi" id="I165:13949;165:8222">What makes your property special?</p>
         </div>
-        <textarea type="text" placeholder="Description (Max 600 characters)&#10;Enter Here" name="description" value={formData.description} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-eGA" id="I165:13949;165:8335">
+        <textarea type="text" placeholder="Description (Max 600 characters)&#10;Enter Here" name="description" value={formData.formData.description} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-eGA" id="I165:13949;165:8335">
 
         </textarea>
         <div onClick={handleUpload} class="search-bar-3LE" id="I165:13949;165:8340">
@@ -170,17 +185,17 @@ const Page1 = ({onNext,requestClose}) =>{
         onRequestClose={handleImageClose}
         style={{
             overlay: {
-             zIndex: 999,
+             zIndex: 998,
             },
         }}
         >
         <ClearIcon onClick={handleImageClose} class="modal-icon"></ClearIcon>
         <ul class="modal-list">
-        {previewImages.map((imageFile)=>(
-            <li class="modal-image"key={imageFile.name}>
-            <p>{imageFile.name} </p>
-            <img src={imageFile.preview} alt={imageFile.name} style={{maxWidth:'100%',maxHeight:'150px',height:'auto'}}/>
-            <button onClick={()=>handleImageDelete(imageFile.name)}class="modal-button">
+        {previewImages.map((image,index)=>(
+            <li class="modal-image"key={index}>
+            <p>{image.name} </p>
+            <img src={image.src} alt={image.src} style={{maxWidth:'100%',maxHeight:'150px',height:'auto'}}/>
+            <button onClick={()=>handleImageDelete(image.name)}class="modal-button">
                 Delete
             </button>
             </li>
@@ -276,7 +291,7 @@ const Page1 = ({onNext,requestClose}) =>{
         <div class="frame-15-1cv" id="I165:13949;165:8451;141:4592">Smoking Allowed</div>
         </div>
         </div>
-        <textarea placeholder="Square Footage&#10;500sqft"  name="propertySize" value={formData.propertySize} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-HqL" id="I165:13949;165:8464">
+        <textarea placeholder="Square Footage&#10;500sqft"  name="propertySize" value={formData.formData.propertySize} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-HqL" id="I165:13949;165:8464">
  
         </textarea>
         <div onClick={onNext} class="submit-hXg" id="I165:13949;165:8469">Next Page</div>

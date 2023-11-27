@@ -15,27 +15,17 @@ const ListProperty =({isOpen,requestClose})=>{
 
     const currentIndex = pages.indexOf(currentPage);
     const handleSubmit = ()=>{
-
-        const isValueEmpty = (value) => {
-            if (Array.isArray(value)) {
-              return value.length === 0;
+       const checkEmptyFields = () =>{
+       for(const val in formData.formData){
+        if(Object.hasOwnProperty.call(formData.formData,val)){
+            if(formData.formData[val]===''){
+                return true;
             }
-            if (typeof value === 'object' && value !== null) {
-              return isObjectEmpty(value);
-            }
-            return value === '' || value === null || value === undefined;
-          };
-          
-          const isObjectEmpty = (obj) => {
-            for (const key in obj) {
-              if (!isValueEmpty(obj[key])) {
-                return false;
-              }
-            }
-            return true;
-          };
-          
-          const isEmpty = isObjectEmpty(formData);
+        }
+       }
+       return false;
+    }
+          const isEmpty = checkEmptyFields();
           
         if(isEmpty){
             setError('Please fill out all fields');
@@ -90,7 +80,7 @@ const ListProperty =({isOpen,requestClose})=>{
             left: 0,
             right:0,
             bottom: 0,
-            zIndex: 998,
+            zIndex: 997,
            },
            content:{
             display:isOpen ? 'block' : 'none',
@@ -99,6 +89,7 @@ const ListProperty =({isOpen,requestClose})=>{
             left: '50%',
             transform: 'translate(-50%,-50%)',
             height: '100%',
+            width: '40%',
             backgroundColor: 'white',
 
            }
