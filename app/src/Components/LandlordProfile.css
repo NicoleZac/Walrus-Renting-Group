@@ -185,3 +185,8 @@
     white-space: initial;
   }
 }
+
+
+.current-properties {
+  align-items: start;
+}

@@ -90,7 +90,7 @@ function Content({ openPopup }) {
       {location.pathname === "/" && <HomePage openPopup={openPopup} />}
       {location.pathname === "/Login" && <Login />}
       {location.pathname === "/Register" && <Register />}
-      {location.pathname === `/UserProfile/${email}` && <UserProfile />}
+      {location.pathname === `/UserProfile/${email}` && <UserProfile openPopup={openPopup}/>}
       {location.pathname === `/Calendar/${email}` && <Calendar />}
       {location.pathname === "/ListProperty" && <ListProperty />}
       {location.pathname === `/PropertyPage/${encodeURIComponent(id)}/${encodeURIComponent(property)}` && <PropertyPage />}
