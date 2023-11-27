@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "./Messaging.css";
 import Send from '../Images/PropertyPics/send.png'
 import Calendar from '../Images/PropertyPics/calendar.png'
@@ -9,9 +9,14 @@ import Search from '../Images/PropertyPics/search.png'
 
 export const Messaging = () => {
 
-  /* For sending messages button */
+  const [isBorderWhite, setIsBorderWhite] = useState(true);
+  const [hasShadow, setHasShadow] = useState(false);
+  const [isTextColored, setIsTextColored] = useState(false);
+
   const handleSend = () => {
-    
+    setIsBorderWhite(false);
+    setHasShadow(true);
+    setIsTextColored(true);
   };
 
   /* For view availability button */
@@ -24,7 +29,7 @@ export const Messaging = () => {
     };
 
   return (
-    <div className = "messaging">
+    <div className="messaging">
       <div className = "overlap-wrapper1">
         <div className = "overlap1">
           <div className = "overlap2">
@@ -141,24 +146,16 @@ export const Messaging = () => {
               <div className="frame-12">
                 <div className="frame-screen">
                   <div className="frame-6-variant3p">
-                    <div className="frame-variant">
+                    <div className={isBorderWhite ? "frame-variant white-border" : `frame-variant ${hasShadow ? 'with-shadow' : ''}`}>
                       <div className="framepp">
-                        <p className="text-wrapperpp">
+                        <p className={isTextColored ? "text-wrapperpp colored-text" : "text-wrapperpp"}>
                           Hello, are you free tomorrow at 2pm for a viewing?
                         </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="frame-6-variant3">
-                  <div className="frame-instance">
-                    <div className="framep">
-                      <p className="text-wrapperp">
-                        Yes, I am! Please make sure to complete the form, prepare a reference letter, and some form of identification. See you then.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              
               </div>
             </div>
         </div>
