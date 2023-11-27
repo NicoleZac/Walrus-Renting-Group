@@ -91,7 +91,7 @@ const Page2 = ({onNext,onPrevious}) =>{
     onRequestClose={closeModal}
     style={{
         overlay: {
-         zIndex: 998,
+         zIndex: 3,
         },
     }}
     >

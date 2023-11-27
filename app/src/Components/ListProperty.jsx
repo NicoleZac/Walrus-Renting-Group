@@ -32,7 +32,7 @@ const ListProperty =({isOpen,requestClose})=>{
             setPage('p4');
         }
         else{
-            //propertyList.push(formData);
+            //propertyList.push(formData.formData);
             setError('');
             setPage('p1');
             dispatch({type: 'SUBMIT'});
@@ -80,7 +80,7 @@ const ListProperty =({isOpen,requestClose})=>{
             left: 0,
             right:0,
             bottom: 0,
-            zIndex: 997,
+            zIndex: 2,
            },
            content:{
             display:isOpen ? 'block' : 'none',

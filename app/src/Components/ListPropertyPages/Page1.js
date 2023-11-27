@@ -185,7 +185,7 @@ const Page1 = ({onNext,requestClose}) =>{
         onRequestClose={handleImageClose}
         style={{
             overlay: {
-             zIndex: 998,
+             zIndex: 3,
             },
         }}
         >
