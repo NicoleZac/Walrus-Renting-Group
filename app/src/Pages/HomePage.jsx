@@ -13,6 +13,7 @@ function HomePage({ openPopup }) {
     <div>
       {userType === "Landlord" ? (
         <div>
+          <div class="auto-group-n9aa-rLh" id="N4ErtTvWgvAsg2VNhXn9AA">
           <div class="frame-55-XVL" id="I195:7530;195:7167">
             <div class="submit-qW2" id="I195:7530;195:7165">
               View Messages
@@ -36,6 +37,7 @@ function HomePage({ openPopup }) {
               type="OtherInNeighbourhood"
             />
           </div>
+        </div>
         </div>
       ) : (
         <PropertyListings properties={propertyList} />
