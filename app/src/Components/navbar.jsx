@@ -186,7 +186,16 @@ function Nav() {
               )}
             </div>
           </div>
-
+          <div className="div-201">
+            <div className="div-200" onClick={openModal}>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/4b69ccca-2cca-43a0-b4cf-69bdf3b4e361?"
+                className="img-200"
+              />
+              <div className="div-202">Filters</div>
+            </div>
+          </div>
           <div className="div-24">
             {userEmail && (
               <>
@@ -227,9 +236,6 @@ function Nav() {
             </div>
           </div>
         </div>
-        <button className="div-26" onClick={openModal}>
-          Additional Filters
-        </button>
         <FilterModal isOpen={isModalOpen} closeModal={closeModal} />
       </div>
     </div>
