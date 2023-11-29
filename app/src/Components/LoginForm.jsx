@@ -52,9 +52,9 @@ function LoginForm(){
 
 </div>
 <p class="dont-have-an-account-sign-up-here-A74" id="161:5195">
-<span class="dont-have-an-account-sign-up-here-A74-sub-0">Don’t have an account? </span>
+<span class="dont-have-an-account-sign-up-here-A74-sub-0">Don’t have an account? &#160;</span>
 <Link to="../Register">
-<span class="dont-have-an-account-sign-up-here-A74-sub-1">&#160;Sign up here.</span>
+<span class="dont-have-an-account-sign-up-here-A74-sub-1">Sign up here.</span>
 </Link>
 </p>
 </div>

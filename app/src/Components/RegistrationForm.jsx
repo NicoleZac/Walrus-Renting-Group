@@ -70,29 +70,31 @@ function RegistrationForm(){
 </Link>
 <p class="register-gFU" id="161:5492">Register</p>
 <div class="frame-49-a5x" id="161:5479">
-<p class="first-name-8Ft" id="161:5511">First Name</p>
 
+<div class ="search-bar-reg">
+<p class=" email-address-MNa">First Name</p>
+<input class="email-input" id="161:5512" name="firstName" placeholder=" First Name"value={formData.firstName} onChange={handleTextInput}></input>
+</div>
+<div class ="search-bar-reg">
+<p class=" email-address-MNa">Last Name</p>
+<input class="email-input" id="30:2361" name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleTextInput}></input>
+</div>
 
-<input class="search-bar-e5p" id="161:5512" name="firstName" placeholder="Name"value={formData.firstName} onChange={handleTextInput}></input>
+<div class ="search-bar-reg">
+<p class=" email-address-MNa">Email Address</p>
 
-<p class="last-name-ff8" id="161:5516">Last Name</p>
+<input class="email-input" id="161:5484" name="email" placeholder="xxx@email.com"value={formData.email} onChange={handleTextInput}></input>
+</div>
 
-<input class="search-bar-AyG" id="30:2361" name="lastName" placeholder="Name" value={formData.lastName} onChange={handleTextInput}></input>
+<div class ="search-bar-reg">
+<p class=" email-address-MNa">Password</p>
+<input type="password" class="email-input" id="30:2348" name="password" placeholder="Enter Here" value={formData.password} onChange={handleTextInput}></input>
+</div>
 
-
-<p class="email-address-iWv" id="161:5483">Email Address</p>
-
-<input class="search-bar-Gev" id="161:5484" name="email" placeholder="xxx@email.com"value={formData.email} onChange={handleTextInput}></input>
-
-
-<p class="password-Eta">Password</p>
-<input type="password" class="search-bar-MJz" id="30:2348" name="password" placeholder="Enter Here" value={formData.password} onChange={handleTextInput}></input>
-
-<p class="confirm-password-v98" id="161:5521">Confirm Password</p>
-
-
-<input type="password" class="search-bar-tiE" id="30:2357" name="reEnterPassword" placeholder= "Enter Here" value={formData.reEnterPassword} onChange={handleTextInput}></input>
-
+<div class ="search-bar-reg">
+<p class=" email-address-MNa">Confirm Password</p>
+<input type="password" class="email-input" id="30:2357" name="reEnterPassword" placeholder= "Enter Here" value={formData.reEnterPassword} onChange={handleTextInput}></input>
+</div>
 
 </div>
 <p class="select-account-type-9Xg" id="161:5490">Select Account Type</p>
@@ -103,7 +105,14 @@ function RegistrationForm(){
 <p class="or-Kyt" id="163:5556">or</p>
 
 <button type ="submit"class="price-SYi" id="30:2369"  style={{backgroundColor:landlordColor}} checked={!isRenter} onClick={handleLandlord}>Landlord</button>
+
 </div>
+<p class="already-have-account-reg" id="161:5195">
+<span class="already-have-account-reg">Already Have an Account?&#160;</span>
+<Link to="../Register">
+<span class="already-have-account-reg-1">Log in here.</span>
+</Link>
+</p>
 <button type="submit" class="submit-cLi" id="30:2352" onClick={handleSubmit}>Create Account</button>
 <span class="error-register">{error}</span>
 </div>
