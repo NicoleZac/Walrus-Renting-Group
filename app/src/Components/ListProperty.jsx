@@ -5,9 +5,12 @@ import Page2 from './ListPropertyPages/Page2';
 import Page3 from './ListPropertyPages/Page3';
 import Page4 from './ListPropertyPages/Page4';
 import {useFormData} from '../Context/formdatacontext.js';
+import propertyList from "../Components/propertyList";
 
 
 const ListProperty =({isOpen,requestClose})=>{
+
+
     const{formData,dispatch} = useFormData();
     const [currentPage,setPage] = useState('p1');
     const[error,setError] =useState('');
@@ -15,6 +18,11 @@ const ListProperty =({isOpen,requestClose})=>{
 
     const currentIndex = pages.indexOf(currentPage);
     const handleSubmit = ()=>{
+
+        const ids=[...propertyList];
+        const largestId = ids.reduce((maxId,item)=>(item.id>maxId ? item.id:maxId),0);
+        const maxId = largestId+1;
+        
        const checkEmptyFields = () =>{
        for(const val in formData.formData){
         if(Object.hasOwnProperty.call(formData.formData,val)){
@@ -32,6 +40,8 @@ const ListProperty =({isOpen,requestClose})=>{
             setPage('p4');
         }
         else{
+           const newId = String(maxId);;
+            formData.formData.id= newId;
             //propertyList.push(formData);
             setError('');
             setPage('p1');
@@ -39,6 +49,7 @@ const ListProperty =({isOpen,requestClose})=>{
             requestClose();
         }
     };
+
     const handleNext=()=>{
         const nextIndex = currentIndex+1;
         if(nextIndex <pages.length){
@@ -54,13 +65,13 @@ const ListProperty =({isOpen,requestClose})=>{
     const getPageContent = ()=>{
         switch(currentPage){
             case 'p1':
-                return <Page1 onNext={handleNext}  requestClose={requestClose}/>;
-            case 'p2':
-                return <Page2 onNext={handleNext} onPrevious={handlePrevious}/>;    
+                return <Page1 onNext={handleNext}  requestClose={requestClose} />;
+            case 'p2': 
+                return <Page2 onNext={handleNext} onPrevious={handlePrevious} />;    
             case 'p3':
-                return <Page3 onNext={handleNext} onPrevious={handlePrevious} />;
+                return <Page3 onNext={handleNext} onPrevious={handlePrevious}/>;
             case 'p4':
-                return <Page4 onPrevious={handlePrevious} onSubmit={handleSubmit} error={error}/>;
+                return <Page4 onPrevious={handlePrevious} onSubmit={handleSubmit} error={error} />;
             default:
                 return <Page1 onNext={handleNext}  requestClose={requestClose}/>;
         }

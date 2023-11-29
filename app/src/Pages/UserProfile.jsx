@@ -3,16 +3,16 @@ import LandlordProfile from "../Components/LandlordProfile";
 import RenterProfile from "../Components/RenterProfile";
 import { UserContext } from "../Context/usercontext";
 
-function UserProfile (useParams) {
+function UserProfile ({openPopup}) {
   const { user } = useContext(UserContext);
   const userType = user?.userType;
 
   return (
     <div>
       {userType === "Landlord" ? (
-        <LandlordProfile user={user}/>
+        <LandlordProfile user={user} openPopup={openPopup}/>
       ) : (
-        <RenterProfile user={user}/>
+        <RenterProfile user={user} />
       )}
     </div>
   );

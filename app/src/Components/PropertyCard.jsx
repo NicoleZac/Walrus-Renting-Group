@@ -8,7 +8,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import {PageContext } from "../Context/pagecontext";
 import {Link} from 'react-router-dom';
 import { useFormData } from '../Context/formdatacontext';
-function PropertyCard({ property}) {
+import {removeProperty} from './propertyList';
+function PropertyCard({ openPopup,property}) {
   const {formData,dispatch} = useFormData();
   dispatch({type: 'SUBMIT'});
   const { pageStates} = useContext(PageContext);
@@ -57,11 +58,34 @@ function PropertyCard({ property}) {
   
   
   }
-  const saveData=()=>{
-    dispatch({type:'UPDATE_DATA',payload:{propertyType:property.propertyType}});
-    dispatch({type:''})
+  const saveData=(event)=>{
+    event.preventDefault();
+    event.stopPropagation();
+    dispatch({type:'UPDATE_DATA',payload:{propertyType:property?.propertyType}});
+    dispatch({type:'UPDATE_DATA',payload:{description:property?.description}});
+    dispatch({type:'UPDATE_DATA',payload:{propertyType:property?.propertyType}});
+    dispatch({type:'UPDATE_DATA',payload:{numBeds:property?.numBeds}});
+    dispatch({type:'UPDATE_DATA',payload:{numBaths:property?.numBaths}});
+    dispatch({type:'UPDATE_DATA',payload:{propertySize:property?.propertySize}});
+    dispatch({type:'UPDATE_DATA',payload:{address:property?.address}});
+    dispatch({type:'UPDATE_DATA',payload:{country:property?.country}});
+    dispatch({type:'UPDATE_DATA',payload:{city:property?.city}});
+    dispatch({type:'UPDATE_DATA',payload:{zip:property?.propertyType}});
+    dispatch({type:'UPDATE_DATA',payload:{startDate:property?.startDate}});
+    dispatch({type:'UPDATE_DATA',payload:{leaseLength:property?.leaseLength}});
+    dispatch({type:'UPDATE_DATA',payload:{monthlyRent:property?.monthlyRent}});
+    dispatch({type:'UPDATE_DATA',payload:{securityDep:property?.securityDep}});
+    dispatch({type:'UPDATE_DATA',payload:{contactMethod:property?.contactMethod}});
+    dispatch({type:'UPDATE_DATA',payload:{landlord:property?.landlord}});
+    dispatch({type:'UPDATE_DATA',payload:{id:property?.id}});
+  
   }
-
+  const deleteData=()=>{
+    /*
+    removeProperty(propertyId,user.email);
+    */
+  }
+ 
   useEffect(() => {
     import(`../Images/Properties/${property.image}`).then((imageModule) => {
       setImage(imageModule.default);
@@ -77,10 +101,11 @@ function PropertyCard({ property}) {
       <div class="frame-70-6gA" id="I141:5987;141:5709" style={cardStyle} onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)}>
         {(isHovered&&pageStates.UserProfilePage) &&(
           <div class="icon-container">
-            <Link to="../Dashboard" style={{textDecoration:'none',color:'inherit'}}>
-          <EditIcon onClick={saveData}style={{fill:  'white',fontSize:'80px'} }/>
+          <EditIcon onClick={(event)=>saveData(event)}style={{fill:  'white',fontSize:'80px'} }/>
+  
+          <Link to="../" style={{textDecoration:'none',color:'inherit'}}>
+          <DeleteIcon onClick={deleteData(propertyId)} style={{ fill:  'white',fontSize:'80px'} }/>
           </Link>
-          <DeleteIcon style={{ fill:  'white',fontSize:'80px'} }/>
           </div>
         )}
         <div class="auto-group-z5tw-2Zp" id="N4EkpPYABDeLgunmSZZ5tW">

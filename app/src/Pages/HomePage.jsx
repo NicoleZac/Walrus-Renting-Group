@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import PropertyListings from "../Components/PropertyListings";
-import propertyList from "../Components/propertyList";
+import {getProperties} from "../Components/propertyList";
 import { UserContext } from "../Context/usercontext";
 import {Link} from "react-router-dom";
 import "./HomePage.css";
@@ -29,21 +29,21 @@ function HomePage({ openPopup }) {
             <div class="employment-Ega" id="I195:7530;195:7168;161:3104">
               My properties
             </div>
-            <PropertyListings properties={propertyList} type="Landlord" />
+            <PropertyListings properties={getProperties()} type="Landlord" />
           </div>
           <div class="landlords-own-properties-LbC" id="I195:7530;195:7298">
             <div class="employment-Ega" id="I195:7530;195:7298;161:3104">
               Neighbouring Properties
             </div>
             <PropertyListings
-              properties={propertyList}
+              properties={getProperties()}
               type="OtherInNeighbourhood"
             />
           </div>
         </div>
         </div>
       ) : (
-        <PropertyListings properties={propertyList} />
+        <PropertyListings properties={getProperties()} />
       )}
     </div>
   );

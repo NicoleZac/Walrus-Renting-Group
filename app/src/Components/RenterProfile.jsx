@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 import "./RenterProfile.css";
 
 const RenterProfile = ({ user }) => {
-  const { firstName, lastName, email } = user;
+  const firstName = user?.firstName;
+  const lastName = user?.lastName;
+  const email = user?.email;
 
   return (
     <div>

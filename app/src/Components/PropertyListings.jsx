@@ -5,7 +5,7 @@ import { UserContext } from "../Context/usercontext";
 import { useFilter } from "../Context/filtercontext";
 import { Link } from "react-router-dom";
 
-const PropertyListings = ({ properties, type}) => {
+const PropertyListings = ({ openPopup,properties, type}) => {
   const { user } = useContext(UserContext);
   const { state } = useFilter();
   const [filteredProperties, setFilteredProperties] = useState(properties);
@@ -114,7 +114,7 @@ const PropertyListings = ({ properties, type}) => {
           <div className="tableRow" key={rowIndex}>
             {row.map((cell, cellIndex) => (
               <Link to={ `/PropertyPage/${encodeURIComponent(cell.id)}/${encodeURIComponent(JSON.stringify(cell))}`} style={{textDecoration: 'none',color:'inherit'}}>
-              <PropertyCard key={cellIndex} property={cell} />
+              <PropertyCard openPopup={openPopup} key={cellIndex} property={cell} />
               </Link>
             ))}
           </div>
