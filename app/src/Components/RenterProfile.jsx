@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./RenterProfile.css";
+import { Link } from "react-router-dom";
 
 const RenterProfile = ({ user }) => {
   const { firstName, lastName, email } = user;
@@ -59,7 +60,12 @@ const RenterProfile = ({ user }) => {
 
   // Function to toggle overall edit mode
   const toggleEditMode = () => {
-    setEditMode(!editMode);
+    // Only allow edit mode if the current user matches the profile owner
+    if (user.email === email) {
+      setEditMode(!editMode);
+    } else {
+      console.error("You are not authorized to edit this profile.");
+    }
   };
 
   return (
@@ -125,6 +131,21 @@ const RenterProfile = ({ user }) => {
               {editMode ? "Save" : "Edit Profile Information"}
             </div>
           </button>
+          {/* Send Message button (conditionally rendered) */}
+          {!editMode && (
+            <button className="send-renter-message">
+              Send Message
+              <span className="link">
+                <Link to={`/UserProfile/${email}`}>
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
+                    className="message"
+                  />
+                </Link>
+              </span>
+            </button>
+          )}
         </div>
       </div>
       {/* Common container class for "occupation" and "filters" */}

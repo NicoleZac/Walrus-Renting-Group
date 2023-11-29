@@ -6,6 +6,7 @@
   align-self: center;
   margin: 20px;
   margin-top: 122px;
+  margin-left: -100px;
   max-width: 100%;
   padding: 50px 20px;
   border-bottom: 2px solid var(--Gray-4, #bdbdbd);
@@ -161,10 +162,36 @@
   }
 }
 
+.send-renter-message {
+  color: var(--Gray-3, #828282);
+  font: italic 400 23px/23px Roboto, -apple-system, Roboto, Helvetica,
+    sans-serif;
+  margin-left: 50px;
+  margin-top: 20px;
+  white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+  .send-renter-message {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: right;
+  }
+}
+
+.send-renter-message:hover {
+  text-decoration: underline;
+}
+
+.message
+{
+  margin-left: 20px;
+}
+
 .edit-profile {
   margin-bottom: 20px; /* Adjust this value as needed */
-  margin-left: -5px;
-  margin-top: -10px;
+  margin-left: 40px;
+  margin-top: -400px;
   color: var(--Gray-3, #828282);
   font: 400 20px/23px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
   padding: 10px;
@@ -221,7 +248,7 @@
   flex-grow: 1;
   flex-direction: column;
   width: 100%;
-  margin-left: 800px;
+  margin-left: 700px;
   padding: 44px 80px 44px 28px;
 }
 
