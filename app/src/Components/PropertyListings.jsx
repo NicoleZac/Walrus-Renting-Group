@@ -22,6 +22,12 @@ const PropertyListings = ({ properties, type }) => {
         (prop) => prop.landlord === user?.email
       );
     }
+    if (type === "Favourites" && user?.email !== "") {
+      tempProperties = tempProperties.filter(
+        (prop) => user?.favourites.includes(prop.id)
+      );
+    }
+
 
     if (type === "OtherInNeighbourhood" && user?.email !== "") {
       tempProperties = tempProperties.filter(

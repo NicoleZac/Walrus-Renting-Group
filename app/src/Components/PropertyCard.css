@@ -23,6 +23,7 @@
         display: flex;
         flex-shrink: 0;
         height: 100%;
+        width:67%;
         margin-right: 1.9813rem;
         overflow: hidden;
         padding: 17.3rem 1.256rem 1.287rem 2.03rem;
@@ -40,7 +41,7 @@
             color: #ffffff;
             flex-shrink: 0;
             font-family: Roboto, 'Source Sans Pro';
-            font-size: 2.8564rem;
+            font-size: 2.0564rem;
             font-weight: 700;
             line-height: 0.1725;
             margin-right: 0.8456rem;
@@ -49,7 +50,7 @@
         .vector-Ugi {
             flex-shrink: 0;
             height: 2.2367rem;
-            margin: 0rem 1.208rem 1.783rem 0rem;
+            margin: 0rem 1.208rem 1.183rem 0rem;
             object-fit: contain;
             vertical-align: top;
             width: 2.6095rem;
@@ -69,8 +70,17 @@
         font-size: 1.388rem;
         font-weight: 700;
         line-height: 1.1725;
-        margin-bottom: 3.3794rem;
+        margin-bottom: 1.1794rem;
         white-space: nowrap;
+      }
+      .type{
+        color: #828282;
+        flex-shrink: 0;
+        font-size:1.388rem;
+        font-family: Roboto, 'Source Sans Pro';
+        font-weight: 700;
+        line-height: 0.1725;
+        margin-bottom: 0.3046rem;
       }
       .bedrooms {
         color: #828282;
@@ -79,7 +89,7 @@
         font-family: Roboto, 'Source Sans Pro';
         font-weight: 700;
         line-height: 0.1725;
-        margin-bottom: 0.9046rem;
+        margin-bottom: 0.3046rem;
 
       }
       .bathrooms {
@@ -89,7 +99,7 @@
         font-size: 1.388rem;
         font-weight: 700;
         line-height: 0.1725;
-        margin-bottom: 0.9046rem;
+        margin-bottom: 0.3046rem;
         white-space: nowrap;
       }
       .sq-ft-Mtv {
