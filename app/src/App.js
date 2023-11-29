@@ -84,24 +84,30 @@ function App() {
   );
 }
 function Content({ openPopup }) {
-  const { LoginRegisterPage, setLoginRegister } = useContext(PageContext);
+  const { pageStates, setPageState } = useContext(PageContext);
   const location = useLocation();
   const {email} = useParams(); 
   const {id,property} = useParams();
   useEffect(() => {
     handleSwitch();
-  }, [location.pathname, setLoginRegister]);
+  }, [location.pathname, setPageState]);
   const handleSwitch = () => {
     if (location.pathname === "/Login" || location.pathname === "/Register") {
-      setLoginRegister(true);
+      setPageState('LoginRegisterPage',true);
     } else {
-      setLoginRegister(false);
+      setPageState('LoginRegisterPage',false);
+    }
+    if(location.pathname === `/UserProfile/${email}`){
+      setPageState('UserProfilePage',true);
+    }
+    else{
+      setPageState('UserProfilePage',false);
     }
   };
 
   return (
     <>
-      {LoginRegisterPage ? <LoginRegisterNav /> : <Nav />}
+      {pageStates.LoginRegisterPage ? <LoginRegisterNav /> : <Nav />}
       {location.pathname === "/" && <HomePage openPopup={openPopup} />}
       {location.pathname === "/Login" && <Login />}
       {location.pathname === "/Register" && <Register />}

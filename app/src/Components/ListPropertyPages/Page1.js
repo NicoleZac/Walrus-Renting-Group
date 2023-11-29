@@ -12,6 +12,7 @@ Modal.setAppElement('#root');
 const Page1 = ({onNext,requestClose}) =>{
     const location = useLocation();
     const {formData,dispatch} = useFormData();
+    console.log(formData.formData.propertyType);
     const [selectedType,setSelectedType] = useState(formData.formData.propertyType);
     const [selectedBeds,setSelectedBeds] = useState(formData.formData.numBeds);
     const [selectedBaths,setSelectedBaths] = useState(formData.formData.numBaths);
