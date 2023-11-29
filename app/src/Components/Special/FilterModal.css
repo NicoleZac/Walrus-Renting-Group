@@ -50,7 +50,7 @@
   width: 800px;
   top: 15%;
   position: absolute;
-  transform: scale(0.75);
+  /* transform: scale(0.9); */
 }
 
 .close-button {
@@ -583,7 +583,7 @@
 .fdiv-40 {
   transform: rotate(-0.439deg);
   color: var(--Gray-2, #4f4f4f);
-  margin: 52px 0 0 13px;
+  margin: 20px 0 0 13px;
   font: 400 15px/18px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
 }
 @media (max-width: 991px) {
