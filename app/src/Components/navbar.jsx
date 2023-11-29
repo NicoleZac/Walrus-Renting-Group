@@ -1,7 +1,7 @@
 import "./navbar.css";
 import React, { useContext, useEffect, useState, useRef } from "react";
 import { UserContext } from "../Context/usercontext";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../Images/logo.png";
 import ListProperty from "./ListProperty";
 import { useFormData } from "../Context/formdatacontext";
@@ -9,6 +9,11 @@ import { state, useFilter } from "../Context/filtercontext";
 import ClickableComponent from "./Special/Clicked";
 import FilterModal from "./Special/FilterModal";
 function Nav() {
+  const location = useLocation();
+  const isUserProfile = location.pathname.includes("/UserProfile");
+  const isMessaging = location.pathname.includes("/messaging");
+  const isFavourites = location.pathname.includes("/favourites");
+
   const [locationFilter, setLocationFilter] = useState("");
   const [bathFilter, setBathFilter] = useState();
   const [bedFilter, setBedFilter] = useState();
@@ -200,25 +205,46 @@ function Nav() {
             {userEmail && (
               <>
                 <Link to={`/UserProfile/${userEmail}`}>
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/ef4d5567-e4d6-40e8-9039-f16f190f3684?"
-                    className="img-5"
-                  />
+                  <div
+                    className={
+                      isUserProfile ? "special-button-colour" : "regular"
+                    }
+                  >
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/ef4d5567-e4d6-40e8-9039-f16f190f3684?"
+                      className="img-5"
+                    />
+                  </div>
                 </Link>
-                <Link to={`/UserProfile/${userEmail}`}>
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
-                    className="img-6"
-                  />
+                <Link to={`/messaging`}>
+                  <div
+                    className={
+                      isMessaging ? "special-button-colour" : "regular"
+                    }
+                  >
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
+                      className="img-6"
+                    />
+                  </div>
                 </Link>
-                <Link to={`/UserProfile/${userEmail}`}>
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/97d36e33-6f9a-4165-916f-a11683446465?"
-                    className="img-7"
-                  />
+                <Link
+                  to={`/favourites`}
+                  className={isFavourites ? "special-button-colour" : ""}
+                >
+                  <div
+                    className={
+                      isMessaging ? "special-button-colour" : "regular"
+                    }
+                  >
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/97d36e33-6f9a-4165-916f-a11683446465?"
+                      className="img-7"
+                    />
+                  </div>
                 </Link>
               </>
             )}
