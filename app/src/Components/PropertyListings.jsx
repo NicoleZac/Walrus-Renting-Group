@@ -5,7 +5,7 @@ import { UserContext } from "../Context/usercontext";
 import { useFilter } from "../Context/filtercontext";
 import { Link } from "react-router-dom";
 
-const PropertyListings = ({ properties, type }) => {
+const PropertyListings = ({ properties, type}) => {
   const { user } = useContext(UserContext);
   const { state } = useFilter();
   const [filteredProperties, setFilteredProperties] = useState(properties);
@@ -23,9 +23,11 @@ const PropertyListings = ({ properties, type }) => {
       );
     }
     if (type === "Favourites" && user?.email !== "") {
+
       tempProperties = tempProperties.filter(
         (prop) => user?.favourites.includes(prop.id)
       );
+  
     }
 
 

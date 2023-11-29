@@ -30,7 +30,7 @@ function HomePage({ openPopup }) {
           </div>
           <div class="landlords-own-properties-LbC" id="I195:7530;195:7298">
             <div class="employment-Ega" id="I195:7530;195:7298;161:3104">
-              Other Properties
+              Neighbouring Properties
             </div>
             <PropertyListings
               properties={propertyList}

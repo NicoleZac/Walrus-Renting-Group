@@ -9,19 +9,18 @@ function PropertyCard({ property }) {
   const [image, setImage] = useState(null);
   const propertyId = property.id;
   const isPropertyInFavourites = ()=>{
-    const uL = userList.find((u)=>u.email ===user.email);
+    const uL = userList.find((u)=>u.email ===user?.email);
     return uL && uL.favourites && uL.favourites.includes(propertyId);
   }
   console.log(isPropertyInFavourites());
-  const [like,setLike] = useState(isPropertyInFavourites());
   const handleLike = (event,propertyId) =>{
     event.preventDefault();
     event.stopPropagation();
   
-    if(like){
+    if(isPropertyInFavourites()){
       setUsers((prev)=>{
         return prev.map((u)=>{
-          if(u.email === user.email&&u.favourites){
+          if(u.email === user?.email&&u.favourites){
             u.favourites=u.favourites.filter((id)=>id!==propertyId);
           }
           return u;
@@ -29,12 +28,11 @@ function PropertyCard({ property }) {
       })
 
 
-      setLike(false);
     }
     else{
       setUsers((prev)=>{
         return prev.map((u)=>{
-          if(u.email === user.email){
+          if(u.email === user?.email){
             if(!u.favourites){
               u.favourites =[propertyId];
             }
@@ -47,7 +45,6 @@ function PropertyCard({ property }) {
       })
     
       
-      setLike(true);
     }
   
   
@@ -70,7 +67,7 @@ function PropertyCard({ property }) {
             ${property.rent} /month
           </p>
           {user && (
-          <FavoriteIcon class="vector-Ugi" style={{ fill: like  ? 'red':'white'} } onClick={(event)=>handleLike(event,propertyId)}/>
+          <FavoriteIcon class="vector-Ugi" style={{ fill: isPropertyInFavourites()  ? 'red':'white'} } onClick={(event)=>handleLike(event,propertyId)}/>
           )}
         </div>
       </div>
