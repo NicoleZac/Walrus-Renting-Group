@@ -1,10 +1,15 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import Modal from "react-modal";
 import "./FilterModal.css";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { state, useFilter } from "../../Context/filtercontext";
 import Slider from "react-slider";
 import MultiRangeSlider from "./MultiRangeSlider";
 const FilterModal = ({ isOpen, closeModal }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
+
   const homeTypeOptions = ["Room", "Apartment", "Duplex", "House", "Basement"];
   const additionalFilterOptions = [
     { id: "Utilities", name: "Utilities" },
@@ -58,6 +63,9 @@ const FilterModal = ({ isOpen, closeModal }) => {
   };
 
   const handleSeeProperties = () => {
+    if (!isHome) {
+      navigate("/");
+    }
     handleFilterChange("homeType", homeType);
     handleFilterChange("additionalFilters", additionalFilters);
     handleFilterChange("minPrice", minPriceFilter);
