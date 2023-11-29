@@ -23,10 +23,14 @@ const PropertyListings = ({ properties, type}) => {
       );
     }
     if (type === "Favourites" && user?.email !== "") {
-
+      if(!user?.favourites){
+        tempProperties =[];
+      }
+      else{
       tempProperties = tempProperties.filter(
         (prop) => user?.favourites.includes(prop.id)
       );
+      }
   
     }
 

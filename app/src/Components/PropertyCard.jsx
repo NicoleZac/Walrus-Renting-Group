@@ -1,6 +1,7 @@
 import React, { useState, useEffect,useContext} from "react";
 import "./PropertyCard.css";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { PageContext } from "../Context/pagecontext";
 import userList from "./userList";
 import {UserContext} from '../Context/usercontext';
 function PropertyCard({ property }) {
@@ -12,7 +13,7 @@ function PropertyCard({ property }) {
     const uL = userList.find((u)=>u.email ===user?.email);
     return uL && uL.favourites && uL.favourites.includes(propertyId);
   }
-  console.log(isPropertyInFavourites());
+
   const handleLike = (event,propertyId) =>{
     event.preventDefault();
     event.stopPropagation();
