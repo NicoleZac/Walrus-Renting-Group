@@ -12,6 +12,7 @@ function LoginForm(){
         password: '',
     });
     const handleTextInput = (e)=>{
+        setError('');
         const {name,value} =e.target;
         setFormData({
             ...formData,
@@ -40,20 +41,20 @@ function LoginForm(){
 <p class="login-grn" id="161:5145">Login</p>
 <div class="frame-49-jq4" id="161:5196">
 <div class="frame-49-eSE" id="161:5184">
+    <div class="search-bar-Zp6">
 <p class="email-address-MNa" id="163:5561">Email Address</p>
-<input class="search-bar-Zp6" id="30:2330" name="email" placeholder="xxx@email.com" value={formData.email} onChange={handleTextInput}></input>
-<div class="frame-17-URG" id="163:5560">
+<input class="email-input" name="email" placeholder="xxx@email.com" value={formData.email} onChange={handleTextInput}></input>
 </div>
-<p class="password-MfQ" id="161:5182">Password</p>
-<input type="password" class="search-bar-j8E" id="30:2332"  name="password" placeholder="xxxxxxxx...." value={formData.password} onChange={handleTextInput}></input>
+<div class="search-bar-Zp6">
+<p class="email-address-MNa" id="161:5182">Password</p>
+<input class="email-input"type="password"  id="30:2332"  name="password" placeholder="xxxxxxxx...." value={formData.password} onChange={handleTextInput}></input>
+</div>
 
-<div class="frame-17-TK8" id="161:5181">
-</div>
 </div>
 <p class="dont-have-an-account-sign-up-here-A74" id="161:5195">
 <span class="dont-have-an-account-sign-up-here-A74-sub-0">Don’t have an account? </span>
 <Link to="../Register">
-<span class="dont-have-an-account-sign-up-here-A74-sub-1">Sign up here.</span>
+<span class="dont-have-an-account-sign-up-here-A74-sub-1">&#160;Sign up here.</span>
 </Link>
 </p>
 </div>
