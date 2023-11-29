@@ -4,7 +4,9 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import { PageContext } from "../Context/pagecontext";
 import userList from "./userList";
 import {UserContext} from '../Context/usercontext';
+import { useLocation } from "react-router-dom";
 function PropertyCard({ property }) {
+  const location = useLocation();
   const [users,setUsers]= useState(userList);
   const {user}= useContext(UserContext);
   const [image, setImage] = useState(null);

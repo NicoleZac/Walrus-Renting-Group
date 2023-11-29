@@ -15,6 +15,7 @@ import Calendar from "./Pages/Calendar";
 import PropertyPage from "./Pages/PropertyPage";
 import CreateCalendar from "./Pages/CreateCalendar";
 import Favourites from "./Pages/Favourites";
+import Dashboard from "./Pages/Dashboard";
 
 import { useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -69,6 +70,10 @@ function App() {
                   path={"/Favourites/:email"}
                   element={<Content openPopup={openPop} />}
                 />
+                <Route
+                  path={"/Dashboard"}
+                  element={<Content openPopup={openPop} />}
+                />
               </Routes>
               <ListProperty isOpen={isPopOpen} requestClose={closePop} />
             </Router>
@@ -106,6 +111,7 @@ function Content({ openPopup }) {
       {location.pathname === `/PropertyPage/${encodeURIComponent(id)}/${encodeURIComponent(property)}` && <PropertyPage />}
       {location.pathname === `/CreateCalendar/${email}` && <CreateCalendar />}
       {location.pathname === `/Favourites/${email}` && <Favourites />}
+      {location.pathname === `/Dashboard` && <Dashboard />}
     </>
   );
 }

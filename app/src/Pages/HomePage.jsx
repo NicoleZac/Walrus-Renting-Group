@@ -2,13 +2,13 @@ import React, { useContext } from "react";
 import PropertyListings from "../Components/PropertyListings";
 import propertyList from "../Components/propertyList";
 import { UserContext } from "../Context/usercontext";
+import {Link} from "react-router-dom";
 import "./HomePage.css";
 
 function HomePage({ openPopup }) {
   const { user } = useContext(UserContext);
 
   const userType = user?.userType;
-  const other = true;
   return (
     <div>
       {userType === "Landlord" ? (
@@ -18,6 +18,9 @@ function HomePage({ openPopup }) {
             <div class="submit-qW2" id="I195:7530;195:7165">
               View Messages
             </div>
+            <Link class="submit-qW2"to="../Dashboard" style={{textDecoration:'none',color:'inherit'}}>
+            View Other Properties
+            </Link>
             <div onClick={openPopup} class="submit-UJ6" id="I195:7530;195:6735">
               Create Property
             </div>
