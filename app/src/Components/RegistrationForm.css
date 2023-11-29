@@ -15,7 +15,7 @@
     .group-49-NEn {
       flex-shrink: 0;
       height: 2.1353rem;
-      margin: 0rem 0.7rem 0rem -12.9rem;
+      margin: 1.5rem 0.7rem 0rem -14.9rem;
       object-fit: contain;
       vertical-align: top;
       width: 3.1rem;
@@ -23,9 +23,9 @@
     .register-gFU {
       color: #828282;
       flex-shrink: 0;
-      font-family: Roboto, 'Source Sans Pro';
-      margin-bottom:3.3rem;
-      font-size: 2.3191rem;
+      font-family: Roboto, "Source Sans Pro";
+      margin-bottom: 5.3rem;
+      font-size: 2.9191rem;
       font-weight: 700;
       line-height: 0.1725;
       white-space: nowrap;
@@ -37,118 +37,106 @@
       flex-shrink: 0;
       row-gap: 1.1rem;
       width: 30.8rem;
+      padding: 1rem 0rem 0.5rem 0rem;
   
-      .first-name-8Ft {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 1.276rem;
-        font-weight: 400;
-        line-height: 0.1725;
-        white-space: nowrap;
-      }
-      .search-bar-e5p {
+      .search-bar-reg-1 {
         background-color: #ffffff;
         border: solid 0.1rem #c2c2c2;
         border-radius: 40rem;
         font-size: 1.1076rem;
         box-sizing: border-box;
         flex-shrink: 0;
-        height: 2.1rem;
-     
-        padding: 2rem 10.1rem 2.5rem 2.1rem;
-        margin-bottom: 0.5rem;
+        height: 4.1rem;
+
+        padding: 0.8rem 1.5rem 4.5rem 2.5rem;
+        margin-bottom: 1.5rem;
         width: 90%;
-  
+
       }
-      .last-name-ff8 {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 1.276rem;
-        font-weight: 400;
-        line-height: 0.1725;
-        white-space: nowrap;
-      }
-      .search-bar-AyG {
+      .search-bar-reg-2 {
         background-color: #ffffff;
         border: solid 0.1rem #c2c2c2;
         border-radius: 40rem;
         font-size: 1.1076rem;
         box-sizing: border-box;
         flex-shrink: 0;
-        height: 2.1rem;
-     
-        padding: 2rem 10.1rem 2.5rem 2.1rem;
-        margin-bottom: 0.5rem;
+        height: 4.1rem;
+
+        padding: 0.8rem 1.5rem 4.5rem 2.5rem;
+        margin-bottom: 1.5rem;
         width: 90%;
-  
-  
-        
+
       }
-      
-      .email-address-iWv {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 1.276rem;
-        font-weight: 400;
-        line-height: 0.1725;
-        white-space: nowrap;
-      }
-      .search-bar-Gev {
+      .search-bar-reg-3 {
         background-color: #ffffff;
         border: solid 0.1rem #c2c2c2;
         border-radius: 40rem;
         font-size: 1.1076rem;
         box-sizing: border-box;
         flex-shrink: 0;
-        height: 2.1rem;
-     
-        padding: 2rem 10.1rem 2.5rem 2.1rem;
-        margin-bottom: 0.5rem;
+        height: 4.1rem;
+
+        padding: 0.8rem 1.5rem 4.5rem 2.5rem;
+        margin-bottom: 1.5rem;
         width: 90%;
+
       }
-      .password-Eta {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 1.276rem;
-        font-weight: 400;
-        line-height: 0.1725;
-        white-space: nowrap;
-      }
-      .search-bar-MJz {
+      .search-bar-reg-4 {
         background-color: #ffffff;
         border: solid 0.1rem #c2c2c2;
         border-radius: 40rem;
         font-size: 1.1076rem;
         box-sizing: border-box;
         flex-shrink: 0;
-        height: 2.1rem;
-     
-        padding: 2rem 10.1rem 2.5rem 2.1rem;
-        margin-bottom: 0.5rem;
+        height: 4.1rem;
+
+        padding: 0.8rem 1.5rem 4.5rem 2.5rem;
+        margin-bottom: 1.5rem;
         width: 90%;
-        
+
       }
-      .confirm-password-v98 {
-        color: #4f4f4f;
-        font-family: Roboto, 'Source Sans Pro';
-        font-size: 1.276rem;
-        font-weight: 400;
-        line-height: 0.1725;
-        white-space: nowrap;
-      }
-      .search-bar-tiE {
+      .search-bar-reg-5 {
         background-color: #ffffff;
         border: solid 0.1rem #c2c2c2;
         border-radius: 40rem;
         font-size: 1.1076rem;
         box-sizing: border-box;
         flex-shrink: 0;
-        height: 2.1rem;
-     
-        padding: 2rem 10.1rem 2.5rem 2.1rem;
-        margin-bottom: 0.5rem;
+        height: 4.1rem;
+
+        padding: 0.8rem 1.5rem 4.5rem 2.5rem;
+        margin-bottom: 1.5rem;
         width: 90%;
-        
+
+      }
+      .search-bar-reg-6 {
+        background-color: #ffffff;
+        border: solid 0.1rem #c2c2c2;
+        border-radius: 40rem;
+        font-size: 1.1076rem;
+        box-sizing: border-box;
+        flex-shrink: 0;
+        height: 4.1rem;
+
+        padding: 0.8rem 1.5rem 4.5rem 2.5rem;
+        margin-bottom: 1.5rem;
+        width: 90%;
+
+      }
+      .email-address-MNa {
+        color: #4f4f4f;
+        font-family: Roboto, "Source Sans Pro";
+        font-size: 1.076rem;
+        font-weight: 400;
+        line-height: 0.1725;
+        margin-bottom:0.5rem;
+        white-space: nowrap;
+      }
+      .email-input{
+        outline:none;
+        font-size: 1.3rem;
+        -webkit-box-shadow: 0 0 0 30px white inset;
+
       }
     }
     .select-account-type-9Xg {
@@ -159,7 +147,7 @@
       font-style: italic;
       font-weight: 400;
       line-height: 1.1725;
-      margin: 0rem 0rem 1.6rem 3.3rem;
+      margin: 0rem 0rem 1.6rem 1.3rem;
       white-space: nowrap;
     }
     .frame-49-ejL {
@@ -190,6 +178,10 @@
         white-space: nowrap;
   
   
+      }
+      .price-Mte:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+        background-color:#303201;
       }
       .or-Kyt {
         color: #c9cba3;
@@ -222,6 +214,33 @@
   
   
       }
+      .price-SYi:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+        background-color:#303201;
+      }
+    }
+    .already-have-account-reg {
+      align-items: baseline;
+      color: #828282;
+      display: flex;
+      flex-shrink: 0;
+      font-family: Roboto, "Source Sans Pro";
+      font-size: 1.5076rem;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.1725;
+      margin-left: 0.7rem;
+      white-space: nowrap;
+
+    }
+    .already-have-account-reg-1{
+      color: #828282;
+      font-family: Roboto, "Source Sans Pro";
+      font-size: 1.5076rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.1725;
+      text-decoration-line: underline;
     }
     .submit-cLi {
       align-items: center;
@@ -238,12 +257,13 @@
       line-height: 1.1725;
       margin-left: 1rem;
       white-space: nowrap;
+      margin-top: 2.5rem;
       width: 24.8rem;
     }
   }
   .error-register{
     margin-top: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     color:red;
     font-weight:bold;
   }
