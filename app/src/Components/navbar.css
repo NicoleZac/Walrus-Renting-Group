@@ -417,13 +417,14 @@ button {
   padding-top: 50px;
 }
 .div-101 {
-  border-radius: 0px 0px 30px 30px;
+  border-radius: 30px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5); /* Add a box shadow on hover */
   border: 1px solid var(--Gray-4, #bdbdbd);
   background-color: #fff;
   display: flex;
   width: 160px;
   flex-direction: column;
-  padding: 31px 38px 45px 39px;
+  padding: 31px 10px 45px 39px;
   position: absolute;
   z-index: 2;
 }
