@@ -2,6 +2,7 @@ import React from "react";
 import PropertyListings from "../Components/PropertyListings";
 import propertyList from "../Components/propertyList";
 import "./LandlordProfile.css";
+import { Link } from "react-router-dom";
 import ListProperty from "./ListProperty";
 
 const LandlordProfile = ({ user, openPopup }) => {
@@ -27,6 +28,17 @@ const LandlordProfile = ({ user, openPopup }) => {
           <p className="profile-description">
             I’ve got a nice property for you to stay at. Looking for renters.
           </p>
+          <div className="send-message">Send Message
+            <span className="link"> 
+              <Link to={`/UserProfile/${email}`}>
+                    <img
+                      loading="lazy"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
+                      className="message"
+                    />
+              </Link>
+            </span>
+          </div>
         </div>
       </div>
 

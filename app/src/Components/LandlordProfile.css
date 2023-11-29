@@ -118,6 +118,23 @@
   }
 }
 
+.send-message {
+  color: var(--Gray-3, #828282);
+  font: italic 400 23px/23px Roboto, -apple-system, Roboto, Helvetica,
+    sans-serif;
+  margin-left: 900px;
+  margin-top: -10px;
+  white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+  .send-message {
+    max-width: 100%;
+    flex-direction: column;
+    align-items: right;
+  }
+}
+
 .main-container {
   display: flex;
   width: 1134px;
@@ -137,8 +154,9 @@
 
 .text-wrapper {
   color: var(--Gray-3, #828282);
-  margin-left: 700px;
+  margin-left: 500px;
   margin-top: 70px;
+  margin-bottom: -10px;
   font: 700 35px/41px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
@@ -188,5 +206,6 @@
 
 
 .current-properties {
-  align-items: start;
+  align-items: center;
+  margin-left: 400px;
 }

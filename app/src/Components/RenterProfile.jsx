@@ -1,9 +1,66 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import "./RenterProfile.css";
 
 const RenterProfile = ({ user }) => {
   const { firstName, lastName, email } = user;
+
+  // State variable to manage overall edit mode
+  const [editMode, setEditMode] = useState(false);
+
+  // State variables to manage editable profile fields
+  const [description, setDescription] = useState(
+    "I am a short-term renter looking for a home with a nearby Pilates studio."
+  );
+
+  const [newFirstName, setNewFirstName] = useState(firstName);
+  const [newLastName, setNewLastName] = useState(lastName);
+  const [newAge, setNewAge] = useState("22");
+  const [ageLabel] = useState("years old");
+
+  // State variables for occupation and filters sections
+  const [editOccupation, setEditOccupation] = useState(false);
+  const [editFilters, setEditFilters] = useState(false);
+
+  const [student, setStudent] = useState("Full-Time Student");
+  const [university, setUniversity] = useState("University of Calgary");
+  const [faculty, setFaculty] = useState("Engineering");
+
+  const [room, setRoom] = useState("Room to Rent");
+  const [length, setLength] = useState("Short Term");
+  const [location, setLocation] = useState("Near University");
+  const [transit, setTransit] = useState("Access to Transit");
+  const [laundry, setLaundry] = useState("Ensuite Laundry");
+
+  const handleDescriptionChange = (e) => {
+    setDescription(e.target.value);
+  };
+
+  const handleFirstNameChange = (e) => {
+    setNewFirstName(e.target.value);
+  };
+
+  const handleLastNameChange = (e) => {
+    setNewLastName(e.target.value);
+  };
+
+
+  const handleAgeChange = (e) => {
+    const enteredAge = e.target.value;
+
+    // Check if entered age is greater than 18
+    if (!isNaN(enteredAge) && enteredAge > 18) {
+      setNewAge(enteredAge.toString());
+    } else {
+      // Optionally, you can provide feedback to the user about the age requirement
+      console.error("Age must be greater than 18");
+    }
+  };
+
+
+  // Function to toggle overall edit mode
+  const toggleEditMode = () => {
+    setEditMode(!editMode);
+  };
 
   return (
     <div>
@@ -17,45 +74,89 @@ const RenterProfile = ({ user }) => {
           />
         </div>
         <div className="profile-details">
-          <h2 className="profile-name">{`${firstName} ${lastName}`}</h2>
-          <div className="profile-age">22 years old</div>
-          <p className="profile-email">{`${email}`}</p>
-          <div className="profile-description">
-            I am a short-term renter looking for a home with a nearby Pilates
-            studio.
-          </div>
-          <div className="send-message">Send Message
-            <span className="link"> 
-              <Link to={`/UserProfile/${email}`}>
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
-                      className="message"
-                    />
-              </Link>
-            </span>
-          </div>
+          {/* Editable first name */}
+          {editMode ? (
+            <input
+              type="text"
+              value={newFirstName}
+              onChange={handleFirstNameChange}
+              className="first-name-input"
+            />
+          ) : (
+            <h2 className="profile-name">{`${newFirstName} ${newLastName}`}</h2>
+          )}
+          {/* Editable last name */}
+          {editMode ? (
+            <input
+              type="text"
+              value={newLastName}
+              onChange={handleLastNameChange}
+              className="last-name-input"
+            />
+          ) : null}
+          {editMode ? (
+            <div className="profile-age">
+              <input
+                type="number"
+                value={newAge}
+                onChange={handleAgeChange}
+                className="profile-age-input"
+              />
+            </div>
+          ) : (
+            <div className="profile-age">{`${newAge} ${ageLabel}`}</div>
+          )}
+          <p className="profile-email">{`${email || ""}`}</p>
+          {/* Toggle between displaying text and input field for description */}
+          {editMode ? (
+            <textarea
+              className="edit-description"
+              value={description}
+              onChange={handleDescriptionChange}
+            />
+          ) : (
+            <div className="profile-description">
+              {description}
+            </div>
+          )}
+          {/* Button to toggle the overall edit mode */}
+          <button onClick={toggleEditMode} className="edit-profile-button">
+            <div className="edit-profile">
+              {editMode ? "Save" : "Edit Profile Information"}
+            </div>
+          </button>
         </div>
       </div>
-      <div className="occupation">
-        <div className="div-37">
-          <div className="employment">Employment</div>
-          <div className="div-39">
-            <div className="student">Full-Time Student</div>
-            <div className="university">University of Calgary</div>
-            <div className="faculty">Engineering</div>
+      {/* Common container class for "occupation" and "filters" */}
+      <div className="profile-section">
+        <div className="div-47">
+          <div className="column-divide">
+            <div className="occupation">
+              <div className="employment">Employment</div>
+              <div className="tags">
+                <div className="student-column">
+                  <div className="student">Full Time Student</div>
+                  <div className="faculty">Engineering</div>
+                </div>
+                <div className="university-tag">
+                  <div className="university">University of Calgary</div>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div className="filters">
-        <div className="div-43">
-          <div className="requirements">Looking for</div>
-          <div className="div-45">
-            <div className="room">Room to Rent</div>
-            <div className="length">Short Term</div>
-            <div className="location">Near University</div>
-            <div className="transit">Access to Transit</div>
-            <div className="laundry">Ensuite Laundry</div>
+          <div className="requirements-column">
+            <div className="rent-tags">
+              <div className="requirements">Looking for</div>
+              <div className="information">
+                <div className="room">Room to Rent</div>
+                <div className="length">Short Term</div>
+                <div className="location">Near University</div>
+              </div>
+              <div className="other">
+                <div className="transit">Access to Transit</div>
+                <div className="laundry">Ensuite Laundry</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

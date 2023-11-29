@@ -3,7 +3,7 @@ import LandlordProfile from "../Components/LandlordProfile";
 import RenterProfile from "../Components/RenterProfile";
 import { UserContext } from "../Context/usercontext";
 
-function UserProfile (useParams) {
+function UserProfile (useParams, openPopup) {
   const { user } = useContext(UserContext);
   const userType = user?.userType;
 
