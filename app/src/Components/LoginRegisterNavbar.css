@@ -41,12 +41,12 @@
   
           .group-6 {
             flex-shrink: 0;
-            height: 5.1064rem;
-            margin: 0rem 0rem 0.031rem 0rem;
+            height: 7.1064rem;
+            margin: 0rem 0rem 0.031rem 21rem;
             object-fit: contain;
             position: relative;
             vertical-align: top;
-            width: 9.1482rem;
+            width: 15.1482rem;
           }
         }
     }
