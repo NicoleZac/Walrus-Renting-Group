@@ -1,7 +1,7 @@
 import "./navbar.css";
 import React, { useContext, useEffect, useState, useRef } from "react";
 import { UserContext } from "../Context/usercontext";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../Images/logo.png";
 import ListProperty from "./ListProperty";
 import { useFormData } from "../Context/formdatacontext";
@@ -10,6 +10,8 @@ import ClickableComponent from "./Special/Clicked";
 import FilterModal from "./Special/FilterModal";
 function Nav() {
   const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
   const isUserProfile = location.pathname.includes("/UserProfile");
   const isMessaging = location.pathname.includes("/messaging");
   const isFavourites = location.pathname.includes("/favourites");
@@ -49,6 +51,9 @@ function Nav() {
   };
 
   const handleButtonClick = () => {
+    if (!isHome) {
+      navigate("/");
+    }
     handleFilterChange("location", locationFilter);
     handleFilterChange("bath", bathFilter);
     handleFilterChange("bed", bedFilter);
