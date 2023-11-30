@@ -89,24 +89,37 @@ const PropertyListings = ({ properties, type }) => {
   };
 
   return (
-    <div className="table">
-      {filteredProperties
-        .reduce(
-          (rows, cell, index) =>
-            (index % 3 === 0
-              ? rows.push([cell])
-              : rows[rows.length - 1].push(cell)) && rows,
-          []
-        )
-        .map((row, rowIndex) => (
-          <div className="tableRow" key={rowIndex}>
-            {row.map((cell, cellIndex) => (
-              <Link to={ `/PropertyPage/${encodeURIComponent(cell.id)}/${encodeURIComponent(JSON.stringify(cell))}`} style={{textDecoration: 'none',color:'inherit'}}>
-              <PropertyCard key={cellIndex} property={cell} />
-              </Link>
-            ))}
-          </div>
-        ))}
+    <div className="mainProp">
+      {filteredProperties == 0 ? (
+        <div className="additionalChild">No Properties Found</div>
+      ) : (
+        ""
+      )}
+
+      <div className="table">
+        {filteredProperties
+          .reduce(
+            (rows, cell, index) =>
+              (index % 3 === 0
+                ? rows.push([cell])
+                : rows[rows.length - 1].push(cell)) && rows,
+            []
+          )
+          .map((row, rowIndex) => (
+            <div className="tableRow" key={rowIndex}>
+              {row.map((cell, cellIndex) => (
+                <Link
+                  to={`/PropertyPage/${encodeURIComponent(
+                    cell.id
+                  )}/${encodeURIComponent(JSON.stringify(cell))}`}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <PropertyCard key={cellIndex} property={cell} />
+                </Link>
+              ))}
+            </div>
+          ))}
+      </div>
     </div>
   );
 };
