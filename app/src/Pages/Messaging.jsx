@@ -28,6 +28,19 @@ export const Messaging = () => {
       
     };
 
+    /* Should go to landlord profiles*/
+    const matthewProfile = () => {
+      
+    };
+
+    const drakeProfile = () => {
+      
+    };
+
+    const angerProfile = () => {
+      
+    };
+
   return (
     <div className="messaging">
       <div className = "overlap-wrapper1">
@@ -78,7 +91,14 @@ export const Messaging = () => {
                   <div className="frame-7">
                     <div className="user-card">
                       <div className = "frame25">
-                        <img className="matthew" alt="Matthew" src={Matthew}/>
+                        <button onClick={matthewProfile}>
+                          <img
+                            className="matthew"
+                            alt="Matthew"
+                            loading="lazy"
+                            src={Matthew}
+                          />
+                        </button>
                         <div className="div25">
                           <div className="textwrapper25">Matthew Roberts</div>
                           <div className="textwrapper25-2">How are you doing?</div>
@@ -92,10 +112,17 @@ export const Messaging = () => {
                     </div>
                     <div className="user-card">
                       <div className = "frame25">
-                        <img className="drake" alt="Drake" src={Drake}/>
+                        <button onClick={drakeProfile}>
+                          <img
+                            className="drake"
+                            alt="Drake"
+                            loading="lazy"
+                            src={Drake}
+                          />
+                        </button>
                         <div className="div25">
                           <div className="textwrapper25">Drake the Demon</div>
-                          <div className="textwrapper25-2">I have a house for you</div>
+                          <div className="textwrapper25-2">...</div>
                         </div>
                         <div className="group25">
                           <div className="overlap-group25">
@@ -106,7 +133,14 @@ export const Messaging = () => {
                     </div>
                     <div className="user-card">
                       <div className = "frame25">
-                        <img className="anger" alt="Anger" src={Anger}/>
+                        <button onClick={angerProfile}>
+                            <img
+                              className="anger"
+                              alt="Anger"
+                              loading="lazy"
+                              src={Anger}
+                            />
+                          </button>
                         <div className="div25">
                           <div className="textwrapper25">Anger Issues</div>
                           <div className="textwrapper25-2">You: I am interested</div>
