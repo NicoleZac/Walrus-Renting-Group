@@ -3,15 +3,17 @@ import "./Messaging.css";
 import Send from '../Images/PropertyPics/send.png'
 import Calendar from '../Images/PropertyPics/calendar.png'
 import Matthew from '../Images/PropertyPics/matthew.png'
-import Drake from '../Images/PropertyPics/drake.png'
+import Drake from '../Images/PropertyPics/Drake.png'
 import Anger from '../Images/PropertyPics/Anger.png'
 import Search from '../Images/PropertyPics/search.png'
+import CalendarModal from "../Components/Special/Calendar";
 
 export const Messaging = () => {
 
   const [isBorderWhite, setIsBorderWhite] = useState(true);
   const [hasShadow, setHasShadow] = useState(false);
   const [isTextColored, setIsTextColored] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const handleSend = () => {
     setIsBorderWhite(false);
@@ -20,9 +22,8 @@ export const Messaging = () => {
   };
 
   /* For view availability button */
-    const handleCalendar = () => {
-    
-  };
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
 
     const handleSearch = () => {
       
@@ -59,7 +60,7 @@ export const Messaging = () => {
                 <div className = "text-wrapper-2">Drake The Demon</div>
                 <div className = "frame-5s">
                   <div className="text-wrapper-3">View Availability</div>
-                    <button onClick={handleCalendar}>
+                    <button onClick={openModal}>
                       <img
                         className="calendar"
                         alt="Calendar"
@@ -67,6 +68,7 @@ export const Messaging = () => {
                         src={Calendar}
                       />
                   </button>
+                  <CalendarModal isOpen={isModalOpen} closeModal={closeModal} />
                 </div>
               </div>
             </div>

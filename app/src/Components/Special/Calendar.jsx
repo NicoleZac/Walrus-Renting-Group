@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import Modal from "react-modal";
 import "./Calendar.css";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
-export const Calendar = () => {
+const CalendarModal = ({ isOpen, closeModal }) => {
 
     
     const [day1, setDay1Value] = useState('28');
@@ -42,11 +43,32 @@ export const Calendar = () => {
     //  const [isHoveredB, setIsHoveredB] = useState(false);
 
   return (
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={closeModal}
+      contentLabel="Calendar Modal"
+      className="modal-content"
+      overlayClassName="modal-overlay"
+      style={{
+        overlay: {
+          backgroundColor: 'rgba(0, 0, 0, 0.25)',
+        },
+        content: {
+          width: '75%', // Adjust the width as needed
+          height: '85%', // Adjust the height as needed
+          margin: 'auto',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          overflow: 'auto', // Enable scrolling
+        },
+      }}
+    >
     <div className="calendar" >
       <div className="overlap">
         <div className="frame">
           <div className="text-wrapper">December</div>
-        </div>
+          </div>
       </div>
       <div className="div-time">
         <div className="text-wrapper-2">08:00</div>
@@ -116,6 +138,7 @@ export const Calendar = () => {
         </div>}
       </div>
     </div>
+    </Modal>
   );
-}
-export default Calendar;
+};
+export default CalendarModal;

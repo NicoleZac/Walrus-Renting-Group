@@ -12,21 +12,22 @@ import HeartFilled from '../Images/PropertyPics/filledheart.png'
 import Calendar from '../Images/PropertyPics/calendar.png'
 import {useParams} from 'react-router-dom';
 import { Link } from "react-router-dom";
+import CalendarModal from "../Components/Special/Calendar";
 
 export const PropertyPage = () => {
   const {id,property} = useParams();
   const propertyInfo = JSON.parse(decodeURIComponent(property));
   const [isFavorited, setIsFavorited] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   /* For sending favourites button */
   const handleFavourite = () => {
     setIsFavorited(!isFavorited);
   };
 
-  /* For view availability button */
-  const handleCalendar = () => {
-    // Your implementation
-  };
+   /* For view availability button */
+   const openModal = () => setModalOpen(true);
+   const closeModal = () => setModalOpen(false);
 
   /* For contact landlord button */
   const contactLandlord = () => {
@@ -59,7 +60,7 @@ export const PropertyPage = () => {
                 src={Heart}
               />
             </button>
-            <button onClick={handleCalendar}>
+            <button onClick={openModal}>
               <img
                 className="calendar"
                 alt="Calendar"
@@ -67,6 +68,7 @@ export const PropertyPage = () => {
                 src={Calendar}
               />
             </button>
+            <CalendarModal isOpen={isModalOpen} closeModal={closeModal} />
           </div>
         </div>
         <div className="frame-7">
