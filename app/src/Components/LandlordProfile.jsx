@@ -54,7 +54,7 @@ function PropertyComponent({ openPopup }) {
       </div>
       <div className="current-properties">
         <div className="landlords-own-properties" id="I195:7530;195:7168">
-          <PropertyListings properties={getProperties()} type="Landlord" />
+          <PropertyListings openPopup={openPopup} properties={getProperties()} type="Landlord" />
         </div>
       </div>
     </>

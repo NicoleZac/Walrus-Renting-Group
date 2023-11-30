@@ -10,7 +10,7 @@ import { useFormData } from '../Context/formdatacontext';
 import {Link} from 'react-router-dom';
 import {removeProperty} from './propertyList';
 
-function PropertyCard({ property }) {
+function PropertyCard({ openPopup,property }) {
   const {formData,dispatch} = useFormData();
   const { pageStates} = useContext(PageContext);
   const [users,setUsers]= useState(userList);
@@ -79,15 +79,12 @@ function PropertyCard({ property }) {
     dispatch({type:'UPDATE_DATA',payload:{contactMethod:property?.contactMethod}});
     dispatch({type:'UPDATE_DATA',payload:{landlord:property?.landlord}});
     dispatch({type:'UPDATE_DATA',payload:{id:property?.id}});
+    openPopup();
   
   }
-  const deleteData= async(event)=>{
-    event.preventDefault();
-    event.stopPropagation();
-    console.log(propertyId)
-    console.log(user.email)
+  const deleteData= async()=>{
+
     await removeProperty(propertyId,user.email);
-    window.location.href=`/UserProfile/${user?.email}`;
    
     
   }
@@ -107,9 +104,10 @@ function PropertyCard({ property }) {
       <div class="frame-70-6gA" id="I141:5987;141:5709" style={cardStyle} onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)}>
       {(isHovered&&pageStates.UserProfilePage) &&(
           <div class="icon-container">
-          <EditIcon style={{fill:  'white',fontSize:'80px'} }/>
-  
+          <EditIcon onClick={(event)=>saveData(event)} style={{fill:  'white',fontSize:'80px'} }/>
+  <Link to='../'>
           <DeleteIcon onClick={(event)=>deleteData(event)} style={{ fill:  'white',fontSize:'80px'} }/>
+          </Link>
           </div>
         )}
         <div class="auto-group-z5tw-2Zp" id="N4EkpPYABDeLgunmSZZ5tW">

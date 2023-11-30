@@ -41,8 +41,16 @@ const ListProperty =({isOpen,requestClose})=>{
         }
         else{
            const newId = String(maxId);;
-            formData.formData.id= newId;
-            //propertyList.push(formData);
+           if(formData.formData.id === ''){
+                formData.formData.id= newId;
+           }
+           const index = propertyList.findIndex(prop=>prop.id ===formData.formData.id);
+        if(index!=-1){ //for editing properties
+            propertyList[index] = formData.formData;
+        }
+        else{
+            propertyList.push(formData.formData);
+        }
             setError('');
             setPage('p1');
             dispatch({type: 'SUBMIT'});
