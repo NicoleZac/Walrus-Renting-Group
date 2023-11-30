@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import PropertyListings from "../Components/PropertyListings";
-import propertyList from "../Components/propertyList";
+import {getProperties} from "../Components/propertyList";
 import "./LandlordProfile.css";
 import { Link } from "react-router-dom";
 
 const LandlordProfile = ({ user, openPopup }) => {
   // Check if user exists before destructuring its properties
-  const { firstName, lastName, email } = user || {};
+  const firstName = user?.firstName;
+  const lastName = user?.lastName;
+  const email = user?.email;
 
   // State variable to manage overall edit mode
   const [editMode, setEditMode] = useState(false);
@@ -161,7 +163,7 @@ function PropertyComponent({ openPopup }) {
       </div>
       <div className="current-properties">
         <div className="landlords-own-properties" id="I195:7530;195:7168">
-          <PropertyListings properties={propertyList} type="Landlord" />
+          <PropertyListings openPopup={openPopup} properties={getProperties()} type="Landlord" />
         </div>
       </div>
     </>

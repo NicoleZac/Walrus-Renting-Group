@@ -3,7 +3,9 @@ import "./RenterProfile.css";
 import { Link } from "react-router-dom";
 
 const RenterProfile = ({ user }) => {
-  const { firstName, lastName, email } = user;
+  const firstName = user?.firstName;
+  const lastName = user?.lastName;
+  const email = user?.email;
 
   // State variable to manage overall edit mode
   const [editMode, setEditMode] = useState(false);
