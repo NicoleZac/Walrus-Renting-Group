@@ -606,6 +606,7 @@ button {
   max-width: 100%;
   filter: brightness(1);
   scale: 1.9;
+  filter: saturate(175%);
 }
 
 .img-400:hover {
@@ -620,7 +621,7 @@ button {
   max-width: 100%;
   filter: brightness(1);
   scale: 1.9;
-  filter: saturate(50%);
+  filter: saturate(0%);
   cursor: not-allowed;
 }
 
