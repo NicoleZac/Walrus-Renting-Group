@@ -682,6 +682,6 @@ let propertyList = [
 ];
 export const getProperties =()=> propertyList;
 export const removeProperty=(id,u)=>{
-  propertyList = propertyList.filter(p=>p.id!==id && p.landlord ===u);
+  propertyList = propertyList.filter(prop=>!(prop.id === id && prop.landlord === u))
 }
 export default propertyList;

@@ -1,27 +1,28 @@
 import React, { useState, useEffect,useContext} from "react";
 import "./PropertyCard.css";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { PageContext } from "../Context/pagecontext";
 import userList from "./userList";
 import {UserContext} from '../Context/usercontext';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-import {PageContext } from "../Context/pagecontext";
-import {Link} from 'react-router-dom';
 import { useFormData } from '../Context/formdatacontext';
+import {Link} from 'react-router-dom';
 import {removeProperty} from './propertyList';
-function PropertyCard({ openPopup,property}) {
+
+function PropertyCard({ property }) {
   const {formData,dispatch} = useFormData();
-  dispatch({type: 'SUBMIT'});
   const { pageStates} = useContext(PageContext);
   const [users,setUsers]= useState(userList);
   const {user}= useContext(UserContext);
   const [image, setImage] = useState(null);
-  const propertyId = property.id;
   const [isHovered,setHovered] = useState(false);
+  const propertyId = property.id;
   const isPropertyInFavourites = ()=>{
     const uL = userList.find((u)=>u.email ===user?.email);
     return uL && uL.favourites && uL.favourites.includes(propertyId);
   }
+  
   const handleLike = (event,propertyId) =>{
     event.preventDefault();
     event.stopPropagation();
@@ -80,12 +81,17 @@ function PropertyCard({ openPopup,property}) {
     dispatch({type:'UPDATE_DATA',payload:{id:property?.id}});
   
   }
-  const deleteData=()=>{
-    /*
-    removeProperty(propertyId,user.email);
-    */
+  const deleteData= async(event)=>{
+    event.preventDefault();
+    event.stopPropagation();
+    console.log(propertyId)
+    console.log(user.email)
+    await removeProperty(propertyId,user.email);
+    window.location.href=`/UserProfile/${user?.email}`;
+   
+    
   }
- 
+
   useEffect(() => {
     import(`../Images/Properties/${property.image}`).then((imageModule) => {
       setImage(imageModule.default);
@@ -99,13 +105,11 @@ function PropertyCard({ openPopup,property}) {
   return (
     <div class="property-card-P14" id="141:5987">
       <div class="frame-70-6gA" id="I141:5987;141:5709" style={cardStyle} onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)}>
-        {(isHovered&&pageStates.UserProfilePage) &&(
+      {(isHovered&&pageStates.UserProfilePage) &&(
           <div class="icon-container">
-          <EditIcon onClick={(event)=>saveData(event)}style={{fill:  'white',fontSize:'80px'} }/>
+          <EditIcon style={{fill:  'white',fontSize:'80px'} }/>
   
-          <Link to="../" style={{textDecoration:'none',color:'inherit'}}>
-          <DeleteIcon onClick={deleteData(propertyId)} style={{ fill:  'white',fontSize:'80px'} }/>
-          </Link>
+          <DeleteIcon onClick={(event)=>deleteData(event)} style={{ fill:  'white',fontSize:'80px'} }/>
           </div>
         )}
         <div class="auto-group-z5tw-2Zp" id="N4EkpPYABDeLgunmSZZ5tW">
