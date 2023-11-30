@@ -3,7 +3,7 @@ import "./Messaging.css";
 import Send from '../Images/PropertyPics/send.png'
 import Calendar from '../Images/PropertyPics/calendar.png'
 import Matthew from '../Images/PropertyPics/matthew.png'
-import Drake from '../Images/PropertyPics/drake.png'
+import Drake from '../Images/PropertyPics/Drake.png'
 import Anger from '../Images/PropertyPics/Anger.png'
 import Search from '../Images/PropertyPics/search.png'
 
