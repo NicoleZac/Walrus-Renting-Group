@@ -50,6 +50,7 @@ export const PropertyPage = () => {
         <div className="group">
           <div className="text-wrapper-5">{propertyInfo.title}</div>
           <div className="text-wrapper-6">${propertyInfo.rent} / month</div>
+          <div className = "addy">{address}</div>
           <div className="buttons">
             <button onClick={handleFavourite}>
               <img
@@ -70,8 +71,14 @@ export const PropertyPage = () => {
           </div>
         </div>
         <div className="frame-7">
+          <div className="property-info">
+            <div className="frame-2-2">$500 Security Deposit</div>
+            <div className="frame-25-2">1 year lease</div>
+            <div className="frame-26-2">Available January</div>
+          </div>
+          <div className="text-wrapper-25-2">Rental Information</div>
           <div className="property-features">
-            <div className="frame-2">Available Now!</div>
+            <div className="frame-2">Parking Garage</div>
             <div className="frame-25">Utilities Included</div>
             <div className="frame-26">Ensuite Laundry</div>
           </div>

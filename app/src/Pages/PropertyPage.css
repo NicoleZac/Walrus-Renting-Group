@@ -3,7 +3,8 @@
   height: 1908px;
   width: 1920px;
   position: relative;
-  left: 115px;
+  left: 175px;
+  top: -100px;
 }
 
 .individual-property .frame-5 {
@@ -121,6 +122,24 @@
   white-space: nowrap;
 }
 
+.individual-property .addy {
+  color: rgba(130, 130, 130, 1);
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 25.2px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  white-space: nowrap;
+  align-items: center;
+  display: inline-flex;
+  gap: 24.15px;
+  justify-content: center;
+  position: absolute;
+  left: 719px;
+  top: 70px;
+}
+
 .individual-property .frame-6 {
   height: 39px;
   left: 0;
@@ -137,7 +156,7 @@
   width: 1144px;
 }
 
-.individual-property .property-features {
+.individual-property .property-info {
   background-color: #ffffff;
   border-color: rgba(189, 189, 189, 1);
   border-right-style: solid;
@@ -147,6 +166,65 @@
   width: 572px;
 }
 
+.individual-property .frame-2-2 {
+  align-items: flex-start;
+  color: rgba(79, 79, 79, 1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px 18px;
+  left: 32px;
+  position: absolute;
+  top: 85px;
+  width: 175px;
+  border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
+  border-radius: 20px; /* Adjust border-radius to make the corners rounder */
+  padding: 5px 10px;
+}
+
+.individual-property .frame-25-2 {
+  align-items: flex-start;
+  color: rgba(79, 79, 79, 1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px 18px;
+  left: 257px;
+  position: absolute;
+  top: 85px;
+  width: 98px;
+  border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
+  border-radius: 20px; /* Adjust border-radius to make the corners rounder */
+  padding: 5px 10px;
+}
+
+.individual-property .frame-26-2 {
+  align-items: flex-start;
+  color: rgba(79, 79, 79, 1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px 18px;
+  left: 32px;
+  position: absolute;
+  top: 140px;
+  width: 130px;
+  border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
+  border-radius: 20px; /* Adjust border-radius to make the corners rounder */
+  padding: 5px 10px;
+}
+
+.individual-property .text-wrapper-25-2 {
+  color: rgba(130, 130, 130, 1);
+  font-family: "Roboto-Bold", Helvetica;
+  font-size: 25px;
+  font-weight: 700;
+  left: 28px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 33px;
+  white-space: nowrap;
+}
+
+
 .individual-property .frame-2 {
   align-items: flex-start;
   color: rgba(79, 79, 79, 1);
@@ -155,7 +233,7 @@
   gap: 27px 18px;
   left: 32px;
   position: absolute;
-  top: 150px;
+  top: 380px;
   width: 113px;
   border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
   border-radius: 20px; /* Adjust border-radius to make the corners rounder */
@@ -170,7 +248,7 @@
   gap: 27px 18px;
   left: 207px;
   position: absolute;
-  top: 150px;
+  top: 320px;
   width: 128px;
   border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
   border-radius: 20px; /* Adjust border-radius to make the corners rounder */
@@ -185,7 +263,7 @@
   gap: 27px 18px;
   left: 32px;
   position: absolute;
-  top: 205px;
+  top: 320px;
   width: 125px;
   border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
   border-radius: 20px; /* Adjust border-radius to make the corners rounder */
@@ -201,7 +279,7 @@
   letter-spacing: 0;
   line-height: normal;
   position: absolute;
-  top: 33px;
+  top: 220px;
   white-space: nowrap;
 }
 
@@ -211,7 +289,7 @@
   gap: 63px;
   left: 29px;
   position: absolute;
-  top: 90px;
+  top: 270px;
 }
 
 .individual-property .item1 {
