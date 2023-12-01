@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import MapContainer from "../Components/GoogleMaps";
 import GalleryModal from "../Components/GalleryModal";
 import cover from "../Images/PropertyPics/Cover.png"
+import Messaging from "../Components/Messaging";
 
 export const PropertyPage = () => {
   const { id, property } = useParams();
@@ -21,6 +22,12 @@ export const PropertyPage = () => {
   const [isFavorited, setIsFavorited] = useState(false);
   const [showGallery, setShowGallery] = useState(false);
   const address = "212 University Way, Calgary";
+  const [showMessaging, setShowMessaging] = useState(false);
+
+  // Function to toggle Messaging component
+  const contactLandlord = () => {
+    setShowMessaging(true); // Show Messaging component when Contact Landlord is clicked
+  };
 
 
   const images = [
@@ -52,11 +59,6 @@ export const PropertyPage = () => {
     // Your implementation
   };
 
-  /* For contact landlord button */
-  const contactLandlord = () => {
-    // Your implementation
-  };
-
   const openGallery = () => {
     setShowGallery(true);
   };
@@ -70,6 +72,7 @@ export const PropertyPage = () => {
       <div className="frame-5">
         <div className="submit">
         <button type="submit" class="text-wrapper-4" onClick={contactLandlord}>Contact Landlord</button>
+        {showMessaging && <Messaging isOpen={showMessaging} onClose={() => setShowMessaging(false)} />}
         </div>
         <div className="photos">
           <div className="big-image">
