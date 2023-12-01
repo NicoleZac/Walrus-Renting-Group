@@ -164,7 +164,7 @@ const Page1 = ({onNext,requestClose}) =>{
         <p class="key-features-5KY" id="I165:13949;165:8221">Key Features</p>
         <p class="what-makes-your-property-special-ZEi" id="I165:13949;165:8222">What makes your property special?</p>
         </div>
-        <textarea type="text" placeholder="Description (Max 600 characters)&#10;Enter Here" name="description" value={formData.formData.description} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-eGA" id="I165:13949;165:8335">
+        <textarea type="text" placeholder="Description (Max 600 characters)" name="description" value={formData.formData.description} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-eGA" id="I165:13949;165:8335">
 
         </textarea>
         <div onClick={handleUpload} class="search-bar-3LE" id="I165:13949;165:8340">
@@ -291,7 +291,7 @@ const Page1 = ({onNext,requestClose}) =>{
         <div class="frame-15-1cv" id="I165:13949;165:8451;141:4592">Smoking Allowed</div>
         </div>
         </div>
-        <textarea placeholder="Square Footage&#10;500sqft"  name="propertySize" value={formData.formData.propertySize} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-HqL" id="I165:13949;165:8464">
+        <textarea placeholder="Square Footage (e.g 500)"  name="propertySize" value={formData.formData.propertySize} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-HqL" id="I165:13949;165:8464">
  
         </textarea>
         <div onClick={onNext} class="submit-hXg" id="I165:13949;165:8469">Next Page</div>

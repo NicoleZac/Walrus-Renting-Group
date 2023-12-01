@@ -1,12 +1,11 @@
 .create-a-property-vkS {
   border-radius: 6.4478rem;
-  box-shadow: 0 0.0321rem 0.1427rem rgba(0, 0, 0, 0.0421718433), 0 0.0772rem 0.343rem rgba(0, 0, 0, 0.0605839156), 0 0.1453rem 0.6459rem rgba(0, 0, 0, 0.075000003), 0 0.2592rem 1.1522rem rgba(0, 0, 0, 0.0894160867), 0 0.4849rem 2.155rem rgba(0, 0, 0, 0.1078281552), 0 1.1606rem 5.1582rem rgba(0, 0, 0, 0.150000006);
-  flex-shrink: 0;
-  height: 55.1929rem;
-  margin-right: 2.4501rem;
-  position: relative;
-  width: 39.5249rem;
-
+  display: flex;
+  width: 100%;
+  border: none;
+  flex-direction: column;
+  align-items: start;
+  height:55.1929rem;
   .rectangle-13-2Hg {
     background-color: #ffffff;
     border-radius: 1.9666rem;
@@ -254,14 +253,28 @@
     box-sizing: border-box;
     height: 3.557rem;
     font-family: Roboto, 'Source Sans Pro';
-    font-size: 0.9539rem;
+    font-size: 0.8539rem;
     font-weight: 400;
     left: 2.7726rem;
     overflow: hidden;
-    padding: 0.678rem 3.306rem 0.578rem 3.306rem;
+    padding: 0rem 0.06rem 0.78rem 2.306rem;
     position: absolute;
-    top: 35.9786rem;
+    top: 36.9786rem;
     width: 12.2128rem;
+    .rent-label {
+      color: #4f4f4f;
+      font-size: 1.076rem;
+      font-weight: 400;
+      line-height: 0.1725;
+      margin-bottom:0.5rem;
+      white-space: nowrap;
+    }
+    .rent-input{
+      outline:none;
+      font-size: 1.3rem;
+      -webkit-box-shadow: 0 0 0 30px white inset;
+
+    }
 
    
   }
@@ -273,13 +286,26 @@
     height: 3.557rem;
     left: 18.1827rem;
     font-family: Roboto, 'Source Sans Pro';
-    font-size: 0.9539rem;
+    font-size: 0.8539rem;
     font-weight: 400;
     overflow: hidden;
-    padding: 0.678rem 2.656rem 0.578rem 2.656rem;
+    padding: 0rem 0.06rem 0.78rem 2.306rem;
     position: absolute;
-    top: 35.9786rem;
+    top: 36.9786rem;
     width: 12.2128rem;
+    .dep-label {
+      color: #4f4f4f;
+      font-size: 1.076rem;
+      font-weight: 400;
+      line-height: 0.1725;
+      margin-bottom:0.5rem;
+      white-space: nowrap;
+    }
+    .dep-input{
+      outline:none;
+      font-size: 1.3rem;
+      -webkit-box-shadow: 0 0 0 30px white inset;
 
+    }
   }
 }

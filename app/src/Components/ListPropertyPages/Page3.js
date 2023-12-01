@@ -64,10 +64,14 @@ const Page3 = ({onNext,onPrevious}) =>{
         </div>
         <textarea placeholder="Lease Length&#10;ie: 1 year"  name="leaseLength" value={formData.formData.leaseLength} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-ehg" id="I165:13951;165:8746">
         </textarea>
-        <textarea placeholder="Monthly Rent&#10;$0.00" name="monthlyRent" value={formData.formData.monthlyRent} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="price-J9x" id="I165:13951;165:8756">
-        </textarea>
-        <textarea placeholder="Security Deposit&#10;$0.00" name="securityDep" value={formData.formData.securityDep} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="price-uJA" id="I165:13951;165:8761">
-        </textarea>
+        <div class="price-J9x" id="I165:13951;165:8756">
+        <p class="rent-label">Monthly Rent</p>
+        <input class="rent-input" type="text" placeholder="$0.00" name="monthlyRent" value={formData.formData.monthlyRent} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
+        </div>
+        <div class="price-uJA" id="I165:13951;165:8761">
+        <p class="dep-label">Security Deposit</p>
+        <input class="dep-input" type="text" placeholder="$0.00" name="securityDep" value={formData.formData.securityDep} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
+        </div>
         </div>
     );
 };

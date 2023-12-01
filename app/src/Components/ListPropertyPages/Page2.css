@@ -1,12 +1,11 @@
 .create-a-property-CMx {
   border-radius: 6.4478rem;
-  box-shadow: 0 0.0321rem 0.1427rem rgba(0, 0, 0, 0.0421718433), 0 0.0772rem 0.343rem rgba(0, 0, 0, 0.0605839156), 0 0.1453rem 0.6459rem rgba(0, 0, 0, 0.075000003), 0 0.2592rem 1.1522rem rgba(0, 0, 0, 0.0894160867), 0 0.4849rem 2.155rem rgba(0, 0, 0, 0.1078281552), 0 1.1606rem 5.1582rem rgba(0, 0, 0, 0.150000006);
-  flex-shrink: 0;
+  display: flex;
+  width: 100%;
+  border: none;
+  flex-direction: column;
+  align-items: start;
   height: 64.4777rem;
-  margin-right: 2.4501rem;
-  position: relative;
-  width: 39.5249rem;
-
   .rectangle-13-tka {
     background-color: #ffffff;
     border-radius: 1.9666rem;

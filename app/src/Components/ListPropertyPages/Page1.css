@@ -322,10 +322,9 @@
     height: 13.7338rem;
     left: 3.2884rem;
     padding: 1.2896rem 1.9988rem;
-    position: absolute;
+    position: relative;
     top: 30.5625rem;
     width: 31.9165rem;
-
 
   }
   .search-bar-3LE {
@@ -338,8 +337,8 @@
     height: 5.9964rem;
     left: 3.2884rem;
     padding: 1.612rem 9.162rem 1.58rem 10.188rem;
-    position: absolute;
-    top: 45.6502rem;
+    position: relative;
+    top: 32.6502rem;
     width: 31.9165rem;
 
     .upload-photos-t5x {
@@ -1074,16 +1073,16 @@
   }
   .search-bar-HqL {
     background-color: #ffffff;
-    font-size: 0.9721rem;
+    font-size: 1.3rem;
     font-family: Roboto, 'Source Sans Pro';
     border: solid 0.0645rem #c2c2c2;
     border-radius: 25.7911rem;
     box-sizing: border-box;
     height: 5.2227rem;
-    left: 3.2884rem;
+    left: 2.2884rem;
     padding: 1.29rem 3.288rem 1.633rem 3.288rem;
-    position: absolute;
-    top: 87.4342rem;
+    position: relative;
+    top: 66.4342rem;
     width: 31.981rem;
 
 
@@ -1141,4 +1140,8 @@
   margin-Right: 10px;
   margin-bottom:10px;
 }
-
+textarea{
+  resize:none;
+  overflow:hidden;
+  overflow-wrap:break-word;
+}
