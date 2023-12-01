@@ -127,6 +127,7 @@
     width: 11.4rem;
   }
   .submit-SzN {
+    cursor:pointer;
     align-items: center;
     background-color: #4f4f4f;
     border-radius: 25.7911rem;
@@ -137,10 +138,10 @@
     font-weight: 400;
     height: 4.3845rem;
     justify-content: center;
-    left: 4.1266rem;
+    left: 3.1266rem;
     line-height: 1.1725;
-    position: absolute;
-    top: 54.1613rem;
+    position: relative;
+    top: 100%;
     white-space: nowrap;
     width: 31.0782rem;
   }

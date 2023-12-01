@@ -84,7 +84,17 @@ const ListProperty =({isOpen,requestClose})=>{
                 return <Page1 onNext={handleNext}  requestClose={requestClose}/>;
         }
     }
-
+useEffect(()=>{
+    if(isOpen){
+        document.body.style.overflow='hidden'
+    }
+    else{
+        document.body.style.overflow='auto';
+    }
+    return()=>{
+        document.body.overflow='auto';
+    }
+},[isOpen]);
     return(
 <Modal
         isOpen = {isOpen}
@@ -98,7 +108,6 @@ const ListProperty =({isOpen,requestClose})=>{
             alignItems: 'center',
             justifyContent: 'center',
             position: 'fixed',
-            overflow:'hidden',
             top: 0,
             left: 0,
             right:0,

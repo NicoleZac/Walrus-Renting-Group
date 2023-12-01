@@ -148,6 +148,7 @@
     }
   }
   .submit-jQN {
+    cursor:pointer;
     align-items: center;
     background-color: #4f4f4f;
     border-radius: 25.7911rem;
@@ -175,6 +176,7 @@
     width: 0.7093rem;
   }
   .search-bar-uiA {
+    cursor:pointer;
     align-items: center;
     background-color: #ffffff;
     border: solid 0.0645rem #c2c2c2;

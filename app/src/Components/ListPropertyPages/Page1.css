@@ -146,6 +146,7 @@
         width: 9.9296rem;
 
         .price-EoU {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -172,6 +173,7 @@
         }
         .price-WAe {
           background-color: #ffffff;
+          cursor:pointer;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
           box-sizing: border-box;
@@ -204,6 +206,7 @@
         width: 9.9296rem;
 
         .price-EVx {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -229,6 +232,7 @@
           }
         }
         .price-ZAr {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -254,6 +258,7 @@
         }
       }
       .price-K3Y {
+        cursor:pointer;
         background-color: #ffffff;
         border: solid 0.0452rem #c2c2c2;
         border-radius: 18.093rem;
@@ -328,6 +333,7 @@
 
   }
   .search-bar-3LE {
+    cursor:pointer;
     align-items: center;
     background-color: #ffffff;
     border: solid 0.0645rem #c2c2c2;
@@ -342,6 +348,7 @@
     width: 31.9165rem;
 
     .upload-photos-t5x {
+      
       color: #4f4f4f;
       flex-shrink: 0;
       font-family: Roboto, 'Source Sans Pro';
@@ -438,6 +445,7 @@
         width: 5.4161rem;
 
         .price-TaJ {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -465,6 +473,7 @@
           }
         }
         .price-DSz {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -501,6 +510,7 @@
         width: 5.4161rem;
 
         .price-ewc {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -528,6 +538,7 @@
           }
         }
         .price-d2r {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -563,6 +574,7 @@
         width: 5.4161rem;
 
         .price-6qY {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -590,6 +602,7 @@
           }
         }
         .price-ry8 {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -625,6 +638,7 @@
         padding-left: 0.5159rem;
 
         .price-AcS {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -652,6 +666,7 @@
           }
         }
         .price-s9U {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -712,6 +727,7 @@
         width: 5.4161rem;
 
         .price-oUN {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -739,6 +755,7 @@
           }
         }
         .price-vBc {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -775,6 +792,7 @@
         width: 5.4161rem;
 
         .price-Tsg {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -802,6 +820,7 @@
           }
         }
         .price-dJJ {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -837,6 +856,7 @@
         width: 5.4161rem;
 
         .price-ZUn {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -864,6 +884,7 @@
           }
         }
         .price-bZt {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -899,6 +920,7 @@
         padding-left: 0.5159rem;
 
         .price-iY2 {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -926,6 +948,7 @@
           }
         }
         .price-5Wz {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -999,6 +1022,7 @@
     width: 31.981rem;
 
     .price-6iv {
+      cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
       border-radius: 18.093rem;
@@ -1023,6 +1047,7 @@
       }
     }
     .price-VWA {
+      cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
       border-radius: 18.093rem;
@@ -1047,6 +1072,7 @@
       }
     }
     .price-Ust {
+      cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
       border-radius: 18.093rem;
@@ -1089,6 +1115,7 @@
   }
   .submit-hXg {
     align-items: center;
+    cursor:pointer;
     background-color: #4f4f4f;
     border-radius: 25.7911rem;
     color: #ffffff;

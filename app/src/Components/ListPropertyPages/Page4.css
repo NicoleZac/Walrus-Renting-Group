@@ -139,6 +139,7 @@
     }
   }
   .submit-UWv {
+    cursor:pointer;
     align-items: center;
     background-color: #4f4f4f;
     border-radius: 25.7911rem;
@@ -176,6 +177,7 @@
     width: 31.981rem;
 
     .price-CbL {
+      cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
       border-radius: 18.093rem;
@@ -202,6 +204,7 @@
       }
     }
     .price-xiv {
+      cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
       border-radius: 18.093rem;
@@ -226,6 +229,7 @@
       }
     }
     .price-Zyc {
+      cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
       border-radius: 18.093rem;
@@ -251,6 +255,7 @@
     }
   }
   .search-bar-ZcE {
+    cursor:pointer;
     align-items: center;
     background-color: #ffffff;
     border: solid 0.0645rem #c2c2c2;
@@ -292,10 +297,10 @@
   font-weight: 800;
   height: 0.3845rem;
   justify-content: center;
-  left: 4.1266rem;
+  left: 3.1266rem;
   line-height: 1.1725;
-  position: absolute;
-  top: 43.4299rem;
+  position: relative;
+  top: 90%;
   white-space: nowrap;
   width: 31.0782rem;
 }

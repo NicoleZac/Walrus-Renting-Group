@@ -47,8 +47,11 @@ const Page3 = ({onNext,onPrevious}) =>{
         <p class="approximate-2F4" id="I165:13951;165:8755">Approximate</p>
         </div>
         <div onClick={onNext} class="submit-jQN" id="I165:13951;165:8704">Next Page</div>
+        <div class="error">
+            {error && <p style={{color:'red'}}>{error}</p>}
+        </div>
         <ArrowBackIosIcon onClick={onPrevious} class="group-49-ndY" src="/api/prod-us-east-2-first-cluster/projects/LZTNXrW..." id="I165:13951;165:8706"/>
-        <div class="search-bar-uiA" id="I165:13951;165:8729">
+        <div onClick={openDatePicker}  class="search-bar-uiA" id="I165:13951;165:8729">
         <div class="frame-17-bqt" id="I165:13951;165:8731">
         <p class="earlest-start-darte-Ym8" id="I165:13951;165:8732">Earlest Start Date</p>
         {startDate &&(
@@ -56,8 +59,8 @@ const Page3 = ({onNext,onPrevious}) =>{
         )}
         </div>
 
-        <EventIcon onClick={openDatePicker} class="vector-k6W" src="/api/prod-us-east-2-first-cluster/projects/LZTNXrW..." id="I165:13951;165:8745"/>
-        {error && <p style={{color:'red'}}>{error}</p>}
+        <EventIcon class="vector-k6W" src="/api/prod-us-east-2-first-cluster/projects/LZTNXrW..." id="I165:13951;165:8745"/>
+        
         {isDatePickerOpen &&(
             <DatePicker selected={startDate} onChange={handleDateChange} dateFormat="MMMM d,yyyy" isClearable placeholderText="Select a date"/>
         )}
