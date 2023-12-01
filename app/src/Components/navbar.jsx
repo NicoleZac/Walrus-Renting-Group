@@ -204,7 +204,7 @@ function Nav() {
                     className="img-6"
                   />
                 </Link>
-                <Link to={`/UserProfile/${userEmail}`}>
+                <Link to={`/Favourites/${userEmail}`}>
                   <img
                     loading="lazy"
                     src="https://cdn.builder.io/api/v1/image/assets/TEMP/97d36e33-6f9a-4165-916f-a11683446465?"
