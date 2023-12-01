@@ -57,8 +57,25 @@
 }
 
 .individual-property .small-image {
+  position: relative;
   display: flex;
   flex-direction: column;
+}
+
+.individual-property .position-relative {
+  position: relative;
+}
+
+.individual-property .image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.individual-property .overlay-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Adjust width, height, and other styles as needed */
 }
 
 .small-image img {

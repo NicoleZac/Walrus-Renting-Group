@@ -12,12 +12,36 @@ import Calendar from "../Images/PropertyPics/calendar.png";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import MapContainer from "../Components/GoogleMaps";
+import GalleryModal from "../Components/GalleryModal";
+import cover from "../Images/PropertyPics/Cover.png"
 
 export const PropertyPage = () => {
   const { id, property } = useParams();
   const propertyInfo = JSON.parse(decodeURIComponent(property));
   const [isFavorited, setIsFavorited] = useState(false);
+  const [showGallery, setShowGallery] = useState(false);
   const address = "212 University Way, Calgary";
+
+
+  const images = [
+    {
+      original: HousePic1,
+      thumbnail: HousePic1,
+      description: 'House Picture 1'
+    },
+    {
+      original: HousePic2,
+      thumbnail: HousePic2,
+      description: 'House Picture 2'
+    },
+    {
+      original: HousePic3,
+      thumbnail: HousePic3,
+      description: 'House Picture 3'
+    }
+    // Add more images if needed following the same structure
+  ];
+  
   /* For sending favourites button */
   const handleFavourite = () => {
     setIsFavorited(!isFavorited);
@@ -32,6 +56,15 @@ export const PropertyPage = () => {
   const contactLandlord = () => {
     // Your implementation
   };
+
+  const openGallery = () => {
+    setShowGallery(true);
+  };
+
+  const closeGallery = () => {
+    setShowGallery(false);
+  };
+
   return (
     <div className="individual-property">
       <div className="frame-5">
@@ -44,9 +77,22 @@ export const PropertyPage = () => {
           </div>
           <div className="small-image">
             <img src={HousePic2} alt="Property" />
-            <img src={HousePic3} alt="Property" />
+            <div className="position-relative">
+              <div className = "image-container">
+                <img
+                  src= {cover}
+                  alt="Overlay Image"
+                  className="overlay-image"
+                  onClick={openGallery}
+                />
+                <img src={HousePic3} alt="Property"/>
+              </div>
+            </div>
           </div>
         </div>
+        {showGallery && (
+          <GalleryModal images={images} onClose={closeGallery} />
+      ) }
         <div className="group">
           <div className="text-wrapper-5">{propertyInfo.title}</div>
           <div className="text-wrapper-6">${propertyInfo.rent} / month</div>
