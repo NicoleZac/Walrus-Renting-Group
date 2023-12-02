@@ -1,5 +1,6 @@
 
 .create-a-property-2ne {
+
   border-radius: 6.4478rem;
   display: flex;
   width: 100%;
@@ -7,6 +8,7 @@
   flex-direction: column;
   align-items: start;
   height: 102.9709rem;
+  
 
   .rectangle-13-cXt {
     background-color: #ffffff;
@@ -51,7 +53,7 @@
     height: 2.3rem;
     left: 3.2239rem;
     position: absolute;
-    top: 7.9308rem;
+    top: 4.9308rem;
     width: 5.7rem;
 
     .progress-bar-JLA {
@@ -59,9 +61,9 @@
       font-family: Roboto, 'Source Sans Pro';
       font-size: 0.9721rem;
       font-weight: 400;
-      height: 1.2rem;
+      height: 0.2rem;
       left: 0;
-      line-height: 1.1725;
+      line-height: 0.1725;
       position: absolute;
       top: 0;
       white-space: nowrap;
@@ -74,7 +76,7 @@
       font-weight: 400;
       height: 1.2rem;
       left: 0;
-      line-height: 1.1725;
+      line-height: 0.17;
       position: absolute;
       top: 1.1rem;
       white-space: nowrap;
@@ -86,9 +88,38 @@
     left: 3.2238rem;
     object-fit: contain;
     position: absolute;
-    top: 11.606rem;
+    top: 8.606rem;
     vertical-align: top;
     width: 32.7547rem;
+  }
+  .title-bar {
+    background-color: #ffffff;
+    font-size: 1.3rem;
+    font-family: Roboto, 'Source Sans Pro';
+    border: solid 0.0645rem #c2c2c2;
+    border-radius: 25.7911rem;
+    box-sizing: border-box;
+    height: 4.2227rem;
+    left: 2.2884rem;
+    padding: 0rem 0.06rem 0.78rem 2.306rem;
+    position: relative;
+    top: 10.4342rem;
+    width: 31.981rem;
+    .title-label {
+      color: #4f4f4f;
+      font-size: 1.076rem;
+      font-weight: 400;
+      line-height: 0.1725;
+      margin-bottom:0.5rem;
+      white-space: nowrap;
+    }
+    .title-input{
+      outline:none;
+      font-size: 1.3rem;
+      -webkit-box-shadow: 0 0 0 30px white inset;
+
+    }
+
   }
   .group-51-kbU {
     height: 9.9432rem;
@@ -112,7 +143,7 @@
         left: 0;
         line-height: 1.1725;
         position: absolute;
-        top: 0;
+        top: 4.75rem;
         white-space: nowrap;
         width: 6.1rem;
       }
@@ -125,7 +156,7 @@
         left: 0;
         line-height: 1.1725;
         position: absolute;
-        top: 1.1635rem;
+        top: 6.1635rem;
         white-space: nowrap;
         width: 11rem;
       }
@@ -146,6 +177,7 @@
         width: 9.9296rem;
 
         .price-EoU {
+          top: 6rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -172,6 +204,7 @@
           }
         }
         .price-WAe {
+          top: 6rem;
           background-color: #ffffff;
           cursor:pointer;
           border: solid 0.0452rem #c2c2c2;
@@ -206,6 +239,7 @@
         width: 9.9296rem;
 
         .price-EVx {
+          top: 6rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -232,6 +266,7 @@
           }
         }
         .price-ZAr {
+          top: 6rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -258,6 +293,7 @@
         }
       }
       .price-K3Y {
+        top: 6rem;
         cursor:pointer;
         background-color: #ffffff;
         border: solid 0.0452rem #c2c2c2;
@@ -288,7 +324,7 @@
     height: 2.3635rem;
     left: 3.2239rem;
     position: absolute;
-    top: 26.8227rem;
+    top: 30.8227rem;
     width: 15.1rem;
 
     .key-features-5KY {
@@ -344,7 +380,7 @@
     left: 3.2884rem;
     padding: 1.612rem 9.162rem 1.58rem 10.188rem;
     position: relative;
-    top: 32.6502rem;
+    top: 31.6502rem;
     width: 31.9165rem;
 
     .upload-photos-t5x {
@@ -375,7 +411,8 @@
     box-sizing: border-box;
     display: flex;
     height: 2.9964rem;
-    left: 3.2884rem;
+    left: 4.2884rem;
+    margin-top:0.5rem;
     position: absolute;
     top: 53.6502rem;
     width: 11.9165rem;
@@ -1097,6 +1134,18 @@
       }
     }
   }
+  .sqft-label{
+    color: #4f4f4f;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 0.9721rem;
+    font-weight: 400;
+    height: 1.2rem;
+    left: 1.8rem;
+    position: relative;
+    top: 60rem;
+    white-space: nowrap;
+    width: 5.6rem;
+  }
   .search-bar-HqL {
     background-color: #ffffff;
     font-size: 1.3rem;
@@ -1108,7 +1157,7 @@
     left: 2.2884rem;
     padding: 1.29rem 3.288rem 1.633rem 3.288rem;
     position: relative;
-    top: 66.4342rem;
+    top: 60.4342rem;
     width: 31.981rem;
 
 

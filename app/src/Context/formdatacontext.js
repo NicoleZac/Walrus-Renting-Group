@@ -4,6 +4,8 @@ const initialState={
     formData:{
         propertyType: '',
         description: '',
+        title: '',
+        neighbourhood: '',
         images: [],
         numBeds: '',
         numBaths: '',

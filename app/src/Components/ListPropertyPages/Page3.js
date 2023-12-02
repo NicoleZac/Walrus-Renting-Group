@@ -78,7 +78,7 @@ const Page3 = ({onNext,onPrevious}) =>{
         <ArrowBackIosIcon onClick={onPrevious} class="group-49-ndY" src="/api/prod-us-east-2-first-cluster/projects/LZTNXrW..." id="I165:13951;165:8706"/>
         <div style={{borderColor: dateColor}}onClick={openDatePicker}  class="search-bar-uiA" id="I165:13951;165:8729">
         <div class="frame-17-bqt" id="I165:13951;165:8731">
-        <p class="earlest-start-darte-Ym8" id="I165:13951;165:8732">Earlest Start Date</p>
+        <p class="earlest-start-date-Ym8" id="I165:13951;165:8732">Earlest Start Date</p>
         {startDate &&(
         <p class="dd-mm-yyyy-FfY" id="I165:13951;165:8733">{startDate.toLocaleDateString()}</p>
         )}

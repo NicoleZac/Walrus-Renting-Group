@@ -1,20 +1,15 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import "./Page2.css";
 import Progress1 from '../../Images/ProgressBars/Progress1.png'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import Modal  from 'react-modal';
-import ClearIcon from '@mui/icons-material/Clear';
 import { useFormData } from '../../Context/formdatacontext';
-import {useLocation} from 'react-router-dom';
-
-Modal.setAppElement('#root');
 
 const Page2 = ({onNext,onPrevious}) =>{
-    const location = useLocation();
+    const [tagColor,setTagColor] =useState('#c2c2c2');
+    const errorRef = useRef(null);
     const {formData,dispatch} = useFormData();
     const [tags,setTags] = useState(formData.formData.tags || []);
     const [newTag,setNewTag] = useState('');
-    const[isModalOpen,setIsModalOpen] = useState(false);
     const[error,setError] = useState('');
     const handleTextInput = (inputName,value)=>{
         dispatch({type:'UPDATE_DATA',payload:{[inputName]:value}});
@@ -23,6 +18,7 @@ const Page2 = ({onNext,onPrevious}) =>{
         setNewTag(e.target.value);
     };
     const handleAddTag=()=>{
+        setTagColor('#c2c2c2');
         if(newTag.trim()!=='' && !tags.includes(newTag.trim())){
             setTags([...tags,newTag.trim()]);
             dispatch({ type: 'UPDATE_DATA', payload: { tags: [...tags, newTag.trim()] } });
@@ -30,10 +26,12 @@ const Page2 = ({onNext,onPrevious}) =>{
             setError('');
         }
         else{
+            setTagColor('red');
             setError('Tag must not be empty and not a duplicate');
         }
     };
     const handleRemoveTag = (index) => {
+        setTagColor('#c2c2c2');
         setTags((prevTags) => {
           const updatedTags = [...prevTags];
           updatedTags.splice(index, 1);
@@ -44,15 +42,10 @@ const Page2 = ({onNext,onPrevious}) =>{
         });
       };
       useEffect(()=>{
-        setIsModalOpen(false);
-
-    },[location.pathname]);
-    const openModal=()=>{
-        setIsModalOpen(true);
-    };
-    const closeModal=()=>{
-        setIsModalOpen(false);
-    };
+        if(error !== ''){
+            errorRef.current.scrollIntoView({behavior:'smooth'});
+        }
+      },[error]);
     return(
 <div class="create-a-property-CMx" id="165:13950">
 <div class="rectangle-13-tka" id="I165:13950;165:8472"></div>
@@ -67,8 +60,8 @@ const Page2 = ({onNext,onPrevious}) =>{
 <p class="location-kTL" id="I165:13950;165:8486">Location</p>
 <p class="describe-where-it-is-s2A" id="I165:13950;165:8487">Describe where it is!</p>
 </div>
-<p class="neighborhood-description-xZQ" id="I165:13950;165:8668">Neighborhood Description</p>
-<div onClick={onNext} class="submit-SzN" id="I165:13950;165:8544">Next Page</div>
+<p class="neighborhood-description-xZQ" id="I165:13950;165:8668">Tags</p>
+
 <ArrowBackIosIcon onClick={onPrevious} class="group-49-v8r" id="I165:13950;165:8642"/>
 <textarea placeholder="Address&#10;Enter Here" name="address" value={formData.formData.address} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-SN6" id="I165:13950;165:8539">
 </textarea>
@@ -80,45 +73,33 @@ const Page2 = ({onNext,onPrevious}) =>{
 </textarea>
 <textarea placeholder="Country&#10;Enter Here"name="country" value={formData.formData.country} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-Wka" id="I165:13950;165:8656">
 </textarea>
+<textarea placeholder="Neighbourhood&#10;Enter Here"name="neighbourhood" value={formData.formData.neighbourhood} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="neighbourhood-bar" >
+</textarea>
 <div class="frame-22-M8v" id="I165:13950;165:8670">
 
-    <div onClick ={openModal} class="price-U74" id="I165:13950;165:8672">
-<div class="frame-15-zr6" id="I165:13950;165:8672;141:4592">+</div>
-</div>
-
-    <Modal
-    isOpen = {isModalOpen}
-    onRequestClose={closeModal}
-    style={{
-        overlay: {
-         zIndex: 3,
-        },
-    }}
-    >
-         <ClearIcon onClick={closeModal} class="modal-icon"></ClearIcon>
-
-            <input type="text" value={newTag} onChange={handleTagChange} placeholder="Enter Tag" class="adding-input">
+            <input style={{borderColor: tagColor}}type="text" value={newTag} onChange={handleTagChange} placeholder="Enter Tag" class="adding-input">
             </input>
             <button class= "adding-tag"onClick={handleAddTag} >
              Add
             </button>
-            {error && <p style={{color:'red'}}>{error}</p>}
+            
 
+    
+
+</div>
+<div class="tag-div" >
        
-        <ul class="tag-container">
             {tags.map((tag,index)=>(
-                <>
-                <div class="price-UjL" id="I165:13950;165:8671" key={index}>
-                <div class="frame-15-zhg" id="I165:13950;165:8671;141:4592">{tag}</div>
+                <ul key={index}class="tag-container">
+                <div class="remove-input" key={index}>{tag}
                 </div>
                     <button class="remove-tag" onClick={()=>handleRemoveTag(index)}>
                         Remove
                     </button>
-                    </>
+                    </ul>
             ))}
-        </ul>
-    </Modal>
-
+            <div onClick={onNext} class="submit-SzN" id="I165:13950;165:8544">Next Page</div>
+{error && <p ref={errorRef} class="error-p2" style={{color:'red'}}>{error}</p>}
 </div>
 </div>
 );

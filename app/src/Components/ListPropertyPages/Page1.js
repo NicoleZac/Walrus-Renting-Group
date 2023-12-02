@@ -133,10 +133,17 @@ const Page1 = ({onNext,requestClose}) =>{
         <p class="complete-ZWz" id="I165:13949;165:8216">0% Complete</p>
         </div>
         <img class="group-17-qzJ" src={Progress0} alt={Progress0} id="I165:13949;165:8223"/>
+
+        <div class="title-bar">
+        <p class="title-label">
+            Title
+        </p>
+        <input placeholder="Enter Here" class="title-input"type="text" name="title" value={formData.formData.title} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
+        </div>
         <div class="group-51-kbU" id="I165:13949;165:8331">
         <div class="frame-19-GZp" id="I165:13949;165:8302">
         <p class="type-of-home-CTU" id="I165:13949;165:8303">Type of Home</p>
-        <p class="select-as-many-you-want-gtS" id="I165:13949;165:8304">Select as many you want!</p>
+        <p class="select-as-many-you-want-gtS" id="I165:13949;165:8304">Select one!</p>
         </div>
         <div class="frame-20-aiv" id="I165:13949;165:8305">
         <div class="auto-group-xevv-umC" id="N4HMgtUxtZDWE54AJ5XEvv">
@@ -291,7 +298,8 @@ const Page1 = ({onNext,requestClose}) =>{
         <div class="frame-15-1cv" id="I165:13949;165:8451;141:4592">Smoking Allowed</div>
         </div>
         </div>
-        <textarea placeholder="Square Footage (e.g 500)"  name="propertySize" value={formData.formData.propertySize} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-HqL" id="I165:13949;165:8464">
+        <p class="sqft-label">Square Footage (e.g 500)</p>
+        <textarea   name="propertySize" value={formData.formData.propertySize} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-HqL" id="I165:13949;165:8464">
  
         </textarea>
         <div onClick={onNext} class="submit-hXg" id="I165:13949;165:8469">Next Page</div>

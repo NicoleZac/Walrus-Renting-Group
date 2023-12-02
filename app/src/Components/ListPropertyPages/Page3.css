@@ -197,7 +197,7 @@
       position: relative;
       width: 8rem;
 
-      .earlest-start-darte-Ym8 {
+      .earlest-start-date-Ym8 {
         color: #4f4f4f;
         font-family: Roboto, 'Source Sans Pro';
         font-size: 0.9721rem;
@@ -206,14 +206,14 @@
         left: 0;
         line-height: 1.1725;
         position: absolute;
-        top: 0;
+        top: -15px;
         white-space: nowrap;
         width: 8rem;
       }
       .dd-mm-yyyy-FfY {
-        color: #828282;
+        color: #000000;
         font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
+        font-size: 1.2rem;
         font-weight: 400;
         height: 1.2rem;
         left: 0;
@@ -277,7 +277,7 @@
     padding: 0rem 0.06rem 0.78rem 2.306rem;
     position: absolute;
     top: 36.9786rem;
-    width: 12.2128rem;
+    width: 13.2128rem;
     .rent-label {
       color: #4f4f4f;
       font-size: 1.076rem;
@@ -309,7 +309,7 @@
     padding: 0rem 0.06rem 0.78rem 2.306rem;
     position: absolute;
     top: 36.9786rem;
-    width: 12.2128rem;
+    width: 13.2128rem;
     .dep-label {
       color: #4f4f4f;
       font-size: 1.076rem;
