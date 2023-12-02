@@ -66,38 +66,27 @@ const ListProperty =({isOpen,requestClose})=>{
         }
     }
     return(
-<Modal
-        isOpen = {isOpen}
-        onRequestClose ={requestClose}
-        style={{
-           overlay: {
-            backgroundColor: 'rgba(0,0,0,0.5)',
-            display:isOpen ? 'block' : 'none',
-            alignItems: 'center',
-            justifyContent: 'center',
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right:0,
-            bottom: 0,
-            zIndex: 997,
-           },
-           content:{
-            display:isOpen ? 'block' : 'none',
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%,-50%)',
-            height: '100%',
-            width: '40%',
-            backgroundColor: 'white',
-
-           }
-        }}
->
-<div style={{width: '100%'}}>
-{getPageContent()}
-</div>
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={requestClose}
+      className="modal-content"
+      overlayClassName="modal-overlay"
+      style={{
+        overlay: {
+          backgroundColor: 'rgba(0, 0, 0, 0.25)',
+        },
+        content: {
+          width: '35%', // Adjust the width as needed
+          height: '85%', // Adjust the height as needed
+          margin: 'auto',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          overflow: 'auto', // Enable scrolling
+        },
+      }}
+    >
+    {getPageContent()}
 </Modal>
 
     );

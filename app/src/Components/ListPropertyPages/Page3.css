@@ -1,11 +1,11 @@
 .create-a-property-vkS {
-  border-radius: 6.4478rem;
+  /* border-radius: 6.4478rem;
   box-shadow: 0 0.0321rem 0.1427rem rgba(0, 0, 0, 0.0421718433), 0 0.0772rem 0.343rem rgba(0, 0, 0, 0.0605839156), 0 0.1453rem 0.6459rem rgba(0, 0, 0, 0.075000003), 0 0.2592rem 1.1522rem rgba(0, 0, 0, 0.0894160867), 0 0.4849rem 2.155rem rgba(0, 0, 0, 0.1078281552), 0 1.1606rem 5.1582rem rgba(0, 0, 0, 0.150000006);
   flex-shrink: 0;
   height: 55.1929rem;
   margin-right: 2.4501rem;
-  position: relative;
-  width: 39.5249rem;
+  position: relative; */
+  width: 100%;
 
   .rectangle-13-2Hg {
     background-color: #ffffff;
@@ -205,20 +205,20 @@
         left: 0;
         line-height: 1.1725;
         position: absolute;
-        top: 0;
+        top: -15px;
         white-space: nowrap;
         width: 8rem;
       }
       .dd-mm-yyyy-FfY {
-        color: #828282;
+        color: #000000;
         font-family: Roboto, 'Source Sans Pro';
-        font-size: 0.9721rem;
+        font-size: 1.2rem;
         font-weight: 400;
         height: 1.2rem;
         left: 0;
         line-height: 1.1725;
         position: absolute;
-        top: 1.1rem;
+        top: -0.5rem;
         white-space: nowrap;
         width: 5.2rem;
       }
@@ -237,7 +237,7 @@
     border: solid 0.0645rem #c2c2c2;
     border-radius: 25.7911rem;
     font-family: Roboto, 'Source Sans Pro';
-    font-size: 0.9721rem;
+    font-size: 1.2rem;
     font-weight: 400;
     box-sizing: border-box;
     height: 5.2227rem;
@@ -246,6 +246,8 @@
     position: absolute;
     top: 24.5015rem;
     width: 31.981rem;
+    resize: none;
+    overflow: hidden;
   }
   .price-J9x {
     background-color: #ffffff;
@@ -261,8 +263,9 @@
     padding: 0.678rem 3.306rem 0.578rem 3.306rem;
     position: absolute;
     top: 35.9786rem;
-    width: 12.2128rem;
-
+    width: 13.2128rem;
+    resize: none;
+    overflow: hidden;
    
   }
   .price-uJA {
@@ -279,7 +282,8 @@
     padding: 0.678rem 2.656rem 0.578rem 2.656rem;
     position: absolute;
     top: 35.9786rem;
-    width: 12.2128rem;
-
+    width: 13.2128rem;
+    resize: none;
+    overflow: hidden;
   }
 }

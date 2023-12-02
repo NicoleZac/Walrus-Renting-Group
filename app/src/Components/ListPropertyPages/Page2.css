@@ -1,11 +1,11 @@
 .create-a-property-CMx {
-  border-radius: 6.4478rem;
+  /* border-radius: 6.4478rem;
   box-shadow: 0 0.0321rem 0.1427rem rgba(0, 0, 0, 0.0421718433), 0 0.0772rem 0.343rem rgba(0, 0, 0, 0.0605839156), 0 0.1453rem 0.6459rem rgba(0, 0, 0, 0.075000003), 0 0.2592rem 1.1522rem rgba(0, 0, 0, 0.0894160867), 0 0.4849rem 2.155rem rgba(0, 0, 0, 0.1078281552), 0 1.1606rem 5.1582rem rgba(0, 0, 0, 0.150000006);
   flex-shrink: 0;
   height: 64.4777rem;
   margin-right: 2.4501rem;
-  position: relative;
-  width: 39.5249rem;
+  position: relative; */
+  width: 100%;
 
   .rectangle-13-tka {
     background-color: #ffffff;
@@ -22,7 +22,7 @@
     left: 0.129rem;
     position: absolute;
     top: 4.5779rem;
-    width: 39.3959rem;
+    width: 39.3959rem; 
   }
   .create-a-property-LsU {
     color: #828282;
@@ -168,6 +168,7 @@
     position: absolute;
     top: 18.1182rem;
     width: 31.981rem;
+    overflow: hidden;
   }
   .search-bar-RtE {
     background-color: #ffffff;
@@ -183,7 +184,8 @@
     position: absolute;
     top: 38.2353rem;
     width: 15.4102rem;
-
+    resize: none;
+    overflow: hidden;
   }
   .search-bar-wNi {
     background-color: #ffffff;
@@ -199,6 +201,8 @@
     position: absolute;
     top: 38.2353rem;
     width: 14.8943rem;
+    resize: none;
+    overflow: hidden;
   }
   .search-bar-UQa {
     background-color: #ffffff;
@@ -214,6 +218,8 @@
     position: absolute;
     top: 31.5296rem;
     width: 31.981rem;
+    resize: none;
+    overflow: hidden;
 
   }
   .search-bar-Wka {
@@ -230,6 +236,8 @@
     position: absolute;
     top: 24.8239rem;
     width: 31.981rem;
+    resize: none;
+    overflow: hidden;
 
   }
   .frame-22-M8v {

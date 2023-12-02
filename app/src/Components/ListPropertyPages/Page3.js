@@ -39,8 +39,7 @@ const Page3 = ({onNext,onPrevious}) =>{
         </div>
         <img class="group-17-Y34" src={Progress2} alt={Progress2} id="I165:13951;165:8693"/>
         <div class="frame-19-Tvi" id="I165:13951;165:8698">
-        <p class="availability-zQr" id="I165:13951;165:8699">Availability</p>
-        <p class="now-or-never-7Ea" id="I165:13951;165:8700">Now or Never</p>
+        <p class="availability-zQr" id="I165:13951;165:8699">Select the Date of Earliest Vacancy</p>
         </div>
         <div class="frame-19-cSE" id="I165:13951;165:8753">
         <p class="cost-7dt" id="I165:13951;165:8754">Cost</p>
@@ -50,7 +49,6 @@ const Page3 = ({onNext,onPrevious}) =>{
         <ArrowBackIosIcon onClick={onPrevious} class="group-49-ndY" src="/api/prod-us-east-2-first-cluster/projects/LZTNXrW..." id="I165:13951;165:8706"/>
         <div class="search-bar-uiA" id="I165:13951;165:8729">
         <div class="frame-17-bqt" id="I165:13951;165:8731">
-        <p class="earlest-start-darte-Ym8" id="I165:13951;165:8732">Earlest Start Date</p>
         {startDate &&(
         <p class="dd-mm-yyyy-FfY" id="I165:13951;165:8733">{startDate.toLocaleDateString()}</p>
         )}
@@ -62,7 +60,7 @@ const Page3 = ({onNext,onPrevious}) =>{
             <DatePicker selected={startDate} onChange={handleDateChange} dateFormat="MMMM d,yyyy" isClearable placeholderText="Select a date"/>
         )}
         </div>
-        <textarea placeholder="Lease Length&#10;ie: 1 year"  name="leaseLength" value={formData.formData.leaseLength} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-ehg" id="I165:13951;165:8746">
+        <textarea placeholder="Lease Length in Months&#10;ie: 12 months"  name="leaseLength" value={formData.formData.leaseLength} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-ehg" id="I165:13951;165:8746">
         </textarea>
         <textarea placeholder="Monthly Rent&#10;$0.00" name="monthlyRent" value={formData.formData.monthlyRent} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="price-J9x" id="I165:13951;165:8756">
         </textarea>

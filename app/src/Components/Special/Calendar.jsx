@@ -54,8 +54,8 @@ const CalendarModal = ({ isOpen, closeModal }) => {
           backgroundColor: 'rgba(0, 0, 0, 0.25)',
         },
         content: {
-          width: '75%', // Adjust the width as needed
-          height: '85%', // Adjust the height as needed
+          width: 'auto', // Adjust the width as needed
+          height: 'auto', // Adjust the height as needed
           margin: 'auto',
           display: 'flex',
           justifyContent: 'center',
