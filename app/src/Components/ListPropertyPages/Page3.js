@@ -13,8 +13,12 @@ const Page3 = ({onNext,onPrevious}) =>{
     const [error,setError] = useState('');
     const [dateColor,setDateColor] = useState('#c2c2c2');
     const [leaseColor,setLeaseColor] = useState('#c2c2c2');
+    const [rentColor,setRentColor] = useState('#c2c2c2');
+    const [depColor,setDepColor] = useState('#c2c2c2');
     const handleTextInput = (inputName,value)=>{
         setLeaseColor('#c2c2c2');
+        setRentColor('#c2c2c2');
+        setDepColor('#c2c2c2');
         setError('');
         dispatch({type:'UPDATE_DATA',payload:{[inputName]:value}});
     }
@@ -45,12 +49,28 @@ const Page3 = ({onNext,onPrevious}) =>{
         style={{cursor:'pointer'}}
         />
     ));
-    const handleKeyDown =(e)=>{
+    const handleLeaseInput =(e)=>{
         const allowedKeys = ['0','1','2','3','4','5','6','7','8','9','Backspace','Delete','ArrowLeft','ArrowRight','Home','End'];
         if(!allowedKeys.includes(e.key)){
             setLeaseColor('red');
             e.preventDefault();
             setError('Lease Length must be a number in terms of months');
+        }
+    }
+    const handleRentInput =(e)=>{
+        const allowedKeys = ['0','1','2','3','4','5','6','7','8','9','$','.','Backspace','Delete','ArrowLeft','ArrowRight','Home','End'];
+        if(!allowedKeys.includes(e.key)){
+            setRentColor('red');
+            e.preventDefault();
+            setError('Monthly Rent must be in the format $1000.00');
+        }
+    }
+    const handleDepInput =(e)=>{
+        const allowedKeys = ['0','1','2','3','4','5','6','7','8','9','$','.','Backspace','Delete','ArrowLeft','ArrowRight','Home','End'];
+        if(!allowedKeys.includes(e.key)){
+            setDepColor('red');
+            e.preventDefault();
+            setError('Security Deposit must be in the format $1000.00');
         }
     }
     return(
@@ -93,15 +113,15 @@ const Page3 = ({onNext,onPrevious}) =>{
         <div style={{borderColor: leaseColor}}class="search-bar-ehg" id="I165:13951;165:8746">
         <p class="lease-label">Lease Length</p>
         <p class="lease-label">(in months)</p>
-        <input  class="lease-input" onKeyDown={handleKeyDown}  name="leaseLength" value={formData.formData.leaseLength} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
+        <input  class="lease-input" onKeyDown={handleLeaseInput}  name="leaseLength" value={formData.formData.leaseLength} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
         </div>
-        <div class="price-J9x" id="I165:13951;165:8756">
+        <div style={{borderColor: rentColor}}class="price-J9x" id="I165:13951;165:8756">
         <p class="rent-label">Monthly Rent</p>
-        <input class="rent-input" type="text" placeholder="$0.00" name="monthlyRent" value={formData.formData.monthlyRent} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
+        <input class="rent-input" onKeyDown={handleRentInput}type="text" placeholder="$0.00" name="monthlyRent" value={formData.formData.monthlyRent} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
         </div>
-        <div class="price-uJA" id="I165:13951;165:8761">
+        <div style={{borderColor: depColor}}class="price-uJA" id="I165:13951;165:8761">
         <p class="dep-label">Security Deposit</p>
-        <input class="dep-input" type="text" placeholder="$0.00" name="securityDep" value={formData.formData.securityDep} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
+        <input class="dep-input" onKeyDown={handleDepInput} type="text" placeholder="$0.00" name="securityDep" value={formData.formData.securityDep} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
         </div>
         </div>
     );
