@@ -10,6 +10,10 @@ const RenterProfile = ({ user }) => {
   // State variable to manage overall edit mode
   const [editMode, setEditMode] = useState(false);
 
+  // State variable to manage selected student tags
+  const [selectedStudentTags, setSelectedStudentTags] = useState([]);
+
+
   // State variables to manage editable profile fields
   const [description, setDescription] = useState(
     "I am a short-term renter looking for a home with a nearby Pilates studio."
@@ -21,18 +25,13 @@ const RenterProfile = ({ user }) => {
   const [ageLabel] = useState("years old");
 
   // State variables for occupation and filters sections
-  const [editOccupation, setEditOccupation] = useState(false);
-  const [editFilters, setEditFilters] = useState(false);
+  const [editStudent, setStudent] = useState(false);
+  const [editOccupation, setOccupation] = useState(false);
+  const [editTags, setTags] = useState(false);
 
-  const [student, setStudent] = useState("Full-Time Student");
-  const [university, setUniversity] = useState("University of Calgary");
-  const [faculty, setFaculty] = useState("Engineering");
-
-  const [room, setRoom] = useState("Room to Rent");
-  const [length, setLength] = useState("Short Term");
-  const [location, setLocation] = useState("Near University");
-  const [transit, setTransit] = useState("Access to Transit");
-  const [laundry, setLaundry] = useState("Ensuite Laundry");
+  const studentTags = ["Student", "University of Calgary", "Mount Royal University", "SAIT", "University of Alberta"];
+  const occupationTags = ["Teacher", "Software Engineer", "Accountant", "Bartender", "Server", "Retail Associate"];
+  const additionalTags = ["Room to Rent", "Short-Term", "Long-Term", "Near University", "Access to Transit", "Ensuite Laundry", "Pet Owner"];
 
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
@@ -57,6 +56,17 @@ const RenterProfile = ({ user }) => {
       // Optionally, you can provide feedback to the user about the age requirement
       console.error("Age must be greater than 18");
     }
+  };
+
+  // Function to handle the click event for student tags
+  const handleStudentClick = (tag) => {
+    // Toggle the selection state of the clicked tag
+    const isSelected = selectedStudentTags.includes(tag);
+    const updatedTags = isSelected
+      ? selectedStudentTags.filter((selectedTag) => selectedTag !== tag)
+      : [...selectedStudentTags, tag];
+
+    setSelectedStudentTags(updatedTags);
   };
 
 
@@ -155,16 +165,22 @@ const RenterProfile = ({ user }) => {
         <div className="div-47">
           <div className="column-divide">
             <div className="occupation">
-              <div className="employment">Employment</div>
-              <div className="tags">
-                <div className="student-column">
-                  <div className="student">Full Time Student</div>
-                  <div className="faculty">Engineering</div>
+            <div className="employment">Employment</div>
+              {editMode && (
+                <div className="student-tags">
+                  {studentTags.map((option, index) => (
+                    <div
+                      key={index}
+                      className={`${
+                        selectedStudentTags.includes(option) ? "fdiv-45-selected" : "fdiv-45"
+                      }`}
+                      onClick={() => handleStudentClick(option)}
+                    >
+                      {option}
+                    </div>
+                  ))}
                 </div>
-                <div className="university-tag">
-                  <div className="university">University of Calgary</div>
-                </div>
-              </div>
+              )}  
             </div>
           </div>
           <div className="requirements-column">
