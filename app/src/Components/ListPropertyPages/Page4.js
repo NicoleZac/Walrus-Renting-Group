@@ -66,14 +66,12 @@ const Page4 = ({onPrevious,onSubmit,error}) =>{
 <div class="frame-15-u1t" id="I165:13952;165:8256;141:4592">Phone</div>
 </div>
 </div>
+<Link to={`/Calendar/${userEmail}`}>
 <div class="search-bar-ZcE" id="I165:13952;165:8811">
 <p class="open-calendar-rLS" id="I165:13952;165:8814">Open Calendar</p>
-<Link to={`/Calendar/${userEmail}`}>
 <EventIcon class="vector-Zke" src="/api/prod-us-east-2-first-cluster/projects/LZTNXrW..." id="I165:13952;165:8817"/>
-</Link>
-
 </div>
-
+</Link>
 </div>
     );
 };

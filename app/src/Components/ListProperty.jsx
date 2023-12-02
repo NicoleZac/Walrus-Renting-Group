@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import Modal from 'react-modal';
 import Page1 from './ListPropertyPages/Page1';
 import Page2 from './ListPropertyPages/Page2';
@@ -84,12 +84,25 @@ const ListProperty =({isOpen,requestClose})=>{
                 return <Page1 onNext={handleNext}  requestClose={requestClose}/>;
         }
     }
+useEffect(()=>{
+    if(isOpen){
+        document.body.style.overflow='hidden'
+    }
+    else{
+        document.body.style.overflow='auto';
+    }
+    return()=>{
+        document.body.overflow='auto';
+    }
+},[isOpen]);
     return(
 <Modal
         isOpen = {isOpen}
         onRequestClose ={requestClose}
         style={{
+ 
            overlay: {
+        
             backgroundColor: 'rgba(0,0,0,0.5)',
             display:isOpen ? 'block' : 'none',
             alignItems: 'center',
@@ -99,7 +112,7 @@ const ListProperty =({isOpen,requestClose})=>{
             left: 0,
             right:0,
             bottom: 0,
-            zIndex: 997,
+            zIndex: 2,
            },
            content:{
             display:isOpen ? 'block' : 'none',
@@ -108,15 +121,18 @@ const ListProperty =({isOpen,requestClose})=>{
             left: '50%',
             transform: 'translate(-50%,-50%)',
             height: '100%',
-            width: '40%',
+            width: '26%',
             backgroundColor: 'white',
+            overflow:'auto',
 
            }
         }}
+        contentLabel="Example Modal"
 >
-<div style={{width: '100%'}}>
+    <div id="modal-content">
 {getPageContent()}
 </div>
+
 </Modal>
 
     );

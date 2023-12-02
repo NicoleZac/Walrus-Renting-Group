@@ -65,6 +65,8 @@ function PropertyCard({ openPopup,property }) {
     dispatch({type:'UPDATE_DATA',payload:{propertyType:property?.propertyType}});
     dispatch({type:'UPDATE_DATA',payload:{description:property?.description}});
     dispatch({type:'UPDATE_DATA',payload:{propertyType:property?.propertyType}});
+    dispatch({type:'UPDATE_DATA',payload:{title:property?.title}});
+    dispatch({type:'UPDATE_DATA',payload:{neighbourhood:property?.neighbourhood}});
     dispatch({type:'UPDATE_DATA',payload:{numBeds:property?.numBeds}});
     dispatch({type:'UPDATE_DATA',payload:{numBaths:property?.numBaths}});
     dispatch({type:'UPDATE_DATA',payload:{propertySize:property?.propertySize}});
