@@ -10,9 +10,6 @@ const RenterProfile = ({ user }) => {
   // State variable to manage overall edit mode
   const [editMode, setEditMode] = useState(false);
 
-  // State variable to manage selected student tags
-  const [selectedStudentTags, setSelectedStudentTags] = useState([]);
-
 
   // State variables to manage editable profile fields
   const [description, setDescription] = useState(
@@ -25,9 +22,9 @@ const RenterProfile = ({ user }) => {
   const [ageLabel] = useState("years old");
 
   // State variables for occupation and filters sections
-  const [editStudent, setStudent] = useState(false);
-  const [editOccupation, setOccupation] = useState(false);
-  const [editTags, setTags] = useState(false);
+  const [selectedStudentTags, setSelectedStudentTags] = useState([]);
+  const [selectedOccupationTags, setSelectedOccupationTags] = useState([]);
+  const [selectedAdditionalTags, setAdditionalTags] = useState([]);
 
   const studentTags = ["Student", "University of Calgary", "Mount Royal University", "SAIT", "University of Alberta"];
   const occupationTags = ["Teacher", "Software Engineer", "Accountant", "Bartender", "Server", "Retail Associate"];
@@ -60,15 +57,39 @@ const RenterProfile = ({ user }) => {
 
   // Function to handle the click event for student tags
   const handleStudentClick = (tag) => {
-    // Toggle the selection state of the clicked tag
-    const isSelected = selectedStudentTags.includes(tag);
-    const updatedTags = isSelected
-      ? selectedStudentTags.filter((selectedTag) => selectedTag !== tag)
-      : [...selectedStudentTags, tag];
-
-    setSelectedStudentTags(updatedTags);
+    const isSelected = studentTags.includes(tag);
+    if (isSelected) {
+      setSelectedStudentTags((prevSelected) =>
+        prevSelected.filter((selectedOption) => selectedOption !== tag)
+      );
+    } else {
+      setSelectedStudentTags((prevSelected) => [...prevSelected, tag]);
+    }
   };
 
+  // Function to handle the click event for student tags
+  const handleJobsClick = (tag) => {
+    const isSelected = occupationTags.includes(tag);
+    if (isSelected) {
+      setSelectedOccupationTags((prevSelected) =>
+        prevSelected.filter((selectedOption) => selectedOption !== tag)
+      );
+    } else {
+      setSelectedOccupationTags((prevSelected) => [...prevSelected, tag]);
+    }
+  };
+
+  // Function to handle the click event for student tags
+  const handleAdditionalTagsClick = (tag) => {
+    const isSelected = additionalTags.includes(tag);
+    if (isSelected) {
+      setAdditionalTags((prevSelected) =>
+        prevSelected.filter((selectedOption) => selectedOption !== tag)
+      );
+    } else {
+      setAdditionalTags((prevSelected) => [...prevSelected, tag]);
+    }
+  };
 
   // Function to toggle overall edit mode
   const toggleEditMode = () => {
@@ -164,36 +185,81 @@ const RenterProfile = ({ user }) => {
       <div className="profile-section">
         <div className="div-47">
           <div className="column-divide">
-            <div className="occupation">
+          <div className="occupation">
             <div className="employment">Employment</div>
-              {editMode && (
-                <div className="student-tags">
-                  {studentTags.map((option, index) => (
-                    <div
-                      key={index}
-                      className={`${
-                        selectedStudentTags.includes(option) ? "fdiv-45-selected" : "fdiv-45"
-                      }`}
-                      onClick={() => handleStudentClick(option)}
-                    >
-                      {option}
-                    </div>
-                  ))}
-                </div>
-              )}  
-            </div>
+            {editMode && (
+              <div className="student-tags">
+                {studentTags.map((tag, index) => (
+                  <div
+                    key={index}
+                    className={`${
+                      selectedStudentTags.includes(tag) ? "tags" : "tags-selected"
+                    }`}
+                    onClick={() => handleStudentClick(tag)}
+                  >
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            )}
+            {!editMode && (
+              <div className="selected-tags">
+                {selectedStudentTags.map((tag, index) => (
+                  <div key={index} className="tags-selected">
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            )}
+            {editMode && (
+              <div className="job-tags">
+                {occupationTags.map((tag, index) => (
+                  <div
+                    key={index}
+                    className={`${
+                      selectedOccupationTags.includes(tag) ? "tags" : "tags-selected"
+                    }`}
+                    onClick={() => handleJobsClick(tag)}
+                  >
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            )}
+            {!editMode && (
+              <div className="selected-tags">
+                {selectedOccupationTags.map((tag, index) => (
+                  <div key={index} className="tags-selected">
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
           </div>
           <div className="requirements-column">
             <div className="rent-tags">
               <div className="requirements">Looking for</div>
+              {editMode && (
+              <div className="additional-tags">
+                {additionalTags.map((tag, index) => (
+                  <div
+                    key={index}
+                    className={`${
+                      selectedAdditionalTags.includes(tag) ? "tags" : "tags-selected"
+                    }`}
+                    onClick={() => handleAdditionalTagsClick(tag)}
+                  >
+                    {tag}
+                  </div>
+                ))}
+              </div>
+              )}
               <div className="information">
-                <div className="room">Room to Rent</div>
-                <div className="length">Short Term</div>
-                <div className="location">Near University</div>
+                
               </div>
               <div className="other">
-                <div className="transit">Access to Transit</div>
-                <div className="laundry">Ensuite Laundry</div>
+              
               </div>
             </div>
           </div>
