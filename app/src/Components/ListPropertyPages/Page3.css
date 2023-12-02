@@ -21,7 +21,7 @@
     left: 0.129rem;
     position: absolute;
     top: 4.5779rem;
-    width: 39.3959rem;
+    width: 100%;
   }
   .create-a-property-HUW {
     color: #828282;
@@ -234,19 +234,34 @@
     }
   }
   .search-bar-ehg {
+    outline:none;
     background-color: #ffffff;
     border: solid 0.0645rem #c2c2c2;
     border-radius: 25.7911rem;
     font-family: Roboto, 'Source Sans Pro';
-    font-size: 0.9721rem;
+    font-size: 1.4721rem;
     font-weight: 400;
     box-sizing: border-box;
     height: 5.2227rem;
+    padding: 0rem 0.06rem 0.78rem 2.306rem;
     left: 2.7726rem;
-    padding: 1.29rem 3.288rem 1.633rem 3.288rem;
     position: absolute;
     top: 24.5015rem;
     width: 31.981rem;
+    .lease-label {
+      color: #4f4f4f;
+      font-size: 1.076rem;
+      font-weight: 400;
+      line-height: 0.1725;
+      margin-bottom:0.5rem;
+      white-space: nowrap;
+    }
+    .lease-input{
+      outline:none;
+      font-size: 1.4rem;
+      -webkit-box-shadow: 0 0 0 30px white inset;
+
+    }
   }
   .price-J9x {
     background-color: #ffffff;

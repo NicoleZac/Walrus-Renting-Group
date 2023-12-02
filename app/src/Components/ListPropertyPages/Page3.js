@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useRef} from 'react';
 import "./Page3.css";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import EventIcon from '@mui/icons-material/Event';
@@ -7,27 +7,52 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useFormData } from '../../Context/formdatacontext';
 const Page3 = ({onNext,onPrevious}) =>{
+    const datePickerRef = useRef();
     const {formData,dispatch} = useFormData();
     const [startDate,setStartDate] = useState(formData.formData.startDate);
-    const [isDatePickerOpen,setIsDatePickerOpen] = useState(false);
     const [error,setError] = useState('');
+    const [dateColor,setDateColor] = useState('#c2c2c2');
+    const [leaseColor,setLeaseColor] = useState('#c2c2c2');
     const handleTextInput = (inputName,value)=>{
+        setLeaseColor('#c2c2c2');
+        setError('');
         dispatch({type:'UPDATE_DATA',payload:{[inputName]:value}});
     }
     const handleDateChange=(date)=>{
         if(date && date <new Date()){
+            setDateColor('red');
             setError('Select a Date after the current date')
         }
         else{
             setStartDate(date);
+            setDateColor('#c2c2c2');
             dispatch({type:'UPDATE_DATA',payload:{startDate:date}});
-            setIsDatePickerOpen(false);
+            datePickerRef.current.setOpen(false);
             setError('');
         }
     };
+
     const openDatePicker=()=>{
-        setIsDatePickerOpen(true);
+        if(datePickerRef.current){
+            datePickerRef.current.setOpen(true);
+        }
     };
+    const CustomInput =React.forwardRef(({onClick},ref)=>(
+        <input onClick={onClick}
+        value=""
+        readOnly
+        ref={ref}
+        style={{cursor:'pointer'}}
+        />
+    ));
+    const handleKeyDown =(e)=>{
+        const allowedKeys = ['0','1','2','3','4','5','6','7','8','9','Backspace','Delete','ArrowLeft','ArrowRight','Home','End'];
+        if(!allowedKeys.includes(e.key)){
+            setLeaseColor('red');
+            e.preventDefault();
+            setError('Lease Length must be a number in terms of months');
+        }
+    }
     return(
         <div class="create-a-property-vkS" id="165:13951">
         <div class="rectangle-13-2Hg" id="I165:13951;165:8687"></div>
@@ -51,7 +76,7 @@ const Page3 = ({onNext,onPrevious}) =>{
             {error && <p style={{color:'red'}}>{error}</p>}
         </div>
         <ArrowBackIosIcon onClick={onPrevious} class="group-49-ndY" src="/api/prod-us-east-2-first-cluster/projects/LZTNXrW..." id="I165:13951;165:8706"/>
-        <div onClick={openDatePicker}  class="search-bar-uiA" id="I165:13951;165:8729">
+        <div style={{borderColor: dateColor}}onClick={openDatePicker}  class="search-bar-uiA" id="I165:13951;165:8729">
         <div class="frame-17-bqt" id="I165:13951;165:8731">
         <p class="earlest-start-darte-Ym8" id="I165:13951;165:8732">Earlest Start Date</p>
         {startDate &&(
@@ -60,13 +85,16 @@ const Page3 = ({onNext,onPrevious}) =>{
         </div>
 
         <EventIcon class="vector-k6W" src="/api/prod-us-east-2-first-cluster/projects/LZTNXrW..." id="I165:13951;165:8745"/>
-        
-        {isDatePickerOpen &&(
-            <DatePicker selected={startDate} onChange={handleDateChange} dateFormat="MMMM d,yyyy" isClearable placeholderText="Select a date"/>
-        )}
+                <DatePicker selected={startDate} onChange={handleDateChange} dateFormat="MMMM d,yyyy" isClearable showYearDropdown
+                customInput ={<CustomInput/>}
+                ref={datePickerRef}/>
+
         </div>
-        <textarea placeholder="Lease Length&#10;ie: 1 year"  name="leaseLength" value={formData.formData.leaseLength} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-ehg" id="I165:13951;165:8746">
-        </textarea>
+        <div style={{borderColor: leaseColor}}class="search-bar-ehg" id="I165:13951;165:8746">
+        <p class="lease-label">Lease Length</p>
+        <p class="lease-label">(in months)</p>
+        <input  class="lease-input" onKeyDown={handleKeyDown}  name="leaseLength" value={formData.formData.leaseLength} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
+        </div>
         <div class="price-J9x" id="I165:13951;165:8756">
         <p class="rent-label">Monthly Rent</p>
         <input class="rent-input" type="text" placeholder="$0.00" name="monthlyRent" value={formData.formData.monthlyRent} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
