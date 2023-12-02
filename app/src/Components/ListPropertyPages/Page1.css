@@ -1174,12 +1174,66 @@
     font-weight: 400;
     height: 4.3845rem;
     justify-content: center;
-    left: 4.1266rem;
+    left: 3.1266rem;
     line-height: 1.1725;
-    position: absolute;
-    top: 95.1715rem;
+    position: relative;
+    top: 62.1715rem;
     white-space: nowrap;
     width: 31.0782rem;
+  }
+  .save-form-p1 {
+    align-items: center;
+    cursor:pointer;
+    background-color: #4f4f4f;
+    border-radius: 25.7911rem;
+    color: #ffffff;
+    display: flex;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 1.3669rem;
+    font-weight: 400;
+    height: 4.3845rem;
+    justify-content: center;
+    left: 3.1266rem;
+    line-height: 1.1725;
+    position: relative;
+    top: 63.1715rem;
+    white-space: nowrap;
+    width: 15.0782rem;
+  }
+  .edit-form-p1 {
+    align-items: center;
+    cursor:pointer;
+    background-color: #4f4f4f;
+    border-radius: 25.7911rem;
+    color: #ffffff;
+    display: flex;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 1.3669rem;
+    font-weight: 400;
+    height: 4.3845rem;
+    justify-content: center;
+    left: 19.1266rem;
+    line-height: 1.1725;
+    position: relative;
+    top: 58.7715rem;
+    white-space: nowrap;
+    width: 15.0782rem;
+  }
+  .error-p1{
+
+    align-items: center;
+    display: flex;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 1.3669rem;
+    font-weight: 800;
+    height: 0.3845rem;
+    justify-content: center;
+    left: 6.5266rem;
+    line-height: 1.1725;
+    position: relative;
+    white-space: nowrap;
+    color: red;
+    top: 64rem;
   }
 }
 .modal-button{
@@ -1220,4 +1274,17 @@ textarea{
   resize:none;
   overflow:hidden;
   overflow-wrap:break-word;
+}
+.draft-button{
+  background-color: #ffffff;
+  border: solid 0.0452rem #c2c2c2;
+  border-radius: 18.093rem;
+  flex-shrink: 0;
+  height: 1.857rem;
+  margin-bottom: 0.5158rem;
+  overflow: hidden;
+  padding: 0rem 0rem 0rem 0rem;
+  margin-left: 2rem;
+  position: relative;
+  width: 10rem;
 }

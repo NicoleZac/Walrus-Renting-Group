@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import "./Page1.css";
 import ClearIcon from '@mui/icons-material/Clear';
 import ImageIcon from '@mui/icons-material/Image';
@@ -11,6 +11,7 @@ Modal.setAppElement('#root');
 
 const Page1 = ({onNext,requestClose}) =>{
     const location = useLocation();
+    const errorRef = useRef(null);
     const {formData,dispatch} = useFormData();
     const [selectedType,setSelectedType] = useState(formData.formData.propertyType);
     const [selectedBeds,setSelectedBeds] = useState(formData.formData.numBeds);
@@ -19,6 +20,15 @@ const Page1 = ({onNext,requestClose}) =>{
     const [images,setImages] = useState(formData.formData.images || []);
     const [viewImages,setViewImages] = useState(images.length !== 0);
     const [previewImages,setPreviewImages]=useState([]);
+    const [errorTitle,setErrorTitle] = useState(false);
+    const [showDraftList,setShowDraftList] = useState(false);
+    useEffect(()=>{
+        setSelectedType(formData.formData.propertyType);
+        setSelectedBeds(formData.formData.numBeds);
+        setSelectedBaths(formData.formData.numBaths);
+        setSelectedFilters(formData.formData.additionalFilters);
+        setImages(formData.formData.images);
+    },[formData])
     useEffect(()=>{
         const loadImage = async(imagePath)=>{
             const imageModule = await import(`../../Images/Properties/${imagePath}`);
@@ -36,6 +46,9 @@ const Page1 = ({onNext,requestClose}) =>{
     },[images,setPreviewImages]);
     
     const handleTextInput = (inputName,value)=>{
+        if(inputName === "title"){
+            setErrorTitle(false);
+        }
         dispatch({type:'UPDATE_DATA',payload:{[inputName]:value}});
     }
     const handleSelectType = (type) =>{
@@ -112,7 +125,7 @@ const Page1 = ({onNext,requestClose}) =>{
       };
     useEffect(()=>{
         setViewImages(false);
-
+        setShowDraftList(false);
     },[location.pathname]);
     const handleViewImages = ()=>{
         setViewImages(true);
@@ -120,7 +133,31 @@ const Page1 = ({onNext,requestClose}) =>{
     const handleImageClose = ()=>{
         setViewImages(false);
     };
-
+    const handleSaveForm=()=>{
+        setErrorTitle(false);
+        dispatch({type:'SAVE_FORM'});
+        if(formData.duplicateTitleError!==''){
+            setErrorTitle(true);
+        }
+    };
+    const handleViewDrafts =()=>{
+        setShowDraftList(true);
+    };
+    const handleDraftClose =()=>{
+        setShowDraftList(false);
+    }
+    useEffect(()=>{
+        if(errorTitle){
+            errorRef.current.scrollIntoView({behavior:'smooth'});
+        }
+      },[errorTitle]);
+      const handleEditForm =(index)=>{
+        dispatch({type:'PULL_SAVED_FORM',payload:index});
+        setShowDraftList(false);
+      }
+      const handleRemoveForm = (index) =>{
+        dispatch({type:'REMOVE_SAVED_FORM',payload:index});
+      };
     return(
 
         <div class="create-a-property-2ne" id="165:13949">
@@ -303,6 +340,33 @@ const Page1 = ({onNext,requestClose}) =>{
  
         </textarea>
         <div onClick={onNext} class="submit-hXg" id="I165:13949;165:8469">Next Page</div>
+        <div  onClick={handleSaveForm} class="save-form-p1" id="I165:13949;165:8469">Save Draft</div>
+        
+        {formData.savedForms.length>0&& <div  onClick={handleViewDrafts} class="edit-form-p1" id="I165:13949;165:8469">View Drafts</div>}
+        
+        {errorTitle && <p ref={errorRef} class="error-p1">{formData.duplicateTitleError}</p>}
+        <Modal
+        isOpen={showDraftList}
+        onRequestClose={handleDraftClose}
+        style={{
+            overlay: {
+             zIndex: 3,
+            },
+        }}
+        >
+        <ClearIcon onClick={handleDraftClose} class="modal-icon"></ClearIcon>
+        <h2> Saved Drafts </h2>
+        <ul>
+            {formData.savedForms.map((form,index)=>(
+                <li key={index}>
+                    Draft {index+1}: 
+                    <button class="draft-button" onClick={()=>handleEditForm(index)}> Edit Draft</button>
+                    <button class="draft-button" onClick={()=>handleRemoveForm(index)}> Delete Draft</button>
+                </li>
+            ))}
+            </ul>
+        </Modal>
+
         </div>
 
 );
