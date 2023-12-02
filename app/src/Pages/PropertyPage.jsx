@@ -12,12 +12,43 @@ import Calendar from "../Images/PropertyPics/calendar.png";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import MapContainer from "../Components/GoogleMaps";
+import GalleryModal from "../Components/GalleryModal";
+import cover from "../Images/PropertyPics/Cover.png"
+import Messaging from "../Components/Messaging";
 
 export const PropertyPage = () => {
   const { id, property } = useParams();
   const propertyInfo = JSON.parse(decodeURIComponent(property));
   const [isFavorited, setIsFavorited] = useState(false);
+  const [showGallery, setShowGallery] = useState(false);
   const address = "212 University Way, Calgary";
+  const [showMessaging, setShowMessaging] = useState(false);
+
+  // Function to toggle Messaging component
+  const contactLandlord = () => {
+    setShowMessaging(true); // Show Messaging component when Contact Landlord is clicked
+  };
+
+
+  const images = [
+    {
+      original: HousePic1,
+      thumbnail: HousePic1,
+      description: 'House Picture 1'
+    },
+    {
+      original: HousePic2,
+      thumbnail: HousePic2,
+      description: 'House Picture 2'
+    },
+    {
+      original: HousePic3,
+      thumbnail: HousePic3,
+      description: 'House Picture 3'
+    }
+    // Add more images if needed following the same structure
+  ];
+  
   /* For sending favourites button */
   const handleFavourite = () => {
     setIsFavorited(!isFavorited);
@@ -28,15 +59,20 @@ export const PropertyPage = () => {
     // Your implementation
   };
 
-  /* For contact landlord button */
-  const contactLandlord = () => {
-    // Your implementation
+  const openGallery = () => {
+    setShowGallery(true);
   };
+
+  const closeGallery = () => {
+    setShowGallery(false);
+  };
+
   return (
     <div className="individual-property">
       <div className="frame-5">
         <div className="submit">
-          <div className="text-wrapper-4">Contact Landlord</div>
+        <button type="submit" class="text-wrapper-4" onClick={contactLandlord}>Contact Landlord</button>
+        {showMessaging && <Messaging isOpen={showMessaging} onClose={() => setShowMessaging(false)} />}
         </div>
         <div className="photos">
           <div className="big-image">
@@ -44,15 +80,34 @@ export const PropertyPage = () => {
           </div>
           <div className="small-image">
             <img src={HousePic2} alt="Property" />
-            <img src={HousePic3} alt="Property" />
+            <div className="position-relative">
+              <div className = "image-container">
+                <img
+                  src= {cover}
+                  alt="Overlay Image"
+                  className="overlay-image"
+                  onClick={openGallery}
+                />
+                <img src={HousePic3} alt="Property"/>
+              </div>
+            </div>
           </div>
         </div>
+        {showGallery && (
+          <GalleryModal images={images} onClose={closeGallery} />
+      ) }
         <div className="group">
           <div className="text-wrapper-5">{propertyInfo.title}</div>
           <div className="text-wrapper-6">${propertyInfo.rent} / month</div>
+          <div className = "addy">{address}</div>
           <div className="buttons">
             <button onClick={handleFavourite}>
-              <img className="heart" alt="Heart" loading="lazy" src={Heart} />
+              <img
+                className="heart"
+                alt="Heart"
+                loading="lazy"
+                src={isFavorited ? HeartFilled : Heart}
+              />
             </button>
             <button onClick={handleCalendar}>
               <img
@@ -65,8 +120,14 @@ export const PropertyPage = () => {
           </div>
         </div>
         <div className="frame-7">
+          <div className="property-info">
+            <div className="frame-2-2">$500 Security Deposit</div>
+            <div className="frame-25-2">1 year lease</div>
+            <div className="frame-26-2">Available January</div>
+          </div>
+          <div className="text-wrapper-25-2">Rental Information</div>
           <div className="property-features">
-            <div className="frame-2">Available Now!</div>
+            <div className="frame-2">Parking Garage</div>
             <div className="frame-25">Utilities Included</div>
             <div className="frame-26">Ensuite Laundry</div>
           </div>
