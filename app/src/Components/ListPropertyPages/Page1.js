@@ -1,16 +1,19 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import "./Page1.css";
 import ClearIcon from '@mui/icons-material/Clear';
 import ImageIcon from '@mui/icons-material/Image';
 import Progress0 from '../../Images/ProgressBars/Progress0.png';
 import { useFormData } from '../../Context/formdatacontext';
 import {useLocation} from 'react-router-dom';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
 
 const Page1 = ({onNext,requestClose}) =>{
     const location = useLocation();
+    const errorRef = useRef(null);
     const {formData,dispatch} = useFormData();
     const [selectedType,setSelectedType] = useState(formData.formData.propertyType);
     const [selectedBeds,setSelectedBeds] = useState(formData.formData.numBeds);
@@ -19,6 +22,15 @@ const Page1 = ({onNext,requestClose}) =>{
     const [images,setImages] = useState(formData.formData.images || []);
     const [viewImages,setViewImages] = useState(images.length !== 0);
     const [previewImages,setPreviewImages]=useState([]);
+    const [errorTitle,setErrorTitle] = useState(false);
+    const [showDraftList,setShowDraftList] = useState(false);
+    useEffect(()=>{
+        setSelectedType(formData.formData.propertyType);
+        setSelectedBeds(formData.formData.numBeds);
+        setSelectedBaths(formData.formData.numBaths);
+        setSelectedFilters(formData.formData.additionalFilters);
+        setImages(formData.formData.images);
+    },[formData])
     useEffect(()=>{
         const loadImage = async(imagePath)=>{
             const imageModule = await import(`../../Images/Properties/${imagePath}`);
@@ -33,9 +45,13 @@ const Page1 = ({onNext,requestClose}) =>{
         images.forEach((image)=>{
             loadImage(image);
         })
+        
     },[images,setPreviewImages]);
     
     const handleTextInput = (inputName,value)=>{
+        if(inputName === "title"){
+            setErrorTitle(false);
+        }
         dispatch({type:'UPDATE_DATA',payload:{[inputName]:value}});
     }
     const handleSelectType = (type) =>{
@@ -112,7 +128,7 @@ const Page1 = ({onNext,requestClose}) =>{
       };
     useEffect(()=>{
         setViewImages(false);
-
+        setShowDraftList(false);
     },[location.pathname]);
     const handleViewImages = ()=>{
         setViewImages(true);
@@ -120,7 +136,44 @@ const Page1 = ({onNext,requestClose}) =>{
     const handleImageClose = ()=>{
         setViewImages(false);
     };
-
+    const handleSaveForm=()=>{
+        setErrorTitle(false);
+        dispatch({type:'SAVE_FORM'});
+        if(formData.duplicateTitleError!==''){
+            setErrorTitle(true);
+        }
+        if(formData.duplicateTitleError=== null){
+            toast.success('Draft has been saved',{
+                position: 'bottom-center',
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable:true,
+                bodyClassName: 'center-content',
+                
+            });
+        }
+        
+    };
+    const handleViewDrafts =()=>{
+        setShowDraftList(true);
+    };
+    const handleDraftClose =()=>{
+        setShowDraftList(false);
+    }
+    useEffect(()=>{
+        if(errorTitle){
+            errorRef.current.scrollIntoView({behavior:'smooth'});
+        }
+      },[errorTitle]);
+      const handleEditForm =(index)=>{
+        dispatch({type:'PULL_SAVED_FORM',payload:index});
+        setShowDraftList(false);
+      }
+      const handleRemoveForm = (index) =>{
+        dispatch({type:'REMOVE_SAVED_FORM',payload:index});
+      };
     return(
 
         <div class="create-a-property-2ne" id="165:13949">
@@ -133,10 +186,17 @@ const Page1 = ({onNext,requestClose}) =>{
         <p class="complete-ZWz" id="I165:13949;165:8216">0% Complete</p>
         </div>
         <img class="group-17-qzJ" src={Progress0} alt={Progress0} id="I165:13949;165:8223"/>
+
+        <div class="title-bar">
+        <p class="title-label">
+            Title
+        </p>
+        <input placeholder="Enter Here" class="title-input"type="text" name="title" value={formData.formData.title} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
+        </div>
         <div class="group-51-kbU" id="I165:13949;165:8331">
         <div class="frame-19-GZp" id="I165:13949;165:8302">
         <p class="type-of-home-CTU" id="I165:13949;165:8303">Type of Home</p>
-        <p class="select-as-many-you-want-gtS" id="I165:13949;165:8304">Select as many you want!</p>
+        <p class="select-as-many-you-want-gtS" id="I165:13949;165:8304">Select one!</p>
         </div>
         <div class="frame-20-aiv" id="I165:13949;165:8305">
         <div class="auto-group-xevv-umC" id="N4HMgtUxtZDWE54AJ5XEvv">
@@ -164,13 +224,13 @@ const Page1 = ({onNext,requestClose}) =>{
         <p class="key-features-5KY" id="I165:13949;165:8221">Key Features</p>
         <p class="what-makes-your-property-special-ZEi" id="I165:13949;165:8222">What makes your property special?</p>
         </div>
-        <textarea type="text" placeholder="Description (Max 600 characters)&#10;Enter Here" name="description" value={formData.formData.description} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-eGA" id="I165:13949;165:8335">
+        <textarea type="text" placeholder="Description (Max 600 characters)" name="description" value={formData.formData.description} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-eGA" id="I165:13949;165:8335">
 
         </textarea>
         <div onClick={handleUpload} class="search-bar-3LE" id="I165:13949;165:8340">
         <input id="imageFile" type="file" onChange={handleImages} style={{display:'none'}} multiple/>
         <p class="upload-photos-t5x" id="I165:13949;165:8343">Upload Photos</p>
-        <ImageIcon class="group-52-MVL" src="/api/prod-us-east-2-first-cluster/projects/LZTNXrW..." id="I165:13949;165:8347"/>
+        <ImageIcon class="group-52-MVL"  id="I165:13949;165:8347"/>
         
         </div>
         {images.length > 0 && (
@@ -185,7 +245,7 @@ const Page1 = ({onNext,requestClose}) =>{
         onRequestClose={handleImageClose}
         style={{
             overlay: {
-             zIndex: 998,
+             zIndex: 3,
             },
         }}
         >
@@ -276,8 +336,10 @@ const Page1 = ({onNext,requestClose}) =>{
         </div>
         </div>
         </div>
+    
         <div class="frame-19-rRG" id="I165:13949;165:8445">
         <p class="additional-filters-n42" id="I165:13949;165:8446">Additional Filters</p>
+       
         <p class="utilities-more-HmU" id="I165:13949;165:8447">Utilities &amp; More!</p>
         </div>
         <div class="frame-21-b1U" id="I165:13949;165:8448">
@@ -291,11 +353,38 @@ const Page1 = ({onNext,requestClose}) =>{
         <div class="frame-15-1cv" id="I165:13949;165:8451;141:4592">Smoking Allowed</div>
         </div>
         </div>
-        <textarea placeholder="Square Footage&#10;500sqft"  name="propertySize" value={formData.formData.propertySize} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-HqL" id="I165:13949;165:8464">
+        <p class="sqft-label">Square Footage (e.g 500)</p>
+        <textarea   name="propertySize" value={formData.formData.propertySize} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-HqL" id="I165:13949;165:8464">
  
         </textarea>
         <div onClick={onNext} class="submit-hXg" id="I165:13949;165:8469">Next Page</div>
-        </div>
+        <div  onClick={handleSaveForm} class="save-form-p1" id="I165:13949;165:8469">Save Draft</div>
+        
+        {formData.savedForms.length>0&& <div  onClick={handleViewDrafts} class="edit-form-p1" id="I165:13949;165:8469">View Drafts</div>}
+        
+        {errorTitle && <p ref={errorRef} class="error-p1">{formData.duplicateTitleError}</p>}
+        <Modal
+        isOpen={showDraftList}
+        onRequestClose={handleDraftClose}
+        style={{
+            overlay: {
+             zIndex: 3,
+            },
+        }}
+        >
+        <ClearIcon onClick={handleDraftClose} class="modal-icon"></ClearIcon>
+        <h2> Saved Drafts </h2>
+        <ul>
+            {formData.savedForms.map((form,index)=>(
+                <li key={index}>
+                    Draft {index+1}: 
+                    <button class="draft-button" onClick={()=>handleEditForm(index)}> Edit Draft</button>
+                    <button class="draft-button" onClick={()=>handleRemoveForm(index)}> Delete Draft</button>
+                </li>
+            ))}
+            </ul>
+        </Modal>
+ </div>
 
 );
     };
