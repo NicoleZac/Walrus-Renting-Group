@@ -3,7 +3,7 @@ import "./Messaging.css";
 import Send from '../Images/PropertyPics/send.png'
 import Calendar from '../Images/PropertyPics/calendar.png'
 import Matthew from '../Images/PropertyPics/matthew.png'
-import Drake from '../Images/PropertyPics/Drake.png'
+import Landlord from '../Images/PropertyPics/Landlord.png'
 import Anger from '../Images/PropertyPics/Anger.png'
 import Search from '../Images/PropertyPics/search.png'
 
@@ -32,6 +32,7 @@ export const Messaging = ({ isOpen, onClose }) => {
     const matthewProfile = () => {
       
     };
+
 
     const drakeProfile = () => {
       
@@ -73,7 +74,7 @@ export const Messaging = ({ isOpen, onClose }) => {
                     </div>
                     <div className = "div-wrapper">
                       <div className = "frame-4">
-                        <div className = "text-wrapper-2">Drake The Demon</div>
+                        <div className = "text-wrapper-2">Teressa Mother</div>
                         <div className = "frame-5s">
                           <div className="text-wrapper-3">View Availability</div>
                             <button onClick={handleCalendar}>
@@ -122,11 +123,11 @@ export const Messaging = ({ isOpen, onClose }) => {
                                     className="drake"
                                     alt="Drake"
                                     loading="lazy"
-                                    src={Drake}
+                                    src={Landlord}
                                   />
                                 </button>
                                 <div className="div25">
-                                  <div className="textwrapper25">Drake the Demon</div>
+                                  <div className="textwrapper25">Teressa Mother</div>
                                   <div className="textwrapper25-2">...</div>
                                 </div>
                                 <div className="group25">
