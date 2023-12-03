@@ -12,7 +12,7 @@
     display: flex;
     flex-shrink: 0;
     height: 4.0056rem;
-    margin: 0rem 30.572rem 2.5rem 14.328rem;
+    margin: 0rem 30.572rem 2.5rem 23.328rem;
     width: calc(100% - 54.9006rem);
 
     .submit-qW2 {
@@ -60,7 +60,7 @@
     flex-direction: column;
     flex-shrink: 0;
 
-    padding: 2.003rem 0rem 0.703rem 0rem;
+    padding: 2.003rem 0rem 0.703rem 4.5rem;
     width: 107%;
 
     .employment-Ega {

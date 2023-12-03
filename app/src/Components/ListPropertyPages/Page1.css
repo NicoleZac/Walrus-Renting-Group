@@ -23,7 +23,7 @@
     left: 0.129rem;
     position: absolute;
     top: 4.5779rem;
-    width: 39.3959rem;
+    width: 100%;
   }
   .frame-17-m3Q {
     height: 0.9672rem;
@@ -51,7 +51,7 @@
     height: 2.3rem;
     left: 3.2239rem;
     position: absolute;
-    top: 7.9308rem;
+    top: 4.9308rem;
     width: 5.7rem;
 
     .progress-bar-JLA {
@@ -59,9 +59,9 @@
       font-family: Roboto, 'Source Sans Pro';
       font-size: 0.9721rem;
       font-weight: 400;
-      height: 1.2rem;
+      height: 0.2rem;
       left: 0;
-      line-height: 1.1725;
+      line-height: 0.1725;
       position: absolute;
       top: 0;
       white-space: nowrap;
@@ -74,7 +74,7 @@
       font-weight: 400;
       height: 1.2rem;
       left: 0;
-      line-height: 1.1725;
+      line-height: 0.17;
       position: absolute;
       top: 1.1rem;
       white-space: nowrap;
@@ -86,9 +86,38 @@
     left: 3.2238rem;
     object-fit: contain;
     position: absolute;
-    top: 11.606rem;
+    top: 8.606rem;
     vertical-align: top;
     width: 32.7547rem;
+  }
+  .title-bar {
+    background-color: #ffffff;
+    font-size: 1.3rem;
+    font-family: Roboto, 'Source Sans Pro';
+    border: solid 0.0645rem #c2c2c2;
+    border-radius: 25.7911rem;
+    box-sizing: border-box;
+    height: 4.2227rem;
+    left: 2.2884rem;
+    padding: 0rem 0.06rem 0.78rem 2.306rem;
+    position: relative;
+    top: 10.4342rem;
+    width: 31.981rem;
+    .title-label {
+      color: #4f4f4f;
+      font-size: 1.076rem;
+      font-weight: 400;
+      line-height: 0.1725;
+      margin-bottom:0.5rem;
+      white-space: nowrap;
+    }
+    .title-input{
+      outline:none;
+      font-size: 1.3rem;
+      -webkit-box-shadow: 0 0 0 30px white inset;
+
+    }
+
   }
   .group-51-kbU {
     height: 9.9432rem;
@@ -112,7 +141,7 @@
         left: 0;
         line-height: 1.1725;
         position: absolute;
-        top: 0;
+        top: 4.75rem;
         white-space: nowrap;
         width: 6.1rem;
       }
@@ -125,7 +154,7 @@
         left: 0;
         line-height: 1.1725;
         position: absolute;
-        top: 1.1635rem;
+        top: 6.1635rem;
         white-space: nowrap;
         width: 11rem;
       }
@@ -146,6 +175,8 @@
         width: 9.9296rem;
 
         .price-EoU {
+          top: 6rem;
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -171,7 +202,9 @@
           }
         }
         .price-WAe {
+          top: 6rem;
           background-color: #ffffff;
+          cursor:pointer;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
           box-sizing: border-box;
@@ -204,6 +237,8 @@
         width: 9.9296rem;
 
         .price-EVx {
+          top: 6rem;
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -229,6 +264,8 @@
           }
         }
         .price-ZAr {
+          top: 6rem;
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -254,6 +291,8 @@
         }
       }
       .price-K3Y {
+        top: 6rem;
+        cursor:pointer;
         background-color: #ffffff;
         border: solid 0.0452rem #c2c2c2;
         border-radius: 18.093rem;
@@ -283,7 +322,7 @@
     height: 2.3635rem;
     left: 3.2239rem;
     position: absolute;
-    top: 26.8227rem;
+    top: 30.8227rem;
     width: 15.1rem;
 
     .key-features-5KY {
@@ -322,13 +361,13 @@
     height: 13.7338rem;
     left: 3.2884rem;
     padding: 1.2896rem 1.9988rem;
-    position: absolute;
+    position: relative;
     top: 30.5625rem;
     width: 31.9165rem;
 
-
   }
   .search-bar-3LE {
+    cursor:pointer;
     align-items: center;
     background-color: #ffffff;
     border: solid 0.0645rem #c2c2c2;
@@ -338,11 +377,12 @@
     height: 5.9964rem;
     left: 3.2884rem;
     padding: 1.612rem 9.162rem 1.58rem 10.188rem;
-    position: absolute;
-    top: 45.6502rem;
+    position: relative;
+    top: 31.6502rem;
     width: 31.9165rem;
 
     .upload-photos-t5x {
+      
       color: #4f4f4f;
       flex-shrink: 0;
       font-family: Roboto, 'Source Sans Pro';
@@ -369,7 +409,8 @@
     box-sizing: border-box;
     display: flex;
     height: 2.9964rem;
-    left: 3.2884rem;
+    left: 4.2884rem;
+    margin-top:0.5rem;
     position: absolute;
     top: 53.6502rem;
     width: 11.9165rem;
@@ -439,6 +480,7 @@
         width: 5.4161rem;
 
         .price-TaJ {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -466,6 +508,7 @@
           }
         }
         .price-DSz {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -502,6 +545,7 @@
         width: 5.4161rem;
 
         .price-ewc {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -529,6 +573,7 @@
           }
         }
         .price-d2r {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -564,6 +609,7 @@
         width: 5.4161rem;
 
         .price-6qY {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -591,6 +637,7 @@
           }
         }
         .price-ry8 {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -626,6 +673,7 @@
         padding-left: 0.5159rem;
 
         .price-AcS {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -653,6 +701,7 @@
           }
         }
         .price-s9U {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -713,6 +762,7 @@
         width: 5.4161rem;
 
         .price-oUN {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -740,6 +790,7 @@
           }
         }
         .price-vBc {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -776,6 +827,7 @@
         width: 5.4161rem;
 
         .price-Tsg {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -803,6 +855,7 @@
           }
         }
         .price-dJJ {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -838,6 +891,7 @@
         width: 5.4161rem;
 
         .price-ZUn {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -865,6 +919,7 @@
           }
         }
         .price-bZt {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -900,6 +955,7 @@
         padding-left: 0.5159rem;
 
         .price-iY2 {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -927,6 +983,7 @@
           }
         }
         .price-5Wz {
+          cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
           border-radius: 18.093rem;
@@ -1000,6 +1057,7 @@
     width: 31.981rem;
 
     .price-6iv {
+      cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
       border-radius: 18.093rem;
@@ -1024,6 +1082,7 @@
       }
     }
     .price-VWA {
+      cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
       border-radius: 18.093rem;
@@ -1048,6 +1107,7 @@
       }
     }
     .price-Ust {
+      cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
       border-radius: 18.093rem;
@@ -1072,18 +1132,30 @@
       }
     }
   }
+  .sqft-label{
+    color: #4f4f4f;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 0.9721rem;
+    font-weight: 400;
+    height: 1.2rem;
+    left: 1.8rem;
+    position: relative;
+    top: 60rem;
+    white-space: nowrap;
+    width: 5.6rem;
+  }
   .search-bar-HqL {
     background-color: #ffffff;
-    font-size: 0.9721rem;
+    font-size: 1.3rem;
     font-family: Roboto, 'Source Sans Pro';
     border: solid 0.0645rem #c2c2c2;
     border-radius: 25.7911rem;
     box-sizing: border-box;
     height: 5.2227rem;
-    left: 3.2884rem;
+    left: 2.2884rem;
     padding: 1.29rem 3.288rem 1.633rem 3.288rem;
-    position: absolute;
-    top: 87.4342rem;
+    position: relative;
+    top: 60.4342rem;
     width: 31.981rem;
     resize: none;
     overflow: hidden;
@@ -1091,6 +1163,7 @@
   }
   .submit-hXg {
     align-items: center;
+    cursor:pointer;
     background-color: #4f4f4f;
     border-radius: 25.7911rem;
     color: #ffffff;
@@ -1100,12 +1173,66 @@
     font-weight: 400;
     height: 4.3845rem;
     justify-content: center;
-    left: 4.1266rem;
+    left: 3.1266rem;
     line-height: 1.1725;
-    position: absolute;
-    top: 95.1715rem;
+    position: relative;
+    top: 62.1715rem;
     white-space: nowrap;
     width: 31.0782rem;
+  }
+  .save-form-p1 {
+    align-items: center;
+    cursor:pointer;
+    background-color: #4f4f4f;
+    border-radius: 25.7911rem;
+    color: #ffffff;
+    display: flex;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 1.3669rem;
+    font-weight: 400;
+    height: 4.3845rem;
+    justify-content: center;
+    left: 3.1266rem;
+    line-height: 1.1725;
+    position: relative;
+    top: 63.1715rem;
+    white-space: nowrap;
+    width: 15.0782rem;
+  }
+  .edit-form-p1 {
+    align-items: center;
+    cursor:pointer;
+    background-color: #4f4f4f;
+    border-radius: 25.7911rem;
+    color: #ffffff;
+    display: flex;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 1.3669rem;
+    font-weight: 400;
+    height: 4.3845rem;
+    justify-content: center;
+    left: 19.1266rem;
+    line-height: 1.1725;
+    position: relative;
+    top: 58.7715rem;
+    white-space: nowrap;
+    width: 15.0782rem;
+  }
+  .error-p1{
+
+    align-items: center;
+    display: flex;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 1.3669rem;
+    font-weight: 800;
+    height: 0.3845rem;
+    justify-content: center;
+    left: 6.5266rem;
+    line-height: 1.1725;
+    position: relative;
+    white-space: nowrap;
+    color: red;
+    top: 64rem;
   }
 }
 .modal-button{
@@ -1142,4 +1269,21 @@
   margin-Right: 10px;
   margin-bottom:10px;
 }
-
+textarea{
+  resize:none;
+  overflow:hidden;
+  overflow-wrap:break-word;
+}
+.draft-button{
+  background-color: #ffffff;
+  border: solid 0.0452rem #c2c2c2;
+  border-radius: 18.093rem;
+  flex-shrink: 0;
+  height: 1.857rem;
+  margin-bottom: 0.5158rem;
+  overflow: hidden;
+  padding: 0rem 0rem 0rem 0rem;
+  margin-left: 2rem;
+  position: relative;
+  width: 10rem;
+}

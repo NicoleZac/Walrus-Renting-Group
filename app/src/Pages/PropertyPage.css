@@ -3,8 +3,8 @@
   height: 1908px;
   width: 1920px;
   position: relative;
-  left: 115px;
-  
+  left: 175px;
+  top: -100px;
 }
 
 .individual-property .frame-5 {
@@ -18,7 +18,7 @@
 }
 
 .individual-property .submit {
-  background-color: rgba(79,79,79,1);
+  background-color: rgba(79, 79, 79, 1);
   border-radius: 400px;
   height: 68px;
   position: relative;
@@ -40,12 +40,12 @@
   white-space: nowrap;
 }
 
-.individual-property .photos{
+.individual-property .photos {
   display: flex;
   flex-direction: row;
 }
 
-.individual-property .big-image{
+.individual-property .big-image {
   margin: 10px auto;
   margin-right: 10px auto;
   display: block;
@@ -56,9 +56,26 @@
   display: block;
 }
 
-.individual-property .small-image{
+.individual-property .small-image {
+  position: relative;
   display: flex;
   flex-direction: column;
+}
+
+.individual-property .position-relative {
+  position: relative;
+}
+
+.individual-property .image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.individual-property .overlay-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Adjust width, height, and other styles as needed */
 }
 
 .small-image img {
@@ -75,7 +92,7 @@
 }
 
 .individual-property .text-wrapper-5 {
-  color: rgba(130,130,130,1);
+  color: rgba(130, 130, 130, 1);
   font-family: "Roboto-Bold", Helvetica;
   font-size: 53.2px;
   font-weight: 700;
@@ -87,7 +104,7 @@
   white-space: nowrap;
 }
 
-.individual-property .buttons{
+.individual-property .buttons {
   align-items: center;
   display: inline-flex;
   gap: 24.15px;
@@ -97,20 +114,20 @@
   top: 82px;
 }
 
-.individual-property .heart{
+.individual-property .heart {
   height: 32.94px;
   position: relative;
   width: 38.42px;
 }
 
-.individual-property .calendar{
+.individual-property .calendar {
   height: 39.04px;
   position: relative;
   width: 35.13px;
 }
 
 .individual-property .text-wrapper-6 {
-  color: rgba(130,130,130,1);
+  color: rgba(130, 130, 130, 1);
   font-family: "Roboto-Regular", Helvetica;
   font-size: 53.2px;
   font-weight: 400;
@@ -120,6 +137,24 @@
   position: absolute;
   top: 0;
   white-space: nowrap;
+}
+
+.individual-property .addy {
+  color: rgba(130, 130, 130, 1);
+  font-family: "Roboto-Regular", Helvetica;
+  font-size: 25.2px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  white-space: nowrap;
+  align-items: center;
+  display: inline-flex;
+  gap: 24.15px;
+  justify-content: center;
+  position: absolute;
+  left: 719px;
+  top: 70px;
 }
 
 .individual-property .frame-6 {
@@ -138,7 +173,7 @@
   width: 1144px;
 }
 
-.individual-property .property-features {
+.individual-property .property-info {
   background-color: #ffffff;
   border-color: rgba(189, 189, 189, 1);
   border-right-style: solid;
@@ -148,55 +183,52 @@
   width: 572px;
 }
 
-.individual-property .frame-2{
+.individual-property .frame-2-2 {
   align-items: flex-start;
-  color: rgba(79,79, 79, 1);
+  color: rgba(79, 79, 79, 1);
   display: flex;
   flex-wrap: wrap;
   gap: 27px 18px;
   left: 32px;
   position: absolute;
-  top: 150px;
-  width: 113px;
+  top: 85px;
+  width: 175px;
   border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
   border-radius: 20px; /* Adjust border-radius to make the corners rounder */
   padding: 5px 10px;
-
 }
 
-.individual-property .frame-25{
+.individual-property .frame-25-2 {
   align-items: flex-start;
-  color: rgba(79,79, 79, 1);
+  color: rgba(79, 79, 79, 1);
   display: flex;
   flex-wrap: wrap;
   gap: 27px 18px;
-  left: 207px;
+  left: 257px;
   position: absolute;
-  top: 150px;
-  width: 128px;
+  top: 85px;
+  width: 98px;
   border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
   border-radius: 20px; /* Adjust border-radius to make the corners rounder */
   padding: 5px 10px;
-
 }
 
-.individual-property .frame-26{
+.individual-property .frame-26-2 {
   align-items: flex-start;
-  color: rgba(79,79, 79, 1);
+  color: rgba(79, 79, 79, 1);
   display: flex;
   flex-wrap: wrap;
   gap: 27px 18px;
   left: 32px;
   position: absolute;
-  top: 205px;
-  width: 125px;
+  top: 140px;
+  width: 130px;
   border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
   border-radius: 20px; /* Adjust border-radius to make the corners rounder */
   padding: 5px 10px;
-
 }
 
-.individual-property .text-wrapper-25{
+.individual-property .text-wrapper-25-2 {
   color: rgba(130, 130, 130, 1);
   font-family: "Roboto-Bold", Helvetica;
   font-size: 25px;
@@ -209,17 +241,75 @@
   white-space: nowrap;
 }
 
-.individual-property .stuff{
+
+.individual-property .frame-2 {
+  align-items: flex-start;
+  color: rgba(79, 79, 79, 1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px 18px;
+  left: 32px;
+  position: absolute;
+  top: 380px;
+  width: 113px;
+  border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
+  border-radius: 20px; /* Adjust border-radius to make the corners rounder */
+  padding: 5px 10px;
+}
+
+.individual-property .frame-25 {
+  align-items: flex-start;
+  color: rgba(79, 79, 79, 1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px 18px;
+  left: 207px;
+  position: absolute;
+  top: 320px;
+  width: 128px;
+  border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
+  border-radius: 20px; /* Adjust border-radius to make the corners rounder */
+  padding: 5px 10px;
+}
+
+.individual-property .frame-26 {
+  align-items: flex-start;
+  color: rgba(79, 79, 79, 1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px 18px;
+  left: 32px;
+  position: absolute;
+  top: 320px;
+  width: 125px;
+  border: 2px solid rgba(189, 189, 189, 1); /* Example border with a solid black color */
+  border-radius: 20px; /* Adjust border-radius to make the corners rounder */
+  padding: 5px 10px;
+}
+
+.individual-property .text-wrapper-25 {
+  color: rgba(130, 130, 130, 1);
+  font-family: "Roboto-Bold", Helvetica;
+  font-size: 25px;
+  font-weight: 700;
+  left: 28px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 220px;
+  white-space: nowrap;
+}
+
+.individual-property .stuff {
   align-items: flex-start;
   display: inline-flex;
   gap: 63px;
   left: 29px;
   position: absolute;
-  top: 90px
-
+  top: 270px;
 }
 
-.individual-property .item1{
+.individual-property .item1 {
   align-items: center;
   display: inline-flex;
   flex: 0 0 auto;
@@ -234,7 +324,7 @@
   width: 25px;
 }
 
-.individual-property .bed-text{
+.individual-property .bed-text {
   align-items: flex-start;
   display: inline-flex;
   flex: 0 0 auto;
@@ -242,8 +332,8 @@
   position: relative;
 }
 
-.individual-property .bed-text-wrapper{
-  color: rgba(79,79, 79, 1);
+.individual-property .bed-text-wrapper {
+  color: rgba(79, 79, 79, 1);
   font-family: "Roboto-Regular", Helvetica;
   font-size: 15.1px;
   font-weight: 400;
@@ -256,11 +346,11 @@
 }
 
 .individual-property .baths {
-  color: rgba(79,79,79,1);
+  color: rgba(79, 79, 79, 1);
 }
 
 .individual-property .type {
-  color: rgba(79,79,79,1);
+  color: rgba(79, 79, 79, 1);
 }
 
 .individual-property .description {
@@ -271,7 +361,7 @@
 }
 
 .individual-property .text-wrapper-7 {
-  color: rgba(130,130,130,1);
+  color: rgba(130, 130, 130, 1);
   font-family: "Roboto-Bold", Helvetica;
   font-size: 25px;
   font-weight: 700;
@@ -284,7 +374,7 @@
 }
 
 .individual-property .our-mountain-home {
-  color: rgba(79,79,79,1);
+  color: rgba(79, 79, 79, 1);
   font-family: "Roboto-Regular", Helvetica;
   font-size: 22px;
   font-weight: 400;
@@ -296,3 +386,15 @@
   width: 476px;
 }
 
+.locationdiv {
+  color: rgba(130, 130, 130, 1);
+  font-family: "Roboto-Bold", Helvetica;
+  font-size: 25px;
+  font-weight: 700;
+  left: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  top: 600px;
+  white-space: nowrap;
+}

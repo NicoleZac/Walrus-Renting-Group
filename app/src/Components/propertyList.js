@@ -1,4 +1,4 @@
-const propertyList = [
+let propertyList = [
   {
     id: 91,
     title: "House on a Hill",
@@ -680,4 +680,8 @@ const propertyList = [
     landlord: "testLandlord4@email.com",
   },
 ];
+export const getProperties =()=> propertyList;
+export const removeProperty=(id,u)=>{
+  propertyList = propertyList.filter(prop=>!(prop.id === id && prop.landlord === u))
+}
 export default propertyList;

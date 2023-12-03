@@ -13,6 +13,8 @@ import ListProperty from "./Components/ListProperty";
 import UserProfile from "./Pages/UserProfile";
 import PropertyPage from "./Pages/PropertyPage";
 import CreateCalendar from "./Pages/CreateCalendar";
+import Favourites from "./Pages/Favourites";
+import Dashboard from "./Pages/Dashboard";
 
 import { useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -59,6 +61,14 @@ function App() {
                   path={"/CreateCalendar/:email"}
                   element={<Content openPopup={openPop} />}
                 />
+                <Route
+                  path={"/Favourites/:email"}
+                  element={<Content openPopup={openPop} />}
+                />
+                <Route
+                  path={"/Dashboard"}
+                  element={<Content openPopup={openPop} />}
+                />
               </Routes>
               <ListProperty isOpen={isPopOpen} requestClose={closePop} />
             </Router>
@@ -69,24 +79,30 @@ function App() {
   );
 }
 function Content({ openPopup }) {
-  const { LoginRegisterPage, setLoginRegister } = useContext(PageContext);
+  const { pageStates, setPageState } = useContext(PageContext);
   const location = useLocation();
   const {email} = useParams(); 
   const {id,property} = useParams();
   useEffect(() => {
     handleSwitch();
-  }, [location.pathname, setLoginRegister]);
+  }, [location.pathname, setPageState]);
   const handleSwitch = () => {
     if (location.pathname === "/Login" || location.pathname === "/Register") {
-      setLoginRegister(true);
+      setPageState('LoginRegisterPage',true);
     } else {
-      setLoginRegister(false);
+      setPageState('LoginRegisterPage',false);
+    }
+    if(location.pathname === `/UserProfile/${email}`){
+      setPageState('UserProfilePage',true);
+    }
+    else{
+      setPageState('UserProfilePage',false);
     }
   };
 
   return (
     <>
-      {LoginRegisterPage ? <LoginRegisterNav /> : <Nav />}
+      {pageStates.LoginRegisterPage ? <LoginRegisterNav /> : <Nav />}
       {location.pathname === "/" && <HomePage openPopup={openPopup} />}
       {location.pathname === "/Login" && <Login />}
       {location.pathname === "/Register" && <Register />}
@@ -95,6 +111,8 @@ function Content({ openPopup }) {
       {location.pathname === "/ListProperty" && <ListProperty />}
       {location.pathname === `/PropertyPage/${encodeURIComponent(id)}/${encodeURIComponent(property)}` && <PropertyPage />}
       {location.pathname === `/CreateCalendar/${email}` && <CreateCalendar />}
+      {location.pathname === `/Favourites/${email}` && <Favourites />}
+      {location.pathname === `/Dashboard` && <Dashboard />}
     </>
   );
 }
