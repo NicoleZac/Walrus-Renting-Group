@@ -7,10 +7,12 @@ import {UserContext} from '../Context/usercontext';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useFormData } from '../Context/formdatacontext';
-import {Link} from 'react-router-dom';
+import {Link,useNavigate} from 'react-router-dom';
 import {removeProperty} from './propertyList';
+import { toast } from "react-toastify";
 
 function PropertyCard({ openPopup,property }) {
+  const navigate = useNavigate();
   const {formData,dispatch} = useFormData();
   const { pageStates} = useContext(PageContext);
   const [users,setUsers]= useState(userList);
@@ -84,18 +86,52 @@ function PropertyCard({ openPopup,property }) {
     openPopup();
   
   }
-  const deleteData= async()=>{
+  const deleteData= async(event)=>{
+    event.preventDefault();
+    toast.dismiss();
+    toast.info(
+      <div>
+      <p> Are you sure you want to delete this property?</p>
+      <button onClick={()=>handleDelete()}>Yes </button>
+      <button onClick={()=>handleCancel()}>No </button>
+    </div>,{
+      position:'top-center',
+      autoClose: false,
+      hideProgressBar:true,
+      closeOnClick:false,
+      pauseOnHover:true,
+      draggable: true,
+      closeButton: false,
+      className:'confirmation-toast',
+    })
+    
+  }
+  const handleDelete =async()=>{
 
     await removeProperty(propertyId,user.email);
-   
-    
+    toast.dismiss();
+    navigate('../');
+  }
+  const handleCancel = ()=>{
+    toast.dismiss();
   }
 
   useEffect(() => {
-    import(`../Images/Properties/${property.image}`).then((imageModule) => {
-      setImage(imageModule.default);
-    });
-  }, [property.image]);
+    const importImages = async()=>{
+      if(Array.isArray(property.images)&& property.images.length>0){
+        const importedImages = await Promise.all(
+          property.images.map((imagePath)=>import(`../Images/Properties/${imagePath}`))
+        )
+        setImage(importedImages[0].default);
+      }
+      else if(property.image){
+        const imageModule = await import(`../Images/Properties/${property.image}`);
+        setImage(imageModule.default);
+      }
+    };
+    importImages();
+    
+  }, [property.image,property.images]);
   const cardStyle = {
     background: `url(${image})`,
     backgroundSize: "cover",
@@ -107,14 +143,14 @@ function PropertyCard({ openPopup,property }) {
       {(isHovered&&pageStates.UserProfilePage) &&(
           <div class="icon-container">
           <EditIcon onClick={(event)=>saveData(event)} style={{fill:  'white',fontSize:'80px'} }/>
-  <Link to='../'>
-          <DeleteIcon onClick={(event)=>deleteData(event)} style={{ fill:  'white',fontSize:'80px'} }/>
+  <Link to='../' onClick={(event)=>deleteData(event)}>
+          <DeleteIcon  style={{ fill:  'white',fontSize:'80px'} }/>
           </Link>
           </div>
         )}
         <div class="auto-group-z5tw-2Zp" id="N4EkpPYABDeLgunmSZZ5tW">
           <p class="item-89900-Z3x" id="I141:5987;141:5708">
-            ${property.rent} /month
+            ${property.rent || property.monthlyRent} /month
           </p>
           {user && (
           <FavoriteIcon class="vector-Ugi" style={{ fill: isPropertyInFavourites()  ? 'red':'white'} } onClick={(event)=>handleLike(event,propertyId)}/>
@@ -140,7 +176,7 @@ function PropertyCard({ openPopup,property }) {
                       loading="lazy"
                       src="https://cdn.builder.io/api/v1/image/assets/TEMP/7c2377dc-9136-4549-84c6-158a8f299819?"
                       />
-          {property.bedrooms} Bedrooms</p>
+          {property.bedrooms || property.numBeds} Bedrooms</p>
         </div>
         <div class="bathrooms">
           <p>
@@ -148,10 +184,10 @@ function PropertyCard({ openPopup,property }) {
               loading="lazy"
                 src="https://cdn.builder.io/api/v1/image/assets/TEMP/af350dc6-a591-468c-baa3-e3642d76bc54?"
             />
-          {property.bathrooms} Bathrooms</p>
+          {property.bathrooms||property.numBaths} Bathrooms</p>
         </div>
         <p class="sq-ft-Mtv" id="I141:5987;141:5983">
-          {property.size} sqft
+          {property.size||property.propertySize} sqft
         </p>
       </div>
     </div>

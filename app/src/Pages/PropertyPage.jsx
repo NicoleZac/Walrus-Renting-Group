@@ -98,7 +98,7 @@ export const PropertyPage = () => {
       ) }
         <div className="group">
           <div className="text-wrapper-5">{propertyInfo.title}</div>
-          <div className="text-wrapper-6">${propertyInfo.rent} / month</div>
+          <div className="text-wrapper-6">${propertyInfo.rent||propertyInfo.monthlyRent} / month</div>
           <div className = "addy">{address}</div>
           <div className="buttons">
             <button onClick={handleFavourite}>
@@ -137,7 +137,7 @@ export const PropertyPage = () => {
               <img className="beds" alt="Bath" src={Bed} />
               <div className="bed-text">
                 <div className="bed-text-wrapper">
-                  {propertyInfo.bedrooms} Beds
+                  {propertyInfo.bedrooms||propertyInfo.numBeds} Beds
                 </div>
               </div>
             </div>
@@ -145,14 +145,14 @@ export const PropertyPage = () => {
               <img className="beds" alt="Bath" src={Bath} />
               <div className="bed-text">
                 <div className="bed-text-wrapper">
-                  {propertyInfo.bathrooms} Baths
+                  {propertyInfo.bathrooms||propertyInfo.numBaths} Baths
                 </div>
               </div>
             </div>
             <div className="item1">
               <img className="beds" alt="Bath" src={House} />
               <div className="bed-text">
-                <div className="bed-text-wrapper">House</div>
+                <div className="bed-text-wrapper">{propertyInfo.propertyType}</div>
               </div>
             </div>
           </div>
