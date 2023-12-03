@@ -18,6 +18,9 @@ const LandlordProfile = ({ user, openPopup }) => {
     "I’ve got a nice property for you to stay at. Looking for renters."
   );
 
+  const [showMessaging, setShowMessaging] = useState(false);
+  const[error, setError] = useState(false);
+
   const [newFirstName, setNewFirstName] = useState(firstName);
   const [newLastName, setNewLastName] = useState(lastName);
   const [newAge, setNewAge] = useState("65");
@@ -47,6 +50,22 @@ const LandlordProfile = ({ user, openPopup }) => {
       // Optionally, you can provide feedback to the user about the age requirement
       console.error("Age must be greater than 18");
     }
+  };
+
+  // Function to handle the click event for saving changes
+  const handleSave = () => {
+    // Perform save logic here
+
+    // check if the required fields are filled
+    if (newFirstName === '' || newLastName === '' || description === '') {
+      setError(true);
+      return; // Do not proceed with saving if there is an error
+    }
+
+    // If the save logic is successful, you can reset the error state
+    setError(false);
+    // Toggle edit mode after saving (optional)
+    toggleEditMode();
   };
   
   // Function to toggle overall edit mode
@@ -117,27 +136,33 @@ const LandlordProfile = ({ user, openPopup }) => {
               {description}
             </div>
           )}
-          {/* Button to toggle the overall edit mode */}
-          <button onClick={toggleEditMode} className="edit-profile-button">
+
+          {/* Button to toggle the overall edit mode or save changes */}
+          <button onClick={editMode ? handleSave : toggleEditMode} className="edit-profile-button">
             <div className="edit-profile">
               {editMode ? "Save" : "Edit Profile Information"}
             </div>
           </button>
-          {/* Send Message button (conditionally rendered) */}
-          {!editMode && (
-            <button className="send-renter-message">
-              View Messages
-              <span className="link">
-                <Link to={`/UserProfile/${email}`}>
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
-                    className="message"
-                  />
-                </Link>
-              </span>
-            </button>
+
+          {/* Error message */}
+          {error && (
+            <div className="error-message">
+              Please fill in all required fields.
+            </div>
           )}
+
+          <button className="send-renter-message">
+            View Messages
+            <span className="link">
+              <Link to={`/UserProfile/${email}`}>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
+                  className="message"
+                />
+              </Link>
+            </span>
+          </button>
         </div>
       </div>
 

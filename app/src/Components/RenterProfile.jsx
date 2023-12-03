@@ -15,6 +15,8 @@ const RenterProfile = ({ user }) => {
     "I am a short-term renter looking for a home with a nearby Pilates studio."
   );
 
+  const [showMessaging, setShowMessaging] = useState(false);
+
   const[error, setError] = useState(false);
   const [newFirstName, setNewFirstName] = useState(firstName);
   const [newLastName, setNewLastName] = useState(lastName);
@@ -188,21 +190,18 @@ const RenterProfile = ({ user }) => {
             </div>
           )}
 
-          {/* Send Message button (conditionally rendered) */}
-          {!editMode && (
-            <button className="send-renter-message">
-              Send Message
-              <span className="link">
-                <Link to={`/UserProfile/${email}`}>
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
-                    className="message"
-                  />
-                </Link>
-              </span>
-            </button>
-          )}
+          <button className="send-renter-message">
+            View Messages
+            <span className="link">
+              <Link to={`/UserProfile/${email}`}>
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
+                  className="message"
+                />
+              </Link>
+            </span>
+          </button>
         </div>
       </div>
       {/* Common container class for "occupation" and "filters" */}
