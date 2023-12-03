@@ -1,10 +1,15 @@
 import React, { useContext, useEffect, useState, useRef } from "react";
 import Modal from "react-modal";
 import "./FilterModal.css";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { state, useFilter } from "../../Context/filtercontext";
 import Slider from "react-slider";
 import MultiRangeSlider from "./MultiRangeSlider";
 const FilterModal = ({ isOpen, closeModal }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
+
   const homeTypeOptions = ["Room", "Apartment", "Duplex", "House", "Basement"];
   const additionalFilterOptions = [
     { id: "Utilities", name: "Utilities" },
@@ -58,11 +63,19 @@ const FilterModal = ({ isOpen, closeModal }) => {
   };
 
   const handleSeeProperties = () => {
+    if (!isHome) {
+      navigate("/");
+    }
     handleFilterChange("homeType", homeType);
     handleFilterChange("additionalFilters", additionalFilters);
     handleFilterChange("minPrice", minPriceFilter);
     handleFilterChange("maxPrice", maxPriceFilter);
+
     closeModal();
+  };
+
+  const handleResetFilter = () => {
+    window.location.reload(true);
   };
 
   return (
@@ -174,9 +187,21 @@ const FilterModal = ({ isOpen, closeModal }) => {
           ))}
         </div>
         <div className="fdiv-101">
-          <button className="fdiv-button" onClick={handleSeeProperties}>
-            See Properties
-          </button>
+          <div className="fdiv-301">
+            <button className="fdiv-button-reset" onClick={handleResetFilter}>
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/42f16edc-96ae-40cf-a630-0711b2ba6c66?"
+                className="reset-button"
+              />
+              Reset Filters
+            </button>
+          </div>
+          <div className="fdiv-301">
+            <button className="fdiv-button" onClick={handleSeeProperties}>
+              See Properties
+            </button>
+          </div>
         </div>
       </div>
     </Modal>
@@ -184,42 +209,3 @@ const FilterModal = ({ isOpen, closeModal }) => {
 };
 
 export default FilterModal;
-
-// <button className="close-button" onClick={closeModal}>
-//         Close
-//       </button>
-
-// <Modal
-//   isOpen={isOpen}
-//   onRequestClose={closeModal}
-//   contentLabel="Example Modal"
-//   className="modal-content"
-//   overlayClassName="modal-overlay"
-//     >
-//       <h2>Modal Content</h2>
-//       <button className="close-button" onClick={closeModal}>
-//         Close
-//       </button>
-//     </Modal>
-
-{
-  /* <div className="fdiv-32">Select as many you want!</div>
-<div className="fdiv-33">
-  <div className="fdiv-34">Room</div>
-  <div className="fdiv-35">Apartment'</div>{" "}
-  <div className="fdiv-36">Duplex</div>
-</div>{" "}
-<div className="fdiv-37">
-  <div className="fdiv-38">House</div>{" "}
-  <div className="fdiv-39">Basement</div>
-</div>{" "}
-<div className="fdiv-40">
-  <b>Additional Filters</b>
-</div>{" "}
-<div className="fdiv-41">Utilities & More!</div>{" "}
-<div className="fdiv-42">
-  <div className="fdiv-43">Utilities</div>{" "}
-  <div className="fdiv-44">Pets Allowed</div>{" "}
-  <div className="fdiv-45">Smoking Allowed</div>
-</div> */
-}
