@@ -5,6 +5,8 @@ import ImageIcon from '@mui/icons-material/Image';
 import Progress0 from '../../Images/ProgressBars/Progress0.png';
 import { useFormData } from '../../Context/formdatacontext';
 import {useLocation} from 'react-router-dom';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Modal from 'react-modal';
 
 Modal.setAppElement('#root');
@@ -43,6 +45,7 @@ const Page1 = ({onNext,requestClose}) =>{
         images.forEach((image)=>{
             loadImage(image);
         })
+        
     },[images,setPreviewImages]);
     
     const handleTextInput = (inputName,value)=>{
@@ -139,6 +142,19 @@ const Page1 = ({onNext,requestClose}) =>{
         if(formData.duplicateTitleError!==''){
             setErrorTitle(true);
         }
+        if(formData.duplicateTitleError=== null){
+            toast.success('Draft has been saved',{
+                position: 'bottom-center',
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable:true,
+                bodyClassName: 'center-content',
+                
+            });
+        }
+        
     };
     const handleViewDrafts =()=>{
         setShowDraftList(true);
@@ -214,7 +230,7 @@ const Page1 = ({onNext,requestClose}) =>{
         <div onClick={handleUpload} class="search-bar-3LE" id="I165:13949;165:8340">
         <input id="imageFile" type="file" onChange={handleImages} style={{display:'none'}} multiple/>
         <p class="upload-photos-t5x" id="I165:13949;165:8343">Upload Photos</p>
-        <ImageIcon class="group-52-MVL" src="/api/prod-us-east-2-first-cluster/projects/LZTNXrW..." id="I165:13949;165:8347"/>
+        <ImageIcon class="group-52-MVL"  id="I165:13949;165:8347"/>
         
         </div>
         {images.length > 0 && (
@@ -320,8 +336,10 @@ const Page1 = ({onNext,requestClose}) =>{
         </div>
         </div>
         </div>
+    
         <div class="frame-19-rRG" id="I165:13949;165:8445">
         <p class="additional-filters-n42" id="I165:13949;165:8446">Additional Filters</p>
+       
         <p class="utilities-more-HmU" id="I165:13949;165:8447">Utilities &amp; More!</p>
         </div>
         <div class="frame-21-b1U" id="I165:13949;165:8448">
@@ -366,8 +384,7 @@ const Page1 = ({onNext,requestClose}) =>{
             ))}
             </ul>
         </Modal>
-
-        </div>
+ </div>
 
 );
     };

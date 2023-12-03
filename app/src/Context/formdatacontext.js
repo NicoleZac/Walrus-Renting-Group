@@ -40,7 +40,38 @@ const formReducer = (state,action)=>{
             return initialState;
             
         case 'SUBMIT':
-            return initialState;
+            const {savedForms,pulledFormIndex,...rest} =state;
+            const submittedForms = {
+                    propertyType: '',
+                    description: '',
+                    title: '',
+                    neighbourhood: '',
+                    images: [],
+                    numBeds: '',
+                    numBaths: '',
+                    additionalFilters: [],
+                    propertySize: '',
+                    address: '',
+                    country: '',
+                    province: '',
+                    city:'',
+                    zip: '',
+                    tags: [],
+                    startDate: '',
+                    leaseLength: '',
+                    monthlyRent:'',
+                    securityDep:'',
+                    contactMethod:'',
+                    landlord: '',
+                    id:'',
+            }
+            return{
+                ...rest,
+                formData: submittedForms,
+                savedForms:savedForms.filter((form,index)=>index!==pulledFormIndex),
+                duplicateTitleError: null,
+                pulledFormIndex:null,
+            }
         case 'SAVE_FORM':
             if(state.formData.title===''){
                 return{

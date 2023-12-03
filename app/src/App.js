@@ -16,20 +16,51 @@ import PropertyPage from "./Pages/PropertyPage";
 import CreateCalendar from "./Pages/CreateCalendar";
 import Favourites from "./Pages/Favourites";
 import Dashboard from "./Pages/Dashboard";
+import {ToastContainer,toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { FormDataProvider } from "./Context/formdatacontext";
 
 function App() {
+  const[showToast,setShowToast] = useState(true);
   const [isPopOpen, setPopOpen] = useState(false);
 
   const openPop = () => {
+    toast.dismiss();
     setPopOpen(true);
   };
   const closePop = () => {
-    setPopOpen(false);
+    toast.dismiss();
+    if(showToast){
+    toast.info(
+      <div>
+      <p> Are you sure you want to close the page?</p>
+      <button onClick={handleCloseConfirmation}>Yes </button>
+      <button onClick={handleCancelConfirmation}>No </button>
+    </div>,{
+      position:'top-center',
+      autoClose: false,
+      hideProgressBar:true,
+      closeOnClick:false,
+      pauseOnHover:true,
+      draggable: true,
+      closeButton: false,
+      className:'confirmation-toast',
+    })
+  }
+  else{
+    setShowToast(true);
+  }
   };
+  const handleCloseConfirmation=()=>{
+    setPopOpen(false);
+    toast.dismiss();
+  }
+  const handleCancelConfirmation=()=>{
+    toast.dismiss();
+  }
   return (
     <FormDataProvider>
       <PageProvider>
@@ -75,7 +106,9 @@ function App() {
                   element={<Content openPopup={openPop} />}
                 />
               </Routes>
-              <ListProperty isOpen={isPopOpen} requestClose={closePop} />
+         
+              <ToastContainer position="top-center"/>
+           <ListProperty isOpen={isPopOpen} requestClose={closePop} setShowToast={setShowToast} />
             </Router>
           </FilterProvider>
         </UserProvider>
@@ -108,10 +141,10 @@ function Content({ openPopup }) {
   return (
     <>
       {pageStates.LoginRegisterPage ? <LoginRegisterNav /> : <Nav />}
-      {location.pathname === "/" && <HomePage openPopup={openPopup} />}
+      {location.pathname === "/" && <HomePage openPopup={openPopup} /> }
       {location.pathname === "/Login" && <Login />}
       {location.pathname === "/Register" && <Register />}
-      {location.pathname === `/UserProfile/${email}` && <UserProfile openPopup={openPopup}/>}
+      {location.pathname === `/UserProfile/${email}` && <UserProfile openPopup={openPopup}/>  }
       {location.pathname === `/Calendar/${email}` && <Calendar />}
       {location.pathname === "/ListProperty" && <ListProperty />}
       {location.pathname === `/PropertyPage/${encodeURIComponent(id)}/${encodeURIComponent(property)}` && <PropertyPage />}

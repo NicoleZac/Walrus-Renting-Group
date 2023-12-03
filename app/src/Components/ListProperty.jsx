@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useContext,useEffect} from 'react';
 import Modal from 'react-modal';
 import Page1 from './ListPropertyPages/Page1';
 import Page2 from './ListPropertyPages/Page2';
@@ -6,10 +6,11 @@ import Page3 from './ListPropertyPages/Page3';
 import Page4 from './ListPropertyPages/Page4';
 import {useFormData} from '../Context/formdatacontext.js';
 import propertyList from "../Components/propertyList";
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
-const ListProperty =({isOpen,requestClose})=>{
-
+const ListProperty =({isOpen,requestClose,setShowToast})=>{
 
     const{formData,dispatch} = useFormData();
     const [currentPage,setPage] = useState('p1');
@@ -51,10 +52,21 @@ const ListProperty =({isOpen,requestClose})=>{
         else{
             propertyList.push(formData.formData);
         }
+            setShowToast(false);
             setError('');
             setPage('p1');
             dispatch({type: 'SUBMIT'});
             requestClose();
+            toast.success('Property has been listed',{
+                position: 'bottom-center',
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable:true,
+                bodyClassName: 'center-content',
+                
+            });
         }
     };
 
@@ -73,7 +85,7 @@ const ListProperty =({isOpen,requestClose})=>{
     const getPageContent = ()=>{
         switch(currentPage){
             case 'p1':
-                return <Page1 onNext={handleNext}  requestClose={requestClose} />;
+                return <Page1 onNext={handleNext}  requestClose={()=>requestClose()} />;
             case 'p2': 
                 return <Page2 onNext={handleNext} onPrevious={handlePrevious} />;    
             case 'p3':
@@ -81,7 +93,7 @@ const ListProperty =({isOpen,requestClose})=>{
             case 'p4':
                 return <Page4 onPrevious={handlePrevious} onSubmit={handleSubmit} error={error} />;
             default:
-                return <Page1 onNext={handleNext}  requestClose={requestClose}/>;
+                return <Page1 onNext={handleNext}  requestClose={()=>requestClose()}/>;
         }
     }
 useEffect(()=>{
@@ -98,7 +110,7 @@ useEffect(()=>{
     return(
 <Modal
         isOpen = {isOpen}
-        onRequestClose ={requestClose}
+        onRequestClose ={()=>requestClose()}
         style={{
  
            overlay: {
