@@ -1,4 +1,4 @@
-import React,{useState,useRef} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
 import "./Page3.css";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import EventIcon from '@mui/icons-material/Event';
@@ -6,6 +6,10 @@ import Progress2 from '../../Images/ProgressBars/Progress2.png';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useFormData } from '../../Context/formdatacontext';
+import ClearIcon from '@mui/icons-material/Clear';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Modal from 'react-modal';
 const Page3 = ({onNext,onPrevious}) =>{
     const datePickerRef = useRef();
     const {formData,dispatch} = useFormData();
@@ -15,6 +19,10 @@ const Page3 = ({onNext,onPrevious}) =>{
     const [leaseColor,setLeaseColor] = useState('#c2c2c2');
     const [rentColor,setRentColor] = useState('#c2c2c2');
     const [depColor,setDepColor] = useState('#c2c2c2');
+    const [showDraftList,setShowDraftList] = useState(false);
+    useEffect(()=>{
+        setStartDate(formData.formData.startDate);
+    },[formData])
     const handleTextInput = (inputName,value)=>{
         setLeaseColor('#c2c2c2');
         setRentColor('#c2c2c2');
@@ -73,6 +81,39 @@ const Page3 = ({onNext,onPrevious}) =>{
             setError('Security Deposit must be in the format $1000.00');
         }
     }
+    const handleSaveForm=()=>{
+        setError('');
+        dispatch({type:'SAVE_FORM'});
+        if(formData.duplicateTitleError!==''){
+            setError(formData.duplicateTitleError);
+        }
+        if(formData.duplicateTitleError=== null){
+            toast.success('Draft has been saved',{
+                position: 'bottom-center',
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable:true,
+                bodyClassName: 'center-content',
+                
+            });
+        }
+        
+    };
+    const handleViewDrafts =()=>{
+        setShowDraftList(true);
+    };
+    const handleDraftClose =()=>{
+        setShowDraftList(false);
+    }
+      const handleEditForm =(index)=>{
+        dispatch({type:'PULL_SAVED_FORM',payload:index});
+        setShowDraftList(false);
+      }
+      const handleRemoveForm = (index) =>{
+        dispatch({type:'REMOVE_SAVED_FORM',payload:index});
+      };
     return(
         <div class="create-a-property-vkS" id="165:13951">
         <div class="rectangle-13-2Hg" id="I165:13951;165:8687"></div>
@@ -92,9 +133,34 @@ const Page3 = ({onNext,onPrevious}) =>{
         <p class="approximate-2F4" id="I165:13951;165:8755">Approximate</p>
         </div>
         <div onClick={onNext} class="submit-jQN" id="I165:13951;165:8704">Next Page</div>
+        <div  onClick={handleSaveForm} class="save-form-p3" id="I165:13949;165:8469">Save Draft</div>
+        
+        {formData.savedForms.length>0&& <div  onClick={handleViewDrafts} class="edit-form-p3" id="I165:13949;165:8469">View Drafts</div>}
+        
         <div class="error">
             {error && <p style={{color:'red'}}>{error}</p>}
         </div>
+        <Modal
+        isOpen={showDraftList}
+        onRequestClose={handleDraftClose}
+        style={{
+            overlay: {
+             zIndex: 3,
+            },
+        }}
+        >
+        <ClearIcon onClick={handleDraftClose} class="modal-icon"></ClearIcon>
+        <h2> Saved Drafts </h2>
+        <ul>
+            {formData.savedForms.map((form,index)=>(
+                <li key={index}>
+                    Draft {index+1}: 
+                    <button class="draft-button" onClick={()=>handleEditForm(index)}> Edit Draft</button>
+                    <button class="draft-button" onClick={()=>handleRemoveForm(index)}> Delete Draft</button>
+                </li>
+            ))}
+            </ul>
+        </Modal>
         <ArrowBackIosIcon onClick={onPrevious} class="group-49-ndY" src="/api/prod-us-east-2-first-cluster/projects/LZTNXrW..." id="I165:13951;165:8706"/>
         <div style={{borderColor: dateColor}}onClick={openDatePicker}  class="search-bar-uiA" id="I165:13951;165:8729">
         <div class="frame-17-bqt" id="I165:13951;165:8731">
