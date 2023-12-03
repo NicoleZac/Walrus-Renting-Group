@@ -15,6 +15,7 @@ import MapContainer from "../Components/GoogleMaps";
 import GalleryModal from "../Components/GalleryModal";
 import cover from "../Images/PropertyPics/Cover.png"
 import Messaging from "../Components/Messaging";
+import CalendarModal from "../Components/Special/Calendar";
 
 export const PropertyPage = () => {
   const { id, property } = useParams();
@@ -23,6 +24,7 @@ export const PropertyPage = () => {
   const [showGallery, setShowGallery] = useState(false);
   const address = "212 University Way, Calgary";
   const [showMessaging, setShowMessaging] = useState(false);
+  const [isModalOpen, setModalOpen] = useState(false);
 
   // Function to toggle Messaging component
   const contactLandlord = () => {
@@ -55,9 +57,8 @@ export const PropertyPage = () => {
   };
 
   /* For view availability button */
-  const handleCalendar = () => {
-    // Your implementation
-  };
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
 
   const openGallery = () => {
     setShowGallery(true);
@@ -109,7 +110,7 @@ export const PropertyPage = () => {
                 src={isFavorited ? HeartFilled : Heart}
               />
             </button>
-            <button onClick={handleCalendar}>
+            <button onClick={openModal}>
               <img
                 className="calendar"
                 alt="Calendar"
@@ -117,6 +118,7 @@ export const PropertyPage = () => {
                 src={Calendar}
               />
             </button>
+            <CalendarModal isOpen={isModalOpen} closeModal={closeModal} />
           </div>
         </div>
         <div className="frame-7">

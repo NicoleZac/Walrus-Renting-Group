@@ -11,7 +11,6 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import ListProperty from "./Components/ListProperty";
 import UserProfile from "./Pages/UserProfile";
-import Calendar from "./Pages/Calendar";
 import PropertyPage from "./Pages/PropertyPage";
 import CreateCalendar from "./Pages/CreateCalendar";
 import Favourites from "./Pages/Favourites";
@@ -82,10 +81,6 @@ function App() {
                   element={<Content openPopup={openPop} />}
                 />
                 <Route
-                  path={"/Calendar/:email"}
-                  element={<Content openPopup={openPop} />}
-                />
-                <Route
                   path={"/ListProperty"}
                   element={<Content openPopup={openPop} />}
                 />
@@ -145,7 +140,6 @@ function Content({ openPopup }) {
       {location.pathname === "/Login" && <Login />}
       {location.pathname === "/Register" && <Register />}
       {location.pathname === `/UserProfile/${email}` && <UserProfile openPopup={openPopup}/>  }
-      {location.pathname === `/Calendar/${email}` && <Calendar />}
       {location.pathname === "/ListProperty" && <ListProperty />}
       {location.pathname === `/PropertyPage/${encodeURIComponent(id)}/${encodeURIComponent(property)}` && <PropertyPage />}
       {location.pathname === `/CreateCalendar/${email}` && <CreateCalendar />}
