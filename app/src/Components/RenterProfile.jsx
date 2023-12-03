@@ -32,7 +32,7 @@ const RenterProfile = ({ user }) => {
   const [selectedAdditionalTags, setAdditionalTags] = useState([]);
 
   const studentTags = ["Student", "University of Calgary", "Mount Royal University", "SAIT", "University of Alberta"];
-  const occupationTags = ["Teacher", "Software Engineer", "Accountant", "Bartender", "Server", "Retail Associate"];
+  const occupationTags = ["Part-time", "Full-time", "Teacher", "Software Engineer", "Accountant", "Bartender", "Server", "Retail Associate"];
   const additionalTags = ["Room to Rent", "Short-Term", "Long-Term", "Near University", "Access to Transit", "Ensuite Laundry", "Pet Owner"];
 
   
@@ -67,39 +67,34 @@ const RenterProfile = ({ user }) => {
 
   // Function to handle the click event for student tags
   const handleStudentClick = (tag) => {
-    const isSelected = studentTags.includes(tag);
-    if (isSelected) {
-      setSelectedStudentTags((prevSelected) =>
-        prevSelected.filter((selectedOption) => selectedOption !== tag)
-      );
-    } else {
-      setSelectedStudentTags((prevSelected) => [...prevSelected, tag]);
-    }
+    setSelectedStudentTags((prevSelected) => {
+      const isSelected = prevSelected.includes(tag);
+      return isSelected
+        ? prevSelected.filter((selectedOption) => selectedOption !== tag)
+        : [...prevSelected, tag];
+    });
   };
 
-  // Function to handle the click event for student tags
+  // Function to handle the click event for job tags
   const handleJobsClick = (tag) => {
-    const isSelected = occupationTags.includes(tag);
-    if (isSelected) {
-      setSelectedOccupationTags((prevSelected) =>
-        prevSelected.filter((selectedOption) => selectedOption !== tag)
-      );
-    } else {
-      setSelectedOccupationTags((prevSelected) => [...prevSelected, tag]);
-    }
+    setSelectedOccupationTags((prevSelected) => {
+      const isSelected = prevSelected.includes(tag);
+      return isSelected
+        ? prevSelected.filter((selectedOption) => selectedOption !== tag)
+        : [...prevSelected, tag];
+    });
   };
 
-  // Function to handle the click event for student tags
+  // Function to handle the click event for additional tags
   const handleAdditionalTagsClick = (tag) => {
-    const isSelected = additionalTags.includes(tag);
-    if (isSelected) {
-      setAdditionalTags((prevSelected) =>
-        prevSelected.filter((selectedOption) => selectedOption !== tag)
-      );
-    } else {
-      setAdditionalTags((prevSelected) => [...prevSelected, tag]);
-    }
+    setAdditionalTags((prevSelected) => {
+      const isSelected = prevSelected.includes(tag);
+      return isSelected
+        ? prevSelected.filter((selectedOption) => selectedOption !== tag)
+        : [...prevSelected, tag];
+    });
   };
+
 
   // Function to handle the click event for saving changes
   const handleSave = () => {
@@ -246,7 +241,7 @@ const RenterProfile = ({ user }) => {
             {!editMode && (
               <div className="selected-tags">
                 {selectedStudentTags.map((tag, index) => (
-                  <div key={index} className="tags-selected">
+                  <div key={index} className="tags">
                     {tag}
                   </div>
                 ))}
@@ -270,7 +265,7 @@ const RenterProfile = ({ user }) => {
             {!editMode && (
               <div className="selected-tags">
                 {selectedOccupationTags.map((tag, index) => (
-                  <div key={index} className="tags-selected">
+                  <div key={index} className="tags">
                     {tag}
                   </div>
                 ))}
@@ -295,6 +290,15 @@ const RenterProfile = ({ user }) => {
                   </div>
                 ))}
               </div>
+              )}
+              {!editMode && (
+                <div className="selected-tags2">
+                  {selectedAdditionalTags.map((tag, index) => (
+                    <div key={index} className="tags">
+                      {tag}
+                    </div>
+                  ))}
+                </div>
               )}
             </div>
           </div>
