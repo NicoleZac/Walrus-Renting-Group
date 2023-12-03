@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./RenterProfile.css";
-import { Link } from "react-router-dom";
+import Messaging from "../Components/Messaging";
+import { UserContext } from "../Context/usercontext";
 
 const RenterProfile = ({ user }) => {
+  const { user: currentUser } = useContext(UserContext);
+
   const firstName = user?.firstName;
   const lastName = user?.lastName;
   const email = user?.email;
@@ -43,6 +46,11 @@ const RenterProfile = ({ user }) => {
   
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
+  };
+
+  // Function to toggle Messaging component
+  const messages = () => {
+    setShowMessaging(true); // Show Messaging component when Contact Landlord is clicked
   };
 
   const handleAgeChange = (e) => {
@@ -190,18 +198,28 @@ const RenterProfile = ({ user }) => {
             </div>
           )}
 
-          <button className="send-renter-message">
-            View Messages
-            <span className="link">
-              <Link to={`/UserProfile/${email}`}>
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
-                  className="message"
-                />
-              </Link>
-            </span>
-          </button>
+          <div className="send-renter-message-container">
+            {currentUser && (
+              <>
+                <button className="send-renter-message" onClick={messages}>
+                  View Messages
+                </button>
+                <span className="icon">
+                  {showMessaging && (
+                    <Messaging
+                      isOpen={showMessaging}
+                      onClose={() => setShowMessaging(false)}
+                    />
+                  )}
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
+                    className="message"
+                  />
+                </span>
+              </>
+            )}
+          </div>
         </div>
       </div>
       {/* Common container class for "occupation" and "filters" */}

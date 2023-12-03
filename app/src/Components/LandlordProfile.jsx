@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import PropertyListings from "../Components/PropertyListings";
 import {getProperties} from "../Components/propertyList";
 import "./LandlordProfile.css";
-import { Link } from "react-router-dom";
+import Messaging from "../Components/Messaging";
+import { UserContext } from "../Context/usercontext";
 
-const LandlordProfile = ({ user, openPopup }) => {
+const LandlordProfile = ({ openPopup }) => {
+  const { user } = useContext(UserContext);
   // Check if user exists before destructuring its properties
   const firstName = user?.firstName;
   const lastName = user?.lastName;
@@ -26,6 +28,10 @@ const LandlordProfile = ({ user, openPopup }) => {
   const [newAge, setNewAge] = useState("65");
   const [ageLabel] = useState("years old");
 
+   // Function to toggle Messaging component
+   const messages = () => {
+    setShowMessaging(true); // Show Messaging component when Contact Landlord is clicked
+  };
 
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
@@ -151,18 +157,28 @@ const LandlordProfile = ({ user, openPopup }) => {
             </div>
           )}
 
-          <button className="send-renter-message">
-            View Messages
-            <span className="link">
-              <Link to={`/UserProfile/${email}`}>
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
-                  className="message"
-                />
-              </Link>
-            </span>
-          </button>
+          <div className="send-renter-message-container">
+            {user && (
+              <>
+                <button className="send-renter-message" onClick={messages}>
+                  View Messages
+                </button>
+                <span className="icon">
+                  {showMessaging && (
+                    <Messaging
+                      isOpen={showMessaging}
+                      onClose={() => setShowMessaging(false)}
+                    />
+                  )}
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
+                    className="message"
+                  />
+                </span>
+              </>
+            )}
+          </div>
         </div>
       </div>
 

@@ -154,6 +154,12 @@
   font: 700 20px/23px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
+.send-renter-message-container {
+  display: flex;
+  align-items: center;
+  margin-left: 600px;
+}
+
 .send-renter-message {
   color: var(--Gray-3, #828282);
   font: italic 400 23px/23px Roboto, -apple-system, Roboto, Helvetica,
@@ -177,7 +183,7 @@
 
 .message
 {
-  margin-left: 20px;
+  margin-top: 20px;
 }
 
 .edit-profile {
