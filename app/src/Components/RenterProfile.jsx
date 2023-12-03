@@ -10,12 +10,12 @@ const RenterProfile = ({ user }) => {
   // State variable to manage overall edit mode
   const [editMode, setEditMode] = useState(false);
 
-
   // State variables to manage editable profile fields
   const [description, setDescription] = useState(
     "I am a short-term renter looking for a home with a nearby Pilates studio."
   );
 
+  const[error, setError] = useState(false);
   const [newFirstName, setNewFirstName] = useState(firstName);
   const [newLastName, setNewLastName] = useState(lastName);
   const [newAge, setNewAge] = useState("22");
@@ -30,18 +30,18 @@ const RenterProfile = ({ user }) => {
   const occupationTags = ["Teacher", "Software Engineer", "Accountant", "Bartender", "Server", "Retail Associate"];
   const additionalTags = ["Room to Rent", "Short-Term", "Long-Term", "Near University", "Access to Transit", "Ensuite Laundry", "Pet Owner"];
 
-  const handleDescriptionChange = (e) => {
-    setDescription(e.target.value);
-  };
-
+  
   const handleFirstNameChange = (e) => {
     setNewFirstName(e.target.value);
   };
-
+  
   const handleLastNameChange = (e) => {
     setNewLastName(e.target.value);
   };
-
+  
+  const handleDescriptionChange = (e) => {
+    setDescription(e.target.value);
+  };
 
   const handleAgeChange = (e) => {
     const enteredAge = e.target.value;
@@ -51,7 +51,7 @@ const RenterProfile = ({ user }) => {
       setNewAge(enteredAge.toString());
     } else {
       // Optionally, you can provide feedback to the user about the age requirement
-      console.error("Age must be greater than 18");
+      setError("Age must be greater than 18");
     }
   };
 
@@ -91,13 +91,29 @@ const RenterProfile = ({ user }) => {
     }
   };
 
+  // Function to handle the click event for saving changes
+  const handleSave = () => {
+    // Perform save logic here
+
+    // check if the required fields are filled
+    if (newFirstName === '' || newLastName === '' || description === '') {
+      setError(true);
+      return; // Do not proceed with saving if there is an error
+    }
+
+    // If the save logic is successful, you can reset the error state
+    setError(false);
+    // Toggle edit mode after saving (optional)
+    toggleEditMode();
+  };
+
   // Function to toggle overall edit mode
   const toggleEditMode = () => {
     // Only allow edit mode if the current user matches the profile owner
     if (user.email === email) {
       setEditMode(!editMode);
     } else {
-      console.error("You are not authorized to edit this profile.");
+      setError("You are not authorized to edit this profile.");
     }
   };
 
@@ -158,12 +174,20 @@ const RenterProfile = ({ user }) => {
               {description}
             </div>
           )}
-          {/* Button to toggle the overall edit mode */}
-          <button onClick={toggleEditMode} className="edit-profile-button">
+          {/* Button to toggle the overall edit mode or save changes */}
+          <button onClick={editMode ? handleSave : toggleEditMode} className="edit-profile-button">
             <div className="edit-profile">
               {editMode ? "Save" : "Edit Profile Information"}
             </div>
           </button>
+
+          {/* Error message */}
+          {error && (
+            <div className="error-message">
+              Please fill in all required fields.
+            </div>
+          )}
+
           {/* Send Message button (conditionally rendered) */}
           {!editMode && (
             <button className="send-renter-message">
@@ -255,12 +279,6 @@ const RenterProfile = ({ user }) => {
                 ))}
               </div>
               )}
-              <div className="information">
-                
-              </div>
-              <div className="other">
-              
-              </div>
             </div>
           </div>
         </div>

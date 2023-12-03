@@ -126,7 +126,7 @@ const LandlordProfile = ({ user, openPopup }) => {
           {/* Send Message button (conditionally rendered) */}
           {!editMode && (
             <button className="send-renter-message">
-              Send Message
+              View Messages
               <span className="link">
                 <Link to={`/UserProfile/${email}`}>
                   <img
