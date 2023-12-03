@@ -115,7 +115,7 @@ const RenterProfile = ({ user }) => {
   // Function to toggle overall edit mode
   const toggleEditMode = () => {
     // Only allow edit mode if the current user matches the profile owner
-    if (user.email === email) {
+    if (currentUser.email === email) {
       setEditMode(!editMode);
     } else {
       setError("You are not authorized to edit this profile.");
