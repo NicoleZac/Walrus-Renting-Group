@@ -98,7 +98,7 @@ export const PropertyPage = () => {
           <GalleryModal images={images} onClose={closeGallery} />
       ) }
         <div className="group">
-          <div className="text-wrapper-5">{propertyInfo.title}</div>
+          <div className="text-wrapper-9">{propertyInfo.title}</div>
           <div className="text-wrapper-6">${propertyInfo.rent||propertyInfo.monthlyRent} / month</div>
           <div className = "addy">{address}</div>
           <div className="buttons">
@@ -112,7 +112,7 @@ export const PropertyPage = () => {
             </button>
             <button onClick={openModal}>
               <img
-                className="calendar"
+                className="calendar-icon"
                 alt="Calendar"
                 loading="lazy"
                 src={Calendar}
