@@ -5,7 +5,7 @@
 	overflow: hidden;
 	position: relative;
 	width: 1800px;
-    margin-top: 30%;
+    
   }
   
   .calendar .overlap {
@@ -26,7 +26,14 @@
 	top: 0;
 	width: 1270px;
   }
-  
+  .calendar .save-button {
+	color: #545454;
+	font-family: "Roboto-Bold", Helvetica;
+	font-size: 35px;
+	font-weight: 700;
+	letter-spacing: 0;
+	line-height: normal;
+  }
   .calendar .text-wrapper {
 	color: #545454;
 	font-family: "Roboto-Bold", Helvetica;
@@ -272,4 +279,33 @@
   }
   .group-48-NEn:hover {
   	color: pink;
+  }
+  .save-1 {
+	display: flex;
+	flex-grow: 1;
+	flex-basis: 0%;
+	border-radius: 200rem;
+	border: solid 0.0452rem #c2c2c2;
+	background-color: rgba(0, 0, 0, 0); /* Initial background color */
+	/* transition: background-color 0.3s; Smooth transition for the color change */
+	width: 130px;
+	height: 55px;
+	margin-top: 5rem;
+  }
+  
+  .save-1:hover {
+	background-color: #c9cba3; /* New background color on hover */
+	border: solid 0.0452rem #ffffff;
+  }
+
+  .schedule-toggle {
+	padding-left: 55rem;
+	padding-top: 5rem;
+  }
+  .toggle-title {
+	color: #545454;
+	font-family: "Roboto-Regular", Helvetica;
+	font-size: 15.7px;
+	font-weight: 400;
+	white-space: nowrap;
   }
