@@ -3,6 +3,10 @@ import "./Page2.css";
 import Progress1 from '../../Images/ProgressBars/Progress1.png'
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { useFormData } from '../../Context/formdatacontext';
+import ClearIcon from '@mui/icons-material/Clear';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Modal from 'react-modal';
 
 const Page2 = ({onNext,onPrevious}) =>{
     const [tagColor,setTagColor] =useState('#c2c2c2');
@@ -11,6 +15,11 @@ const Page2 = ({onNext,onPrevious}) =>{
     const [tags,setTags] = useState(formData.formData.tags || []);
     const [newTag,setNewTag] = useState('');
     const[error,setError] = useState('');
+    const [showDraftList,setShowDraftList] = useState(false);
+
+    useEffect(()=>{
+        setTags(formData.formData.tags);
+    },[formData])
     const handleTextInput = (inputName,value)=>{
         dispatch({type:'UPDATE_DATA',payload:{[inputName]:value}});
     }
@@ -46,6 +55,39 @@ const Page2 = ({onNext,onPrevious}) =>{
             errorRef.current.scrollIntoView({behavior:'smooth'});
         }
       },[error]);
+      const handleSaveForm=()=>{
+        setError('');
+        dispatch({type:'SAVE_FORM'});
+        if(formData.duplicateTitleError!==''){
+            setError(formData.duplicateTitleError);
+        }
+        if(formData.duplicateTitleError=== null){
+            toast.success('Draft has been saved',{
+                position: 'bottom-center',
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable:true,
+                bodyClassName: 'center-content',
+                
+            });
+        }
+        
+    };
+    const handleViewDrafts =()=>{
+        setShowDraftList(true);
+    };
+    const handleDraftClose =()=>{
+        setShowDraftList(false);
+    }
+      const handleEditForm =(index)=>{
+        dispatch({type:'PULL_SAVED_FORM',payload:index});
+        setShowDraftList(false);
+      }
+      const handleRemoveForm = (index) =>{
+        dispatch({type:'REMOVE_SAVED_FORM',payload:index});
+      };
     return(
 <div class="create-a-property-CMx" id="165:13950">
 <div class="rectangle-13-tka" id="I165:13950;165:8472"></div>
@@ -99,7 +141,32 @@ const Page2 = ({onNext,onPrevious}) =>{
                     </ul>
             ))}
             <div onClick={onNext} class="submit-SzN" id="I165:13950;165:8544">Next Page</div>
-{error && <p ref={errorRef} class="error-p2" style={{color:'red'}}>{error}</p>}
+<div  onClick={handleSaveForm} class="save-form-p2" id="I165:13949;165:8469">Save Draft</div>
+        
+        {formData.savedForms.length>0&& <div  onClick={handleViewDrafts} class="edit-form-p2" id="I165:13949;165:8469">View Drafts</div>}
+        
+        {error && <p ref={errorRef} class="error-p2" style={{color:'red'}}>{error}</p>}
+        <Modal
+        isOpen={showDraftList}
+        onRequestClose={handleDraftClose}
+        style={{
+            overlay: {
+             zIndex: 3,
+            },
+        }}
+        >
+        <ClearIcon onClick={handleDraftClose} class="modal-icon"></ClearIcon>
+        <h2> Saved Drafts </h2>
+        <ul>
+            {formData.savedForms.map((form,index)=>(
+                <li key={index}>
+                    Draft {index+1}: 
+                    <button class="draft-button" onClick={()=>handleEditForm(index)}> Edit Draft</button>
+                    <button class="draft-button" onClick={()=>handleRemoveForm(index)}> Delete Draft</button>
+                </li>
+            ))}
+            </ul>
+        </Modal>
 </div>
 </div>
 );

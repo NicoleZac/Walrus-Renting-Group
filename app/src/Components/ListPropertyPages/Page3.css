@@ -166,6 +166,44 @@
     white-space: nowrap;
     width: 31.0782rem;
   }
+  .save-form-p3 {
+    align-items: center;
+    cursor:pointer;
+    background-color: #4f4f4f;
+    border-radius: 25.7911rem;
+    color: #ffffff;
+    display: flex;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 1.3669rem;
+    font-weight: 400;
+    height: 4.3845rem;
+    justify-content: center;
+    left: 2.8266rem;
+    line-height: 1.1725;
+    position: relative;
+    top: 48.2962rem;
+    white-space: nowrap;
+    width: 15.0782rem;
+  }
+  .edit-form-p3 {
+    align-items: center;
+    cursor:pointer;
+    background-color: #4f4f4f;
+    border-radius: 25.7911rem;
+    color: #ffffff;
+    display: flex;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 1.3669rem;
+    font-weight: 400;
+    height: 4.3845rem;
+    justify-content: center;
+    left: 19.1266rem;
+    line-height: 1.1725;
+    position: relative;
+    top: 43.9962rem;
+    white-space: nowrap;
+    width: 15.0782rem;
+  }
   .group-49-ndY {
     height: 1.3768rem;
     left: 2.4501rem;

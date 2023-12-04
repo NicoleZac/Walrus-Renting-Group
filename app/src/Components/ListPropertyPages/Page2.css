@@ -326,6 +326,44 @@
   white-space: nowrap;
   width: 31.0782rem;
 }
+.save-form-p2 {
+  align-items: center;
+  cursor:pointer;
+  background-color: #4f4f4f;
+  border-radius: 25.7911rem;
+  color: #ffffff;
+  display: flex;
+  font-family: Roboto, 'Source Sans Pro';
+  font-size: 1.3669rem;
+  font-weight: 400;
+  height: 4.3845rem;
+  justify-content: center;
+  left: 2.8266rem;
+  line-height: 1.1725;
+  position: relative;
+  top: 0.8715rem;
+  white-space: nowrap;
+  width: 15.0782rem;
+}
+.edit-form-p2 {
+  align-items: center;
+  cursor:pointer;
+  background-color: #4f4f4f;
+  border-radius: 25.7911rem;
+  color: #ffffff;
+  display: flex;
+  font-family: Roboto, 'Source Sans Pro';
+  font-size: 1.3669rem;
+  font-weight: 400;
+  height: 4.3845rem;
+  justify-content: center;
+  left: 4.1266rem;
+  line-height: 1.1725;
+  position: relative;
+  top: 0.8715rem;
+  white-space: nowrap;
+  width: 15.0782rem;
+}
 .error-p2{
   align-items: center;
   color: #ffffff;
