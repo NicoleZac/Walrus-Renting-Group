@@ -51,16 +51,26 @@ const CalendarModal = ({ isOpen, closeModal }) => {
       overlayClassName="modal-overlay"
       style={{
         overlay: {
-          backgroundColor: 'rgba(0, 0, 0, 0.25)',
-        },
+            backgroundColor: 'rgba(0,0,0,0.5)',
+            display:isOpen ? 'block' : 'none',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right:0,
+            bottom: 0,
+            zIndex: 2,
+           },
         content: {
           width: '55%', // Adjust the width as needed
-          height: '60%', // Adjust the height as needed
+          height: '95%', // Adjust the height as needed
           margin: 'auto',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           overflow: 'auto', // Enable scrolling
+          top: '0%',
         },
       }}
     >
