@@ -6,12 +6,14 @@ import Matthew from '../Images/PropertyPics/matthew.png'
 import Landlord from '../Images/PropertyPics/Landlord.png'
 import Anger from '../Images/PropertyPics/Anger.png'
 import Search from '../Images/PropertyPics/search.png'
+import { Link } from "react-router-dom";
 
 export const Messaging = ({ isOpen, onClose }) => {
 
   const [isBorderWhite, setIsBorderWhite] = useState(true);
   const [hasShadow, setHasShadow] = useState(false);
   const [isTextColored, setIsTextColored] = useState(false);
+
 
   const handleSend = () => {
     setIsBorderWhite(false);
@@ -21,6 +23,8 @@ export const Messaging = ({ isOpen, onClose }) => {
 
   /* For view availability button */
     const handleCalendar = () => {
+      const email = 'test'; // The email you want to navigate to
+      window.location.href = `/Calendar/${email}`;
     
   };
 
@@ -33,9 +37,10 @@ export const Messaging = ({ isOpen, onClose }) => {
       
     };
 
-
     const drakeProfile = () => {
-      
+      const email = 'testLandlord@email.com'; // The email you want to navigate to
+      window.location.href = `/UserProfile/${email}`;
+
     };
 
     const angerProfile = () => {
@@ -84,6 +89,7 @@ export const Messaging = ({ isOpen, onClose }) => {
                                 loading="lazy"
                                 src={Calendar}
                               />
+                              <Link to={`/Calendar/test`}></Link>
                           </button>
                           <span className="close" onClick={onClose}>&times;</span>
                         </div>
@@ -125,6 +131,8 @@ export const Messaging = ({ isOpen, onClose }) => {
                                     loading="lazy"
                                     src={Landlord}
                                   />
+                                  <Link to={`/UserProfile/testLandlord@email.com`}>
+                                  </Link>
                                 </button>
                                 <div className="div25">
                                   <div className="textwrapper25">Teressa Mother</div>

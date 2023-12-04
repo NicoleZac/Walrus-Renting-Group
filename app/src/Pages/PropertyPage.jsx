@@ -56,8 +56,10 @@ export const PropertyPage = () => {
 
   /* For view availability button */
   const handleCalendar = () => {
-    // Your implementation
-  };
+    const email = 'test'; // The email you want to navigate to
+    window.location.href = `/Calendar/${email}`;
+  
+};
 
   const openGallery = () => {
     setShowGallery(true);
@@ -116,6 +118,7 @@ export const PropertyPage = () => {
                 loading="lazy"
                 src={Calendar}
               />
+              <Link to={`/Calendar/test`}></Link>
             </button>
           </div>
         </div>
