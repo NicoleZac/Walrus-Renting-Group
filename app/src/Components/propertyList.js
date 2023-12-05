@@ -201,7 +201,7 @@ let propertyList = [
   },
   {
     id: 18,
-    title: "Quaint Countryside Farmhouse",
+    title: "Upside Apartment",
     image: "Property10.png",
     size: 2162,
     rent: 980.19,
