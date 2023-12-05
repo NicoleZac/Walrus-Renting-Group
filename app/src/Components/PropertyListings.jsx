@@ -5,7 +5,7 @@ import { UserContext } from "../Context/usercontext";
 import { useFilter } from "../Context/filtercontext";
 import { Link } from "react-router-dom";
 
-const PropertyListings = ({ properties, type }) => {
+const PropertyListings = ({ openPopup,properties, type}) => {
   const { user } = useContext(UserContext);
   const { state } = useFilter();
   const [filteredProperties, setFilteredProperties] = useState(properties);
@@ -22,6 +22,18 @@ const PropertyListings = ({ properties, type }) => {
         (prop) => prop.landlord === user?.email
       );
     }
+    if (type === "Favourites" && user?.email !== "") {
+      if(!user?.favourites){
+        tempProperties =[];
+      }
+      else{
+      tempProperties = tempProperties.filter(
+        (prop) => user?.favourites.includes(prop.id)
+      );
+      }
+  
+    }
+
 
     if (type === "OtherInNeighbourhood" && user?.email !== "") {
       tempProperties = tempProperties.filter(
@@ -89,24 +101,37 @@ const PropertyListings = ({ properties, type }) => {
   };
 
   return (
-    <div className="table">
-      {filteredProperties
-        .reduce(
-          (rows, cell, index) =>
-            (index % 3 === 0
-              ? rows.push([cell])
-              : rows[rows.length - 1].push(cell)) && rows,
-          []
-        )
-        .map((row, rowIndex) => (
-          <div className="tableRow" key={rowIndex}>
-            {row.map((cell, cellIndex) => (
-              <Link to={ `/PropertyPage/${encodeURIComponent(cell.id)}/${encodeURIComponent(JSON.stringify(cell))}`} style={{textDecoration: 'none',color:'inherit'}}>
-              <PropertyCard key={cellIndex} property={cell} />
-              </Link>
-            ))}
-          </div>
-        ))}
+    <div className="mainProp">
+      {filteredProperties == 0 ? (
+        <div className="additionalChild">No Properties Found</div>
+      ) : (
+        ""
+      )}
+
+      <div className="table">
+        {filteredProperties
+          .reduce(
+            (rows, cell, index) =>
+              (index % 3 === 0
+                ? rows.push([cell])
+                : rows[rows.length - 1].push(cell)) && rows,
+            []
+          )
+          .map((row, rowIndex) => (
+            <div className="tableRow" key={rowIndex}>
+              {row.map((cell, cellIndex) => (
+                <Link
+                  to={`/PropertyPage/${encodeURIComponent(
+                    cell.id
+                  )}/${encodeURIComponent(JSON.stringify(cell))}`}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <PropertyCard key={cellIndex} property={cell} />
+                </Link>
+              ))}
+            </div>
+          ))}
+      </div>
     </div>
   );
 };

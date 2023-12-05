@@ -48,9 +48,9 @@
   padding: 60px;
   text-align: center;
   width: 800px;
-  top: 15%;
+  top: 9%;
   position: absolute;
-  transform: scale(0.75);
+  /* transform: scale(0.9); */
 }
 
 .close-button {
@@ -583,7 +583,7 @@
 .fdiv-40 {
   transform: rotate(-0.439deg);
   color: var(--Gray-2, #4f4f4f);
-  margin: 52px 0 0 13px;
+  margin: 20px 0 0 13px;
   font: 400 15px/18px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
 }
 @media (max-width: 991px) {
@@ -712,9 +712,33 @@
 }
 
 .fdiv-101 {
-  width: 100%;
-
   padding-top: 50px;
   display: flex;
   justify-content: center;
+  gap: 197px;
+}
+
+.fdiv-301 {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.fdiv-button-reset {
+  gap: 20px;
+  display: flex;
+  width: 482px;
+  border: 2px solid; /* Add border to both divs */
+  padding: 21px 0px 22px 0px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 400px;
+  border-color: var(--Gray-2, #4f4f4f);
+  color: var(--Gray-2, #4f4f4f);
+  cursor: pointer;
+  font: 400 15px/17px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+.reset-button {
+  transform: scale(0.7);
 }

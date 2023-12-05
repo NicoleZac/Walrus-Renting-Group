@@ -20,7 +20,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  z-index: 999;
+  z-index: 2;
 }
 
 .messaging .overlap-wrapper1 {
@@ -180,14 +180,15 @@
   width: fit-content;
 }
 
-.close {
+.close-message {
   position: absolute;
-  top: -75px;
+  top: -60px;
   right: 0px;
   cursor: pointer;
   font-size: 25px;
   border-radius: 100px; /* Makes the button circular */
-  padding: 5px; /* Adjust the padding for the button */
+  padding-left: 15px; /* Adjust the padding for the button */
+  padding-right: 15px;
   background-color: #C9CBA3; /* Set the background color */
 }
 
@@ -205,12 +206,13 @@
   height: 1024px;
 }
 
-.messaging .overlap-3 {
-  background-image: url(../Images/PropertyPics/rectangle-112.png);
-  background-size: 100% 100%;
+.messaging .overlap-13 {
+  background-color: #939661;
+  border-radius: 0px 30px 30px 0px;
   height: 1024px;
-  position: relative;
+  position: fixed;
   width: 412px;
+  top: 0.75rem;
 }
 
 .messaging .rectangle {
@@ -218,7 +220,7 @@
   height: 112px;
   left: 0;
   position: absolute;
-  top: 269px;
+  top: 159px;
   width: 412px;
 }
 
@@ -232,7 +234,7 @@
   top: 164px;
 }
 
-.messaging .calendar {
+.messaging .calendar-icon {
   height: 35.56px;
   position: relative;
   width: 32px;

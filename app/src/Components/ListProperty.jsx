@@ -1,13 +1,17 @@
-import React,{useState} from 'react';
+import React,{useState,useContext,useEffect} from 'react';
 import Modal from 'react-modal';
 import Page1 from './ListPropertyPages/Page1';
 import Page2 from './ListPropertyPages/Page2';
 import Page3 from './ListPropertyPages/Page3';
 import Page4 from './ListPropertyPages/Page4';
 import {useFormData} from '../Context/formdatacontext.js';
+import propertyList from "../Components/propertyList";
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
-const ListProperty =({isOpen,requestClose})=>{
+const ListProperty =({isOpen,requestClose,setShowToast})=>{
+
     const{formData,dispatch} = useFormData();
     const [currentPage,setPage] = useState('p1');
     const[error,setError] =useState('');
@@ -15,6 +19,11 @@ const ListProperty =({isOpen,requestClose})=>{
 
     const currentIndex = pages.indexOf(currentPage);
     const handleSubmit = ()=>{
+
+        const ids=[...propertyList];
+        const largestId = ids.reduce((maxId,item)=>(item.id>maxId ? item.id:maxId),0);
+        const maxId = largestId+1;
+        
        const checkEmptyFields = () =>{
        for(const val in formData.formData){
         if(Object.hasOwnProperty.call(formData.formData,val)){
@@ -32,13 +41,35 @@ const ListProperty =({isOpen,requestClose})=>{
             setPage('p4');
         }
         else{
-            //propertyList.push(formData);
+           const newId = String(maxId);;
+           if(formData.formData.id === ''){
+                formData.formData.id= newId;
+           }
+           const index = propertyList.findIndex(prop=>prop.id ===formData.formData.id);
+        if(index!=-1){ //for editing properties
+            propertyList[index] = formData.formData;
+        }
+        else{
+            propertyList.push(formData.formData);
+        }
+            setShowToast(false);
             setError('');
             setPage('p1');
             dispatch({type: 'SUBMIT'});
             requestClose();
+            toast.success('Property has been listed',{
+                position: 'bottom-center',
+                autoClose: 3000,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable:true,
+                bodyClassName: 'center-content',
+                
+            });
         }
     };
+
     const handleNext=()=>{
         const nextIndex = currentIndex+1;
         if(nextIndex <pages.length){
@@ -54,23 +85,36 @@ const ListProperty =({isOpen,requestClose})=>{
     const getPageContent = ()=>{
         switch(currentPage){
             case 'p1':
-                return <Page1 onNext={handleNext}  requestClose={requestClose}/>;
-            case 'p2':
-                return <Page2 onNext={handleNext} onPrevious={handlePrevious}/>;    
+                return <Page1 onNext={handleNext}  requestClose={()=>requestClose()} />;
+            case 'p2': 
+                return <Page2 onNext={handleNext} onPrevious={handlePrevious} />;    
             case 'p3':
-                return <Page3 onNext={handleNext} onPrevious={handlePrevious} />;
+                return <Page3 onNext={handleNext} onPrevious={handlePrevious}/>;
             case 'p4':
-                return <Page4 onPrevious={handlePrevious} onSubmit={handleSubmit} error={error}/>;
+                return <Page4 onPrevious={handlePrevious} onSubmit={handleSubmit} error={error} />;
             default:
-                return <Page1 onNext={handleNext}  requestClose={requestClose}/>;
+                return <Page1 onNext={handleNext}  requestClose={()=>requestClose()}/>;
         }
     }
+useEffect(()=>{
+    if(isOpen){
+        document.body.style.overflow='hidden'
+    }
+    else{
+        document.body.style.overflow='auto';
+    }
+    return()=>{
+        document.body.overflow='auto';
+    }
+},[isOpen]);
     return(
 <Modal
         isOpen = {isOpen}
-        onRequestClose ={requestClose}
+        onRequestClose ={()=>requestClose()}
         style={{
+ 
            overlay: {
+        
             backgroundColor: 'rgba(0,0,0,0.5)',
             display:isOpen ? 'block' : 'none',
             alignItems: 'center',
@@ -80,7 +124,7 @@ const ListProperty =({isOpen,requestClose})=>{
             left: 0,
             right:0,
             bottom: 0,
-            zIndex: 997,
+            zIndex: 2,
            },
            content:{
             display:isOpen ? 'block' : 'none',
@@ -89,15 +133,18 @@ const ListProperty =({isOpen,requestClose})=>{
             left: '50%',
             transform: 'translate(-50%,-50%)',
             height: '100%',
-            width: '40%',
+            width: '26%',
             backgroundColor: 'white',
+            overflow:'auto',
 
            }
         }}
+        contentLabel="Example Modal"
 >
-<div style={{width: '100%'}}>
+    <div id="modal-content">
 {getPageContent()}
 </div>
+
 </Modal>
 
     );

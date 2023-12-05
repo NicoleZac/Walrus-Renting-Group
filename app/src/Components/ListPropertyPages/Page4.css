@@ -1,12 +1,11 @@
 .create-a-property-9ES {
   border-radius: 6.4478rem;
-  box-shadow: 0 0.0321rem 0.1427rem rgba(0, 0, 0, 0.0421718433), 0 0.0772rem 0.343rem rgba(0, 0, 0, 0.0605839156), 0 0.1453rem 0.6459rem rgba(0, 0, 0, 0.075000003), 0 0.2592rem 1.1522rem rgba(0, 0, 0, 0.0894160867), 0 0.4849rem 2.155rem rgba(0, 0, 0, 0.1078281552), 0 1.1606rem 5.1582rem rgba(0, 0, 0, 0.150000006);
-  flex-shrink: 0;
-  height: 46.295rem;
-  margin: 0rem 6.221rem 43.705rem 0rem;
-  position: relative;
-  width: 39.5249rem;
-
+  display: flex;
+  width: 100%;
+  border: none;
+  flex-direction: column;
+  align-items: start;
+  height:46.295rem;
   .rectangle-13-EFt {
     background-color: #ffffff;
     border-radius: 1.9666rem;
@@ -22,7 +21,7 @@
     left: 0.129rem;
     position: absolute;
     top: 4.5779rem;
-    width: 39.3959rem;
+    width: 100%;
   }
   .create-a-property-tbL {
     color: #828282;
@@ -72,7 +71,7 @@
     }
   }
   .group-17-qwp {
-    height: 0.363rem;
+    height: 2rem;
     left: 3.2238rem;
     object-fit: contain;
     position: absolute;
@@ -118,7 +117,7 @@
     height: 2.4048rem;
     left: 3.2238rem;
     position: absolute;
-    top: 22.3093rem;
+    top: 17.3093rem;
     width: 13.3rem;
 
     .availability-calendar-optional-pSN {
@@ -140,6 +139,7 @@
     }
   }
   .submit-UWv {
+    cursor:pointer;
     align-items: center;
     background-color: #4f4f4f;
     border-radius: 25.7911rem;
@@ -156,6 +156,44 @@
     top: 36.4299rem;
     white-space: nowrap;
     width: 31.0782rem;
+  }
+  .save-form-p4 {
+    align-items: center;
+    cursor:pointer;
+    background-color: #4f4f4f;
+    border-radius: 25.7911rem;
+    color: #ffffff;
+    display: flex;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 1.3669rem;
+    font-weight: 400;
+    height: 4.3845rem;
+    justify-content: center;
+    left: 2.8266rem;
+    line-height: 1.1725;
+    position: relative;
+    top: 40.2962rem;
+    white-space: nowrap;
+    width: 15.0782rem;
+  }
+  .edit-form-p4 {
+    align-items: center;
+    cursor:pointer;
+    background-color: #4f4f4f;
+    border-radius: 25.7911rem;
+    color: #ffffff;
+    display: flex;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 1.3669rem;
+    font-weight: 400;
+    height: 4.3845rem;
+    justify-content: center;
+    left: 19.1266rem;
+    line-height: 1.1725;
+    position: relative;
+    top: 35.9962rem;
+    white-space: nowrap;
+    width: 15.0782rem;
   }
   .group-49-kUS {
     height: 1.3768rem;
@@ -177,6 +215,7 @@
     width: 31.981rem;
 
     .price-CbL {
+      cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
       border-radius: 18.093rem;
@@ -203,6 +242,7 @@
       }
     }
     .price-xiv {
+      cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
       border-radius: 18.093rem;
@@ -227,6 +267,7 @@
       }
     }
     .price-Zyc {
+      cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
       border-radius: 18.093rem;
@@ -252,6 +293,7 @@
     }
   }
   .search-bar-ZcE {
+    cursor:pointer;
     align-items: center;
     background-color: #ffffff;
     border: solid 0.0645rem #c2c2c2;
@@ -262,7 +304,7 @@
     left: 3.7397rem;
     padding: 1.87rem 11.735rem 1.834rem 10.187rem;
     position: absolute;
-    top: 27.5965rem;
+    top: 22.5965rem;
     width: 31.9165rem;
 
     .open-calendar-rLS {
@@ -290,13 +332,13 @@
   display: flex;
   font-family: Roboto, 'Source Sans Pro';
   font-size: 1.3669rem;
-  font-weight: 400;
+  font-weight: 800;
   height: 0.3845rem;
   justify-content: center;
-  left: 4.1266rem;
+  left: 3.1266rem;
   line-height: 1.1725;
-  position: absolute;
-  top: 41.4299rem;
+  position: relative;
+  top: 90%;
   white-space: nowrap;
   width: 31.0782rem;
 }

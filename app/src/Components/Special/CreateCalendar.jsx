@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import "../Components/Special/Calendar.css";
+import Modal from "react-modal";
+import "./Calendar.css";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import Switch from "react-switch";
 
-export const Calendar = () => {
+export const CreateCalendarModal = ({ isOpen, closeModal }) => {
 
     
     const [day1, setDay1Value] = useState('28');
@@ -29,7 +31,8 @@ export const Calendar = () => {
     const [BCt4, setBCt4] = useState('white');
     const [BCt5, setBCt5] = useState('white');
     const [BCt6, setBCt6] = useState('white');
-
+    const [isChecked, setChecked] = useState(false);
+    
     const Thur1Click = () => {
       setBCt1('grey');
     };
@@ -163,16 +166,20 @@ export const Calendar = () => {
 
     const handleForwardClick = () => {
         // Change the value when the icon is clicked
-        setDay1Value('5');
-        setDay2Value('6');
-        setDay3Value('7');
-        setDay4Value('8');
-        setDay5Value('9');
-        setDay6Value('10');
-        setDay7Value('11');
-        setThurVisible(false);
-        setWedVisible(false);
-        setMonVisible(false);
+        if(isChecked){  
+          setDay1Value('5');
+          setDay2Value('6');
+          setDay3Value('7');
+          setDay4Value('8');
+          setDay5Value('9');
+          setDay6Value('10');
+          setDay7Value('11');
+        }else{
+          
+          setThurVisible(false);
+          setWedVisible(false);
+          setMonVisible(false);
+        }
       };
       const handleBackClick = () => {
         // Change the value when the icon is clicked
@@ -188,12 +195,57 @@ export const Calendar = () => {
         setMonVisible(true);
       };
       
-
+    
+      const handleToggle = () => {
+        setChecked(!isChecked);
+      };
   return (
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={closeModal}
+      contentLabel="Calendar Modal"
+      className="modal-content"
+      overlayClassName="modal-overlay"
+      style={{
+        overlay: {
+          backgroundColor: 'rgba(0,0,0,0)',
+          display:isOpen ? 'block' : 'none',
+          alignItems: 'center',
+          justifyContent: 'center',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right:0,
+          bottom: 0,
+          zIndex: 2,
+         },
+        content: {
+          width: '55%', // Adjust the width as needed
+          height: '95%', // Adjust the height as needed
+          margin: 'auto',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          overflow: 'auto', // Enable scrolling
+          top: '0%',
+        },
+      }}
+    >
     <div className="calendar" >
       <div className="overlap">
         <div className="frame">
-          <div className="text-wrapper">December</div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: 20 }}>
+            <div>
+              <div className="save-1" onClick={closeModal}>
+                <span style={{ fontSize: "25px", marginLeft: "2.3rem", marginTop: "0.8rem", color: "#545454",	fontFamily: "Roboto-Regular, Helvetica"}}>Save</span>
+              </div>
+            </div>
+            <div className="text-wrapper">December</div>
+            <div className="schedule-toggle">
+                <span className="toggle-title">Apply Schedule Weekly</span>
+                <Switch onChange={handleToggle} checked={isChecked} onColor={"#c9cba3"}  />
+            </div>
+          </div>
         </div>
       </div>
       <div className="div-time">
@@ -289,6 +341,7 @@ export const Calendar = () => {
         </div>}
       </div>
     </div>
+    </Modal>
   );
 }
-export default Calendar;
+export default CreateCalendarModal;
