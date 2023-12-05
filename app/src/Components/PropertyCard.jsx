@@ -64,7 +64,7 @@ function PropertyCard({ openPopup,property }) {
   const saveData=(event)=>{
     event.preventDefault();
     event.stopPropagation();
-    console.log(property.propertyType)
+
     dispatch({type:'UPDATE_DATA',payload:{propertyType:property?.propertyType}});
     dispatch({type:'UPDATE_DATA',payload:{description:property?.description}});
     dispatch({type:'UPDATE_DATA',payload:{propertyType:property?.propertyType}});
