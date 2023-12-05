@@ -105,17 +105,23 @@ const Page2 = ({onNext,onPrevious}) =>{
 <p class="neighborhood-description-xZQ" id="I165:13950;165:8668">Tags</p>
 
 <ArrowBackIosIcon onClick={onPrevious} class="group-49-v8r" id="I165:13950;165:8642"/>
-<textarea placeholder="Address&#10;Enter Here" name="address" value={formData.formData.address} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-SN6" id="I165:13950;165:8539">
+<span class="address-label">Address</span>
+<textarea placeholder="Enter Here" name="address" value={formData.formData.address} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-SN6" id="I165:13950;165:8539">
 </textarea>
-<textarea placeholder="City&#10;Enter Here" name="city" value={formData.formData.city} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-RtE" id="I165:13950;165:8646">
+<span class="address-label">City</span>
+<textarea placeholder="Enter Here" name="city" value={formData.formData.city} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-RtE" id="I165:13950;165:8646">
 </textarea>
-<textarea placeholder="Zip Code&#10;Enter Here" name="zip" value={formData.formData.zip} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-wNi" id="I165:13950;165:8661">
+<span class="address-label">Zip Code</span>
+<textarea placeholder="Enter Here" name="zip" value={formData.formData.zip} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-wNi" id="I165:13950;165:8661">
 </textarea>
-<textarea placeholder="Province / State&#10;Enter Here" name="province" value={formData.formData.province}onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-UQa" id="I165:13950;165:8651">
+<span class="address-label">Province / State</span>
+<textarea placeholder="Enter Here" name="province" value={formData.formData.province}onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-UQa" id="I165:13950;165:8651">
 </textarea>
-<textarea placeholder="Country&#10;Enter Here"name="country" value={formData.formData.country} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-Wka" id="I165:13950;165:8656">
+<span class="address-label">Neighbourhood</span>
+<textarea placeholder="Enter Here"name="country" value={formData.formData.country} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-Wka" id="I165:13950;165:8656">
 </textarea>
-<textarea placeholder="Neighbourhood&#10;Enter Here"name="neighbourhood" value={formData.formData.neighbourhood} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="neighbourhood-bar" >
+<span class="country-label">Country</span>
+<textarea placeholder="Enter Here"name="neighbourhood" value={formData.formData.neighbourhood} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="neighbourhood-bar" >
 </textarea>
 <div class="frame-22-M8v" id="I165:13950;165:8670">
 

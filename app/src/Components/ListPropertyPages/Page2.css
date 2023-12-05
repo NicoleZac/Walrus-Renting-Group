@@ -145,7 +145,7 @@
     box-sizing: border-box;
     height: 5.2227rem;
     left: 2.7726rem;
-    padding: 1.29rem 3.288rem 1.633rem 3.288rem;
+    padding: 2.29rem 3.288rem 1.633rem 3.288rem;
     position: absolute;
     top: 18.1182rem;
     width: 31.981rem;
@@ -160,7 +160,7 @@
     font-weight: 400;
     height: 5.2227rem;
     left: 2.7726rem;
-    padding: 1.29rem 3.288rem 1.633rem 3.288rem;
+    padding: 2.29rem 3.288rem 1.633rem 3.288rem;
     position: absolute;
     top: 38.2353rem;
     width: 15.4102rem;
@@ -176,7 +176,7 @@
     font-weight: 400;
     height: 5.2227rem;
     left: 19.8592rem;
-    padding: 1.29rem 3.288rem 1.633rem 3.288rem;
+    padding: 2.29rem 3.288rem 1.633rem 3.288rem;
     position: absolute;
     top: 38.2353rem;
     width: 14.8943rem;
@@ -191,7 +191,7 @@
     box-sizing: border-box;
     height: 5.2227rem;
     left: 2.7726rem;
-    padding: 1.29rem 3.288rem 1.633rem 3.288rem;
+    padding: 2.29rem 3.288rem 1.633rem 3.288rem;
     position: absolute;
     top: 31.5296rem;
     width: 31.981rem;
@@ -207,7 +207,7 @@
     font-weight: 400;
     height: 5.2227rem;
     left: 2.7726rem;
-    padding: 1.29rem 3.288rem 1.633rem 3.288rem;
+    padding: 2.29rem 3.288rem 1.633rem 3.288rem;
     position: absolute;
     top: 24.8239rem;
     width: 31.981rem;
@@ -223,11 +223,39 @@
     font-weight: 400;
     height: 5.2227rem;
     left: 2.7726rem;
-    padding: 1.29rem 3.288rem 1.633rem 3.288rem;
+    padding: 2.29rem 3.288rem 1.633rem 3.288rem;
     position: absolute;
     top: 45.2353rem;
     width: 31.981rem;
 
+  }
+  .address-label{
+    color: #4f4f4f;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 0.9721rem;
+    font-weight: 400;
+    height: 1.2rem;
+    left: 5rem;
+    position: relative;
+    top: 17.5rem;
+    margin-bottom: 5.58rem;
+    white-space: nowrap;
+    width: 5.6rem;
+    z-index: 1;
+  }
+  .country-label{
+    color: #4f4f4f;
+    font-family: Roboto, 'Source Sans Pro';
+    font-size: 0.9721rem;
+    font-weight: 400;
+    height: 1.2rem;
+    left: 21.9rem;
+    position: relative;
+    top: 3.9rem;
+    margin-bottom: 5.7rem;
+    white-space: nowrap;
+    width: 5.6rem;
+    z-index: 1;
   }
   .frame-22-M8v {
     align-items: center;
