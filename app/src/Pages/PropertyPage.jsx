@@ -10,7 +10,6 @@ import Heart from "../Images/PropertyPics/heart.png";
 import HeartFilled from "../Images/PropertyPics/filledheart.png";
 import Calendar from "../Images/PropertyPics/calendar.png";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import MapContainer from "../Components/GoogleMaps";
 import GalleryModal from "../Components/GalleryModal";
 import cover from "../Images/PropertyPics/Cover.png"
@@ -57,11 +56,9 @@ export const PropertyPage = () => {
   };
 
   /* For view availability button */
-  const handleCalendar = () => {
-    const email = 'test'; // The email you want to navigate to
-    window.location.href = `/Calendar/${email}`;
-  
-};
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
 
   const openGallery = () => {
     setShowGallery(true);
@@ -113,15 +110,15 @@ export const PropertyPage = () => {
                 src={isFavorited ? HeartFilled : Heart}
               />
             </button>
-            <button onClick={handleCalendar}>
+            <button onClick={openModal}>
               <img
                 className="calendar-icon"
                 alt="Calendar"
                 loading="lazy"
                 src={Calendar}
               />
-              <Link to={`/Calendar/test`}></Link>
             </button>
+            <CalendarModal isOpen={isModalOpen} closeModal={closeModal} />
           </div>
         </div>
         <div className="frame-7">

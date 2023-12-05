@@ -14,24 +14,18 @@ export const Messaging = ({ isOpen, onClose }) => {
   const [isBorderWhite, setIsBorderWhite] = useState(true);
   const [hasShadow, setHasShadow] = useState(false);
   const [isTextColored, setIsTextColored] = useState(false);
-
+  const [isModalOpen, setModalOpen] = useState(false);
 
   const handleSend = () => {
     setIsBorderWhite(false);
     setHasShadow(true);
     setIsTextColored(true);
   };
-
-  // /* For view availability button */
-  //   const handleCalendar = () => {
     
   // };
   /* For view availability button */
-    const handleCalendar = () => {
-      const email = 'test'; // The email you want to navigate to
-      window.location.href = `/Calendar/${email}`;
-    
-  };
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
 
     const handleSearch = () => {
       
@@ -87,14 +81,13 @@ export const Messaging = ({ isOpen, onClose }) => {
                         <div className = "text-wrapper-2">Teressa Mother</div>
                         <div className = "frame-5s">
                           <div className="text-wrapper-3">View Availability</div>
-                            <button onClick={openModal}>
+                          <button onClick={openModal}>
                               <img
                                 className="calendar-icon"
                                 alt="Calendar"
                                 loading="lazy"
                                 src={Calendar}
                               />
-                              <Link to={`/Calendar/test`}></Link>
                           </button>
                           <CalendarModal isOpen={isModalOpen} closeModal={closeModal} />
                           <span className="close-message" onClick={onClose}>&times;</span>
