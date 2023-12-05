@@ -200,22 +200,22 @@ const Page1 = ({onNext,requestClose}) =>{
         </div>
         <div class="frame-20-aiv" id="I165:13949;165:8305">
         <div class="auto-group-xevv-umC" id="N4HMgtUxtZDWE54AJ5XEvv">
-        <div onClick={()=>handleSelectType('room')} style={{backgroundColor: selectedType ==='room' ? '#c9cba3':'#ffffff'}}class="price-EoU" id="I165:13949;165:8306">
+        <div onClick={()=>handleSelectType('Room')} style={{backgroundColor: selectedType ==='Room' ? '#c9cba3':'#ffffff'}}class="price-EoU" id="I165:13949;165:8306">
         <div class="frame-15-gSW" id="I165:13949;165:8306;141:4592">Room</div>
         </div>
-        <div onClick={()=>handleSelectType('house')} style={{backgroundColor: selectedType ==='house' ? '#c9cba3':'#ffffff'}}class="price-WAe" id="I165:13949;165:8309">
+        <div onClick={()=>handleSelectType('House')} style={{backgroundColor: selectedType ==='House' ? '#c9cba3':'#ffffff'}}class="price-WAe" id="I165:13949;165:8309">
         <div class="frame-15-dWA" id="I165:13949;165:8309;141:4592">House</div>
         </div>
         </div>
         <div class="auto-group-m8ww-hF8" id="N4HMsJMHMv7qPgDSh6M8WW">
-        <div onClick={()=>handleSelectType('apartment')} style={{backgroundColor: selectedType ==='apartment' ? '#c9cba3':'#ffffff'}}class="price-EVx" id="I165:13949;165:8307">
+        <div onClick={()=>handleSelectType('Apartment')} style={{backgroundColor: selectedType ==='Apartment' ? '#c9cba3':'#ffffff'}}class="price-EVx" id="I165:13949;165:8307">
         <div class="frame-15-wQN" id="I165:13949;165:8307;141:4592">Apartment</div>
         </div>
-        <div onClick={()=>handleSelectType('basement')} style={{backgroundColor: selectedType ==='basement' ? '#c9cba3':'#ffffff'}}class="price-ZAr" id="I165:13949;165:8310">
+        <div onClick={()=>handleSelectType('Basement')} style={{backgroundColor: selectedType ==='Basement' ? '#c9cba3':'#ffffff'}}class="price-ZAr" id="I165:13949;165:8310">
         <div class="frame-15-3ri" id="I165:13949;165:8310;141:4592">Basement</div>
         </div>
         </div>
-        <div onClick={()=>handleSelectType('duplex')} style={{backgroundColor: selectedType ==='duplex' ? '#c9cba3':'#ffffff'}}class="price-K3Y" id="I165:13949;165:8308">
+        <div onClick={()=>handleSelectType('Duplex')} style={{backgroundColor: selectedType ==='Duplex' ? '#c9cba3':'#ffffff'}}class="price-K3Y" id="I165:13949;165:8308">
         <div class="frame-15-Pp6" id="I165:13949;165:8308;141:4592">Duplex</div>
         </div>
         </div>
