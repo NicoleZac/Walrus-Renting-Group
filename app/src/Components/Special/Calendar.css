@@ -43,6 +43,7 @@
 	line-height: normal;
 	position: absolute;
 	white-space: nowrap;
+	left: 17rem;
   }
   
   .calendar .group {

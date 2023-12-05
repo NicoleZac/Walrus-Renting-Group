@@ -77,8 +77,18 @@ const CalendarModal = ({ isOpen, closeModal }) => {
     <div className="calendar" >
       <div className="overlap">
         <div className="frame">
-          <div className="text-wrapper">December</div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: 20 }}>
+            <div>
+              <div className="save-1" onClick={closeModal}>
+                <span style={{ fontSize: "25px", marginLeft: "2.3rem", marginTop: "0.8rem", color: "#545454",	fontFamily: "Roboto-Regular, Helvetica"}}>Close</span>
+              </div>
+            </div>
+            <div className="text-wrapper">December</div>
+            <div className="schedule-toggle">
+                
+            </div>
           </div>
+        </div>
       </div>
       <div className="div-time">
         <div className="text-wrapper-2">08:00</div>
