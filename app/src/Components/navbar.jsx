@@ -8,14 +8,10 @@ import { useFormData } from "../Context/formdatacontext";
 import { state, useFilter } from "../Context/filtercontext";
 import ClickableComponent from "./Special/Clicked";
 import FilterModal from "./Special/FilterModal";
-function Nav() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const isHome = location.pathname === "/";
-  const isUserProfile = location.pathname.includes("/UserProfile");
-  const isMessaging = location.pathname.includes("/messaging");
-  const isFavourites = location.pathname.includes("/favourites");
+import Messaging from "../Components/Messaging";
+import { toast } from "react-toastify";
 
+function Nav() {
   const [locationFilter, setLocationFilter] = useState("");
   const [bathFilter, setBathFilter] = useState(0);
   const [bedFilter, setBedFilter] = useState(0);
@@ -24,6 +20,15 @@ function Nav() {
   const { state, dispatchFilter } = useFilter();
   const userEmail = user?.email;
   const [isModalOpen, setModalOpen] = useState(false);
+  const [showMessaging, setShowMessaging] = useState(false);
+
+  // Location
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
+  const isUserProfile = location.pathname.includes("/UserProfile");
+  const isMessaging = location.pathname.includes("/messaging");
+  const isFavourites = location.pathname.includes("/Favourites/" + user.email);
 
   //MinMax Popup
   const [isMinMaxPopupOpen, setMinMaxPopupOpen] = useState(false);
@@ -38,6 +43,10 @@ function Nav() {
   //Filter Modal
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
+
+  // Notification Show
+  const [notificationShow, setNotificationShow] = useState(false);
+  const [oneTime, setOneTime] = useState(true);
 
   useEffect(() => {
     setMinPriceFilter(state.filters.minPrice);
@@ -87,6 +96,42 @@ function Nav() {
     setBedBathPopup(false);
   };
 
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setNotificationShow(true);
+      handleNewMessage();
+    }, 10000);
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  const handleNewMessage = () => {
+    toast.dismiss();
+    toast.info(
+      <div>
+        <p> New Message!</p>
+        <button
+          onClick={() => {
+            toast.dismiss();
+            setShowMessaging(true);
+            setNotificationShow(false);
+          }}
+        >
+          View{" "}
+        </button>
+      </div>,
+      {
+        position: "top-center",
+        autoClose: false,
+        hideProgressBar: true,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: false,
+        closeButton: true,
+        className: "confirmation-toast",
+      }
+    );
+  };
+
   return (
     <div className="div">
       <div className="div-2">
@@ -132,7 +177,6 @@ function Nav() {
                       <input
                         type="number"
                         placeholder={bathFilter === 0 ? "Baths..." : bathFilter}
-                        value={bathFilter === 0 ? "Baths..." : bathFilter}
                         onChange={(e) => setBathFilter(e.target.value)}
                         onKeyDown={handleEnterPress}
                         className="number-input"
@@ -147,8 +191,7 @@ function Nav() {
                       />
                       <input
                         type="number"
-                        placeholder={bedFilter === 0 ? "Baths..." : bedFilter}
-                        value={bedFilter === 0 ? "Beds..." : bedFilter}
+                        placeholder={bedFilter === 0 ? "Beds..." : bedFilter}
                         onChange={(e) => setBedFilter(e.target.value)}
                         onKeyDown={handleEnterPress}
                         className="number-input"
@@ -331,21 +374,27 @@ function Nav() {
                     />
                   </div>
                 </Link>
-                <Link to={`/messaging`}>
-                  <div
-                    className={
-                      isMessaging ? "special-button-colour" : "regular"
-                    }
-                  >
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
-                      className="img-6"
-                    />
-                  </div>
-                </Link>
+                <div
+                  className={isMessaging ? "special-button-colour" : "regular"}
+                  onClick={() => {
+                    setShowMessaging(true);
+                    setNotificationShow(false);
+                  }}
+                  class="image-container"
+                >
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/248ce8f4-51d8-4320-a68c-8957a496b0bd?"
+                    className="img-6"
+                  />
+                  {notificationShow ? (
+                    <div class="notification-dot"></div>
+                  ) : (
+                    <></>
+                  )}
+                </div>
                 <Link
-                  to={`/favourites`}
+                  to={`/Favourites/` + user.email}
                   className={isFavourites ? "special-button-colour" : ""}
                 >
                   <div
@@ -377,6 +426,12 @@ function Nav() {
           </div>
         </div>
         <FilterModal isOpen={isModalOpen} closeModal={closeModal} />
+        {showMessaging && (
+          <Messaging
+            isOpen={showMessaging}
+            onClose={() => setShowMessaging(false)}
+          />
+        )}
       </div>
     </div>
   );
