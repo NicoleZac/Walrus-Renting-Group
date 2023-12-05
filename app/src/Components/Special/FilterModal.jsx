@@ -159,7 +159,9 @@ const FilterModal = ({ isOpen, closeModal }) => {
             <div
               key={index}
               className={`${
-                homeType.includes(option) ? "fdiv-45-selected" : "fdiv-45"
+                homeType.includes(option.replace(/\s/g, ""))
+                  ? "fdiv-45-selected"
+                  : "fdiv-45"
               }`}
               onClick={() => handleHomeClick(option)}
             >
