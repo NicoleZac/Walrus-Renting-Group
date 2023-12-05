@@ -6,6 +6,7 @@ import Matthew from '../Images/PropertyPics/matthew.png'
 import Landlord from '../Images/PropertyPics/Landlord.png'
 import Anger from '../Images/PropertyPics/Anger.png'
 import Search from '../Images/PropertyPics/search.png'
+import { Link } from "react-router-dom";
 import CalendarModal from "../Components/Special/Calendar";
 
 export const Messaging = ({ isOpen, onClose }) => {
@@ -20,9 +21,6 @@ export const Messaging = ({ isOpen, onClose }) => {
     setHasShadow(true);
     setIsTextColored(true);
   };
-
-  // /* For view availability button */
-  //   const handleCalendar = () => {
     
   // };
   /* For view availability button */
@@ -38,9 +36,10 @@ export const Messaging = ({ isOpen, onClose }) => {
       
     };
 
-
     const drakeProfile = () => {
-      
+      const email = 'testLandlord@email.com'; // The email you want to navigate to
+      window.location.href = `/UserProfile/${email}`;
+
     };
 
     const angerProfile = () => {
@@ -82,7 +81,7 @@ export const Messaging = ({ isOpen, onClose }) => {
                         <div className = "text-wrapper-2">Teressa Mother</div>
                         <div className = "frame-5s">
                           <div className="text-wrapper-3">View Availability</div>
-                            <button onClick={openModal}>
+                          <button onClick={openModal}>
                               <img
                                 className="calendar-icon"
                                 alt="Calendar"
@@ -135,6 +134,29 @@ export const Messaging = ({ isOpen, onClose }) => {
                                 <div className="div25">
                                   <div className="textwrapper25">Matthew Roberts</div>
                                   <div className="textwrapper25-2">How are you doing?</div>
+                                </div>
+                                <div className="group25">
+                                  <div className="overlap-group25">
+                                    <div className="text-wrapper25-3">3</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="user-card">
+                              <div className = "frame25">
+                                <button onClick={drakeProfile}>
+                                  <img
+                                    className="drake"
+                                    alt="Drake"
+                                    loading="lazy"
+                                    src={Landlord}
+                                  />
+                                  <Link to={`/UserProfile/testLandlord@email.com`}>
+                                  </Link>
+                                </button>
+                                <div className="div25">
+                                  <div className="textwrapper25">Teressa Mother</div>
+                                  <div className="textwrapper25-2">...</div>
                                 </div>
                                 <div className="group25">
                                   <div className="overlap-group25">

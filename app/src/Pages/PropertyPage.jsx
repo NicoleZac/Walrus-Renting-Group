@@ -10,7 +10,6 @@ import Heart from "../Images/PropertyPics/heart.png";
 import HeartFilled from "../Images/PropertyPics/filledheart.png";
 import Calendar from "../Images/PropertyPics/calendar.png";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import MapContainer from "../Components/GoogleMaps";
 import GalleryModal from "../Components/GalleryModal";
 import cover from "../Images/PropertyPics/Cover.png"
@@ -59,6 +58,7 @@ export const PropertyPage = () => {
   /* For view availability button */
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
+
 
   const openGallery = () => {
     setShowGallery(true);
