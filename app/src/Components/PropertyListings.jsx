@@ -126,7 +126,7 @@ const PropertyListings = ({ openPopup,properties, type}) => {
                   )}/${encodeURIComponent(JSON.stringify(cell))}`}
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <PropertyCard key={cellIndex} property={cell} />
+                  <PropertyCard openPopup={openPopup} key={cellIndex} property={cell} />
                 </Link>
               ))}
             </div>
