@@ -102,13 +102,15 @@ export const Messaging = ({ isOpen, onClose }) => {
                           <div className="frame-7">
                           <div className="user-card">
                               <div className = "frame25">
-                                <button onClick={drakeProfile}>
+                              <button onClick={drakeProfile}>
                                   <img
                                     className="drake"
                                     alt="Drake"
                                     loading="lazy"
                                     src={Landlord}
                                   />
+                                  <Link to={`/UserProfile/testLandlord@email.com`}>
+                                  </Link>
                                 </button>
                                 <div className="div25">
                                   <div className="textwrapper25">Teressa Mother</div>
@@ -142,29 +144,7 @@ export const Messaging = ({ isOpen, onClose }) => {
                                 </div>
                               </div>
                             </div>
-                            <div className="user-card">
-                              <div className = "frame25">
-                                <button onClick={drakeProfile}>
-                                  <img
-                                    className="drake"
-                                    alt="Drake"
-                                    loading="lazy"
-                                    src={Landlord}
-                                  />
-                                  <Link to={`/UserProfile/testLandlord@email.com`}>
-                                  </Link>
-                                </button>
-                                <div className="div25">
-                                  <div className="textwrapper25">Teressa Mother</div>
-                                  <div className="textwrapper25-2">...</div>
-                                </div>
-                                <div className="group25">
-                                  <div className="overlap-group25">
-                                    <div className="text-wrapper25-3">3</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                  
                             <div className="user-card">
                               <div className = "frame25">
                                 <button onClick={angerProfile}>
