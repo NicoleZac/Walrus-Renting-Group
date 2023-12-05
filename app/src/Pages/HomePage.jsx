@@ -15,9 +15,6 @@ function HomePage({ openPopup }) {
         <div>
           <div class="auto-group-n9aa-rLh" id="N4ErtTvWgvAsg2VNhXn9AA">
           <div class="frame-55-XVL" id="I195:7530;195:7167">
-            <div class="submit-qW2" id="I195:7530;195:7165">
-              View Messages
-            </div>
             <Link class="submit-qW2"to="../Dashboard" style={{textDecoration:'none',color:'inherit'}}>
             View Other Properties
             </Link>
