@@ -25,6 +25,7 @@ import { FormDataProvider } from "./Context/formdatacontext";
 function App() {
   const [showToast, setShowToast] = useState(true);
   const [isPopOpen, setPopOpen] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const openPop = () => {
     toast.dismiss();
@@ -32,7 +33,12 @@ function App() {
   };
   const closePop = () => {
     toast.dismiss();
-    if (showToast) {
+    console.log(showToast );
+    if(submitted){
+      console.log("submitted true, changed toast to false");
+      setShowToast(false);
+    }
+    if (showToast ) {
       toast.info(
         <div>
           <p> Are you sure you want to close the page?</p>
@@ -52,6 +58,8 @@ function App() {
       );
     } else {
       setShowToast(true);
+      setSubmitted(false);
+      handleCloseConfirmation();
     }
   };
   const handleCloseConfirmation = () => {
@@ -108,6 +116,7 @@ function App() {
                 isOpen={isPopOpen}
                 requestClose={closePop}
                 setShowToast={setShowToast}
+                setSubmitted={setSubmitted}
               />
             </Router>
           </FilterProvider>

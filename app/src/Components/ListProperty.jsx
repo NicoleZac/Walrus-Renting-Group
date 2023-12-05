@@ -10,10 +10,11 @@ import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const ListProperty =({isOpen,requestClose,setShowToast})=>{
+const ListProperty =({isOpen,requestClose,setShowToast, setSubmitted})=>{
 
     const{formData,dispatch} = useFormData();
     const [currentPage,setPage] = useState('p1');
+    // const [submitted, submitForm] = useState(false);
     const[error,setError] =useState('');
     const pages=['p1','p2','p3','p4'];
 
@@ -24,17 +25,17 @@ const ListProperty =({isOpen,requestClose,setShowToast})=>{
         const largestId = ids.reduce((maxId,item)=>(item.id>maxId ? item.id:maxId),0);
         const maxId = largestId+1;
         
-       const checkEmptyFields = () =>{
-       for(const val in formData.formData){
-        if(Object.hasOwnProperty.call(formData.formData,val)){
-            if(formData.formData[val]===''){
-                return true;
-            }
+        const checkEmptyFields = () =>{
+            for(let val in formData.formData){
+                    if(Object.hasOwnProperty.call(formData.formData,val)){
+                        if(formData.formData[val]===''){
+                            return false;
+                        }
+                    }
+                }
+            return false;
         }
-       }
-       return false;
-    }
-          const isEmpty = checkEmptyFields();
+        const isEmpty = checkEmptyFields();
           
         if(isEmpty){
             setError('Please fill out all fields');
@@ -52,10 +53,12 @@ const ListProperty =({isOpen,requestClose,setShowToast})=>{
         else{
             propertyList.push(formData.formData);
         }
-            setShowToast(false);
+            
             setError('');
+            // dispatch({type: 'SUBMIT'});
             setPage('p1');
-            dispatch({type: 'SUBMIT'});
+            setShowToast(false);
+            setSubmitted(true);
             requestClose();
             toast.success('Property has been listed',{
                 position: 'bottom-center',
