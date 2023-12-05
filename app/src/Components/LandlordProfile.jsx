@@ -99,31 +99,31 @@ const LandlordProfile = ({ openPopup }) => {
         <div className="profile-details">
           {/* Editable first name */}
           {editMode ? (
-            <input
-              type="text"
+            <div>
+            <span className="name-input-titles">First Name</span>
+            <textarea 
               value={newFirstName}
               onChange={handleFirstNameChange}
-              className="first-name-input"
+              class="first-name-input"
             />
+            <span className="name-input-titles">Last Name</span>
+            <textarea 
+              value={newLastName}
+              onChange={handleLastNameChange}
+              class="last-name-input"
+            />
+            </div>
           ) : (
             <h2 className="profile-name">{`${newFirstName} ${newLastName}`}</h2>
           )}
-          {/* Editable last name */}
           {editMode ? (
-            <input
-              type="text"
-              value={newLastName}
-              onChange={handleLastNameChange}
-              className="last-name-input"
-            />
-          ) : null}
-          {editMode ? (
-            <div className="profile-age">
-              <input
+            <div >
+              <span className="age-input-title">Age</span>
+              <textarea
                 type="number"
                 value={newAge}
                 onChange={handleAgeChange}
-                className="profile-age-input"
+                class="profile-age-input"
               />
             </div>
           ) : (
@@ -132,11 +132,14 @@ const LandlordProfile = ({ openPopup }) => {
           <p className="profile-email">{`${email || ""}`}</p>
           {/* Toggle between displaying text and input field for description */}
           {editMode ? (
-            <textarea
-              className="edit-description"
-              value={description}
-              onChange={handleDescriptionChange}
-            />
+            <div >
+              <span className="age-input-title">User Bio</span>
+              <textarea
+                className="edit-description"
+                value={description}
+                onChange={handleDescriptionChange}
+              />
+            </div>
           ) : (
             <div className="profile-description">
               {description}

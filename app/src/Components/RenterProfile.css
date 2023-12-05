@@ -73,15 +73,42 @@
 
 .first-name-input,
 .last-name-input {
-  /* Optional: Add some styles to the input field */
-  width: 60px;
-  padding: 8px;
+  width: 20rem;
+  height: 5.2227rem;
+  padding: 1.29rem 3.288rem 1.633rem 3.288rem;
   font-size: 16px;
   text-align: center;
-  border: var(--input-border, 1px) solid #ccc; /* Set the default border size to 1px */
-  border-radius: 10px;
-  resize: both;
-  font: 700 22px/62px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+  border: solid 0.0645rem #c2c2c2;
+  border-radius: 25.7911rem;
+  box-sizing: border-box;
+  font: 700 22px/62px Roboto, -apple-system, Roboto, Helvetica, sans-serif; 
+  left: 0rem;
+  margin:0;
+}
+.name-input-titles {
+  color: #4f4f4f;
+  font-family: Roboto, 'Source Sans Pro';
+  font-size: 0.9721rem;
+  font-weight: 400;
+  /* height: 1.2rem; */
+  left: 12.5rem;
+  top: -3.5rem;
+  /* margin-left: 5%;
+  margin-right: 15%; */
+  position: relative;
+  white-space: nowrap;
+  /* width: 5.6rem; */
+}
+.age-input-title {
+  color: #4f4f4f;
+  font-family: Roboto, 'Source Sans Pro';
+  font-size: 0.9721rem;
+  font-weight: 400;
+  position: relative;
+  white-space: nowrap;
+  left: 7rem;
+  top: -3.3rem;
+  /* width: 5.6rem; */
 }
 
 .profile-email {
@@ -116,14 +143,16 @@
   appearance: textfield;
   margin: 0;
 
-  /* Optional: Add some styles to the input field */
-  width: 60px;
-  padding: 8px;
+  width: 6rem;
+  height: 5.2227rem;
+  padding: 1.29rem 1.288rem 1.633rem 1.288rem;
   font-size: 16px;
   text-align: center;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font: 400 20px/23px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
+  border: solid 0.0645rem #c2c2c2;
+  border-radius: 25.7911rem;
+  box-sizing: border-box;
+  font: 700 22px/62px Roboto, -apple-system, Roboto, Helvetica, sans-serif; 
+  margin-left: 3rem;
 }
 
 /* Optional: Style the wrapper div for better positioning */
@@ -149,10 +178,17 @@
 }
 
 .edit-description{
-  border: var(--input-border, 1px) solid #ccc; /* Set the default border size to 1px */
-  border-radius: 4px;
+  height: 5.2227rem;
+  width: 45rem;
+  padding: 1.29rem 2.288rem 1.633rem 2.288rem;
+  font-size: 16px;
+  text-align: left;
+  border: solid 0.0645rem #c2c2c2;
+  border-radius: 25.7911rem;
+  box-sizing: border-box;
+  font: 700 22px/62px Roboto, -apple-system, Roboto, Helvetica, sans-serif; 
+  margin-left: 3rem;
   resize: both;
-  font: 700 20px/23px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
 }
 
 .send-renter-message-container {
