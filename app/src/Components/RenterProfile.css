@@ -22,6 +22,7 @@
 .profile-image {
   margin-bottom: 20px;
   align-items: center;
+  margin-left: 600px;
 }
 
 .profile-img {
@@ -188,7 +189,7 @@
 
 .edit-profile {
   margin-bottom: 20px; /* Adjust this value as needed */
-  margin-left: 40px;
+  margin-left: 300px;
   margin-top: -400px;
   color: var(--Gray-3, #828282);
   font: 400 20px/23px Roboto, -apple-system, Roboto, Helvetica, sans-serif;
@@ -248,6 +249,7 @@
   flex-wrap: wrap;
   flex-direction: column;
   width: 90%;
+  margin-left: -300px;
   padding: 44px 80px 44px 28px;
 }
 
@@ -378,7 +380,7 @@
   flex-grow: 1;
   flex-direction: column;
   width: 100%;
-  margin-left: 300px;
+  margin-left: -100px;
   padding: 44px 80px 44px 28px;
 }
 
