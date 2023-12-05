@@ -15,15 +15,15 @@ import PropertyPage from "./Pages/PropertyPage";
 import CreateCalendar from "./Pages/CreateCalendar";
 import Favourites from "./Pages/Favourites";
 import Dashboard from "./Pages/Dashboard";
-import {ToastContainer,toast} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { useLocation } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { FormDataProvider } from "./Context/formdatacontext";
 
 function App() {
-  const[showToast,setShowToast] = useState(true);
+  const [showToast, setShowToast] = useState(true);
   const [isPopOpen, setPopOpen] = useState(false);
 
   const openPop = () => {
@@ -32,34 +32,35 @@ function App() {
   };
   const closePop = () => {
     toast.dismiss();
-    if(showToast){
-    toast.info(
-      <div>
-      <p> Are you sure you want to close the page?</p>
-      <button onClick={handleCloseConfirmation}>Yes </button>
-      <button onClick={handleCancelConfirmation}>No </button>
-    </div>,{
-      position:'top-center',
-      autoClose: false,
-      hideProgressBar:true,
-      closeOnClick:false,
-      pauseOnHover:true,
-      draggable: true,
-      closeButton: false,
-      className:'confirmation-toast',
-    })
-  }
-  else{
-    setShowToast(true);
-  }
+    if (showToast) {
+      toast.info(
+        <div>
+          <p> Are you sure you want to close the page?</p>
+          <button onClick={handleCloseConfirmation}>Yes </button>
+          <button onClick={handleCancelConfirmation}>No </button>
+        </div>,
+        {
+          position: "top-center",
+          autoClose: false,
+          hideProgressBar: true,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          closeButton: false,
+          className: "confirmation-toast",
+        }
+      );
+    } else {
+      setShowToast(true);
+    }
   };
-  const handleCloseConfirmation=()=>{
+  const handleCloseConfirmation = () => {
     setPopOpen(false);
     toast.dismiss();
-  }
-  const handleCancelConfirmation=()=>{
+  };
+  const handleCancelConfirmation = () => {
     toast.dismiss();
-  }
+  };
   return (
     <FormDataProvider>
       <PageProvider>
@@ -84,7 +85,7 @@ function App() {
                   path={"/ListProperty"}
                   element={<Content openPopup={openPop} />}
                 />
-                  <Route
+                <Route
                   path={"/PropertyPage/:id/:property"}
                   element={<Content openPopup={openPop} />}
                 />
@@ -101,9 +102,13 @@ function App() {
                   element={<Content openPopup={openPop} />}
                 />
               </Routes>
-         
-              <ToastContainer position="top-center"/>
-           <ListProperty isOpen={isPopOpen} requestClose={closePop} setShowToast={setShowToast} />
+
+              <ToastContainer position="top-center" />
+              <ListProperty
+                isOpen={isPopOpen}
+                requestClose={closePop}
+                setShowToast={setShowToast}
+              />
             </Router>
           </FilterProvider>
         </UserProvider>
@@ -114,34 +119,38 @@ function App() {
 function Content({ openPopup }) {
   const { pageStates, setPageState } = useContext(PageContext);
   const location = useLocation();
-  const {email} = useParams(); 
-  const {id,property} = useParams();
+  const { email } = useParams();
+  const { id, property } = useParams();
   useEffect(() => {
     handleSwitch();
-  }, [location.pathname, setPageState]);
+  }, [location.pathname]);
   const handleSwitch = () => {
     if (location.pathname === "/Login" || location.pathname === "/Register") {
-      setPageState('LoginRegisterPage',true);
+      setPageState("LoginRegisterPage", true);
     } else {
-      setPageState('LoginRegisterPage',false);
+      setPageState("LoginRegisterPage", false);
     }
-    if(location.pathname === `/UserProfile/${email}`){
-      setPageState('UserProfilePage',true);
-    }
-    else{
-      setPageState('UserProfilePage',false);
+    if (location.pathname === `/UserProfile/${email}`) {
+      setPageState("UserProfilePage", true);
+    } else {
+      setPageState("UserProfilePage", false);
     }
   };
 
   return (
     <>
       {pageStates.LoginRegisterPage ? <LoginRegisterNav /> : <Nav />}
-      {location.pathname === "/" && <HomePage openPopup={openPopup} /> }
+      {location.pathname === "/" && <HomePage openPopup={openPopup} />}
       {location.pathname === "/Login" && <Login />}
       {location.pathname === "/Register" && <Register />}
-      {location.pathname === `/UserProfile/${email}` && <UserProfile openPopup={openPopup}/>  }
+      {location.pathname === `/UserProfile/${email}` && (
+        <UserProfile openPopup={openPopup} />
+      )}
       {location.pathname === "/ListProperty" && <ListProperty />}
-      {location.pathname === `/PropertyPage/${encodeURIComponent(id)}/${encodeURIComponent(property)}` && <PropertyPage />}
+      {location.pathname ===
+        `/PropertyPage/${encodeURIComponent(id)}/${encodeURIComponent(
+          property
+        )}` && <PropertyPage />}
       {location.pathname === `/CreateCalendar/${email}` && <CreateCalendar />}
       {location.pathname === `/Favourites/${email}` && <Favourites />}
       {location.pathname === `/Dashboard` && <Dashboard />}

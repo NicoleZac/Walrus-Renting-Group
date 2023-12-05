@@ -10,6 +10,22 @@
   z-index: 2;
 }
 
+.image-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.notification-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 0px;
+  right: 0px;
+  background-color: rgb(177, 24, 24); /* Change the color as needed */
+  border-radius: 50%;
+}
+
 input {
   border: none;
   outline: none;
