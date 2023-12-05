@@ -4,14 +4,25 @@ import {getProperties} from "../Components/propertyList";
 import "./LandlordProfile.css";
 import Messaging from "../Components/Messaging";
 import { UserContext } from "../Context/usercontext";
+import { useParams } from 'react-router-dom';
+import userList from "./userList";
 
 const LandlordProfile = ({ openPopup }) => {
-  const { user } = useContext(UserContext);
+  const { email } = useParams();
+  const user = userList.find((u)=>u.email === email);
+  const { userC } = useContext(UserContext);
+  const cemail = userC?.email;
   // Check if user exists before destructuring its properties
   const firstName = user?.firstName;
   const lastName = user?.lastName;
-  const email = user?.email;
+  
+  let myprofile;
 
+  if(cemail === email){
+    myprofile  = true;
+  }else{
+    myprofile = false;
+  }
   // State variable to manage overall edit mode
   const [editMode, setEditMode] = useState(false);
 
@@ -77,10 +88,10 @@ const LandlordProfile = ({ openPopup }) => {
   // Function to toggle overall edit mode
   const toggleEditMode = () => {
     // Only allow edit mode if the current user matches the profile owner
-    if (user.email === email) {
+    if (cemail === email) {
       setEditMode(!editMode);
     } else {
-      console.error("You are not authorized to edit this profile.");
+      setError("You are not authorized to edit this profile.");
     }
   };
 
@@ -147,11 +158,12 @@ const LandlordProfile = ({ openPopup }) => {
           )}
 
           {/* Button to toggle the overall edit mode or save changes */}
+          {myprofile? (
           <button onClick={editMode ? handleSave : toggleEditMode} className="edit-profile-button">
             <div className="edit-profile">
               {editMode ? "Save" : "Edit Profile Information"}
             </div>
-          </button>
+          </button> ) : (null) }
 
           {/* Error message */}
           {error && (
@@ -161,11 +173,17 @@ const LandlordProfile = ({ openPopup }) => {
           )}
 
           <div className="send-renter-message-container">
-            {user && (
+          {myprofile? (
               <>
                 <button className="send-renter-message" onClick={messages}>
                   View Messages
                 </button>
+                </>
+            ):(<>
+              <button className="send-renter-message" onClick={messages}>
+                Send Message
+              </button>
+              </>)}
                 <span className="icon">
                   {showMessaging && (
                     <Messaging
@@ -179,8 +197,6 @@ const LandlordProfile = ({ openPopup }) => {
                     className="message"
                   />
                 </span>
-              </>
-            )}
           </div>
         </div>
       </div>
