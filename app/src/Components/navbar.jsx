@@ -28,7 +28,7 @@ function Nav() {
   const isHome = location.pathname === "/";
   const isUserProfile = location.pathname.includes("/UserProfile");
   const isMessaging = location.pathname.includes("/messaging");
-  const isFavourites = location.pathname.includes("/Favourites/" + user.email);
+  const isFavourites = location.pathname.includes("/Favourites/" + user?.email);
 
   //MinMax Popup
   const [isMinMaxPopupOpen, setMinMaxPopupOpen] = useState(false);
@@ -98,8 +98,10 @@ function Nav() {
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      setNotificationShow(true);
-      handleNewMessage();
+      if (user !== null) {
+        setNotificationShow(true);
+        handleNewMessage();
+      }
     }, 10000);
     return () => clearTimeout(timeoutId);
   }, []);
