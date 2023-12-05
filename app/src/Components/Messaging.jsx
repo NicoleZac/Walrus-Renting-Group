@@ -218,7 +218,8 @@ export const Messaging = ({ isOpen, onClose }) => {
                                   : "text-wrapperpp"
                               }
                             >
-                              Hello, are you free tomorrow at 2pm for a viewing?
+                              Hello, are you free Thursday at 11 am for a
+                              viewing?
                             </p>
                           </div>
                         </div>
