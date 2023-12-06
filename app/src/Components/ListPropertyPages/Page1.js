@@ -272,31 +272,25 @@ const Page1 = ({onNext,requestClose}) =>{
         <div class="group-53-1Zt" >
         <p class="of-beds-hxW" ># of Beds</p>
         <div class="frame-53-CeN" >
-        <div class="auto-group-2g4a-8Y2" >
+
         <div onClick={()=>handleSelectBeds(1)} style={{backgroundColor: selectedBeds ===1 ? '#c9cba3':'#ffffff'}}class="price-TaJ" >
         1
         </div>
         <div onClick={()=>handleSelectBeds(6)} style={{backgroundColor: selectedBeds ===6 ? '#c9cba3':'#ffffff'}}class="price-DSz">
         6
         </div>
-        </div>
-        <div class="auto-group-kkpi-8iN">
         <div onClick={()=>handleSelectBeds(2)} style={{backgroundColor: selectedBeds ===2 ? '#c9cba3':'#ffffff'}}class="price-ewc" >
         2
         </div>
         <div onClick={()=>handleSelectBeds(7)} style={{backgroundColor: selectedBeds ===7 ? '#c9cba3':'#ffffff'}}class="price-d2r" >
        7
         </div>
-        </div>
-        <div class="auto-group-ofwa-Zqc">
         <div onClick={()=>handleSelectBeds(3)} style={{backgroundColor: selectedBeds ===3 ? '#c9cba3':'#ffffff'}}class="price-6qY" >
         3
         </div>
         <div onClick={()=>handleSelectBeds('8+')} style={{backgroundColor: selectedBeds ==='8+' ? '#c9cba3':'#ffffff'}}class="price-ry8" >
        8+
         </div>
-        </div>
-        <div class="auto-group-yxyt-FkN" >
         <div onClick={()=>handleSelectBeds(4)} style={{backgroundColor: selectedBeds ===4 ? '#c9cba3':'#ffffff'}}class="price-AcS" >
         4
         </div>
@@ -305,41 +299,32 @@ const Page1 = ({onNext,requestClose}) =>{
         </div>
         </div>
         </div>
-        </div>
         <div class="group-54-19C" >
         <p class="of-baths-Je6" ># of Baths</p>
         <div class="frame-53-xCr">
-        <div class="auto-group-kr2w-5HU" >
         <div onClick={()=>handleSelectBaths(1)} style={{backgroundColor: selectedBaths ===1 ? '#c9cba3':'#ffffff'}}class="price-oUN" >
         1
         </div>
         <div onClick={()=>handleSelectBaths(6)} style={{backgroundColor: selectedBaths ===6 ? '#c9cba3':'#ffffff'}}class="price-vBc" >
        6
         </div>
-        </div>
-        <div class="auto-group-bltu-mjx">
         <div onClick={()=>handleSelectBaths(2)} style={{backgroundColor: selectedBaths ===2 ? '#c9cba3':'#ffffff'}}class="price-Tsg" >
         2
         </div>
         <div onClick={()=>handleSelectBaths(7)} style={{backgroundColor: selectedBaths ===7 ? '#c9cba3':'#ffffff'}}class="price-dJJ" >
        7
         </div>
-        </div>
-        <div class="auto-group-oedg-HGN">
         <div onClick={()=>handleSelectBaths(3)} style={{backgroundColor: selectedBaths ===3 ? '#c9cba3':'#ffffff'}}class="price-ZUn" >
         3
         </div>
         <div onClick={()=>handleSelectBaths('8+')} style={{backgroundColor: selectedBaths ==='8+' ? '#c9cba3':'#ffffff'}} class="price-bZt" >
         8+
         </div>
-        </div>
-        <div class="auto-group-f88s-n8a" >
         <div onClick={()=>handleSelectBaths(4)} style={{backgroundColor: selectedBaths ===4 ? '#c9cba3':'#ffffff'}}class="price-iY2" >
         4
         </div>
         <div onClick={()=>handleSelectBaths(5)} style={{backgroundColor: selectedBaths ===5 ? '#c9cba3':'#ffffff'}}class="price-5Wz" >
         5
-        </div>
         </div>
         </div>
         </div>
