@@ -1186,4 +1186,10 @@ export const removeProperty = (id, u) => {
     (prop) => !(prop.id === id && prop.landlord === u)
   );
 };
+export const addProperty =(data)=>{
+  propertyList.push(data);
+}
+export const editProperty = (index,data)=>{
+  propertyList[index] = data;
+}
 export default propertyList;

@@ -16,11 +16,11 @@ const Page2 = ({onNext,onPrevious}) =>{
     const [newTag,setNewTag] = useState('');
     const[error,setError] = useState('');
     const [showDraftList,setShowDraftList] = useState(false);
-
     useEffect(()=>{
         setTags(formData.formData.tags);
     },[formData])
     const handleTextInput = (inputName,value)=>{
+
         dispatch({type:'UPDATE_DATA',payload:{[inputName]:value}});
     }
     const handleTagChange = (e)=>{
@@ -55,13 +55,15 @@ const Page2 = ({onNext,onPrevious}) =>{
             errorRef.current.scrollIntoView({behavior:'smooth'});
         }
       },[error]);
-      const handleSaveForm=()=>{
-        setError('');
-        dispatch({type:'SAVE_FORM'});
-        if(formData.duplicateTitleError!==''){
-            setError(formData.duplicateTitleError);
+    const handleSaveForm=()=>{
+        if(formData.formData.title === ''){
+            formData.duplicateTitleError ='Must have a title for a saved form';
+            setError('Must have a title for a saved form');
         }
+        else{
+        dispatch({type:'SAVE_FORM'});
         if(formData.duplicateTitleError=== null){
+            setError('');
             toast.success('Draft has been saved',{
                 position: 'bottom-center',
                 autoClose: 3000,
@@ -73,6 +75,7 @@ const Page2 = ({onNext,onPrevious}) =>{
                 
             });
         }
+    }
         
     };
     const handleViewDrafts =()=>{
@@ -109,16 +112,16 @@ const Page2 = ({onNext,onPrevious}) =>{
 <textarea placeholder="Enter Here" name="address" value={formData.formData.address} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-SN6" id="I165:13950;165:8539">
 </textarea>
 <span class="address-label">City</span>
-<textarea placeholder="Enter Here" name="city" value={formData.formData.city} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-RtE" id="I165:13950;165:8646">
+<textarea placeholder="Enter Here" name="province" value={formData.formData.province} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-RtE" id="I165:13950;165:8646">
 </textarea>
 <span class="address-label">Zip Code</span>
-<textarea placeholder="Enter Here" name="zip" value={formData.formData.zip} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-wNi" id="I165:13950;165:8661">
+<textarea placeholder="Enter Here" name="country" value={formData.formData.country} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-wNi" id="I165:13950;165:8661">
 </textarea>
 <span class="address-label">Province / State</span>
-<textarea placeholder="Enter Here" name="province" value={formData.formData.province}onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-UQa" id="I165:13950;165:8651">
+<textarea placeholder="Enter Here" name="zip" value={formData.formData.zip}onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-UQa" id="I165:13950;165:8651">
 </textarea>
 <span class="address-label">Neighbourhood</span>
-<textarea placeholder="Enter Here"name="country" value={formData.formData.country} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-Wka" id="I165:13950;165:8656">
+<textarea placeholder="Enter Here"name="city" value={formData.formData.city} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="search-bar-Wka" id="I165:13950;165:8656">
 </textarea>
 <span class="country-label">Country</span>
 <textarea placeholder="Enter Here"name="neighbourhood" value={formData.formData.neighbourhood} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}class="neighbourhood-bar" >

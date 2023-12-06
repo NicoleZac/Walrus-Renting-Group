@@ -82,12 +82,14 @@ const Page3 = ({onNext,onPrevious}) =>{
         }
     }
     const handleSaveForm=()=>{
-        setError('');
-        dispatch({type:'SAVE_FORM'});
-        if(formData.duplicateTitleError!==''){
-            setError(formData.duplicateTitleError);
+        if(formData.formData.title === ''){
+            formData.duplicateTitleError ='Must have a title for a saved form';
+            setError('Must have a title for a saved form');
         }
+        else{
+        dispatch({type:'SAVE_FORM'});
         if(formData.duplicateTitleError=== null){
+            setError('');
             toast.success('Draft has been saved',{
                 position: 'bottom-center',
                 autoClose: 3000,
@@ -99,6 +101,7 @@ const Page3 = ({onNext,onPrevious}) =>{
                 
             });
         }
+    }
         
     };
     const handleViewDrafts =()=>{
@@ -180,12 +183,12 @@ const Page3 = ({onNext,onPrevious}) =>{
         <input  class="lease-input" onKeyDown={handleLeaseInput}  name="leaseLength" value={formData.formData.leaseLength} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
         </div>
         <div style={{borderColor: rentColor}}class="price-J9x" id="I165:13951;165:8756">
-        <p class="rent-label">Monthly Rent</p>
-        <input class="rent-input" onKeyDown={handleRentInput}type="text" placeholder="$0.00" name="monthlyRent" value={formData.formData.monthlyRent} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
+        <p class="rent-label">Monthly Rent ($)</p>
+        <input class="rent-input" onKeyDown={handleRentInput}type="text" placeholder="0.00" name="monthlyRent" value={formData.formData.monthlyRent} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
         </div>
         <div style={{borderColor: depColor}}class="price-uJA" id="I165:13951;165:8761">
-        <p class="dep-label">Security Deposit</p>
-        <input class="dep-input" onKeyDown={handleDepInput} type="text" placeholder="$0.00" name="securityDep" value={formData.formData.securityDep} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
+        <p class="dep-label">Security Deposit ($)</p>
+        <input class="dep-input" onKeyDown={handleDepInput} type="text" placeholder="0.00" name="securityDep" value={formData.formData.securityDep} onChange={(e)=>handleTextInput(e.target.name,e.target.value)}/>
         </div>
         </div>
     );

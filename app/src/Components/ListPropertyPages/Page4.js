@@ -1,13 +1,10 @@
 
 import React, {useState,useContext,useRef,useEffect} from 'react';
-import {UserContext} from "../../Context/usercontext";
-import {Link} from "react-router-dom";
 import "./Page4.css";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import EventIcon from '@mui/icons-material/Event';
 import Progress3 from '../../Images/ProgressBars/Progress3.png';
 import { useFormData } from '../../Context/formdatacontext';
-import propertyList from '../propertyList.js';
 import CreateCalendarModal from "../Special/CreateCalendar";
 import ClearIcon from '@mui/icons-material/Clear';
 import {toast} from 'react-toastify';
@@ -17,27 +14,9 @@ import Modal from 'react-modal';
 const Page4 = ({onPrevious,onSubmit,error}) =>{
     const errorRef = useRef(null);
     const {formData,dispatch} = useFormData();
-    const [selectedMethod,setSelectedMethod] = useState(formData.formData.contactMethod);
-    const {user} = useContext(UserContext);
     const [isModalOpen, setModalOpen] = useState(false);
     const [showDraftList,setShowDraftList] = useState(false);
     const [errorTitle,setErrorTitle] = useState(false);
-    const userEmail = user?.email;
-    const handleSelectMethod= (method) =>{
-        const propertyIds = propertyList.map(property=>property.id);
-        const maxPId = Math.max(...propertyIds);
- 
-         dispatch({type:'UPDATE_DATA',payload:{id:maxPId+1}});
-        if(selectedMethod === method){
-            setSelectedMethod(null);
-            dispatch({type:'UPDATE_DATA',payload:{contactMethod:null}});
-        }
-        else{
-            setSelectedMethod(method);
-            dispatch({type:'UPDATE_DATA',payload:{contactMethod:method}});
-            dispatch({type:'UPDATE_DATA',payload:{landlord:userEmail}});
-        }
-    };
   
     /* For view availability button */
     const openModal = () => setModalOpen(true);
@@ -48,13 +27,15 @@ const Page4 = ({onPrevious,onSubmit,error}) =>{
             errorRef.current.scrollIntoView({behavior:'smooth'});
         }
       },[errorTitle]);
-    const handleSaveForm=()=>{
-        setErrorTitle(false);
-        dispatch({type:'SAVE_FORM'});
-        if(formData.duplicateTitleError!==''){
+      const handleSaveForm=()=>{
+        if(formData.formData.title === ''){
+            formData.duplicateTitleError ='Must have a title for a saved form';
             setErrorTitle(true);
         }
-        if(formData.duplicateTitleError=== null ){
+        else{
+        dispatch({type:'SAVE_FORM'});
+        if(formData.duplicateTitleError=== null){
+            setErrorTitle(false);
             toast.success('Draft has been saved',{
                 position: 'bottom-center',
                 autoClose: 3000,
@@ -66,6 +47,7 @@ const Page4 = ({onPrevious,onSubmit,error}) =>{
                 
             });
         }
+    }
         
     };
     const handleViewDrafts =()=>{
