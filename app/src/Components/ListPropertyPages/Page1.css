@@ -177,7 +177,7 @@
         width: 9.9296rem;
 
         .price-EoU {
-          top: 24.2rem;
+          top: 6rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -188,8 +188,8 @@
           margin-bottom: 1.0961rem;
           overflow: hidden;
           padding: 0.678rem 3.665rem 0rem 3.665rem;
-          position: fixed;
-          width: 9.9rem;
+          position: relative;
+          width: 100%;
 
           .frame-15-gSW {
             color: #4f4f4f;
@@ -204,7 +204,7 @@
           }
         }
         .price-WAe {
-          top: 27.8rem;
+          top: 6rem;
           background-color: #ffffff;
           cursor:pointer;
           border: solid 0.0452rem #c2c2c2;
@@ -214,8 +214,8 @@
           height: 2.457rem;
           overflow: hidden;
           padding: 0.678rem 3.565rem 0rem 3.565rem;
-          position: fixed;
-          width: 9.9rem;
+          position: relative;
+          width: 100%;
 
           .frame-15-dWA {
             color: #4f4f4f;
@@ -239,7 +239,7 @@
         width: 9.9296rem;
 
         .price-EVx {
-          top: 24.2rem;
+          top: 6rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -250,8 +250,8 @@
           margin-bottom: 1.0961rem;
           overflow: hidden;
           padding: 0.678rem 2.615rem 0rem 2.615rem;
-          position: fixed;
-          width: 9.9rem;
+          position: relative;
+          width: 100%;
 
           .frame-15-wQN {
             color: #4f4f4f;
@@ -266,7 +266,7 @@
           }
         }
         .price-ZAr {
-          top: 27.8rem;
+          top: 6rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -276,8 +276,8 @@
           height: 2.457rem;
           overflow: hidden;
           padding: 0.678rem 2.815rem 0rem 2.815rem;
-          position: fixed;
-          width: 9.9rem;
+          position: relative;
+          width: 100%;
 
           .frame-15-3ri {
             color: #4f4f4f;
@@ -293,8 +293,7 @@
         }
       }
       .price-K3Y {
-        top: 24.2rem;
-        left: 25.5rem;
+        top: 6rem;
         cursor:pointer;
         background-color: #ffffff;
         border: solid 0.0452rem #c2c2c2;
@@ -304,7 +303,7 @@
         height: 2.457rem;
         overflow: hidden;
         padding: 0.678rem 3.515rem 0rem 3.515rem;
-        position: fixed;
+        position: relative;
         width: 9.9296rem;
 
         .frame-15-Pp6 {
@@ -483,7 +482,6 @@
         width: 5.4161rem;
 
         .price-TaJ {
-          top:60.1rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -494,8 +492,8 @@
           margin-bottom: 0.5158rem;
           overflow: hidden;
           padding: 0.678rem 1.529rem 0rem 1.487rem;
-          position: fixed;
-          width: 5.5rem;
+          position: relative;
+          width: 100%;
 
           .frame-15-NSN {
             box-sizing: border-box;
@@ -512,7 +510,6 @@
           }
         }
         .price-DSz {
-          top:63.1rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -522,8 +519,8 @@
           height: 2.457rem;
           overflow: hidden;
           padding: 0.678rem 1.529rem 0rem 1.487rem;
-          position: fixed;
-          width: 5.5rem;
+          position: relative;
+          width: 100%;
 
           .frame-15-JUS {
             box-sizing: border-box;
@@ -550,7 +547,6 @@
         width: 5.4161rem;
 
         .price-ewc {
-          top: 60.1rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -561,8 +557,8 @@
           margin-bottom: 0.5158rem;
           overflow: hidden;
           padding: 0.678rem 1.529rem 0rem 1.487rem;
-          position: fixed;
-          width: 5.5rem;
+          position: relative;
+          width: 100%;
 
           .frame-15-n2E {
             box-sizing: border-box;
@@ -579,7 +575,6 @@
           }
         }
         .price-d2r {
-          top: 63.1rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -589,8 +584,9 @@
           height: 2.457rem;
           overflow: hidden;
           padding: 0.678rem 1.529rem 0rem 1.487rem;
-          position: fixed;
-          width: 5.5rem;
+          position: relative;
+          width: 100%;
+
           .frame-15-ktA {
             box-sizing: border-box;
             color: #4f4f4f;
@@ -615,7 +611,6 @@
         width: 5.4161rem;
 
         .price-6qY {
-          top:60.1rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -626,8 +621,8 @@
           margin-bottom: 0.5158rem;
           overflow: hidden;
           padding: 0.678rem 1.529rem 0rem 1.487rem;
-          position: fixed;
-          width: 5.5rem;
+          position: relative;
+          width: 100%;
 
           .frame-15-1Si {
             box-sizing: border-box;
@@ -644,7 +639,6 @@
           }
         }
         .price-ry8 {
-          top:63.1rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -654,8 +648,8 @@
           height: 2.457rem;
           overflow: hidden;
           padding: 0.678rem 1.529rem 0rem 1.487rem;
-          position: fixed;
-          width: 5.5rem;
+          position: relative;
+          width: 100%;
 
           .frame-15-C1Q {
             box-sizing: border-box;
@@ -681,7 +675,6 @@
         padding-left: 0.5159rem;
 
         .price-AcS {
-          top: 60.1rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -692,7 +685,7 @@
           margin-right: 0.5158rem;
           overflow: hidden;
           padding: 0.678rem 1.529rem 0rem 1.487rem;
-          position: fixed;
+          position: relative;
           width: 5.4161rem;
 
           .frame-15-qCn {
@@ -710,8 +703,6 @@
           }
         }
         .price-s9U {
-          top:60.1rem;
-          left: 27.1rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -721,7 +712,7 @@
           height: 2.457rem;
           overflow: hidden;
           padding: 0.678rem 1.529rem 0rem 1.487rem;
-          position: fixed;
+          position: relative;
           width: 5.4161rem;
 
           .frame-15-yCW {
@@ -773,7 +764,6 @@
         width: 5.4161rem;
 
         .price-oUN {
-          top:70.1rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -784,8 +774,8 @@
           margin-bottom: 0.5158rem;
           overflow: hidden;
           padding: 0.678rem 1.529rem 0rem 1.487rem;
-          position: fixed;
-          width: 5.5rem;
+          position: relative;
+          width: 100%;
 
           .frame-15-5wg {
             box-sizing: border-box;
@@ -802,7 +792,6 @@
           }
         }
         .price-vBc {
-          top:73.1rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -812,8 +801,8 @@
           height: 2.457rem;
           overflow: hidden;
           padding: 0.678rem 1.529rem 0rem 1.487rem;
-          position: fixed;
-          width: 5.5rem;
+          position: relative;
+          width: 100%;
 
           .frame-15-Sfk {
             box-sizing: border-box;
@@ -840,7 +829,6 @@
         width: 5.4161rem;
 
         .price-Tsg {
-          top:70.1rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -851,8 +839,8 @@
           margin-bottom: 0.5158rem;
           overflow: hidden;
           padding: 0.678rem 1.529rem 0rem 1.487rem;
-          position: fixed;
-          width: 5.5rem;
+          position: relative;
+          width: 100%;
 
           .frame-15-XsY {
             box-sizing: border-box;
@@ -869,7 +857,6 @@
           }
         }
         .price-dJJ {
-          top:73.1rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -879,8 +866,8 @@
           height: 2.457rem;
           overflow: hidden;
           padding: 0.678rem 1.529rem 0rem 1.487rem;
-          position: fixed;
-          width: 5.5rem;
+          position: relative;
+          width: 100%;
 
           .frame-15-JfL {
             box-sizing: border-box;
@@ -906,7 +893,6 @@
         width: 5.4161rem;
 
         .price-ZUn {
-          top: 70.1rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -917,8 +903,8 @@
           margin-bottom: 0.5158rem;
           overflow: hidden;
           padding: 0.678rem 1.529rem 0rem 1.487rem;
-          position: fixed;
-          width: 5.5rem;
+          position: relative;
+          width: 100%;
 
           .frame-15-QVQ {
             box-sizing: border-box;
@@ -935,7 +921,6 @@
           }
         }
         .price-bZt {
-          top:73.1rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -945,8 +930,8 @@
           height: 2.457rem;
           overflow: hidden;
           padding: 0.678rem 1.529rem 0rem 1.487rem;
-          position: fixed;
-          width: 5.5rem;
+          position: relative;
+          width: 100%;
 
           .frame-15-L1g {
             box-sizing: border-box;
@@ -972,7 +957,6 @@
         padding-left: 0.5159rem;
 
         .price-iY2 {
-          top: 70.1rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -983,7 +967,7 @@
           margin-right: 0.5158rem;
           overflow: hidden;
           padding: 0.678rem 1.529rem 0rem 1.487rem;
-          position: fixed;
+          position: relative;
           width: 5.4161rem;
 
           .frame-15-qMk {
@@ -1001,8 +985,6 @@
           }
         }
         .price-5Wz {
-          top: 70.1rem;
-          left: 27.1rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -1012,7 +994,7 @@
           height: 2.457rem;
           overflow: hidden;
           padding: 0.678rem 1.529rem 0rem 1.487rem;
-          position: fixed;
+          position: relative;
           width: 5.4161rem;
 
           .frame-15-QJN {
@@ -1077,7 +1059,6 @@
     width: 31.981rem;
 
     .price-6iv {
-      top: 82.7rem;
       cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
@@ -1086,9 +1067,8 @@
       flex-shrink: 0;
       height: 100%;
       overflow: hidden;
-      height: 2.3rem;
       padding: 0.678rem 3.365rem 0rem 3.365rem;
-      position: fixed;
+      position: relative;
       width: 9.9296rem;
 
       .frame-15-DoY {
@@ -1104,8 +1084,6 @@
       }
     }
     .price-VWA {
-      top: 82.7rem;
-      left: 14rem;
       cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
@@ -1115,8 +1093,7 @@
       height: 100%;
       overflow: hidden;
       padding: 0.678rem 2.165rem 0rem 2.165rem;
-      position: fixed;
-      height: 2.3rem;
+      position: relative;
       width: 9.9296rem;
 
       .frame-15-Qt2 {
@@ -1132,8 +1109,6 @@
       }
     }
     .price-Ust {
-      top: 82.7rem;
-      left: 24.7rem;
       cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
@@ -1143,8 +1118,7 @@
       height: 100%;
       overflow: hidden;
       padding: 0.678rem 1.265rem 0rem 1.265rem;
-      position: fixed;
-      height:2.3rem;
+      position: relative;
       width: 9.9296rem;
 
       .frame-15-1cv {
