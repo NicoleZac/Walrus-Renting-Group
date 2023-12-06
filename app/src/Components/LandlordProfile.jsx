@@ -114,16 +114,16 @@ const LandlordProfile = ({ openPopup }) => {
           {editMode ? (
             <div>
             <span className="name-input-titles">First Name</span>
-            <textarea 
+            <input
               value={newFirstName}
               onChange={handleFirstNameChange}
-              class="first-name-input"
+              className="first-name-input"
             />
             <span className="name-input-titles">Last Name</span>
-            <textarea 
+            <input
               value={newLastName}
               onChange={handleLastNameChange}
-              class="last-name-input"
+              className="last-name-input"
             />
             </div>
           ) : (
@@ -132,11 +132,11 @@ const LandlordProfile = ({ openPopup }) => {
           {editMode ? (
             <div >
               <span className="age-input-title">Age</span>
-              <textarea
+              <input
                 type="number"
                 value={newAge}
                 onChange={handleAgeChange}
-                class="profile-age-input"
+                className="profile-age-input"
               />
             </div>
           ) : (
@@ -146,7 +146,7 @@ const LandlordProfile = ({ openPopup }) => {
           {/* Toggle between displaying text and input field for description */}
           {editMode ? (
             <div >
-              <span className="age-input-title">User Bio</span>
+              <span className="bio-input-title">User Bio</span>
               <textarea
                 className="edit-description"
                 value={description}
