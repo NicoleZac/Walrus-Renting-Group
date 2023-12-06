@@ -214,14 +214,14 @@ const Page1 = ({onNext,requestClose}) =>{
         House
         </div>
         </div>
-        <div class="auto-group-m8ww-hF8" >
+
         <div onClick={()=>handleSelectType('Apartment')} style={{backgroundColor: selectedType ==='Apartment' ? '#c9cba3':'#ffffff'}}class="price-EVx" >
         Apartment
         </div>
         <div onClick={()=>handleSelectType('Basement')} style={{backgroundColor: selectedType ==='Basement' ? '#c9cba3':'#ffffff'}}class="price-ZAr">
        Basement
         </div>
-        </div>
+      
         <div onClick={()=>handleSelectType('Duplex')} style={{backgroundColor: selectedType ==='Duplex' ? '#c9cba3':'#ffffff'}}class="price-K3Y" >
         Duplex
         </div>

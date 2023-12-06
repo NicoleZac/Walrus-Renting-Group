@@ -182,7 +182,7 @@
           overflow: hidden;
           padding: 0.678rem 3.665rem 0rem 3.665rem;
           position: relative;
-          width: 100%;
+          width: 9.9rem;
 
         }
         .price-WAe {
@@ -197,17 +197,10 @@
           overflow: hidden;
           padding: 0.678rem 3.565rem 0rem 3.565rem;
           position: relative;
-          width: 100%;
+          width: 9.9rem;
 
         }
       
-      .auto-group-m8ww-hF8 {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        flex-shrink: 0;
-        height: 100%;
-        width: 9.9296rem;
 
         .price-EVx {
           top: 6rem;
@@ -222,11 +215,12 @@
           overflow: hidden;
           padding: 0.678rem 2.615rem 0rem 2.615rem;
           position: relative;
-          width: 100%;
+          width: 9.9rem;
 
         }
         .price-ZAr {
-          top: 6rem;
+          top: 9.5rem;
+          right:11rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -237,11 +231,12 @@
           overflow: hidden;
           padding: 0.678rem 2.815rem 0rem 2.815rem;
           position: relative;
-          width: 100%;
+          width: 9.9rem;
         }
-      }
+      
       .price-K3Y {
         top: 6rem;
+        right:11rem;
         cursor:pointer;
         background-color: #ffffff;
         border: solid 0.0452rem #c2c2c2;
