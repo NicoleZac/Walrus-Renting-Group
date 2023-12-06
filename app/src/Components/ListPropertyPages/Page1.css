@@ -177,6 +177,7 @@
         width: 9.9296rem;
 
         .price-EoU {
+          left: 12rem;
           top: 6rem;
           cursor:pointer;
           background-color: #ffffff;
