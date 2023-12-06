@@ -150,26 +150,29 @@ const RenterProfile = ({ user2 }) => {
         <div className="profile-details">
           {/* Editable first name */}
           {editMode ? (
-            <input
-              type="text"
-              value={newFirstName}
-              onChange={handleFirstNameChange}
-              className="first-name-input"
-            />
+            <div>
+              <span className="name-input-titles">First Name</span>
+              <input
+                type="text"
+                value={newFirstName}
+                onChange={handleFirstNameChange}
+                className="first-name-input"
+              />
+              <span className="name-input-titles">Last Name</span>
+              <input
+                type="text"
+                value={newLastName}
+                onChange={handleLastNameChange}
+                className="last-name-input"
+              />
+            </div>
           ) : (
             <h2 className="profile-name">{`${newFirstName} ${newLastName}`}</h2>
           )}
-          {/* Editable last name */}
-          {editMode ? (
-            <input
-              type="text"
-              value={newLastName}
-              onChange={handleLastNameChange}
-              className="last-name-input"
-            />
-          ) : null}
+          
           {editMode ? (
             <div className="profile-age">
+              <span className="age-input-title">Age</span>
               <input
                 type="number"
                 value={newAge}
@@ -183,11 +186,14 @@ const RenterProfile = ({ user2 }) => {
           <p className="profile-email">{`${email || ""}`}</p>
           {/* Toggle between displaying text and input field for description */}
           {editMode ? (
-            <textarea
-              className="edit-description"
-              value={description}
-              onChange={handleDescriptionChange}
-            />
+            <div >
+              <span className="bio-input-title">User Bio</span>
+              <textarea
+                className="edit-description"
+                value={description}
+                onChange={handleDescriptionChange}
+              />
+            </div>
           ) : (
             <div className="profile-description">
               {description}
