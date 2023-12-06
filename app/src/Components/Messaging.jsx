@@ -32,7 +32,7 @@ export const Messaging = ({ isOpen, onClose }) => {
   const matthewProfile = () => {};
 
   const drakeProfile = () => {
-    const email = "testLandlord@email.com"; // The email you want to navigate to
+    const email = "resaLmother@email.com"; // The email you want to navigate to
     window.location.href = `/UserProfile/${email}`;
   };
 
