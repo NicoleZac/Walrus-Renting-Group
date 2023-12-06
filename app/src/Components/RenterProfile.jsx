@@ -5,21 +5,25 @@ import { UserContext } from "../Context/usercontext";
 import { useParams } from 'react-router-dom';
 import userList from "./userList";
 
-const RenterProfile = ({ user1 }) => {
+const RenterProfile = ({ user2 }) => {
   const { email } = useParams();
-  const user = userList.find((u)=>u.email === email);
-  const { userC } = useContext(UserContext);
-  const cemail = userC?.email;
+  const user1 = userList.find((u)=>u.email === email);
+  const { user } = useContext(UserContext);
+  const cemail = user?.email;
+  // const [myprofile, setmyprofile] = useState(false);
+  const firstName = user1?.firstName;
+  const lastName = user1?.lastName;
 
-  const firstName = user?.firstName;
-  const lastName = user?.lastName;
-  let myprofile;
 
-  if(cemail === email){
-    myprofile  = true;
-  }else{
-    myprofile = false;
-  }
+  const handleMyProfile = () => {
+    if(cemail === email){
+      return true;
+    }
+    else{
+      return false;
+    }
+  };
+  
   // State variable to manage overall edit mode
   const [editMode, setEditMode] = useState(false);
 
@@ -190,12 +194,12 @@ const RenterProfile = ({ user1 }) => {
             </div>
           )}
           {/* Button to toggle the overall edit mode or save changes */}
-          {myprofile? (
+          {handleMyProfile()? (
           <button onClick={editMode ? handleSave : toggleEditMode} className="edit-profile-button">
             <div className="edit-profile">
               {editMode ? "Save" : "Edit Profile Information"}
             </div>
-          </button> ) : (null) }
+          </button> ):(<div/>) }
 
           {/* Error message */}
           {error && (
@@ -205,7 +209,7 @@ const RenterProfile = ({ user1 }) => {
           )}
 
           <div className="send-renter-message-container">
-            {myprofile? (
+            {handleMyProfile()? (
               <>
                 <button className="send-renter-message" onClick={messages}>
                   View Messages
