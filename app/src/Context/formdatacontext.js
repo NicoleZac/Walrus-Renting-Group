@@ -21,7 +21,6 @@ const initialState={
         leaseLength: '',
         monthlyRent:'',
         securityDep:'',
-        contactMethod:'',
         landlord: '',
         id:'',
     },
@@ -33,7 +32,6 @@ const formReducer = (state,action)=>{
     switch(action.type){
         case 'UPDATE_DATA':
             return {...state,formData:{...state.formData,...action.payload},
-            duplicateTitleError: null
         };
         
         case 'LOGOUT':
@@ -61,7 +59,6 @@ const formReducer = (state,action)=>{
                     leaseLength: '',
                     monthlyRent:'',
                     securityDep:'',
-                    contactMethod:'',
                     landlord: '',
                     id:'',
             }
@@ -73,12 +70,6 @@ const formReducer = (state,action)=>{
                 pulledFormIndex:null,
             }
         case 'SAVE_FORM':
-            if(state.formData.title===''){
-                return{
-                    ...state,
-                    duplicateTitleError: 'Must have a title for a saved form'
-                }
-            }
             const updatedForms = state.savedForms.slice();
             if(state.pulledFormIndex != null){
                 updatedForms[state.pulledFormIndex] = state.formData;

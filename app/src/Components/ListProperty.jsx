@@ -5,9 +5,10 @@ import Page2 from './ListPropertyPages/Page2';
 import Page3 from './ListPropertyPages/Page3';
 import Page4 from './ListPropertyPages/Page4';
 import {useFormData} from '../Context/formdatacontext.js';
-import propertyList from "../Components/propertyList";
+import {getProperties,addProperty,editProperty} from "../Components/propertyList";
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import PropertyListings from './PropertyListings.jsx';
 
 
 const ListProperty =({isOpen,requestClose,setShowToast, setSubmitted})=>{
@@ -20,19 +21,24 @@ const ListProperty =({isOpen,requestClose,setShowToast, setSubmitted})=>{
 
     const currentIndex = pages.indexOf(currentPage);
     const handleSubmit = ()=>{
-
-        const ids=[...propertyList];
-        const largestId = ids.reduce((maxId,item)=>(item.id>maxId ? item.id:maxId),0);
-        const maxId = largestId+1;
-        
+        const propertyList = getProperties();
+        const ids = [...propertyList]
+        const largestId = ids.reduce(function(prev,current){
+            return(prev && parseInt(prev.id,10)> parseInt(current.id,10) ? prev: current)
+        });
+        const maxId = largestId.id+1;
         const checkEmptyFields = () =>{
             for(let val in formData.formData){
-                    if(Object.hasOwnProperty.call(formData.formData,val)){
-                        if(formData.formData[val]===''){
-                            return false;
-                        }
+                if(Array.isArray(formData.formData[val])){
+                    if(formData.formData[val].length ===0){
+                        console.log('a');
+                        return true;
                     }
                 }
+                else if(formData.formData[val]==='' && val !== 'id'){
+                    return true;
+                }
+            }
             return false;
         }
         const isEmpty = checkEmptyFields();
@@ -42,20 +48,19 @@ const ListProperty =({isOpen,requestClose,setShowToast, setSubmitted})=>{
             setPage('p4');
         }
         else{
-           const newId = String(maxId);;
            if(formData.formData.id === ''){
-                formData.formData.id= newId;
+            formData.formData.id = maxId;
            }
            const index = propertyList.findIndex(prop=>prop.id ===formData.formData.id);
         if(index!=-1){ //for editing properties
-            propertyList[index] = formData.formData;
+           editProperty(index,formData.formData);
         }
         else{
-            propertyList.push(formData.formData);
+           addProperty(formData.formData);
         }
-            
+        console.log(formData.formData);
             setError('');
-            // dispatch({type: 'SUBMIT'});
+            dispatch({type: 'SUBMIT'});
             setPage('p1');
             setShowToast(false);
             setSubmitted(true);

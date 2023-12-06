@@ -64,26 +64,36 @@ function PropertyCard({ openPopup,property }) {
   const saveData=(event)=>{
     event.preventDefault();
     event.stopPropagation();
+    
+    dispatch({type:'UPDATE_DATA',payload:{tags:(property.tags||[])}});
+    
+    if(property.image){
+      let propertyArr = [];
+      propertyArr.push(property.image);
+      property.images = propertyArr;
+    }
+  
+    dispatch({type:'UPDATE_DATA',payload:{images:(property.images||[])}});
 
-    dispatch({type:'UPDATE_DATA',payload:{propertyType:property?.propertyType}});
-    dispatch({type:'UPDATE_DATA',payload:{description:property?.description}});
-    dispatch({type:'UPDATE_DATA',payload:{propertyType:property?.propertyType}});
-    dispatch({type:'UPDATE_DATA',payload:{title:property?.title}});
-    dispatch({type:'UPDATE_DATA',payload:{neighbourhood:property?.neighbourhood}});
-    dispatch({type:'UPDATE_DATA',payload:{numBeds:property?.numBeds}});
-    dispatch({type:'UPDATE_DATA',payload:{numBaths:property?.numBaths}});
-    dispatch({type:'UPDATE_DATA',payload:{propertySize:property?.propertySize}});
-    dispatch({type:'UPDATE_DATA',payload:{address:property?.address}});
-    dispatch({type:'UPDATE_DATA',payload:{country:property?.country}});
-    dispatch({type:'UPDATE_DATA',payload:{city:property?.city}});
-    dispatch({type:'UPDATE_DATA',payload:{zip:property?.propertyType}});
-    dispatch({type:'UPDATE_DATA',payload:{startDate:property?.startDate}});
-    dispatch({type:'UPDATE_DATA',payload:{leaseLength:property?.leaseLength}});
-    dispatch({type:'UPDATE_DATA',payload:{monthlyRent:property?.monthlyRent}});
-    dispatch({type:'UPDATE_DATA',payload:{securityDep:property?.securityDep}});
-    dispatch({type:'UPDATE_DATA',payload:{contactMethod:property?.contactMethod}});
-    dispatch({type:'UPDATE_DATA',payload:{landlord:property?.landlord}});
-    dispatch({type:'UPDATE_DATA',payload:{id:property?.id}});
+    dispatch({type:'UPDATE_DATA',payload:{additionalFilters:(property.additionalFilters||[])}});
+    
+    dispatch({type:'UPDATE_DATA',payload:{description:(property.description||'')}});
+    dispatch({type:'UPDATE_DATA',payload:{propertyType:(property.propertyType||'')}});
+    dispatch({type:'UPDATE_DATA',payload:{title:(property.title||'')}});
+    dispatch({type:'UPDATE_DATA',payload:{neighbourhood:(property.neighbourhood||'')}});
+    dispatch({type:'UPDATE_DATA',payload:{numBeds:(property.numBeds||property.bedrooms)}});
+    dispatch({type:'UPDATE_DATA',payload:{numBaths:(property.numBaths||property.bathrooms)}});
+    dispatch({type:'UPDATE_DATA',payload:{propertySize:(property.propertySize||property.size)}});
+    dispatch({type:'UPDATE_DATA',payload:{address:(property.address||'')}});
+    dispatch({type:'UPDATE_DATA',payload:{country:(property.country||'')}});
+    dispatch({type:'UPDATE_DATA',payload:{city:(property.city||'')}});
+    dispatch({type:'UPDATE_DATA',payload:{zip:(property.zip||'')}});
+    dispatch({type:'UPDATE_DATA',payload:{startDate:(property.startDate||'')}});
+    dispatch({type:'UPDATE_DATA',payload:{leaseLength:(property.leaseLength||'')}});
+    dispatch({type:'UPDATE_DATA',payload:{monthlyRent:(property.monthlyRent||property.rent)}});
+    dispatch({type:'UPDATE_DATA',payload:{securityDep:(property.securityDep||'')}});
+    dispatch({type:'UPDATE_DATA',payload:{landlord:(property.landlord||'')}});
+    dispatch({type:'UPDATE_DATA',payload:{id:(property.id||'')}});
     openPopup();
   
   }

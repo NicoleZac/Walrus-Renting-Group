@@ -35,10 +35,11 @@ function App() {
     toast.dismiss();
     console.log(showToast );
     if(submitted){
+      setPopOpen(false);
       console.log("submitted true, changed toast to false");
       setShowToast(false);
     }
-    if (showToast ) {
+    else if (showToast ) {
       toast.info(
         <div>
           <p> Are you sure you want to close the page?</p>
