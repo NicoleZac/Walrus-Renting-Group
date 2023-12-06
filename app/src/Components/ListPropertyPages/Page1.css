@@ -202,6 +202,7 @@
       
 
         .price-EVx {
+          left: 11rem;
           top: 6rem;
           cursor:pointer;
           background-color: #ffffff;
@@ -219,7 +220,6 @@
         }
         .price-ZAr {
           top: 9.5rem;
-          right:11rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -235,7 +235,6 @@
       
       .price-K3Y {
         top: 6rem;
-        right:11rem;
         cursor:pointer;
         background-color: #ffffff;
         border: solid 0.0452rem #c2c2c2;
