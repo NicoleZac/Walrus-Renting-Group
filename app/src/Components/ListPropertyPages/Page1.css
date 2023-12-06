@@ -218,7 +218,7 @@
 
         }
         .price-ZAr {
-          top:3.5rem;
+          left:11rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -233,6 +233,7 @@
         }
       
       .price-K3Y {
+        left: 11rem;
         cursor:pointer;
         background-color: #ffffff;
         border: solid 0.0452rem #c2c2c2;
