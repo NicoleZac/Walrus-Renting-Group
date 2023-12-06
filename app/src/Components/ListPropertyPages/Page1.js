@@ -200,22 +200,22 @@ const Page1 = ({onNext,requestClose}) =>{
         <div class="frame-20-aiv" >
         <div class="auto-group-xevv-umC">
         <div onClick={()=>handleSelectType('Room')} style={{backgroundColor: selectedType ==='Room' ? '#c9cba3':'#ffffff'}}class="price-EoU" >
-        <div class="frame-15-gSW">Room</div>
+            Room
         </div>
         <div onClick={()=>handleSelectType('House')} style={{backgroundColor: selectedType ==='House' ? '#c9cba3':'#ffffff'}}class="price-WAe" >
-        <div class="frame-15-dWA" >House</div>
+        House
         </div>
         </div>
         <div class="auto-group-m8ww-hF8" >
         <div onClick={()=>handleSelectType('Apartment')} style={{backgroundColor: selectedType ==='Apartment' ? '#c9cba3':'#ffffff'}}class="price-EVx" >
-        <div class="frame-15-wQN" >Apartment</div>
+        Apartment
         </div>
         <div onClick={()=>handleSelectType('Basement')} style={{backgroundColor: selectedType ==='Basement' ? '#c9cba3':'#ffffff'}}class="price-ZAr">
-        <div class="frame-15-3ri">Basement</div>
+       Basement
         </div>
         </div>
         <div onClick={()=>handleSelectType('Duplex')} style={{backgroundColor: selectedType ==='Duplex' ? '#c9cba3':'#ffffff'}}class="price-K3Y" >
-        <div class="frame-15-Pp6" >Duplex</div>
+        Duplex
         </div>
         </div>
         </div>
@@ -266,34 +266,34 @@ const Page1 = ({onNext,requestClose}) =>{
         <div class="frame-53-CeN" >
         <div class="auto-group-2g4a-8Y2" >
         <div onClick={()=>handleSelectBeds('1')} style={{backgroundColor: selectedBeds ==='1' ? '#c9cba3':'#ffffff'}}class="price-TaJ" >
-        <div class="frame-15-NSN">1</div>
+        1
         </div>
         <div onClick={()=>handleSelectBeds('6')} style={{backgroundColor: selectedBeds ==='6' ? '#c9cba3':'#ffffff'}}class="price-DSz">
-        <div class="frame-15-JUS" >6</div>
+        6
         </div>
         </div>
         <div class="auto-group-kkpi-8iN">
         <div onClick={()=>handleSelectBeds('2')} style={{backgroundColor: selectedBeds ==='2' ? '#c9cba3':'#ffffff'}}class="price-ewc" >
-        <div class="frame-15-n2E">2</div>
+        2
         </div>
         <div onClick={()=>handleSelectBeds('7')} style={{backgroundColor: selectedBeds ==='7' ? '#c9cba3':'#ffffff'}}class="price-d2r" >
-        <div class="frame-15-ktA" >7</div>
+       7
         </div>
         </div>
         <div class="auto-group-ofwa-Zqc">
         <div onClick={()=>handleSelectBeds('3')} style={{backgroundColor: selectedBeds ==='3' ? '#c9cba3':'#ffffff'}}class="price-6qY" >
-        <div class="frame-15-1Si" >3</div>
+        3
         </div>
         <div onClick={()=>handleSelectBeds('8+')} style={{backgroundColor: selectedBeds ==='8+' ? '#c9cba3':'#ffffff'}}class="price-ry8" >
-        <div class="frame-15-C1Q">8+</div>
+       8+
         </div>
         </div>
         <div class="auto-group-yxyt-FkN" >
         <div onClick={()=>handleSelectBeds('4')} style={{backgroundColor: selectedBeds ==='4' ? '#c9cba3':'#ffffff'}}class="price-AcS" >
-        <div class="frame-15-qCn" >4</div>
+        4
         </div>
         <div onClick={()=>handleSelectBeds('5')} style={{backgroundColor: selectedBeds ==='5' ? '#c9cba3':'#ffffff'}}class="price-s9U" >
-        <div class="frame-15-yCW" >5</div>
+        5
         </div>
         </div>
         </div>
@@ -303,34 +303,34 @@ const Page1 = ({onNext,requestClose}) =>{
         <div class="frame-53-xCr">
         <div class="auto-group-kr2w-5HU" >
         <div onClick={()=>handleSelectBaths('1')} style={{backgroundColor: selectedBaths ==='1' ? '#c9cba3':'#ffffff'}}class="price-oUN" >
-        <div class="frame-15-5wg" >1</div>
+        1
         </div>
         <div onClick={()=>handleSelectBaths('6')} style={{backgroundColor: selectedBaths ==='6' ? '#c9cba3':'#ffffff'}}class="price-vBc" >
-        <div class="frame-15-Sfk">6</div>
+       6
         </div>
         </div>
         <div class="auto-group-bltu-mjx">
         <div onClick={()=>handleSelectBaths('2')} style={{backgroundColor: selectedBaths ==='2' ? '#c9cba3':'#ffffff'}}class="price-Tsg" >
-        <div class="frame-15-XsY" >2</div>
+        2
         </div>
         <div onClick={()=>handleSelectBaths('7')} style={{backgroundColor: selectedBaths ==='7' ? '#c9cba3':'#ffffff'}}class="price-dJJ" >
-        <div class="frame-15-JfL" >7</div>
+       7
         </div>
         </div>
         <div class="auto-group-oedg-HGN">
         <div onClick={()=>handleSelectBaths('3')} style={{backgroundColor: selectedBaths ==='3' ? '#c9cba3':'#ffffff'}}class="price-ZUn" >
-        <div class="frame-15-QVQ" >3</div>
+        3
         </div>
         <div onClick={()=>handleSelectBaths('8+')} style={{backgroundColor: selectedBaths ==='8+' ? '#c9cba3':'#ffffff'}} class="price-bZt" >
-        <div class="frame-15-L1g" >8+</div>
+        8+
         </div>
         </div>
         <div class="auto-group-f88s-n8a" >
         <div onClick={()=>handleSelectBaths('4')} style={{backgroundColor: selectedBaths ==='4' ? '#c9cba3':'#ffffff'}}class="price-iY2" >
-        <div class="frame-15-qMk" >4</div>
+        4
         </div>
         <div onClick={()=>handleSelectBaths('5')} style={{backgroundColor: selectedBaths ==='5' ? '#c9cba3':'#ffffff'}}class="price-5Wz" >
-        <div class="frame-15-QJN" >5</div>
+        5
         </div>
         </div>
         </div>
@@ -343,13 +343,13 @@ const Page1 = ({onNext,requestClose}) =>{
         </div>
         <div class="frame-21-b1U" >
         <div onClick={()=>handleFilters('Utilities')} style={{backgroundColor: selectedFilters.includes('Utilities') ? '#c9cba3':'#ffffff'}}class="price-6iv">
-        <div class="frame-15-DoY" >Utilities</div>
+       Utilities
         </div>
         <div onClick={()=>handleFilters('Pets Allowed')} style={{backgroundColor: selectedFilters.includes('Pets Allowed') ? '#c9cba3':'#ffffff'}}class="price-VWA" >
-        <div class="frame-15-Qt2" >Pets Allowed</div>
+        Pets Allowed
         </div>
         <div onClick={()=>handleFilters('Smoking Allowed')} style={{backgroundColor: selectedFilters.includes('Smoking Allowed') ? '#c9cba3':'#ffffff'}}class="price-Ust">
-        <div class="frame-15-1cv" >Smoking Allowed</div>
+        Smoking Allowed
         </div>
         </div>
         <p class="sqft-label">Square Footage (e.g 500)</p>
@@ -371,7 +371,7 @@ const Page1 = ({onNext,requestClose}) =>{
             },
         }}
         >
-        <ClearIcon onClick={handleDraftClose} class="modal-icon"></ClearIcon>
+        <ClearIcon onClick={handleDraftClose} class="modal-icon-1"></ClearIcon>
         <h2> Saved Drafts </h2>
         <ul>
             {formData.savedForms.map((form,index)=>(
