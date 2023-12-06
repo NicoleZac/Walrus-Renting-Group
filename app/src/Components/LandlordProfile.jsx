@@ -9,20 +9,22 @@ import userList from "./userList";
 
 const LandlordProfile = ({ openPopup }) => {
   const { email } = useParams();
-  const user = userList.find((u)=>u.email === email);
-  const { userC } = useContext(UserContext);
-  const cemail = userC?.email;
-  // Check if user exists before destructuring its properties
-  const firstName = user?.firstName;
-  const lastName = user?.lastName;
-  
-  let myprofile;
+  const user1 = userList.find((u)=>u.email === email);
+  const { user } = useContext(UserContext);
+  const cemail = user?.email;
+  // const [myprofile, setmyprofile] = useState(false);
+  const firstName = user1?.firstName;
+  const lastName = user1?.lastName;
 
-  if(cemail === email){
-    myprofile  = true;
-  }else{
-    myprofile = false;
-  }
+
+  const handleMyProfile = () => {
+    if(cemail === email){
+      return true;
+    }
+    else{
+      return false;
+    }
+  };
   // State variable to manage overall edit mode
   const [editMode, setEditMode] = useState(false);
 
@@ -158,7 +160,7 @@ const LandlordProfile = ({ openPopup }) => {
           )}
 
           {/* Button to toggle the overall edit mode or save changes */}
-          {myprofile? (
+          {handleMyProfile()? (
           <button onClick={editMode ? handleSave : toggleEditMode} className="edit-profile-button">
             <div className="edit-profile">
               {editMode ? "Save" : "Edit Profile Information"}
@@ -173,7 +175,7 @@ const LandlordProfile = ({ openPopup }) => {
           )}
 
           <div className="send-renter-message-container">
-          {myprofile? (
+          {handleMyProfile()? (
               <>
                 <button className="send-renter-message" onClick={messages}>
                   View Messages
@@ -205,7 +207,12 @@ const LandlordProfile = ({ openPopup }) => {
       <div className="properties">
         <div className="text-wrapper">My Properties</div>
         {/* Call PropertyComponent to display the property listing */}
-        <PropertyComponent openPopup={openPopup} />
+        {handleMyProfile()? (<PropertyComponent openPopup={openPopup} />):(null)}
+        <div className="current-properties">
+          <div className="landlords-own-properties" id="I195:7530;195:7168">
+            <PropertyListings openPopup={openPopup} properties={getProperties()} type="Renter" email={email} />
+          </div>
+        </div>
       </div>
     </>
   );
@@ -221,11 +228,7 @@ function PropertyComponent({ openPopup }) {
           </div>
         </span>
       </div>
-      <div className="current-properties">
-        <div className="landlords-own-properties" id="I195:7530;195:7168">
-          <PropertyListings openPopup={openPopup} properties={getProperties()} type="Landlord" />
-        </div>
-      </div>
+      
     </>
   );
 }

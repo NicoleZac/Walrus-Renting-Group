@@ -5,7 +5,7 @@ import { UserContext } from "../Context/usercontext";
 import { useFilter } from "../Context/filtercontext";
 import { Link } from "react-router-dom";
 
-const PropertyListings = ({ openPopup, properties, type }) => {
+const PropertyListings = ({ openPopup, properties, type, email }) => {
   const { user } = useContext(UserContext);
   const { state } = useFilter();
   const [filteredProperties, setFilteredProperties] = useState(properties);
@@ -20,6 +20,11 @@ const PropertyListings = ({ openPopup, properties, type }) => {
     if (type === "Landlord" && user?.email !== "") {
       tempProperties = tempProperties.filter(
         (prop) => prop.landlord === user?.email
+      );
+    }
+    if (type === "Renter" && email !== "") {
+      tempProperties = tempProperties.filter(
+        (prop) => prop.landlord === email
       );
     }
     if (type === "Favourites" && user?.email !== "") {
