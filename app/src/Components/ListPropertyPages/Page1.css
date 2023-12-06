@@ -177,6 +177,7 @@
         width: 9.9296rem;
 
         .price-EoU {
+          left: 12rem;
           top: 6rem;
           cursor:pointer;
           background-color: #ffffff;
@@ -204,7 +205,6 @@
           }
         }
         .price-WAe {
-          left: 11rem;
           top: 6rem;
           background-color: #ffffff;
           cursor:pointer;
@@ -267,7 +267,6 @@
           }
         }
         .price-ZAr {
-          left:11rem;
           top: 6rem;
           cursor:pointer;
           background-color: #ffffff;
@@ -295,7 +294,6 @@
         }
       }
       .price-K3Y {
-        left: 11rem;
         top: 6rem;
         cursor:pointer;
         background-color: #ffffff;
