@@ -414,6 +414,7 @@
 
         .price-ewc {
           left: 7rem;
+          bottom: 4.5rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -430,7 +431,7 @@
 
         }
         .price-d2r {
-          left: 7rem;
+          left: 14rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -446,7 +447,7 @@
         }
       
         .price-6qY {
-          left: 7rem;
+          left:14rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
