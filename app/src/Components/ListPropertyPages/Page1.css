@@ -234,7 +234,7 @@
       
       .price-K3Y {
         left: 22rem;
-        bottom: 7rem;
+        bottom: 6rem;
         cursor:pointer;
         background-color: #ffffff;
         border: solid 0.0452rem #c2c2c2;
@@ -414,7 +414,7 @@
 
         .price-ewc {
           left: 7rem;
-          bottom: 4.5rem;
+          bottom: 5rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -431,7 +431,8 @@
 
         }
         .price-d2r {
-          left: 14rem;
+          left: 7rem;
+          bottom: 2rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -448,6 +449,7 @@
       
         .price-6qY {
           left:14rem;
+          bottom: 5rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -463,6 +465,8 @@
 
         }
         .price-ry8 {
+          left:14rem;
+          bottom:2rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -478,6 +482,8 @@
         }
 
         .price-AcS {
+          left: 21rem;
+          bottom: 5rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -493,6 +499,8 @@
 
         }
         .price-s9U {
+          left:21rem;
+          bottom: 2rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
