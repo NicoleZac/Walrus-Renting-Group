@@ -234,7 +234,7 @@
       
       .price-K3Y {
         left: 22rem;
-        bottom: 9rem;
+        bottom: 7.6rem;
         cursor:pointer;
         background-color: #ffffff;
         border: solid 0.0452rem #c2c2c2;
@@ -429,6 +429,7 @@
 
         }
         .price-d2r {
+          left: 7rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -444,6 +445,7 @@
         }
       
         .price-6qY {
+          left: 7rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -562,6 +564,7 @@
 
 
         .price-Tsg {
+          left: 7rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -577,6 +580,7 @@
 
         }
         .price-dJJ {
+          left: 7rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
