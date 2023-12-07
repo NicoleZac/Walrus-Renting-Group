@@ -800,7 +800,6 @@
   }
   .submit-hXg {
     align-items: center;
-    margin-top:0.7rem;
     text-align: center;
     cursor:pointer;
     background-color: #4f4f4f;
@@ -822,7 +821,6 @@
   .save-form-p1 {
     align-items: center;
     cursor:pointer;
-    margin-top:0.7rem;
     text-align: center;
     background-color: #4f4f4f;
     border-radius: 25.7911rem;
@@ -843,7 +841,6 @@
   .edit-form-p1 {
     text-align: center;
     align-items: center;
-    margin-top:0.7rem;
     cursor:pointer;
     background-color: #4f4f4f;
     border-radius: 25.7911rem;
