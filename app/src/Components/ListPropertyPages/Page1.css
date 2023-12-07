@@ -551,7 +551,7 @@
           height: 2.457rem;
           margin-bottom: 0.5158rem;
           overflow: hidden;
-          padding: 0.578rem 1.529rem 0.9rem 6.287rem;
+          padding: 0.578rem 1.529rem 0.3rem 2.287rem;
           position: relative;
           width: 5.4161rem;
 
@@ -565,7 +565,7 @@
           flex-shrink: 0;
           height: 2.457rem;
           overflow: hidden;
-          padding: 0.578rem 1.529rem 0.9rem 3.287rem;
+          padding: 0.578rem 1.529rem 0.3rem 2.287rem;
           position: relative;
           width: 5.4161rem;
 
@@ -585,7 +585,7 @@
           height: 2.457rem;
           margin-bottom: 0.5158rem;
           overflow: hidden;
-          padding: 0.578rem 1.529rem 0.9rem 3.287rem;
+          padding: 0.578rem 1.529rem 0.3rem 2.287rem;
           position: relative;
           width: 5.4161rem;
 
@@ -809,7 +809,7 @@
     font-size: 1.3669rem;
     font-weight: 400;
     height: 4.3845rem;
-    padding: 0.678rem 1.265rem 0rem 2.765rem;
+    padding: 0.678rem 1.265rem 0rem 7.765rem;
     justify-content: center;
     left: 3.1266rem;
     line-height: 1.1725;
@@ -831,7 +831,7 @@
     height: 4.3845rem;
     justify-content: center;
     left: 3.1266rem;
-    padding: 0.678rem 1.265rem 1rem 2.765rem;
+    padding: 1.678rem 1.265rem 1rem 3.765rem;
     line-height: 1.1725;
     position: relative;
     top: 63.1715rem;
@@ -845,7 +845,7 @@
     border-radius: 25.7911rem;
     color: #ffffff;
     display: flex;
-    padding: 0.678rem 1.265rem 1rem 2.765rem;
+    padding: 1.678rem 1.265rem 1rem 3.765rem;
     font-family: Roboto, 'Source Sans Pro';
     font-size: 1.3669rem;
     font-weight: 400;
