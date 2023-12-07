@@ -202,7 +202,7 @@
       
 
         .price-EVx {
-          top: 6rem;
+          left: 11rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -218,8 +218,7 @@
 
         }
         .price-ZAr {
-          top: 9.5rem;
-          right:11rem;
+          left:11rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -234,8 +233,8 @@
         }
       
       .price-K3Y {
-        top: 6rem;
-        right:11rem;
+        left: 22rem;
+        bottom: 6rem;
         cursor:pointer;
         background-color: #ffffff;
         border: solid 0.0452rem #c2c2c2;
@@ -380,14 +379,7 @@
       height: 5.4298rem;
       width: 100%;
 
-      .auto-group-2g4a-8Y2 {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        flex-shrink: 0;
-        height: 100%;
-        margin-right: 0.5158rem;
-        width: 5.4161rem;
+  
 
         .price-TaJ {
           cursor:pointer;
@@ -401,7 +393,7 @@
           overflow: hidden;
           padding: 0.578rem 1.529rem 0.3rem 2.287rem;
           position: relative;
-          width: 100%;
+          width: 5.4161rem;
         }
         .price-DSz {
           cursor:pointer;
@@ -414,20 +406,15 @@
           overflow: hidden;
           padding: 0.578rem 1.529rem 0.3rem 2.287rem;
           position: relative;
-          width: 100%;
+          width: 5.4161rem;
 
         }
-      }
-      .auto-group-kkpi-8iN {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        flex-shrink: 0;
-        height: 100%;
-        margin-right: 0.5158rem;
-        width: 5.4161rem;
+      
+
 
         .price-ewc {
+          left: 7rem;
+          bottom: 5.4rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -439,11 +426,13 @@
           overflow: hidden;
           padding: 0.578rem 1.529rem 0.3rem 2.287rem;
           position: relative;
-          width: 100%;
+          width: 5.4161rem;
 
 
         }
         .price-d2r {
+          left: 7rem;
+          bottom: 5.4rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -454,19 +443,13 @@
           overflow: hidden;
           padding: 0.578rem 1.529rem 0.3rem 2.287rem;
           position: relative;
-          width: 100%;
+          width: 5.4161rem;
 
         }
-      }
-      .auto-group-ofwa-Zqc {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        flex-shrink: 0;
-        height: 100%;
-        width: 5.4161rem;
-
+      
         .price-6qY {
+          left:14rem;
+          bottom: 10.7rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -478,10 +461,12 @@
           overflow: hidden;
           padding: 0.578rem 1.529rem 0.3rem 2.287rem;
           position: relative;
-          width: 100%;
+          width: 5.4161rem;
 
         }
         .price-ry8 {
+          left:14rem;
+          bottom:10.8rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -492,19 +477,13 @@
           overflow: hidden;
           padding: 0.578rem 1.529rem 0.3rem 2.287rem;
           position: relative;
-          width: 100%;
+          width: 5.4161rem;
 
         }
-      }
-      .auto-group-yxyt-FkN {
-        align-items: flex-start;
-        box-sizing: border-box;
-        display: flex;
-        flex-shrink: 0;
-        height: 100%;
-        padding-left: 0.5159rem;
 
         .price-AcS {
+          left: 21rem;
+          bottom: 16.3rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -520,6 +499,8 @@
 
         }
         .price-s9U {
+          left:28rem;
+          bottom: 18.75rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -533,7 +514,7 @@
           width: 5.4161rem;
 
         }
-      }
+      
     }
   }
   .group-54-19C {
@@ -558,14 +539,7 @@
       height: 5.4298rem;
       width: 100%;
 
-      .auto-group-kr2w-5HU {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        flex-shrink: 0;
-        height: 100%;
-        margin-right: 0.5158rem;
-        width: 5.4161rem;
+  
 
         .price-oUN {
           cursor:pointer;
@@ -579,7 +553,7 @@
           overflow: hidden;
           padding: 0.578rem 1.529rem 0.3rem 2.287rem;
           position: relative;
-          width: 100%;
+          width: 5.4161rem;
 
         }
         .price-vBc {
@@ -593,20 +567,15 @@
           overflow: hidden;
           padding: 0.578rem 1.529rem 0.3rem 2.287rem;
           position: relative;
-          width: 100%;
+          width: 5.4161rem;
 
         }
-      }
-      .auto-group-bltu-mjx {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        flex-shrink: 0;
-        height: 100%;
-        margin-right: 0.5158rem;
-        width: 5.4161rem;
+      
+
 
         .price-Tsg {
+          left: 7rem;
+          bottom: 5.4rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -618,10 +587,12 @@
           overflow: hidden;
           padding: 0.578rem 1.529rem 0.3rem 2.287rem;
           position: relative;
-          width: 100%;
+          width: 5.4161rem;
 
         }
         .price-dJJ {
+          left: 7rem;
+          bottom: 5.4rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -632,18 +603,14 @@
           overflow: hidden;
           padding: 0.578rem 1.529rem 0.3rem 2.287rem;
           position: relative;
-          width: 100%;
+          width: 5.4161rem;
         }
-      }
-      .auto-group-oedg-HGN {
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        flex-shrink: 0;
-        height: 100%;
-        width: 5.4161rem;
+      
+
 
         .price-ZUn {
+          left: 14rem;
+          bottom: 10.8rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -655,10 +622,12 @@
           overflow: hidden;
           padding: 0.578rem 1.529rem 0.3rem 2.287rem;
           position: relative;
-          width: 100%;
+          width: 5.4161rem;
 
         }
         .price-bZt {
+          left: 14rem;
+          bottom: 10.8rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -669,19 +638,15 @@
           overflow: hidden;
           padding: 0.578rem 1.529rem 0.3rem 2.287rem;
           position: relative;
-          width: 100%;
+          width: 5.4161rem;
 
         }
-      }
-      .auto-group-f88s-n8a {
-        align-items: flex-start;
-        box-sizing: border-box;
-        display: flex;
-        flex-shrink: 0;
-        height: 100%;
-        padding-left: 0.5159rem;
+      
+
 
         .price-iY2 {
+          left:21rem;
+          bottom: 16.3rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -697,6 +662,8 @@
 
         }
         .price-5Wz {
+          left: 28rem;
+          bottom: 18.75rem;
           cursor:pointer;
           background-color: #ffffff;
           border: solid 0.0452rem #c2c2c2;
@@ -710,7 +677,6 @@
           width: 5.4161rem;
 
         }
-      }
     }
   }
   .frame-19-rRG {
@@ -772,6 +738,8 @@
 
     }
     .price-VWA {
+      left: 11rem;
+      bottom: 2.5rem;
       cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
@@ -786,6 +754,8 @@
 
     }
     .price-Ust {
+      left: 22rem;
+      bottom: 5rem;
       cursor:pointer;
       background-color: #ffffff;
       border: solid 0.0452rem #c2c2c2;
@@ -830,6 +800,8 @@
   }
   .submit-hXg {
     align-items: center;
+    margin-top:0.7rem;
+    text-align: center;
     cursor:pointer;
     background-color: #4f4f4f;
     border-radius: 25.7911rem;
@@ -850,6 +822,8 @@
   .save-form-p1 {
     align-items: center;
     cursor:pointer;
+    margin-top:0.7rem;
+    text-align: center;
     background-color: #4f4f4f;
     border-radius: 25.7911rem;
     color: #ffffff;
@@ -867,7 +841,9 @@
     width: 15.0782rem;
   }
   .edit-form-p1 {
+    text-align: center;
     align-items: center;
+    margin-top:0.7rem;
     cursor:pointer;
     background-color: #4f4f4f;
     border-radius: 25.7911rem;
